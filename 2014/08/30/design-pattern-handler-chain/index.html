@@ -1,0 +1,2633 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>行为型设计模式 — 责任链模式 | Charles Tech Blog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="Charles Tech Blog">
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  
+  
+  
+
+  
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/11/10/redis-persistence/">Redis持久化策略</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/11/10/redis-persistence/">Redis持久化策略</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/11/10/redis-persistence/">Redis持久化策略</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/19/design-pattern-visitor/">行为型设计模式 — 访问者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/19/design-pattern-visitor/">行为型设计模式 — 访问者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/19/design-pattern-visitor/">行为型设计模式 — 访问者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/12/implement-a-simple-thread-pool/">Java实现一个简单的线程池</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/12/implement-a-simple-thread-pool/">Java实现一个简单的线程池</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/12/implement-a-simple-thread-pool/">Java实现一个简单的线程池</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/12/design-pattern-state/">行为型设计模式 — 状态模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/12/design-pattern-state/">行为型设计模式 — 状态模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/12/design-pattern-state/">行为型设计模式 — 状态模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/09/implement-cache-using-deplay-queue/">使用DelayQueue实现缓存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/09/implement-cache-using-deplay-queue/">使用DelayQueue实现缓存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/09/implement-cache-using-deplay-queue/">使用DelayQueue实现缓存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/03/jsonrpc-usage/">JSON-RPC使用及自动加载服务框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/03/jsonrpc-usage/">JSON-RPC使用及自动加载服务框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/03/jsonrpc-usage/">JSON-RPC使用及自动加载服务框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/03/java-read-write-lock/">Java实现读写锁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/03/java-read-write-lock/">Java实现读写锁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/03/java-read-write-lock/">Java实现读写锁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/02/directory-memory-of-jvm/">Java堆外内存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/02/directory-memory-of-jvm/">Java堆外内存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/10/02/directory-memory-of-jvm/">Java堆外内存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/14/jdk-monitor-tools-2/">JDK监控和故障处理工具 (II)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/14/jdk-monitor-tools-2/">JDK监控和故障处理工具 (II)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/14/jdk-monitor-tools-2/">JDK监控和故障处理工具 (II)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/13/design-pattern-momento/">行为型设计模式 — 备忘录模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/13/design-pattern-momento/">行为型设计模式 — 备忘录模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/13/design-pattern-momento/">行为型设计模式 — 备忘录模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/13/java-substring-memory-leak/">substring()内存泄露隐患</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/13/java-substring-memory-leak/">substring()内存泄露隐患</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/13/java-substring-memory-leak/">substring()内存泄露隐患</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/07/jdk-monitor-tools-1/">JDK监控和故障处理工具 (I)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/07/jdk-monitor-tools-1/">JDK监控和故障处理工具 (I)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/07/jdk-monitor-tools-1/">JDK监控和故障处理工具 (I)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/06/design-pattern-command/">行为型设计模式 — 命令模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/06/design-pattern-command/">行为型设计模式 — 命令模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/09/06/design-pattern-command/">行为型设计模式 — 命令模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/30/design-pattern-handler-chain/">行为型设计模式 — 责任链模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/30/design-pattern-handler-chan/">行为型设计模式 — 责任链模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/30/design-pattern-handler-chan/">行为型设计模式 — 责任链模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/30/design-pattern-handler-chain/">行为型设计模式 — 责任链模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/30/design-pattern-handler-chain/">行为型设计模式 — 责任链模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/28/redis-practice-in-famous-companies/">国内外巨头分享Redis实战经验及使用场景</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/28/redis-practice-in-famous-companies/">国内外巨头分享Redis实战经验及使用场景</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/28/redis-practice-in-famous-companies/">国内外巨头分享Redis实战经验及使用场景</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/23/design-pattern-interator/">行为型设计模式 — 迭代器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/23/design-pattern-interator/">行为型设计模式 — 迭代器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/23/design-pattern-interator/">行为型设计模式 — 迭代器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/21/google-available-host/">分享一个可以上Google的Hosts</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/21/google-available-host/">分享一个可以上Google的Hosts</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/21/google-available-host/">分享一个可以上Google的Hosts</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/13/read-write-lock/">ReadWriteLock读写锁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/13/read-write-lock/">ReadWriteLock读写锁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/13/read-write-lock/">ReadWriteLock读写锁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/09/design-pattern-observer/">行为型设计模式 — 观察者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/09/design-pattern-observer/">行为型设计模式 — 观察者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/09/design-pattern-observer/">行为型设计模式 — 观察者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/08/tutorials-of-git-remote-control/">Git远程操作详解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/08/tutorials-of-git-remote-control/">Git远程操作详解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/08/tutorials-of-git-remote-control/">Git远程操作详解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/04/design-patterns-in-java-api/">Java API中的设计模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/04/design-patterns-in-java-api/">Java API中的设计模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/04/design-patterns-in-java-api/">Java API中的设计模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/02/design-pattern-template-method/">行为型设计模式 — 模板方法模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/02/design-pattern-template-method/">行为型设计模式 — 模板方法模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/08/02/design-pattern-template-method/">行为型设计模式 — 模板方法模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/26/java-callback/">Java回调机制</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/26/java-callback/">Java回调机制</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/26/java-callback/">Java回调机制</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-strategy/">行为型设计模式 — 策略模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-strategy/">行为型设计模式 — 策略模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-strategy/">行为型设计模式 — 策略模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-fascade/">结构型设计模式 — 外观模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-fascade/">结构型设计模式 — 外观模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-fascade/">结构型设计模式 — 外观模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-proxy/">结构型设计模式 — 代理模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-proxy/">结构型设计模式 — 代理模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-proxy/">结构型设计模式 — 代理模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-decorator/">结构型设计模式 — 装饰器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-decorator/">结构型设计模式 — 装饰器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-decorator/">结构型设计模式 — 装饰器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-adapter/">结构型设计模式 — 适配器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-adapter/">结构型设计模式 — 适配器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/13/design-pattern-adapter/">结构型设计模式 — 适配器模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/02/jvm-options/">JVM实用参数系列</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/02/jvm-options/">JVM实用参数系列</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/07/02/jvm-options/">JVM实用参数系列</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/29/design-pattern-share/">结构型设计模式 — 享元模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/29/design-pattern-share/">结构型设计模式 — 享元模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/29/design-pattern-share/">结构型设计模式 — 享元模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/28/jvm-data-region-and-object-storage/">JVM内存区域与对象探秘</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/28/jvm-data-region-and-object-storage/">JVM内存区域与对象探秘</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/28/jvm-data-region-and-object-storage/">JVM内存区域与对象探秘</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/26/design-pattern-bridge/">结构型设计模式 — 桥接模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/26/design-pattern-bridge/">结构型设计模式 — 桥接模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/26/design-pattern-bridge/">结构型设计模式 — 桥接模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/24/design-pattern-composite/">结构型设计模式 — 组合模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/24/design-pattern-composite/">结构型设计模式 — 组合模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/24/design-pattern-composite/">结构型设计模式 — 组合模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/20/ten-basic-algorithm/">程序员必须知道的10大基础实用算法及其讲解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/20/ten-basic-algorithms/">程序员必须知道的10大基础实用算法及其讲解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/20/ten-basic-algorithms/">程序员必须知道的10大基础实用算法及其讲解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/20/ten-basic-algorithms/">程序员必须知道的10大基础实用算法及其讲解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/20/ten-basic-algorithm/">程序员必须知道的10大基础实用算法及其讲解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/12/design-pattern-creator/">创建型设计模式 — 建造者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/12/design-pattern-creator/">创建型设计模式 — 建造者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/12/design-pattern-creator/">创建型设计模式 — 建造者模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/12/design-pattern-prototype/">创建型设计模式 — 原型模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/12/design-pattern-prototype/">创建型设计模式 — 原型模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/06/12/design-pattern-prototype/">创建型设计模式 — 原型模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/27/design-pattern-singleton/">创建型设计模式 — 单例模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/27/design-pattern-singleton/">创建型设计模式 — 单例模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/27/design-pattern-singleton/">创建型设计模式 — 单例模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/27/design-pattern-factory/">创建型设计模式 — 工厂模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/27/design-pattern-factory/">创建型设计模式 — 工厂模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/27/design-pattern-factory/">创建型设计模式 — 工厂模式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/26/back-to-top-jquery/">基于JQuery的返回顶部快捷工具</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/26/back-to-top-jquery/">基于JQuery的返回顶部快捷工具</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/26/back-to-top-jquery/">基于JQuery的返回顶部快捷工具</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/25/find-first-non-repeat-character-in-one-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/25/find-first-non-repeat-character-in-one-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/25/find-first-non-repeat-character-in-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/25/find-first-non-repeat-character-in-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/25/find-first-non-repeat-character-in-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/15/CountdownLatch-and-CyclicBarier/">同步辅助类CountdownLatch与CyclicBarrier</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/15/CountdownLatch-and-CyclicBarier/">同步辅助类CountdownLatch与CyclicBarrier</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/15/CountdownLatch-and-CyclicBarier/">同步辅助类CountdownLatch与CyclicBarrier</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/11/java-concurrency-thread-/">并发编程之任务协作</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/11/java-concurrency-thread-corporation/">并发编程之任务协作</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/11/java-concurrency-thread-corporation/">并发编程之任务协作</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/11/java-concurrency-thread-/">并发编程之任务协作</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/11/java-concurrency-thread-corporation/">并发编程之任务协作</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/07/manage-git-sub-module/">如何用JGit管理Git子模块</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/07/manage-git-sub-module/">如何用JGit管理Git子模块</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/05/07/manage-git-sub-module/">如何用JGit管理Git子模块</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/13/java-session-track/">Java会话跟踪技术</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/13/java-session-track/">Java会话跟踪技术</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/13/java-session-track/">Java会话跟踪技术</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/13/servlet-thread-security/">Servlet的线程安全问题</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/13/servlet-thread-security/">Servlet的线程安全问题</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/13/servlet-thread-security/">Servlet的线程安全问题</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/08/complete-guideline-for-webapp-testing/">Web应用程序完全测试指南</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/08/complete-guideline-for-webapp-testing/">Web应用程序完全测试指南</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/08/complete-guideline-for-webapp-testing/">Web应用程序完全测试指南</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/03/wsdl-binding-style-use/">WSDL绑定的style和use</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/03/wsdl-binding-style-use/">WSDL绑定的style和use</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/04/03/wsdl-binding-style-use/">WSDL绑定的style和use</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/20/compatibility-for-html5-css3-in-all-browsers/">HTML5/CSS3各浏览器支持情况一览表</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/20/compatibility-for-html5-css3-in-all-browsers/">HTML5/CSS3各浏览器支持情况一览表</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/20/compatibility-for-html5-css3-in-all-browsers/">HTML5/CSS3各浏览器支持情况一览表</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/05/big-data-process-algorithm/">教你如何迅速秒杀掉：99%的海量数据处理面试题</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/05/big-data-process-algorithm/">教你如何迅速秒杀掉：99%的海量数据处理面试题</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/05/big-data-process-algorithm/">教你如何迅速秒杀掉：99%的海量数据处理面试题</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/04/find-median-in-10g-integers/">10G整数文件中寻找中位数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/04/find-median-in-10g-integers/">10G整数文件中寻找中位数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/04/find-middle-in-10g-integers/">10G整数文件中寻找中位数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/04/find-median-in-10g-integers/">10G整数文件中寻找中位数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/04/find-middle-in-10g-integers/">10G整数文件中寻找中位数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/03/eight-jquery-tips-for-programmars/">8个对程序员来说有用的jQuery小贴士和技巧</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/03/eight-jquery-tips-for-programmars/">8个对程序员来说有用的jQuery小贴士和技巧</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/03/03/eight-jquery-tips-for-programmars/">8个对程序员来说有用的jQuery小贴士和技巧</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/31/wsdl-document/">WSDL文档详解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/31/wsdl-document/">WSDL文档详解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/31/wsdl-document/">WSDL文档详解</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/31/first-meet-webservice/">初识Webservice</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/31/first-meet-webservice/">初识Webservice</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/31/first-meet-webservice/">初识Webservice</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/22/baba-qunar-toys/">《爸爸去哪儿》粘土Q版公仔设计 萌到不得了</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/22/baba-qunar-toys/">《爸爸去哪儿》粘土Q版公仔设计 萌到不得了</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/22/baba-qunar-toys/">《爸爸去哪儿》粘土Q版公仔设计 萌到不得了</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/20/first-meet-intelliJ-idea/">IntelliJ Idea初体验</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/20/first-meet-intelliJ-idea/">IntelliJ Idea初体验</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/20/first-meet-intelliJ-idea/">IntelliJ Idea初体验</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/20/how-to-create-project-in-idea/">IntelliJ Idea 13创建J2EE工程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/20/how-to-create-project-in-idea/">IntelliJ Idea 13创建J2EE工程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/20/how-to-create-project-in-idea/">IntelliJ Idea 13创建J2EE工程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/15/quick-study-for-git-in-fifteen-minutes/">15分钟学会使用Git和远程代码库</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/15/quick-study-for-git-in-fifteen-minutes/">15分钟学会使用Git和远程代码库</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/15/quick-study-for-git-in-fifteen-minutes/">15分钟学会使用Git和远程代码库</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/14/auto-pagination-component/">自动加载分页导航框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/14/auto-pagination-component/">自动加载分页导航框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/14/auto-pagination-component/">自动加载分页导航框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/09/oracle-windows-processes/">Oracle数据库Windows后台服务进程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/09/oracle-windows-processes/">Oracle数据库Windows后台服务进程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/09/oracle-windows-processes/">Oracle数据库Windows后台服务进程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/02/jasmine-the-front-end-testing-framework/">jasmine - 前端单元测试框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/02/jasmine-the-front-end-testing-framework/">jasmine - 前端单元测试框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/02/jasmine-the-front-end-testing-framework/">jasmine - 前端单元测试框架</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/01/what-will-google-bring-in-2014/">2014年谷歌将给世界带来什么？</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/01/what-will-google-bring-in-2014/">2014年谷歌将给世界带来什么？</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/01/01/what-will-google-bring-in-2014/">2014年谷歌将给世界带来什么？</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/12/25/xss-csrf-introduction/">Web攻击-XSS与CSRF的简单介绍</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/12/25/xss-csrf-introduction/">Web攻击-XSS与CSRF的简单介绍</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/12/25/xss-csrf-introduction/">Web攻击-XSS与CSRF的简单介绍</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/12/18/solutions-of-javascript-cross-site/">JavaScript 跨域总结与解决办法</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/12/18/solutions-of-javascript-cross-site/">JavaScript 跨域总结与解决办法</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/12/18/solutions-of-javascript-cross-site/">JavaScript 跨域总结与解决办法</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/27/change-tomcat-default-root/">修改Tomcat的默认根目录</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/27/javacript-force-close-page/">分享一个强制关闭页面函数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/27/javacript-force-close-page/">分享一个强制关闭页面函数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/27/javacript-force-close-page/">分享一个强制关闭页面函数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/uber-not-only-taxi-app/">Uber：不只是打车应用</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/uber-not-only-taxi-app/">Uber：不只是打车应用</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/uber-not-only-taxi-app/">Uber：不只是打车应用</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/nba-sap-union/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/nba-sap-union/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/nba-sap-union/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Java虚拟机/">&nbsp;&nbsp;&nbsp;Java虚拟机</a>
+                                    <small>18</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/WEB前端/">&nbsp;&nbsp;&nbsp;WEB前端</a>
+                                    <small>15</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Webservice/">&nbsp;&nbsp;&nbsp;Webservice</a>
+                                    <small>12</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/交流分享/">&nbsp;&nbsp;&nbsp;交流分享</a>
+                                    <small>27</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/并发编程/">&nbsp;&nbsp;&nbsp;并发编程</a>
+                                    <small>23</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/技术研发/">&nbsp;&nbsp;&nbsp;技术研发</a>
+                                    <small>28</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/数据库技术/">&nbsp;&nbsp;&nbsp;数据库技术</a>
+                                    <small>9</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/算法-数据结构/">&nbsp;&nbsp;&nbsp;算法/数据结构</a>
+                                    <small>18</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/视觉-交互设计/">&nbsp;&nbsp;&nbsp;视觉/交互设计</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/设计模式/">&nbsp;&nbsp;&nbsp;设计模式</a>
+                                    <small>65</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/软件测试/">&nbsp;&nbsp;&nbsp;软件测试</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/2014/">&nbsp;&nbsp;&nbsp;2014</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CSRF/">&nbsp;&nbsp;&nbsp;CSRF</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CSS3/">&nbsp;&nbsp;&nbsp;CSS3</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/DelayQueue/">&nbsp;&nbsp;&nbsp;DelayQueue</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Git/">&nbsp;&nbsp;&nbsp;Git</a>
+                                    <small>9</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Github/">&nbsp;&nbsp;&nbsp;Github</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Google/">&nbsp;&nbsp;&nbsp;Google</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/HTML5/">&nbsp;&nbsp;&nbsp;HTML5</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/IntelliJ-Idea/">&nbsp;&nbsp;&nbsp;IntelliJ Idea</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/J2EE/">&nbsp;&nbsp;&nbsp;J2EE</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/JGit/">&nbsp;&nbsp;&nbsp;JGit</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/JQuery/">&nbsp;&nbsp;&nbsp;JQuery</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/JSON-RPC/">&nbsp;&nbsp;&nbsp;JSON-RPC</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/JVM/">&nbsp;&nbsp;&nbsp;JVM</a>
+                                    <small>9</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/JVM参数/">&nbsp;&nbsp;&nbsp;JVM参数</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Javascript/">&nbsp;&nbsp;&nbsp;Javascript</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Java虚拟机/">&nbsp;&nbsp;&nbsp;Java虚拟机</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Jquery/">&nbsp;&nbsp;&nbsp;Jquery</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/NBA/">&nbsp;&nbsp;&nbsp;NBA</a>
+                                    <small>15</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/NoSql/">&nbsp;&nbsp;&nbsp;NoSql</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Oracle/">&nbsp;&nbsp;&nbsp;Oracle</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/RPC/">&nbsp;&nbsp;&nbsp;RPC</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/ReadWriteLock/">&nbsp;&nbsp;&nbsp;ReadWriteLock</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Redis/">&nbsp;&nbsp;&nbsp;Redis</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/SAP/">&nbsp;&nbsp;&nbsp;SAP</a>
+                                    <small>15</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Servlet线程安全/">&nbsp;&nbsp;&nbsp;Servlet线程安全</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Tomcat/">&nbsp;&nbsp;&nbsp;Tomcat</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Uber/">&nbsp;&nbsp;&nbsp;Uber</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/WSDL/">&nbsp;&nbsp;&nbsp;WSDL</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Webservice/">&nbsp;&nbsp;&nbsp;Webservice</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/XSS/">&nbsp;&nbsp;&nbsp;XSS</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/google/">&nbsp;&nbsp;&nbsp;google</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/jasmine/">&nbsp;&nbsp;&nbsp;jasmine</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/redis/">&nbsp;&nbsp;&nbsp;redis</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/session/">&nbsp;&nbsp;&nbsp;session</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/substring/">&nbsp;&nbsp;&nbsp;substring</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/webservice/">&nbsp;&nbsp;&nbsp;webservice</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/web安全/">&nbsp;&nbsp;&nbsp;web安全</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/web应用测试/">&nbsp;&nbsp;&nbsp;web应用测试</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/中位数/">&nbsp;&nbsp;&nbsp;中位数</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/享元模式/">&nbsp;&nbsp;&nbsp;享元模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/代理模式/">&nbsp;&nbsp;&nbsp;代理模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/会话跟踪/">&nbsp;&nbsp;&nbsp;会话跟踪</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/内存泄露/">&nbsp;&nbsp;&nbsp;内存泄露</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/分页/">&nbsp;&nbsp;&nbsp;分页</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/创建J2EE工程/">&nbsp;&nbsp;&nbsp;创建J2EE工程</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/单例模式/">&nbsp;&nbsp;&nbsp;单例模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/单元测试/">&nbsp;&nbsp;&nbsp;单元测试</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/原型模式/">&nbsp;&nbsp;&nbsp;原型模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/发布-订阅/">&nbsp;&nbsp;&nbsp;发布/订阅</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/同步/">&nbsp;&nbsp;&nbsp;同步</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/命令模式/">&nbsp;&nbsp;&nbsp;命令模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/回调/">&nbsp;&nbsp;&nbsp;回调</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/基础算法/">&nbsp;&nbsp;&nbsp;基础算法</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/堆外内存/">&nbsp;&nbsp;&nbsp;堆外内存</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/备忘录模式/">&nbsp;&nbsp;&nbsp;备忘录模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/外观模式/">&nbsp;&nbsp;&nbsp;外观模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/大数据处理/">&nbsp;&nbsp;&nbsp;大数据处理</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/字符串/">&nbsp;&nbsp;&nbsp;字符串</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/工厂模式/">&nbsp;&nbsp;&nbsp;工厂模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/并发编程/">&nbsp;&nbsp;&nbsp;并发编程</a>
+                                    <small>11</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/建造者模式/">&nbsp;&nbsp;&nbsp;建造者模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/异步调用/">&nbsp;&nbsp;&nbsp;异步调用</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/强制关闭页面/">&nbsp;&nbsp;&nbsp;强制关闭页面</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/性能调优/">&nbsp;&nbsp;&nbsp;性能调优</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/打车应用/">&nbsp;&nbsp;&nbsp;打车应用</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/桥接模式/">&nbsp;&nbsp;&nbsp;桥接模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/模板方法模式/">&nbsp;&nbsp;&nbsp;模板方法模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/浏览器支持/">&nbsp;&nbsp;&nbsp;浏览器支持</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/爸爸去哪儿/">&nbsp;&nbsp;&nbsp;爸爸去哪儿</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/版本控制/">&nbsp;&nbsp;&nbsp;版本控制</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/状态模式/">&nbsp;&nbsp;&nbsp;状态模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/策略模式/">&nbsp;&nbsp;&nbsp;策略模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/线程协作/">&nbsp;&nbsp;&nbsp;线程协作</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/线程池/">&nbsp;&nbsp;&nbsp;线程池</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/组合模式/">&nbsp;&nbsp;&nbsp;组合模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/缓存/">&nbsp;&nbsp;&nbsp;缓存</a>
+                                    <small>9</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/编程题/">&nbsp;&nbsp;&nbsp;编程题</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/装饰器模式/">&nbsp;&nbsp;&nbsp;装饰器模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/观察者模式/">&nbsp;&nbsp;&nbsp;观察者模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/设计模式/">&nbsp;&nbsp;&nbsp;设计模式</a>
+                                    <small>65</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/访问者模式/">&nbsp;&nbsp;&nbsp;访问者模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/读写锁/">&nbsp;&nbsp;&nbsp;读写锁</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/责任链模式/">&nbsp;&nbsp;&nbsp;责任链模式</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/跨域/">&nbsp;&nbsp;&nbsp;跨域</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/运行时数据区/">&nbsp;&nbsp;&nbsp;运行时数据区</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/返回顶部/">&nbsp;&nbsp;&nbsp;返回顶部</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/迭代器模式/">&nbsp;&nbsp;&nbsp;迭代器模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/适配器模式/">&nbsp;&nbsp;&nbsp;适配器模式</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/锁/">&nbsp;&nbsp;&nbsp;锁</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/面试题/">&nbsp;&nbsp;&nbsp;面试题</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+                   	<li><a class="fa fa-weibo" href="http://weibo.com/bbaocc/profile?rightmod=1&wvr=6&mod=personinfo">&nbsp;&nbsp;&nbsp;Weibo</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
+                
+                    <a  data-pjax href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
+                
+                    <a  data-pjax href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
+                
+                    <a  data-pjax href="/2014/11/10/redis-persistence/">Redis持久化策略</a>
+                
+                    <a  data-pjax href="/2014/11/10/redis-persistence/">Redis持久化策略</a>
+                
+                    <a  data-pjax href="/2014/11/10/redis-persistence/">Redis持久化策略</a>
+                
+                    <a  data-pjax href="/2014/10/19/design-pattern-visitor/">行为型设计模式 — 访问者模式</a>
+                
+                    <a  data-pjax href="/2014/10/19/design-pattern-visitor/">行为型设计模式 — 访问者模式</a>
+                
+                    <a  data-pjax href="/2014/10/19/design-pattern-visitor/">行为型设计模式 — 访问者模式</a>
+                
+                    <a  data-pjax href="/2014/10/12/implement-a-simple-thread-pool/">Java实现一个简单的线程池</a>
+                
+                    <a  data-pjax href="/2014/10/12/implement-a-simple-thread-pool/">Java实现一个简单的线程池</a>
+                
+                    <a  data-pjax href="/2014/10/12/implement-a-simple-thread-pool/">Java实现一个简单的线程池</a>
+                
+                    <a  data-pjax href="/2014/10/12/design-pattern-state/">行为型设计模式 — 状态模式</a>
+                
+                    <a  data-pjax href="/2014/10/12/design-pattern-state/">行为型设计模式 — 状态模式</a>
+                
+                    <a  data-pjax href="/2014/10/12/design-pattern-state/">行为型设计模式 — 状态模式</a>
+                
+                    <a  data-pjax href="/2014/10/09/implement-cache-using-deplay-queue/">使用DelayQueue实现缓存</a>
+                
+                    <a  data-pjax href="/2014/10/09/implement-cache-using-deplay-queue/">使用DelayQueue实现缓存</a>
+                
+                    <a  data-pjax href="/2014/10/09/implement-cache-using-deplay-queue/">使用DelayQueue实现缓存</a>
+                
+                    <a  data-pjax href="/2014/10/03/jsonrpc-usage/">JSON-RPC使用及自动加载服务框架</a>
+                
+                    <a  data-pjax href="/2014/10/03/jsonrpc-usage/">JSON-RPC使用及自动加载服务框架</a>
+                
+                    <a  data-pjax href="/2014/10/03/jsonrpc-usage/">JSON-RPC使用及自动加载服务框架</a>
+                
+                    <a  data-pjax href="/2014/10/03/java-read-write-lock/">Java实现读写锁</a>
+                
+                    <a  data-pjax href="/2014/10/03/java-read-write-lock/">Java实现读写锁</a>
+                
+                    <a  data-pjax href="/2014/10/03/java-read-write-lock/">Java实现读写锁</a>
+                
+                    <a  data-pjax href="/2014/10/02/directory-memory-of-jvm/">Java堆外内存</a>
+                
+                    <a  data-pjax href="/2014/10/02/directory-memory-of-jvm/">Java堆外内存</a>
+                
+                    <a  data-pjax href="/2014/10/02/directory-memory-of-jvm/">Java堆外内存</a>
+                
+                    <a  data-pjax href="/2014/09/14/jdk-monitor-tools-2/">JDK监控和故障处理工具 (II)</a>
+                
+                    <a  data-pjax href="/2014/09/14/jdk-monitor-tools-2/">JDK监控和故障处理工具 (II)</a>
+                
+                    <a  data-pjax href="/2014/09/14/jdk-monitor-tools-2/">JDK监控和故障处理工具 (II)</a>
+                
+                    <a  data-pjax href="/2014/09/13/design-pattern-momento/">行为型设计模式 — 备忘录模式</a>
+                
+                    <a  data-pjax href="/2014/09/13/design-pattern-momento/">行为型设计模式 — 备忘录模式</a>
+                
+                    <a  data-pjax href="/2014/09/13/design-pattern-momento/">行为型设计模式 — 备忘录模式</a>
+                
+                    <a  data-pjax href="/2014/09/13/java-substring-memory-leak/">substring()内存泄露隐患</a>
+                
+                    <a  data-pjax href="/2014/09/13/java-substring-memory-leak/">substring()内存泄露隐患</a>
+                
+                    <a  data-pjax href="/2014/09/13/java-substring-memory-leak/">substring()内存泄露隐患</a>
+                
+                    <a  data-pjax href="/2014/09/07/jdk-monitor-tools-1/">JDK监控和故障处理工具 (I)</a>
+                
+                    <a  data-pjax href="/2014/09/07/jdk-monitor-tools-1/">JDK监控和故障处理工具 (I)</a>
+                
+                    <a  data-pjax href="/2014/09/07/jdk-monitor-tools-1/">JDK监控和故障处理工具 (I)</a>
+                
+                    <a  data-pjax href="/2014/09/06/design-pattern-command/">行为型设计模式 — 命令模式</a>
+                
+                    <a  data-pjax href="/2014/09/06/design-pattern-command/">行为型设计模式 — 命令模式</a>
+                
+                    <a  data-pjax href="/2014/09/06/design-pattern-command/">行为型设计模式 — 命令模式</a>
+                
+                    <a  data-pjax href="/2014/08/30/design-pattern-handler-chain/">行为型设计模式 — 责任链模式</a>
+                
+                    <a  data-pjax href="/2014/08/30/design-pattern-handler-chan/">行为型设计模式 — 责任链模式</a>
+                
+                    <a  data-pjax href="/2014/08/30/design-pattern-handler-chan/">行为型设计模式 — 责任链模式</a>
+                
+                    <a  data-pjax href="/2014/08/30/design-pattern-handler-chain/">行为型设计模式 — 责任链模式</a>
+                
+                    <a  data-pjax href="/2014/08/30/design-pattern-handler-chain/">行为型设计模式 — 责任链模式</a>
+                
+                    <a  data-pjax href="/2014/08/28/redis-practice-in-famous-companies/">国内外巨头分享Redis实战经验及使用场景</a>
+                
+                    <a  data-pjax href="/2014/08/28/redis-practice-in-famous-companies/">国内外巨头分享Redis实战经验及使用场景</a>
+                
+                    <a  data-pjax href="/2014/08/28/redis-practice-in-famous-companies/">国内外巨头分享Redis实战经验及使用场景</a>
+                
+                    <a  data-pjax href="/2014/08/23/design-pattern-interator/">行为型设计模式 — 迭代器模式</a>
+                
+                    <a  data-pjax href="/2014/08/23/design-pattern-interator/">行为型设计模式 — 迭代器模式</a>
+                
+                    <a  data-pjax href="/2014/08/23/design-pattern-interator/">行为型设计模式 — 迭代器模式</a>
+                
+                    <a  data-pjax href="/2014/08/21/google-available-host/">分享一个可以上Google的Hosts</a>
+                
+                    <a  data-pjax href="/2014/08/21/google-available-host/">分享一个可以上Google的Hosts</a>
+                
+                    <a  data-pjax href="/2014/08/21/google-available-host/">分享一个可以上Google的Hosts</a>
+                
+                    <a  data-pjax href="/2014/08/13/read-write-lock/">ReadWriteLock读写锁</a>
+                
+                    <a  data-pjax href="/2014/08/13/read-write-lock/">ReadWriteLock读写锁</a>
+                
+                    <a  data-pjax href="/2014/08/13/read-write-lock/">ReadWriteLock读写锁</a>
+                
+                    <a  data-pjax href="/2014/08/09/design-pattern-observer/">行为型设计模式 — 观察者模式</a>
+                
+                    <a  data-pjax href="/2014/08/09/design-pattern-observer/">行为型设计模式 — 观察者模式</a>
+                
+                    <a  data-pjax href="/2014/08/09/design-pattern-observer/">行为型设计模式 — 观察者模式</a>
+                
+                    <a  data-pjax href="/2014/08/08/tutorials-of-git-remote-control/">Git远程操作详解</a>
+                
+                    <a  data-pjax href="/2014/08/08/tutorials-of-git-remote-control/">Git远程操作详解</a>
+                
+                    <a  data-pjax href="/2014/08/08/tutorials-of-git-remote-control/">Git远程操作详解</a>
+                
+                    <a  data-pjax href="/2014/08/04/design-patterns-in-java-api/">Java API中的设计模式</a>
+                
+                    <a  data-pjax href="/2014/08/04/design-patterns-in-java-api/">Java API中的设计模式</a>
+                
+                    <a  data-pjax href="/2014/08/04/design-patterns-in-java-api/">Java API中的设计模式</a>
+                
+                    <a  data-pjax href="/2014/08/02/design-pattern-template-method/">行为型设计模式 — 模板方法模式</a>
+                
+                    <a  data-pjax href="/2014/08/02/design-pattern-template-method/">行为型设计模式 — 模板方法模式</a>
+                
+                    <a  data-pjax href="/2014/08/02/design-pattern-template-method/">行为型设计模式 — 模板方法模式</a>
+                
+                    <a  data-pjax href="/2014/07/26/java-callback/">Java回调机制</a>
+                
+                    <a  data-pjax href="/2014/07/26/java-callback/">Java回调机制</a>
+                
+                    <a  data-pjax href="/2014/07/26/java-callback/">Java回调机制</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-strategy/">行为型设计模式 — 策略模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-strategy/">行为型设计模式 — 策略模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-strategy/">行为型设计模式 — 策略模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-fascade/">结构型设计模式 — 外观模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-fascade/">结构型设计模式 — 外观模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-fascade/">结构型设计模式 — 外观模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-proxy/">结构型设计模式 — 代理模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-proxy/">结构型设计模式 — 代理模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-proxy/">结构型设计模式 — 代理模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-decorator/">结构型设计模式 — 装饰器模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-decorator/">结构型设计模式 — 装饰器模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-decorator/">结构型设计模式 — 装饰器模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-adapter/">结构型设计模式 — 适配器模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-adapter/">结构型设计模式 — 适配器模式</a>
+                
+                    <a  data-pjax href="/2014/07/13/design-pattern-adapter/">结构型设计模式 — 适配器模式</a>
+                
+                    <a  data-pjax href="/2014/07/02/jvm-options/">JVM实用参数系列</a>
+                
+                    <a  data-pjax href="/2014/07/02/jvm-options/">JVM实用参数系列</a>
+                
+                    <a  data-pjax href="/2014/07/02/jvm-options/">JVM实用参数系列</a>
+                
+                    <a  data-pjax href="/2014/06/29/design-pattern-share/">结构型设计模式 — 享元模式</a>
+                
+                    <a  data-pjax href="/2014/06/29/design-pattern-share/">结构型设计模式 — 享元模式</a>
+                
+                    <a  data-pjax href="/2014/06/29/design-pattern-share/">结构型设计模式 — 享元模式</a>
+                
+                    <a  data-pjax href="/2014/06/28/jvm-data-region-and-object-storage/">JVM内存区域与对象探秘</a>
+                
+                    <a  data-pjax href="/2014/06/28/jvm-data-region-and-object-storage/">JVM内存区域与对象探秘</a>
+                
+                    <a  data-pjax href="/2014/06/28/jvm-data-region-and-object-storage/">JVM内存区域与对象探秘</a>
+                
+                    <a  data-pjax href="/2014/06/26/design-pattern-bridge/">结构型设计模式 — 桥接模式</a>
+                
+                    <a  data-pjax href="/2014/06/26/design-pattern-bridge/">结构型设计模式 — 桥接模式</a>
+                
+                    <a  data-pjax href="/2014/06/26/design-pattern-bridge/">结构型设计模式 — 桥接模式</a>
+                
+                    <a  data-pjax href="/2014/06/24/design-pattern-composite/">结构型设计模式 — 组合模式</a>
+                
+                    <a  data-pjax href="/2014/06/24/design-pattern-composite/">结构型设计模式 — 组合模式</a>
+                
+                    <a  data-pjax href="/2014/06/24/design-pattern-composite/">结构型设计模式 — 组合模式</a>
+                
+                    <a  data-pjax href="/2014/06/20/ten-basic-algorithm/">程序员必须知道的10大基础实用算法及其讲解</a>
+                
+                    <a  data-pjax href="/2014/06/20/ten-basic-algorithms/">程序员必须知道的10大基础实用算法及其讲解</a>
+                
+                    <a  data-pjax href="/2014/06/20/ten-basic-algorithms/">程序员必须知道的10大基础实用算法及其讲解</a>
+                
+                    <a  data-pjax href="/2014/06/20/ten-basic-algorithms/">程序员必须知道的10大基础实用算法及其讲解</a>
+                
+                    <a  data-pjax href="/2014/06/20/ten-basic-algorithm/">程序员必须知道的10大基础实用算法及其讲解</a>
+                
+                    <a  data-pjax href="/2014/06/12/design-pattern-creator/">创建型设计模式 — 建造者模式</a>
+                
+                    <a  data-pjax href="/2014/06/12/design-pattern-creator/">创建型设计模式 — 建造者模式</a>
+                
+                    <a  data-pjax href="/2014/06/12/design-pattern-creator/">创建型设计模式 — 建造者模式</a>
+                
+                    <a  data-pjax href="/2014/06/12/design-pattern-prototype/">创建型设计模式 — 原型模式</a>
+                
+                    <a  data-pjax href="/2014/06/12/design-pattern-prototype/">创建型设计模式 — 原型模式</a>
+                
+                    <a  data-pjax href="/2014/06/12/design-pattern-prototype/">创建型设计模式 — 原型模式</a>
+                
+                    <a  data-pjax href="/2014/05/27/design-pattern-singleton/">创建型设计模式 — 单例模式</a>
+                
+                    <a  data-pjax href="/2014/05/27/design-pattern-singleton/">创建型设计模式 — 单例模式</a>
+                
+                    <a  data-pjax href="/2014/05/27/design-pattern-singleton/">创建型设计模式 — 单例模式</a>
+                
+                    <a  data-pjax href="/2014/05/27/design-pattern-factory/">创建型设计模式 — 工厂模式</a>
+                
+                    <a  data-pjax href="/2014/05/27/design-pattern-factory/">创建型设计模式 — 工厂模式</a>
+                
+                    <a  data-pjax href="/2014/05/27/design-pattern-factory/">创建型设计模式 — 工厂模式</a>
+                
+                    <a  data-pjax href="/2014/05/26/back-to-top-jquery/">基于JQuery的返回顶部快捷工具</a>
+                
+                    <a  data-pjax href="/2014/05/26/back-to-top-jquery/">基于JQuery的返回顶部快捷工具</a>
+                
+                    <a  data-pjax href="/2014/05/26/back-to-top-jquery/">基于JQuery的返回顶部快捷工具</a>
+                
+                    <a  data-pjax href="/2014/05/25/find-first-non-repeat-character-in-one-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                
+                    <a  data-pjax href="/2014/05/25/find-first-non-repeat-character-in-one-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                
+                    <a  data-pjax href="/2014/05/25/find-first-non-repeat-character-in-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                
+                    <a  data-pjax href="/2014/05/25/find-first-non-repeat-character-in-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                
+                    <a  data-pjax href="/2014/05/25/find-first-non-repeat-character-in-string/">Java编程题——在一个字符串中查找第一个非重复的字符</a>
+                
+                    <a  data-pjax href="/2014/05/15/CountdownLatch-and-CyclicBarier/">同步辅助类CountdownLatch与CyclicBarrier</a>
+                
+                    <a  data-pjax href="/2014/05/15/CountdownLatch-and-CyclicBarier/">同步辅助类CountdownLatch与CyclicBarrier</a>
+                
+                    <a  data-pjax href="/2014/05/15/CountdownLatch-and-CyclicBarier/">同步辅助类CountdownLatch与CyclicBarrier</a>
+                
+                    <a  data-pjax href="/2014/05/11/java-concurrency-thread-/">并发编程之任务协作</a>
+                
+                    <a  data-pjax href="/2014/05/11/java-concurrency-thread-corporation/">并发编程之任务协作</a>
+                
+                    <a  data-pjax href="/2014/05/11/java-concurrency-thread-corporation/">并发编程之任务协作</a>
+                
+                    <a  data-pjax href="/2014/05/11/java-concurrency-thread-/">并发编程之任务协作</a>
+                
+                    <a  data-pjax href="/2014/05/11/java-concurrency-thread-corporation/">并发编程之任务协作</a>
+                
+                    <a  data-pjax href="/2014/05/07/manage-git-sub-module/">如何用JGit管理Git子模块</a>
+                
+                    <a  data-pjax href="/2014/05/07/manage-git-sub-module/">如何用JGit管理Git子模块</a>
+                
+                    <a  data-pjax href="/2014/05/07/manage-git-sub-module/">如何用JGit管理Git子模块</a>
+                
+                    <a  data-pjax href="/2014/04/13/java-session-track/">Java会话跟踪技术</a>
+                
+                    <a  data-pjax href="/2014/04/13/java-session-track/">Java会话跟踪技术</a>
+                
+                    <a  data-pjax href="/2014/04/13/java-session-track/">Java会话跟踪技术</a>
+                
+                    <a  data-pjax href="/2014/04/13/servlet-thread-security/">Servlet的线程安全问题</a>
+                
+                    <a  data-pjax href="/2014/04/13/servlet-thread-security/">Servlet的线程安全问题</a>
+                
+                    <a  data-pjax href="/2014/04/13/servlet-thread-security/">Servlet的线程安全问题</a>
+                
+                    <a  data-pjax href="/2014/04/08/complete-guideline-for-webapp-testing/">Web应用程序完全测试指南</a>
+                
+                    <a  data-pjax href="/2014/04/08/complete-guideline-for-webapp-testing/">Web应用程序完全测试指南</a>
+                
+                    <a  data-pjax href="/2014/04/08/complete-guideline-for-webapp-testing/">Web应用程序完全测试指南</a>
+                
+                    <a  data-pjax href="/2014/04/03/wsdl-binding-style-use/">WSDL绑定的style和use</a>
+                
+                    <a  data-pjax href="/2014/04/03/wsdl-binding-style-use/">WSDL绑定的style和use</a>
+                
+                    <a  data-pjax href="/2014/04/03/wsdl-binding-style-use/">WSDL绑定的style和use</a>
+                
+                    <a  data-pjax href="/2014/03/20/compatibility-for-html5-css3-in-all-browsers/">HTML5/CSS3各浏览器支持情况一览表</a>
+                
+                    <a  data-pjax href="/2014/03/20/compatibility-for-html5-css3-in-all-browsers/">HTML5/CSS3各浏览器支持情况一览表</a>
+                
+                    <a  data-pjax href="/2014/03/20/compatibility-for-html5-css3-in-all-browsers/">HTML5/CSS3各浏览器支持情况一览表</a>
+                
+                    <a  data-pjax href="/2014/03/05/big-data-process-algorithm/">教你如何迅速秒杀掉：99%的海量数据处理面试题</a>
+                
+                    <a  data-pjax href="/2014/03/05/big-data-process-algorithm/">教你如何迅速秒杀掉：99%的海量数据处理面试题</a>
+                
+                    <a  data-pjax href="/2014/03/05/big-data-process-algorithm/">教你如何迅速秒杀掉：99%的海量数据处理面试题</a>
+                
+                    <a  data-pjax href="/2014/03/04/find-median-in-10g-integers/">10G整数文件中寻找中位数</a>
+                
+                    <a  data-pjax href="/2014/03/04/find-median-in-10g-integers/">10G整数文件中寻找中位数</a>
+                
+                    <a  data-pjax href="/2014/03/04/find-middle-in-10g-integers/">10G整数文件中寻找中位数</a>
+                
+                    <a  data-pjax href="/2014/03/04/find-median-in-10g-integers/">10G整数文件中寻找中位数</a>
+                
+                    <a  data-pjax href="/2014/03/04/find-middle-in-10g-integers/">10G整数文件中寻找中位数</a>
+                
+                    <a  data-pjax href="/2014/03/03/eight-jquery-tips-for-programmars/">8个对程序员来说有用的jQuery小贴士和技巧</a>
+                
+                    <a  data-pjax href="/2014/03/03/eight-jquery-tips-for-programmars/">8个对程序员来说有用的jQuery小贴士和技巧</a>
+                
+                    <a  data-pjax href="/2014/03/03/eight-jquery-tips-for-programmars/">8个对程序员来说有用的jQuery小贴士和技巧</a>
+                
+                    <a  data-pjax href="/2014/01/31/wsdl-document/">WSDL文档详解</a>
+                
+                    <a  data-pjax href="/2014/01/31/wsdl-document/">WSDL文档详解</a>
+                
+                    <a  data-pjax href="/2014/01/31/wsdl-document/">WSDL文档详解</a>
+                
+                    <a  data-pjax href="/2014/01/31/first-meet-webservice/">初识Webservice</a>
+                
+                    <a  data-pjax href="/2014/01/31/first-meet-webservice/">初识Webservice</a>
+                
+                    <a  data-pjax href="/2014/01/31/first-meet-webservice/">初识Webservice</a>
+                
+                    <a  data-pjax href="/2014/01/22/baba-qunar-toys/">《爸爸去哪儿》粘土Q版公仔设计 萌到不得了</a>
+                
+                    <a  data-pjax href="/2014/01/22/baba-qunar-toys/">《爸爸去哪儿》粘土Q版公仔设计 萌到不得了</a>
+                
+                    <a  data-pjax href="/2014/01/22/baba-qunar-toys/">《爸爸去哪儿》粘土Q版公仔设计 萌到不得了</a>
+                
+                    <a  data-pjax href="/2014/01/20/first-meet-intelliJ-idea/">IntelliJ Idea初体验</a>
+                
+                    <a  data-pjax href="/2014/01/20/first-meet-intelliJ-idea/">IntelliJ Idea初体验</a>
+                
+                    <a  data-pjax href="/2014/01/20/first-meet-intelliJ-idea/">IntelliJ Idea初体验</a>
+                
+                    <a  data-pjax href="/2014/01/20/how-to-create-project-in-idea/">IntelliJ Idea 13创建J2EE工程</a>
+                
+                    <a  data-pjax href="/2014/01/20/how-to-create-project-in-idea/">IntelliJ Idea 13创建J2EE工程</a>
+                
+                    <a  data-pjax href="/2014/01/20/how-to-create-project-in-idea/">IntelliJ Idea 13创建J2EE工程</a>
+                
+                    <a  data-pjax href="/2014/01/15/quick-study-for-git-in-fifteen-minutes/">15分钟学会使用Git和远程代码库</a>
+                
+                    <a  data-pjax href="/2014/01/15/quick-study-for-git-in-fifteen-minutes/">15分钟学会使用Git和远程代码库</a>
+                
+                    <a  data-pjax href="/2014/01/15/quick-study-for-git-in-fifteen-minutes/">15分钟学会使用Git和远程代码库</a>
+                
+                    <a  data-pjax href="/2014/01/14/auto-pagination-component/">自动加载分页导航框架</a>
+                
+                    <a  data-pjax href="/2014/01/14/auto-pagination-component/">自动加载分页导航框架</a>
+                
+                    <a  data-pjax href="/2014/01/14/auto-pagination-component/">自动加载分页导航框架</a>
+                
+                    <a  data-pjax href="/2014/01/09/oracle-windows-processes/">Oracle数据库Windows后台服务进程</a>
+                
+                    <a  data-pjax href="/2014/01/09/oracle-windows-processes/">Oracle数据库Windows后台服务进程</a>
+                
+                    <a  data-pjax href="/2014/01/09/oracle-windows-processes/">Oracle数据库Windows后台服务进程</a>
+                
+                    <a  data-pjax href="/2014/01/02/jasmine-the-front-end-testing-framework/">jasmine - 前端单元测试框架</a>
+                
+                    <a  data-pjax href="/2014/01/02/jasmine-the-front-end-testing-framework/">jasmine - 前端单元测试框架</a>
+                
+                    <a  data-pjax href="/2014/01/02/jasmine-the-front-end-testing-framework/">jasmine - 前端单元测试框架</a>
+                
+                    <a  data-pjax href="/2014/01/01/what-will-google-bring-in-2014/">2014年谷歌将给世界带来什么？</a>
+                
+                    <a  data-pjax href="/2014/01/01/what-will-google-bring-in-2014/">2014年谷歌将给世界带来什么？</a>
+                
+                    <a  data-pjax href="/2014/01/01/what-will-google-bring-in-2014/">2014年谷歌将给世界带来什么？</a>
+                
+                    <a  data-pjax href="/2013/12/25/xss-csrf-introduction/">Web攻击-XSS与CSRF的简单介绍</a>
+                
+                    <a  data-pjax href="/2013/12/25/xss-csrf-introduction/">Web攻击-XSS与CSRF的简单介绍</a>
+                
+                    <a  data-pjax href="/2013/12/25/xss-csrf-introduction/">Web攻击-XSS与CSRF的简单介绍</a>
+                
+                    <a  data-pjax href="/2013/12/18/solutions-of-javascript-cross-site/">JavaScript 跨域总结与解决办法</a>
+                
+                    <a  data-pjax href="/2013/12/18/solutions-of-javascript-cross-site/">JavaScript 跨域总结与解决办法</a>
+                
+                    <a  data-pjax href="/2013/12/18/solutions-of-javascript-cross-site/">JavaScript 跨域总结与解决办法</a>
+                
+                    <a  data-pjax href="/2013/11/27/change-tomcat-default-root/">修改Tomcat的默认根目录</a>
+                
+                    <a  data-pjax href="/2013/11/27/javacript-force-close-page/">分享一个强制关闭页面函数</a>
+                
+                    <a  data-pjax href="/2013/11/27/javacript-force-close-page/">分享一个强制关闭页面函数</a>
+                
+                    <a  data-pjax href="/2013/11/27/javacript-force-close-page/">分享一个强制关闭页面函数</a>
+                
+                    <a  data-pjax href="/2013/11/26/uber-not-only-taxi-app/">Uber：不只是打车应用</a>
+                
+                    <a  data-pjax href="/2013/11/26/uber-not-only-taxi-app/">Uber：不只是打车应用</a>
+                
+                    <a  data-pjax href="/2013/11/26/uber-not-only-taxi-app/">Uber：不只是打车应用</a>
+                
+                    <a  data-pjax href="/2013/11/26/nba-sap-union/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/nba-sap-union/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/nba-sap-union/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                    <a  data-pjax href="/2013/11/26/NBA 与 SAP 联手改变看球方式/">NBA 与 SAP 联手改变看球方式</a>
+                
+                
+                    <a data-pjax href="/categories/Java虚拟机/">&nbsp;&nbsp;Java虚拟机</a>
+                
+                    <a data-pjax href="/categories/WEB前端/">&nbsp;&nbsp;WEB前端</a>
+                
+                    <a data-pjax href="/categories/Webservice/">&nbsp;&nbsp;Webservice</a>
+                
+                    <a data-pjax href="/categories/交流分享/">&nbsp;&nbsp;交流分享</a>
+                
+                    <a data-pjax href="/categories/并发编程/">&nbsp;&nbsp;并发编程</a>
+                
+                    <a data-pjax href="/categories/技术研发/">&nbsp;&nbsp;技术研发</a>
+                
+                    <a data-pjax href="/categories/数据库技术/">&nbsp;&nbsp;数据库技术</a>
+                
+                    <a data-pjax href="/categories/算法-数据结构/">&nbsp;&nbsp;算法/数据结构</a>
+                
+                    <a data-pjax href="/categories/视觉-交互设计/">&nbsp;&nbsp;视觉/交互设计</a>
+                
+                    <a data-pjax href="/categories/设计模式/">&nbsp;&nbsp;设计模式</a>
+                
+                    <a data-pjax href="/categories/软件测试/">&nbsp;&nbsp;软件测试</a>
+                
+                
+                    <a data-pjax href="/tags/2014/">&nbsp;&nbsp;2014</a>
+                
+                    <a data-pjax href="/tags/CSRF/">&nbsp;&nbsp;CSRF</a>
+                
+                    <a data-pjax href="/tags/CSS3/">&nbsp;&nbsp;CSS3</a>
+                
+                    <a data-pjax href="/tags/DelayQueue/">&nbsp;&nbsp;DelayQueue</a>
+                
+                    <a data-pjax href="/tags/Git/">&nbsp;&nbsp;Git</a>
+                
+                    <a data-pjax href="/tags/Github/">&nbsp;&nbsp;Github</a>
+                
+                    <a data-pjax href="/tags/Google/">&nbsp;&nbsp;Google</a>
+                
+                    <a data-pjax href="/tags/HTML5/">&nbsp;&nbsp;HTML5</a>
+                
+                    <a data-pjax href="/tags/IntelliJ-Idea/">&nbsp;&nbsp;IntelliJ Idea</a>
+                
+                    <a data-pjax href="/tags/J2EE/">&nbsp;&nbsp;J2EE</a>
+                
+                    <a data-pjax href="/tags/JGit/">&nbsp;&nbsp;JGit</a>
+                
+                    <a data-pjax href="/tags/JQuery/">&nbsp;&nbsp;JQuery</a>
+                
+                    <a data-pjax href="/tags/JSON-RPC/">&nbsp;&nbsp;JSON-RPC</a>
+                
+                    <a data-pjax href="/tags/JVM/">&nbsp;&nbsp;JVM</a>
+                
+                    <a data-pjax href="/tags/JVM参数/">&nbsp;&nbsp;JVM参数</a>
+                
+                    <a data-pjax href="/tags/Javascript/">&nbsp;&nbsp;Javascript</a>
+                
+                    <a data-pjax href="/tags/Java虚拟机/">&nbsp;&nbsp;Java虚拟机</a>
+                
+                    <a data-pjax href="/tags/Jquery/">&nbsp;&nbsp;Jquery</a>
+                
+                    <a data-pjax href="/tags/NBA/">&nbsp;&nbsp;NBA</a>
+                
+                    <a data-pjax href="/tags/NoSql/">&nbsp;&nbsp;NoSql</a>
+                
+                    <a data-pjax href="/tags/Oracle/">&nbsp;&nbsp;Oracle</a>
+                
+                    <a data-pjax href="/tags/RPC/">&nbsp;&nbsp;RPC</a>
+                
+                    <a data-pjax href="/tags/ReadWriteLock/">&nbsp;&nbsp;ReadWriteLock</a>
+                
+                    <a data-pjax href="/tags/Redis/">&nbsp;&nbsp;Redis</a>
+                
+                    <a data-pjax href="/tags/SAP/">&nbsp;&nbsp;SAP</a>
+                
+                    <a data-pjax href="/tags/Servlet线程安全/">&nbsp;&nbsp;Servlet线程安全</a>
+                
+                    <a data-pjax href="/tags/Tomcat/">&nbsp;&nbsp;Tomcat</a>
+                
+                    <a data-pjax href="/tags/Uber/">&nbsp;&nbsp;Uber</a>
+                
+                    <a data-pjax href="/tags/WSDL/">&nbsp;&nbsp;WSDL</a>
+                
+                    <a data-pjax href="/tags/Webservice/">&nbsp;&nbsp;Webservice</a>
+                
+                    <a data-pjax href="/tags/XSS/">&nbsp;&nbsp;XSS</a>
+                
+                    <a data-pjax href="/tags/google/">&nbsp;&nbsp;google</a>
+                
+                    <a data-pjax href="/tags/jasmine/">&nbsp;&nbsp;jasmine</a>
+                
+                    <a data-pjax href="/tags/redis/">&nbsp;&nbsp;redis</a>
+                
+                    <a data-pjax href="/tags/session/">&nbsp;&nbsp;session</a>
+                
+                    <a data-pjax href="/tags/substring/">&nbsp;&nbsp;substring</a>
+                
+                    <a data-pjax href="/tags/webservice/">&nbsp;&nbsp;webservice</a>
+                
+                    <a data-pjax href="/tags/web安全/">&nbsp;&nbsp;web安全</a>
+                
+                    <a data-pjax href="/tags/web应用测试/">&nbsp;&nbsp;web应用测试</a>
+                
+                    <a data-pjax href="/tags/中位数/">&nbsp;&nbsp;中位数</a>
+                
+                    <a data-pjax href="/tags/享元模式/">&nbsp;&nbsp;享元模式</a>
+                
+                    <a data-pjax href="/tags/代理模式/">&nbsp;&nbsp;代理模式</a>
+                
+                    <a data-pjax href="/tags/会话跟踪/">&nbsp;&nbsp;会话跟踪</a>
+                
+                    <a data-pjax href="/tags/内存泄露/">&nbsp;&nbsp;内存泄露</a>
+                
+                    <a data-pjax href="/tags/分页/">&nbsp;&nbsp;分页</a>
+                
+                    <a data-pjax href="/tags/创建J2EE工程/">&nbsp;&nbsp;创建J2EE工程</a>
+                
+                    <a data-pjax href="/tags/单例模式/">&nbsp;&nbsp;单例模式</a>
+                
+                    <a data-pjax href="/tags/单元测试/">&nbsp;&nbsp;单元测试</a>
+                
+                    <a data-pjax href="/tags/原型模式/">&nbsp;&nbsp;原型模式</a>
+                
+                    <a data-pjax href="/tags/发布-订阅/">&nbsp;&nbsp;发布/订阅</a>
+                
+                    <a data-pjax href="/tags/同步/">&nbsp;&nbsp;同步</a>
+                
+                    <a data-pjax href="/tags/命令模式/">&nbsp;&nbsp;命令模式</a>
+                
+                    <a data-pjax href="/tags/回调/">&nbsp;&nbsp;回调</a>
+                
+                    <a data-pjax href="/tags/基础算法/">&nbsp;&nbsp;基础算法</a>
+                
+                    <a data-pjax href="/tags/堆外内存/">&nbsp;&nbsp;堆外内存</a>
+                
+                    <a data-pjax href="/tags/备忘录模式/">&nbsp;&nbsp;备忘录模式</a>
+                
+                    <a data-pjax href="/tags/外观模式/">&nbsp;&nbsp;外观模式</a>
+                
+                    <a data-pjax href="/tags/大数据处理/">&nbsp;&nbsp;大数据处理</a>
+                
+                    <a data-pjax href="/tags/字符串/">&nbsp;&nbsp;字符串</a>
+                
+                    <a data-pjax href="/tags/工厂模式/">&nbsp;&nbsp;工厂模式</a>
+                
+                    <a data-pjax href="/tags/并发编程/">&nbsp;&nbsp;并发编程</a>
+                
+                    <a data-pjax href="/tags/建造者模式/">&nbsp;&nbsp;建造者模式</a>
+                
+                    <a data-pjax href="/tags/异步调用/">&nbsp;&nbsp;异步调用</a>
+                
+                    <a data-pjax href="/tags/强制关闭页面/">&nbsp;&nbsp;强制关闭页面</a>
+                
+                    <a data-pjax href="/tags/性能调优/">&nbsp;&nbsp;性能调优</a>
+                
+                    <a data-pjax href="/tags/打车应用/">&nbsp;&nbsp;打车应用</a>
+                
+                    <a data-pjax href="/tags/桥接模式/">&nbsp;&nbsp;桥接模式</a>
+                
+                    <a data-pjax href="/tags/模板方法模式/">&nbsp;&nbsp;模板方法模式</a>
+                
+                    <a data-pjax href="/tags/浏览器支持/">&nbsp;&nbsp;浏览器支持</a>
+                
+                    <a data-pjax href="/tags/爸爸去哪儿/">&nbsp;&nbsp;爸爸去哪儿</a>
+                
+                    <a data-pjax href="/tags/版本控制/">&nbsp;&nbsp;版本控制</a>
+                
+                    <a data-pjax href="/tags/状态模式/">&nbsp;&nbsp;状态模式</a>
+                
+                    <a data-pjax href="/tags/策略模式/">&nbsp;&nbsp;策略模式</a>
+                
+                    <a data-pjax href="/tags/线程协作/">&nbsp;&nbsp;线程协作</a>
+                
+                    <a data-pjax href="/tags/线程池/">&nbsp;&nbsp;线程池</a>
+                
+                    <a data-pjax href="/tags/组合模式/">&nbsp;&nbsp;组合模式</a>
+                
+                    <a data-pjax href="/tags/缓存/">&nbsp;&nbsp;缓存</a>
+                
+                    <a data-pjax href="/tags/编程题/">&nbsp;&nbsp;编程题</a>
+                
+                    <a data-pjax href="/tags/装饰器模式/">&nbsp;&nbsp;装饰器模式</a>
+                
+                    <a data-pjax href="/tags/观察者模式/">&nbsp;&nbsp;观察者模式</a>
+                
+                    <a data-pjax href="/tags/设计模式/">&nbsp;&nbsp;设计模式</a>
+                
+                    <a data-pjax href="/tags/访问者模式/">&nbsp;&nbsp;访问者模式</a>
+                
+                    <a data-pjax href="/tags/读写锁/">&nbsp;&nbsp;读写锁</a>
+                
+                    <a data-pjax href="/tags/责任链模式/">&nbsp;&nbsp;责任链模式</a>
+                
+                    <a data-pjax href="/tags/跨域/">&nbsp;&nbsp;跨域</a>
+                
+                    <a data-pjax href="/tags/运行时数据区/">&nbsp;&nbsp;运行时数据区</a>
+                
+                    <a data-pjax href="/tags/返回顶部/">&nbsp;&nbsp;返回顶部</a>
+                
+                    <a data-pjax href="/tags/迭代器模式/">&nbsp;&nbsp;迭代器模式</a>
+                
+                    <a data-pjax href="/tags/适配器模式/">&nbsp;&nbsp;适配器模式</a>
+                
+                    <a data-pjax href="/tags/锁/">&nbsp;&nbsp;锁</a>
+                
+                    <a data-pjax href="/tags/面试题/">&nbsp;&nbsp;面试题</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">Charles Tech Blog</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#">行为型设计模式 — 责任链模式</a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="post-template">-->
+<!---->
+  
+
+<main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/设计模式/' style='color:#D5D5D5'>设计模式</a>
+                      
+                      <a data-pjax href='/tags/责任链模式/' style='color:#D5D5D5'>责任链模式</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">行为型设计模式 — 责任链模式</h1>
+
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2014-08-30T11:00:57.000Z"
+                              itemprop="datePublished">Aug 30 2014</time>
+                    </div>
+    </span>
+
+        <section class="post-content">
+            <p>什么是责任链模式责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。责任链模式的类图如下：责任链模式下有两种角色：Hander：抽象处理者角色，提供设置下一个处理者的setter方法，并提供接受处理请求的接口ConcreteHandler：具体处理者角色，实现处理请求的方法，若没有下一个处理者，则处理请求示例程…</p>
+<a id="more"></a>
+<h4 id="什么是责任链模式"><strong>什么是责任链模式</strong></h4>
+<p>责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。</p>
+<p>责任链模式的类图如下：</p>
+<p>![Image 1][]  </p>
+<p>责任链模式下有两种角色：</p>
+<p><strong>Hander</strong>：抽象处理者角色，提供设置下一个处理者的setter方法，并提供接受处理请求的接口</p>
+<p><strong>ConcreteHandler</strong>：具体处理者角色，实现处理请求的方法，若没有下一个处理者，则处理请求</p>
+<p>示例程序：</p>
+<p>Handler抽象类</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
+
+<span class="javadoc">/**
+ * Abstract handler
+ *
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年8月30日
+ */</span>
+<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Handler</span> </span>{
+     <span class="keyword">protected</span> Handler handler;
+
+     <span class="keyword">public</span> Handler <span class="title">getHandler</span>() {
+            <span class="keyword">return</span> handler;
+     }
+
+     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHandler</span>(Handler handler) {
+            <span class="keyword">this</span>. handler = handler;
+     }
+
+     <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">handleRequest</span>();
+}
+</code></pre><p>ConcreteHandler具体处理者类</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
+
+<span class="javadoc">/**
+ * Concrete handler
+ *
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年8月30日
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>{
+
+     <span class="annotation">@Override</span>
+     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleRequest</span>() {
+            <span class="comment">// TODO Auto-generated method stub</span>
+            <span class="keyword">if</span> ( <span class="keyword">this</span>.getHandler() != <span class="keyword">null</span>) {
+                System. out.println( <span class="string">"Pass request to next handler"</span>);
+                 <span class="keyword">this</span>.getHandler().handleRequest();
+                 <span class="keyword">return</span>;
+           }
+
+           System. out.println( <span class="string">"No next handler, process the request"</span>);
+     }
+
+}
+</code></pre><p>客户端测试程序</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
+
+<span class="javadoc">/**
+ * Client test for responsibility chain design pattern
+ *
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年8月30日
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+
+     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+            <span class="comment">// TODO Auto-generated method stub</span>
+           Handler handler1 = <span class="keyword">new</span> ConcreteHandler();
+           Handler handler2 = <span class="keyword">new</span> ConcreteHandler();
+            <span class="comment">// Set handler2 as the next handler of handler1</span>
+            handler1.setHandler( handler2);
+            <span class="comment">// Request the handler1</span>
+            handler1.handleRequest();
+     }
+
+}
+</code></pre><h4 id="_"> </h4>
+<h3 id="#">#</h3>
+<h4 id="为什么要使用责任链模式"><strong>为什么要使用责任链模式</strong></h4>
+<p>（1）责任链模式使得客户端请求与具体的处理逻辑解耦，我们可以在不影响客户端请求的前提下，自由调整和组织请求的处理逻辑</p>
+<p>（2）责任链模式有利于处理流程的扩展，当需求引入新的处理者，只需要实现新的处理者，调整局部处理链即可，符合“开闭原则”</p>
+<h4 id="责任链模式实现过滤器"><strong>责任链模式实现过滤器</strong></h4>
+<p>Tomcat服务器为web应用提供了Filter过滤器机制，struts也提供了类似的过滤器功能。这种过滤器机制就是基于责任链模式实现的。</p>
+<p>过滤器的设计思想是，通过配置信息将过滤器实例添加到一个过滤器链中，相当于在过滤器链中维护各个过滤器的处理次序，客户端请求会依次在过滤器链上传递，直至最后一个过滤器处理完毕，才将请求传递给服务器程序。</p>
+<p>这里我们可以模拟这种过滤器实现机制，实现一个过滤器链<strong>FilterChain</strong>和过滤器接口<strong>Filter</strong>。</p>
+<p>FilterChain持有Filter的集合，维护一个index变量表示当前等待处理请求的过滤器的下标，并提供addFilter和removeFilter方法实现体检和移除过滤器。</p>
+<p>FilterChain的doFilter方法用来接受请求，若当前index已经到达Filter集合最后一个元素，则表示所有过滤器都执行完毕，可以将请求传递给servlet，否则，则调用当前</p>
+<p>index位置的Filter的doFilter方法，并将自身作为参数传入该方法</p>
+<p>Filter提供doFilter方法处理请求，处理完毕后回调FilterChain的doFilter方法，实现将请求传递给下一个Filter实例</p>
+<p>那么，当请求到来时，我们可以通过FilterChain的addFilter接口添加具体的Filter实例，并调用doFilter方法开始处理请求</p>
+<p>这里我们实现了两个Filter：ScriptFilter（用来过滤请求内容中的script脚本）和SensitiveWordsFilter（用来过滤请求内容中的敏感词）</p>
+<p>类图如下：</p>
+<p>![Image 1][]  </p>
+<p>过滤器执行序列图：</p>
+<p>![Image 1][]  </p>
+<p>示例程序：</p>
+<p>Filter过滤器接口</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+
+<span class="javadoc">/**
+ * Filter interface
+ *
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年8月30日
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Filter</span> </span>{
+     <span class="keyword">void</span> doFilter(Request request, FilterChain chain);
+}
+</code></pre><p>FilterChain过滤器链</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+
+<span class="keyword">import</span> java.util.ArrayList;
+<span class="keyword">import</span> java.util.List;
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FilterChain</span> </span>{
+     <span class="keyword">private</span> List&lt;Filter&gt; filters = <span class="keyword">new</span> ArrayList&lt;Filter&gt;();
+     <span class="keyword">private</span> <span class="keyword">int</span> index = <span class="number">0</span>;
+
+     <span class="javadoc">/**
+      * Add a filter to filter list
+      *
+      *<span class="javadoctag"> @param</span> filter
+      */</span>
+     <span class="keyword">public</span> FilterChain <span class="title">addFilter</span>(Filter filter) {
+            <span class="keyword">this</span>. filters.add( filter);
+            <span class="keyword">return</span> <span class="keyword">this</span>;
+     }
+
+     <span class="javadoc">/**
+      * Remove a filter from filter list
+      *
+      *<span class="javadoctag"> @param</span> filter
+      */</span>
+     <span class="keyword">public</span> FilterChain <span class="title">removeFilter</span>(Filter filter) {
+            <span class="keyword">this</span>. filters.remove( filter);
+            <span class="keyword">return</span> <span class="keyword">this</span>;
+     }
+
+     <span class="javadoc">/**
+      * Call current filter to handle the request
+      *
+      * The current filter will callback this doFilter method to call next filter
+      *
+      *<span class="javadoctag"> @param</span> request
+      */</span>
+     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span>(Request request) {
+            <span class="keyword">if</span> ( index &gt;= <span class="keyword">this</span>. filters.size()) {
+                System. out
+                           .println( <span class="string">"All filters are done, the request content after filters: "</span>
+                                     + request);
+                 <span class="keyword">return</span>;
+           }
+           Filter filter = <span class="keyword">this</span>. filters.get( index++);
+            filter.doFilter( request, <span class="keyword">this</span> );
+     }
+}
+</code></pre><p>ScriptFilter脚本过滤器类</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+
+<span class="javadoc">/**
+ * Filter the script in the requeset content
+ *
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年8月30日
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScriptFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>{
+
+     <span class="annotation">@Override</span>
+     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span>(Request request, FilterChain chain) {
+            <span class="comment">// TODO Auto-generated method stub</span>
+           String content = request.getContent();
+            content = content.replaceAll(<span class="string">"&lt;script[^&gt;]*&gt;.*&lt;/script&gt;"</span> , <span class="string">""</span> );
+            request.setContent( content);
+            chain.doFilter( request);
+     }
+}
+</code></pre><p>SensitiveWordsFilter敏感词过滤器类</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+
+<span class="javadoc">/**
+ * Sensitive words filter
+ *
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年8月30日
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SensitiveWordsFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>{
+     <span class="keyword">private</span> String[] words;
+
+     <span class="keyword">public</span> <span class="title">SensitiveWordsFilter</span>() {
+            <span class="comment">// TODO Auto-generated constructor stub</span>
+            words = <span class="keyword">new</span> String[] { <span class="string">"fuck "</span>, <span class="string">"shit"</span>, <span class="string">"hell"</span> };
+     }
+
+     <span class="annotation">@Override</span>
+     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span>(Request request, FilterChain chain) {
+            <span class="comment">// TODO Auto-generated method stub</span>
+           String content = request.getContent();
+            <span class="keyword">for</span> (String word : words) {
+                 content = content.replaceAll( <span class="string">"(?i)"</span> + word, <span class="string">""</span>);
+           }
+            request.setContent( content);
+            chain.doFilter( request);
+     }
+}
+</code></pre><p>客户端测试程序</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+
+<span class="javadoc">/**
+ * Client test for filters using responsibility design pattern
+ *
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年8月30日
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+
+     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+            <span class="comment">// TODO Auto-generated method stub</span>
+           FilterChain chain = <span class="keyword">new</span> FilterChain();
+            chain.addFilter( <span class="keyword">new</span> ScriptFilter()).addFilter( <span class="keyword">new</span> SensitiveWordsFilter());
+           Request request = <span class="keyword">new</span> Request(
+                      <span class="string">"This is a request&lt;script&gt;alert('script')&lt;/script&gt;. Fuck"</span> );
+            chain.doFilter( request);
+     }
+
+}
+</code></pre><h4 id="枚举类型实现责任链模式"><strong>枚举类型实现责任链模式</strong></h4>
+<p>我们知道Enum枚举类型的每个枚举值可以有自己的常量相关方法，利用这个特性，我们可以定义一个枚举类型，将每个处理者声明为一个枚举值，并实现常量相关方法。当请求到来时，只需要遍历枚举类型的所有枚举值，直到找到某一个枚举值可以处理这个请求，从而实现责任链模式。</p>
+<p>例如Request请求实例包括请求方法method和请求内容content，请求方法有GET, POST, PUT, DELETE。我们可以定义一个枚举类型RequestHandler，其中声明四个枚举值用来分别处理四种请求内容的请求实例。示例代码如下：</p>
+<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
+<span class="javadoc">/**
+ * Responsibility chain design pattern with Enum
+ *<span class="javadoctag"> @author</span> Charles Chen
+ *<span class="javadoctag"> @date</span> 2014年9月4日
+ */</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EnumRespChain</span> </span>{
+    <span class="javadoc">/**
+     * Request handler, every enum value is a concrete handler
+     *<span class="javadoctag"> @author</span> Charles Chen
+     *<span class="javadoctag"> @date</span> 2014年9月4日
+     */</span>
+    <span class="keyword">static</span> <span class="keyword">enum</span> RequestHandler {
+        HANDLE_GET {
+            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
+                <span class="keyword">if</span> (request.getMethod() == Request.Method.GET) {
+                    System.out.println(<span class="string">"Request Method: "</span> + Request.Method.GET
+                            + <span class="string">", Request Content: "</span> + request.getContent());
+                    <span class="keyword">return</span> <span class="keyword">true</span>;
+                }
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        },
+        HANDLE_POST {
+            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
+                <span class="keyword">if</span> (request.getMethod() == Request.Method.POST) {
+                    System.out.println(<span class="string">"Request Method: "</span> + Request.Method.POST
+                            + <span class="string">", Request Content: "</span> + request.getContent());
+                    <span class="keyword">return</span> <span class="keyword">true</span>;
+                }
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        },
+        HANDLE_PUT {
+            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
+                <span class="keyword">if</span> (request.getMethod() == Request.Method.PUT) {
+                    System.out.println(<span class="string">"Request Method: "</span> + Request.Method.PUT
+                            + <span class="string">", Request Content: "</span> + request.getContent());
+                    <span class="keyword">return</span> <span class="keyword">true</span>;
+                }
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        },
+        HANDLE_DELETE {
+            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
+                <span class="keyword">if</span> (request.getMethod() == Request.Method.DELETE) {
+                    System.out.println(<span class="string">"Request Method: "</span>
+                            + Request.Method.DELETE + <span class="string">", Request Content: "</span>
+                            + request.getContent());
+                    <span class="keyword">return</span> <span class="keyword">true</span>;
+                }
+                <span class="keyword">return</span> <span class="keyword">false</span>;
+            }
+        };
+
+        <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request);
+    }
+
+    <span class="javadoc">/**
+     * The request POJO
+     *<span class="javadoctag"> @author</span> Charles Chen
+     *<span class="javadoctag"> @date</span> 2014年9月4日
+     */</span>
+    <span class="keyword">static</span> class Request {
+        <span class="keyword">enum</span> Method {
+            GET, POST, PUT, DELETE
+        }
+
+        <span class="keyword">private</span> String content;
+        <span class="keyword">private</span> Method method;
+
+        <span class="keyword">public</span> <span class="title">Request</span>(Method method, String content) {
+            <span class="comment">// TODO Auto-generated constructor stub</span>
+            <span class="keyword">this</span>.method = method;
+            <span class="keyword">this</span>.content = content;
+        }
+
+        <span class="keyword">public</span> String <span class="title">getContent</span>() {
+            <span class="keyword">return</span> content;
+        }
+
+        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContent</span>(String content) {
+            <span class="keyword">this</span>.content = content;
+        }
+
+        <span class="keyword">public</span> Method <span class="title">getMethod</span>() {
+            <span class="keyword">return</span> method;
+        }
+
+        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMethod</span>(Method method) {
+            <span class="keyword">this</span>.method = method;
+        }
+
+    }
+
+    <span class="javadoc">/**
+     * Client test
+     *<span class="javadoctag"> @param</span> args
+     */</span>
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+        <span class="comment">// TODO Auto-generated method stub</span>
+        Request request = <span class="keyword">new</span> Request(Request.Method.POST, <span class="string">"This is a HTTP request in POST method"</span>);
+        <span class="keyword">for</span>(RequestHandler handler: RequestHandler.values()){
+            <span class="keyword">if</span>(handler.handle(request))<span class="keyword">break</span>;
+        }
+    }
+
+}
+</code></pre><p>[Image 1]: </p>
+
+        </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a data-pjax class="newer-posts" href="/2014/08/30/design-pattern-handler-chain/">← Prev Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2014/08/28/redis-practice-in-famous-companies/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        
+         
+        <section id="comments">
+          <!-- 多说评论框 start -->
+          <div class="ds-thread" data-thread-key="post-design-pattern-handler-chain" data-title="行为型设计模式 — 责任链模式" data-url="http://www.charlestech.info/2014/08/30/design-pattern-handler-chain/"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:'charlestech'};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+               || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+          <!-- 多说公共JS代码 end -->
+        </section>
+        
+
+    </article>
+</main>
+
+
+  
+<footer class="site-footer">
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; Charles Tech Blog 2015</section>
+        <section class="poweredby">Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+    </div>
+</footer>
+</div>
+</div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
+  
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
+</script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
