@@ -43,6 +43,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/04/css-chat-bubble/">纯CSS实现的聊天气泡</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
                                 </li>
                                 
@@ -339,7 +343,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/WEB前端/">&nbsp;&nbsp;&nbsp;WEB前端</a>
-                                    <small>5</small>
+                                    <small>6</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -411,6 +415,11 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/CSRF/">&nbsp;&nbsp;&nbsp;CSRF</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CSS/">&nbsp;&nbsp;&nbsp;CSS</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -795,6 +804,11 @@
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/聊天气泡/">&nbsp;&nbsp;&nbsp;聊天气泡</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
                                     <a href="/tags/装饰器模式/">&nbsp;&nbsp;&nbsp;装饰器模式</a>
                                     <small>1</small>
                                 </li>
@@ -872,6 +886,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/03/04/css-chat-bubble/">纯CSS实现的聊天气泡</a>
                 
                     <a  data-pjax href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
                 
@@ -1037,6 +1053,8 @@
                 
                     <a data-pjax href="/tags/CSRF/">&nbsp;&nbsp;CSRF</a>
                 
+                    <a data-pjax href="/tags/CSS/">&nbsp;&nbsp;CSS</a>
+                
                     <a data-pjax href="/tags/CSS3/">&nbsp;&nbsp;CSS3</a>
                 
                     <a data-pjax href="/tags/DelayQueue/">&nbsp;&nbsp;DelayQueue</a>
@@ -1188,6 +1206,8 @@
                     <a data-pjax href="/tags/缓存/">&nbsp;&nbsp;缓存</a>
                 
                     <a data-pjax href="/tags/编程题/">&nbsp;&nbsp;编程题</a>
+                
+                    <a data-pjax href="/tags/聊天气泡/">&nbsp;&nbsp;聊天气泡</a>
                 
                     <a data-pjax href="/tags/装饰器模式/">&nbsp;&nbsp;装饰器模式</a>
                 
@@ -1427,7 +1447,7 @@ class SubscribeListener extends JedisPubSub {
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2015/03/04/css-chat-bubble/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             

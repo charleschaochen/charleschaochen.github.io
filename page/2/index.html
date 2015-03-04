@@ -43,6 +43,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/04/css-chat-bubble/">纯CSS实现的聊天气泡</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
                                 </li>
                                 
@@ -339,7 +343,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/WEB前端/">&nbsp;&nbsp;&nbsp;WEB前端</a>
-                                    <small>5</small>
+                                    <small>6</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -411,6 +415,11 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/CSRF/">&nbsp;&nbsp;&nbsp;CSRF</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CSS/">&nbsp;&nbsp;&nbsp;CSS</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -795,6 +804,11 @@
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/聊天气泡/">&nbsp;&nbsp;&nbsp;聊天气泡</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
                                     <a href="/tags/装饰器模式/">&nbsp;&nbsp;&nbsp;装饰器模式</a>
                                     <small>1</small>
                                 </li>
@@ -872,6 +886,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/03/04/css-chat-bubble/">纯CSS实现的聊天气泡</a>
                 
                     <a  data-pjax href="/2014/11/10/redis-publish-substribe/">Redis实现发布/订阅模型</a>
                 
@@ -1037,6 +1053,8 @@
                 
                     <a data-pjax href="/tags/CSRF/">&nbsp;&nbsp;CSRF</a>
                 
+                    <a data-pjax href="/tags/CSS/">&nbsp;&nbsp;CSS</a>
+                
                     <a data-pjax href="/tags/CSS3/">&nbsp;&nbsp;CSS3</a>
                 
                     <a data-pjax href="/tags/DelayQueue/">&nbsp;&nbsp;DelayQueue</a>
@@ -1189,6 +1207,8 @@
                 
                     <a data-pjax href="/tags/编程题/">&nbsp;&nbsp;编程题</a>
                 
+                    <a data-pjax href="/tags/聊天气泡/">&nbsp;&nbsp;聊天气泡</a>
+                
                     <a data-pjax href="/tags/装饰器模式/">&nbsp;&nbsp;装饰器模式</a>
                 
                     <a data-pjax href="/tags/观察者模式/">&nbsp;&nbsp;观察者模式</a>
@@ -1249,6 +1269,39 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/JVM/'>JVM</a>
+                
+                <a data-pjax href='/tags/性能调优/'>性能调优</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2014/09/14/jdk-monitor-tools-2/">JDK监控和故障处理工具 (II)</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2014-09-14T08:27:28.000Z"
+                      itemprop="datePublished">Sep 14 2014</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                <p>JHAT（1）jhat工具的作用与Eclipse Memory Analysis工具类似，都是用于分析heapdump文件，jhat工具生成的报告相对简陋一些，没有Eclipse MAT那么详细。（2）jhat的使用jhat <heapdump文件路径>指定jhat后会提示：Started HTTP server on port 7000Server is readyjhat会启动一个…</heapdump文件路径></p>
+
+                
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -1542,39 +1595,6 @@
             <p>
                 
                 <p> 我们知道，通过Java的synchronized关键字获得的锁是排他锁，当一个线程获得对象的排他锁，不管该线程执行的是读操作还是写操作，其他线程都只能等待直到对象锁被释放。然而，考虑这样一种情况，当有多个线程读取一个共享资源而只有一个线程对共享资源发生修改操作，对于读操作我们就没必要使用排他锁，我们可以使用共享锁，使得执行读操作的线程可以共享对象锁，并发地进行读取。只有写操作发生时，线…</p>
-
-                
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/设计模式/'>设计模式</a>
-                
-                <a data-pjax href='/tags/观察者模式/'>观察者模式</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/08/09/design-pattern-observer/">行为型设计模式 — 观察者模式</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-08-09T06:27:53.000Z"
-                      itemprop="datePublished">Aug 9 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                <p>什么是观察者模式观察者模式定义了类之间一对多的依赖关系，多个观察者对象同时监听一个目标对象，当目标对象发生状态的改变时，会通知所有观察者对象，使它们自动执行一些行为。观察者模式也称发布-订阅模式，类似我们常用的RSS订阅，当RSS源发生更新时，RSS阅读器会自动加载更新的内容。Java图形化用户界面编程中的控件事件机制也是观察者模式的应用案例，例如一个Button控件，我们可以在上面注册点击监听器…</p>
 
                 
             </p>
