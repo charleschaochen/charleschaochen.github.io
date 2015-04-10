@@ -454,7 +454,7 @@ a {
   position: relative;
   width: 100%;
   overflow: hidden;
-  min-height: 250px;
+  min-height: 500px;
 }
 #header .switch-area .switch-wrap {
   -webkit-transition: -webkit-transform 0.3s ease-in;
@@ -642,10 +642,14 @@ a {
 #header .switch-part2 {
   left: 100%;
   top: 20px;
+  max-height: 450px;
+  overflow-y: auto;
 }
 #header .switch-part3 {
   left: 200%;
   line-height: 30px;
+  max-height: 450px;
+  overflow-y: auto;
 }
 #header .switch-part3 .switch-friends-link {
   margin-right: 9px;
@@ -661,11 +665,15 @@ a {
   left: 300%;
   text-align: left;
   line-height: 30px;
+  max-height: 450px;
+  overflow-y: auto;
 }
 #header .switch-part5 {
   left: 400%;
   text-align: left;
   line-height: 30px;
+  max-height: 450px;
+  overflow-y: auto;
 }
 #header .switch-part .categories-widget .category-list {
   margin: 10px auto auto 15px;
