@@ -123,8 +123,8 @@
         window.addEventListener('popstate', function (e) {
             if (history.state) {
                 var state = e.state;
-                _requestData(state.site)
-            }
+                _requestData(state.site);
+				$(".header-container").find("ul li[data-value='" + state.site + "']").addClass('current');
         }, false);
     });
 </script>
