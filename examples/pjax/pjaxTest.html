@@ -111,7 +111,7 @@
                 });
             }
 
-            if (site) {
+            if (site && $(".header-container").find("ul li[data-value='" + site + "']").length > 0) {
                 $(".header-container").find("ul li[data-value='" + site + "']").trigger('click');
             } else {
                 $(".header-container").find("ul li:eq(0)").trigger('click');
