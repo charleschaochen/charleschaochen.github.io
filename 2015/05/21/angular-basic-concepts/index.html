@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AngularJS基础概念与核心原理 | Charles Tech Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AngularJS是这两三年兴起的一款优秀的前端框架，最令我惊讶的是它实现了一些后台框架的思想，如MVC, 双向数据绑定，依赖注入等等，并且支持自定义语义化标签，方便封装一些前端组件。最新项目中用到这个框架，所以开始在看，稍微整理一下Angular的一些基础概念与原理性的东西分享一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS基础概念与核心原理">
+<meta property="og:url" content="http://www.charlestech.info/2015/05/21/angular-basic-concepts/">
+<meta property="og:site_name" content="Charles Tech Blog">
+<meta property="og:description" content="AngularJS是这两三年兴起的一款优秀的前端框架，最令我惊讶的是它实现了一些后台框架的思想，如MVC, 双向数据绑定，依赖注入等等，并且支持自定义语义化标签，方便封装一些前端组件。最新项目中用到这个框架，所以开始在看，稍微整理一下Angular的一些基础概念与原理性的东西分享一下。">
+<meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/未命名.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJS基础概念与核心原理">
+<meta name="twitter:description" content="AngularJS是这两三年兴起的一款优秀的前端框架，最令我惊讶的是它实现了一些后台框架的思想，如MVC, 双向数据绑定，依赖注入等等，并且支持自定义语义化标签，方便封装一些前端组件。最新项目中用到这个框架，所以开始在看，稍微整理一下Angular的一些基础概念与原理性的东西分享一下。">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/3364139?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/" style='font-family: 微软雅黑'>茶藕丝陈</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+		
+		
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="2">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="4">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						<li>Categories</li>
+						<!--
+						
+						<li>Others</li>
+						
+						-->
+						
+						<li>About me</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="search-area">
+			<span class="search-icon"></span>
+			<input type="text" id="googleMe" placeholder="Search..." data-url="www.charlestech.info" />
+		</div>
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/charleschaochen" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/bbaocc" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="mafengwo" target="_blank" href="http://www.mafengwo.cn/u/49449646.html" title="mafengwo">mafengwo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/google/" style="font-size: 10.00px;">google</a><a href="/tags/jQuery/" style="font-size: 10.00px;">jQuery</a><a href="/tags/jasmine/" style="font-size: 10.00px;">jasmine</a><a href="/tags/lazyload/" style="font-size: 10.00px;">lazyload</a><a href="/tags/pjax/" style="font-size: 10.00px;">pjax</a>
+					</div>
+				</section>
+				
+				<section class="switch-part switch-part3">
+					<div class="categories-widget">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</section>
+				
+				<!--
+				
+				<section class="switch-part switch-part4">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
+			        
+				</section>
+				
+				-->
+				
+				
+				
+				<section class="switch-part switch-part4">
+				
+					13年毕业，目前就职网易游戏，Java和前端coder，爱折腾技术，什么都懂一点。热爱生活，坚持梦想。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/3364139?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">茶藕丝陈</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/charleschaochen" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/bbaocc" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="mafengwo" target="_blank" href="http://www.mafengwo.cn/u/49449646.html" title="mafengwo">mafengwo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-angular-basic-concepts" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/21/angular-basic-concepts/" class="article-date">
+  	<time datetime="2015-05-21T04:46:00.000Z" itemprop="datePublished">May 21 2015</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WEB前端/">WEB前端</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AngularJS基础概念与核心原理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>AngularJS是这两三年兴起的一款优秀的前端框架，最令我惊讶的是它实现了一些后台框架的思想，如MVC, 双向数据绑定，依赖注入等等，并且支持自定义语义化标签，方便封装一些前端组件。最新项目中用到这个框架，所以开始在看，稍微整理一下Angular的一些基础概念与原理性的东西分享一下。</p>
+<a id="more"></a>
+<h3 id="Angular的一些核心概念">Angular的一些核心概念</h3>
+<p><strong>MVC</strong></p>
+<p>写过后端的都知道什么是MVC，一种常用的Web设计模式，将模型（Model），视图（View），控制器（Controller）分离的一种思想，这里不累述。Angular实现了纯前端的MVC，使得前端应用更加工程化，模块之间耦合性小。</p>
+<p><strong>双向数据绑定(Two-way data binding)</strong></p>
+<p>双向数据绑定，实现视图与模型的双向绑定，即任意一方发生变化，都会同步到另一方。 这种思想使得用惯Jquery的童鞋在刚接触Angular的时候，会感到一些不适应，因为双向数据绑定使我们可以完全抛弃直接去操作DOM的做法，颠覆了传统的DOM操作。举个例子，如果我们要改变页面上某个<span>的内容。使用Jquery的话我们的做法无非是获取这个<span>的DOM，然后修改DOM的text内容。而使用Angular，我们只需要修改这个<span>所绑定的模型数据，就可以自动更新。</span></span></span></p>
+<p><strong>依赖注入(Dependency Inject)</strong></p>
+<p>控制器所使用到的service服务可以由Angular的injector自动注入。</p>
+<p>玩过Spring的童鞋都知道，Spring的IoC容器也实现了依赖注入，Spring注入的方式有构造注入，getter/setter注入和反射注入，而Angular使用的注入方式是构造注入，即通过参数的方式传入到控制器的逻辑函数中。Angular本身提供了多种service，例如$scope,$window,$location等等，我们也可以通过service函数自定义服务。</p>
+<p><strong>directive指令</strong></p>
+<p>Angular提供的一套指令集，用于将模型的数据绑定到视图上。</p>
+<p><strong>$scope对象</strong></p>
+<p>$scope对象是一个Angular控制器的数据模型对象，一个控制器所负责的视图绑定的模型数据都是来自$scope对象。</p>
+<p>另外有一个$rootScope对象，它与$scope对象的不同在于作用域。每个controller都有自己的scope，所以$scope对象的作用域是所在的controller中，对其他controller不可见，而$rootScope的作用域是整个Angular模块，对该模块下的所有controller可见。</p>
+<p><strong>过滤器</strong></p>
+<p>Angular的指令可以和一些过滤器配合使用，过滤器是用来对模型数据进行格式化或对数组元素进行过滤。</p>
+<h3 id="Angular_Hello_World">Angular Hello World</h3>
+<p>稍微了解了AngularJS的一些概念之后，按惯例要来一发Hello World。</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Angular Helloworld<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myapp"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"HelloController"</span> &gt;</span>
+
+    <span class="tag">&lt;<span class="title">h2</span>&gt;</span>Hello { { helloTo } } !<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+angular.module(<span class="string">"myapp"</span>, [])
+    .controller(<span class="string">"HelloController"</span>, <span class="function"><span class="keyword">function</span><span class="params">($scope)</span> </span>{
+        $scope.helloTo = <span class="string">"AngularJS"</span>;
+    } );
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>示例中，body标签用ng-app指定了一个Angular模块，表示从这里开始，所有DOM将由Angular来负责渲染和绑定。</p>
+<p>示例中视图view的部分就是：</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"HelloController"</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">h2</span>&gt;</span>Hello { { helloTo } }  !<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>视图通过ng-controller绑定一个控制器，告诉这个视图应该去使用哪个控制器。 helloTo外面的双大括号是Angular的指令符，表示这地方要显示模型中helloTo的值。</p>
+<p>我们再来看js代码：</p>
+<pre><code>angular.module(<span class="string">"myapp"</span>, [])
+    .controller(<span class="string">"HelloController"</span>, <span class="function"><span class="keyword">function</span><span class="params">(<span class="variable">$scope</span>)</span> </span>{
+        <span class="variable">$scope</span>.helloTo = <span class="string">"AngularJS"</span>;
+    });
+</code></pre><p>这里定义了一个”myapp”模块，并通过调用controller函数定义了一个控制器，控制器的处理函数中，参数$scope就是所谓的模型，而$scope是通过Angular的injector注入到这个函数中。$scope上定义了一个属性helloTo,它的值将显示在视图上。</p>
+<p>创建module的时候，第二个是一个数组。这个数组是干嘛用的呢。 其实是用来声明依赖注入的对象的，如果当前这个module需要依赖另一个module的功能，例如引用到其他module中定义的service，我们可以将所要引用的module名称写到数组中，如：</p>
+<pre><code><span class="reserved">var</span> <span class="built_in">module</span> = angular.<span class="built_in">module</span>(<span class="string">"myapp"</span>, [<span class="string">"servModule"</span>]);
+</code></pre><p>这样一来，当前module下所有控制器就可以使用servModule中定义的service了。同样定义controller的时候，我们也可以声明依赖注入的对象，事实上hello world中定义controller的完整写法应该是：</p>
+<pre><code>module.controller(<span class="string">"HelloController"</span>, [<span class="string">"$scope"</span>,<span class="function"><span class="keyword">function</span><span class="params">(<span class="variable">$scope</span>)</span> </span>{
+        <span class="variable">$scope</span>.helloTo = <span class="string">"AngularJS"</span>;
+    }]);
+</code></pre><p>以上程序告诉了Angular，当前控制器需要一个名为$scope的对象，请帮我注入吧！同样，如果我要用到其他的service，也可以添加到数组中，例如我希望用到servModule下的myServ服务，我们先要在定义module时声明注入”servModule”，正如我们之前所做的，然后要在声明controller的时候，声明注入”myServ”:</p>
+<pre><code>module.controller(<span class="string">"HelloController"</span>, [<span class="string">"$scope"</span>,<span class="string">"myServ"</span>,<span class="function"><span class="keyword">function</span><span class="params">(<span class="variable">$scope</span>)</span> </span>{
+        <span class="variable">$scope</span>.helloTo = <span class="string">"AngularJS"</span>;
+    }]);
+</code></pre><p>这样我们就可以访问myServ的属性和函数了。</p>
+<p>Angular就是使用这种依赖注入的方式，实现模型、服务与控制器的分离，我们在实际开发的过程中，可以将一些独立功能的服务封装到一个module中，供其他业务module的controller引用。 类比Java，这里的module其实就是包，service其实就是包中类。</p>
+<h3 id="Angular指令Directives">Angular指令Directives</h3>
+<p>AngularJS提供了一套directives指令将模型的数据绑定到视图上。</p>
+<p>常见的指令有：</p>
+<p>【普通指令】</p>
+<p>嵌入式指令：如 <code>&lt;span&gt; { { text } } &lt;/span&gt;</code></p>
+<p>ng-app: 指定一个模块</p>
+<p>ng-controller: 指定一个控制器</p>
+<p>ng-bind: 绑定一个model的属性或函数，所绑定的属性值或函数返回值会添加到所在标签中</p>
+<p>ng-bind-html-unsafe: 如果所绑定的模型值包含HTML标签，使用该指令会将HTML标签转义成普通的文本，防止HTML注入</p>
+<p>【条件指令】</p>
+<p>作用于条件判断逻辑。</p>
+<p>ng-show: 根据所绑定的属性值或函数返回值决定所在dom节点是否显示</p>
+<p>ng-hide: 同ng-show，判断是否隐藏</p>
+<p>ng-if: 根据所绑定的属性值或函数返回值决定所在dom节点是否被移除</p>
+<p>ng-switch: 开关语句，如下：</p>
+<pre><code>&lt;<span class="operator">div</span> ng-<span class="keyword">switch</span> <span class="command"><span class="keyword">on</span>=<span class="string">"myData.switch"</span>&gt;</span>
+    &lt;<span class="operator">div</span> ng-<span class="keyword">switch</span>-when=<span class="string">"1"</span>&gt;Shown when <span class="keyword">switch</span> is <span class="number">1</span>&lt;/<span class="operator">div</span>&gt;
+    &lt;<span class="operator">div</span> ng-<span class="keyword">switch</span>-when=<span class="string">"2"</span>&gt;Shown when <span class="keyword">switch</span> is <span class="number">2</span>&lt;/<span class="operator">div</span>&gt;
+    &lt;<span class="operator">div</span> ng-<span class="keyword">switch</span>-default&gt;Shown when <span class="keyword">switch</span> is anything <span class="keyword">else</span> than <span class="number">1</span> <span class="operator">and</span> <span class="number">2</span>&lt;/<span class="operator">div</span>&gt;
+&lt;/<span class="operator">div</span>&gt;
+</code></pre><p>ng-include：引入一个页面</p>
+<p>ng-repeat：遍历model的对象或数组, 如：</p>
+<pre><code><span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-repeat</span>=<span class="value">"item in items"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-repeat</span>=<span class="value">"(name, value) in myData.myObject"</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>【事件指令】</p>
+<p>Angular事件用指令的形式指定对应的事件处理逻辑，如：</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"MyController"</span> &gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-click</span>=<span class="value">"myData.doClick()"</span>&gt;</span>Click here<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    angular.module(<span class="string">"myapp"</span>, [])
+            .controller(<span class="string">"MyController"</span>, <span class="function"><span class="keyword">function</span><span class="params">($scope)</span> </span>{
+                $scope.myData = {};
+                $scope.myData.doClick = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+                    alert(<span class="string">"clicked"</span>);
+                }
+            } );
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>常用的事件包括：</p>
+<ul>
+<li>ng-click</li>
+<li>ng-dbl-click</li>
+<li>ng-mousedown</li>
+<li>ng-mouseup</li>
+<li>ng-mouseenter</li>
+<li>ng-mouseleave</li>
+<li>ng-mousemove</li>
+<li>ng-mouseover</li>
+<li>ng-keydown</li>
+<li>ng-keyup</li>
+<li>ng-keypress</li>
+<li>ng-change</li>
+</ul>
+<h3 id="过滤器Filtering">过滤器Filtering</h3>
+<p>有些AngularJS指定支持过滤器Filtering。过滤器以类似于Shell<strong>管道</strong>的方式应用到指令上。</p>
+<p>【格式化过滤器】</p>
+<ul>
+<li>date    格式化日期</li>
+<li>currency    格式化货币</li>
+<li>number    格式化数值</li>
+<li>lowercase    小写转换</li>
+<li>uppercase    大写转换</li>
+<li>json    格式化json对象</li>
+</ul>
+<p>如：</p>
+<p><img src="http://7x00n0.com1.z0.glb.clouddn.com/未命名.png" alt=""></p>
+<p>【数组过滤器】</p>
+<ul>
+<li>limitTo：个数限制</li>
+<li>filter：自定义过滤器</li>
+</ul>
+<p>如：</p>
+<pre><code>&lt;<span class="operator">div</span> ng-<span class="keyword">repeat</span>=<span class="string">"item in myData.items | filter: itemFilter"</span>&gt;&lt;/<span class="operator">div</span>&gt;
+</code></pre><ul>
+<li><p>filter: itemFilter表示将itemFilter这个过滤器应用到myData.items这个数组上。itemFilter是一个定义在$scope对象上的函数。这个函数接收数组的单个元素作为参数，并返回true或false，表示保留或不保留该元素：</p>
+<p>  $scope.itemFilter = function(item){</p>
+<pre><code><span class="keyword">if</span>(<span class="property">item</span>.<span class="type">text</span> == <span class="string">"one"</span>) <span class="constant">return</span> <span class="constant">false</span>;
+</code></pre><p>  }</p>
+</li>
+<li><p>orderBy</p>
+</li>
+</ul>
+<p>用法：orderBy:sortField:reverse</p>
+<p>如：</p>
+<pre><code>&lt;ul np-<span class="built_in">repeat</span> = <span class="string">"book in books | orderBy:'name':true"</span>&gt;
+</code></pre><p>表示按name倒序</p>
+<h3 id="Angular监听机制">Angular监听机制</h3>
+<p>Angular的模型数据发生变化时，所绑定的视图也会随之发生变化。这是由Angular的监听机制来实现的。<br>Angular的监听机制由三个函数来实现：<strong>$watch()</strong>, <strong>$digest()</strong>, <strong>$apply()</strong></p>
+<p><strong>$watch()</strong></p>
+<p>$watch函数会为所要监听的变量创建一个watch对象，这个watch对象由两部分组成：所要监听的变量，以及变量发生变化时执行的监听函数。这两部分分别对应$watch函数的两个参数valueFunction和listenerFunction。</p>
+<p>$watch(valueFunction, listenerFunction)</p>
+<p>如：</p>
+<pre><code><span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="function"><span class="keyword">function</span><span class="params">(scope)</span> </span>{ <span class="keyword">return</span> scope.data.myVar },
+          <span class="function"><span class="keyword">function</span><span class="params">(newValue, oldValue)</span> </span>{
+              document.getElementById(<span class="string">""</span>).innerHTML =
+                  <span class="string">""</span> + newValue + <span class="string">""</span>;
+          }
+         );
+</code></pre><p>当我们将视图与$scope对象的某个属性绑定时，Angular会自动为$scope的属性调用$watch函数，创建一个watch对象。</p>
+<p><strong>$digest()</strong></p>
+<p>Angular为模型数据创建watch之后，当数据发生变化时，如果去触发监听器函数呢？这个动作将由$digest函数来完成。</p>
+<p>$digest函数会迭代$scope上所有的watch对象，当处理一个watch对象时，digest函数会先调用watch对象的valueFunction，如果取到的返回值与就值不一致，digest函数就会调用listenerFunction触发监听函数，更新所绑定的DOM的内容。</p>
+<p>Angular会在必要的时机为我们调用digest()函数检查watches，例如angular一些指令触发或ajax请求返回的时候。<strong>但有些情况下Angular是不会自动为我们调用digest()</strong>，这就会导致我们修改了$scope属性但对应的视图没有更新。此时我们需要显式去调用$digest函数。</p>
+<p>下面是一个主动调$digest的示例：</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">ng-app</span>=<span class="value">"org.angularstudy.apply"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"applyController"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-click</span>=<span class="value">"doUpdate()"</span>&gt;</span>Update time via directive<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"updateDt"</span>&gt;</span>Update time<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"datetime"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/angular-1.2.5.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/jquery-1.8.3.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    <span class="keyword">var</span> <span class="built_in">module</span> = angular.module(<span class="string">"org.angularstudy.apply"</span>, []);
+    <span class="built_in">module</span>.controller(<span class="string">"applyController"</span>, [<span class="string">"$scope"</span>, <span class="function"><span class="keyword">function</span> <span class="params">($scope)</span> </span>{
+        $scope.datetime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString();
+        $scope.doUpdate = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+            $scope.datetime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString();
+        }
+
+        $(<span class="string">"#updateDt"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+            $scope.datetime = <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString();
+            $scope.$digest();
+        });
+    }]);
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>我们为第一个按钮绑定了ng-click指令，当click事件触发时，修改了datetime数据，此时Angular会自动为我们调用$digest函数更新视图。但第二个按钮我们是通过jquery去绑定click事件，此时Angular并不会自动为我们调用$digest，我们只有显式去调用$digest才能更新视图。</p>
+<p><strong>$apply</strong></p>
+<p>另外一种触发Angular去检查wathces的方法是$apply，我们可以将修改模型数据的操作放在$apply函数的参数函数中，当$apply函数退出时会触发$digest函数，$scope上所有watches将会被检查。</p>
+<p>所以上一个例子，我们也可以通过$apply的方式来取代调用$digest:</p>
+<pre><code>$(<span class="string">"#updateDt"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+        <span class="variable">$scope</span>.<span class="variable">$apply</span>(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+              <span class="variable">$scope</span>.datetime = <span class="keyword">new</span> Date().toLocaleTimeString();
+           });  
+    });
+</code></pre><p>$watch，$digest，$apply不仅可以应用在$scope对象上，也可以作用在普通变量上。也就是说我们可以利用Angular的监听API来实现自己的监听逻辑。</p>
+<p>以下就是一个例子。例子中利用了$watch函数监听输入框值的变化，当值发生变化时，调用$digest触发监听函数。</p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">ng-app</span>=<span class="value">"org.angularstudy.watch"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"inputText"</span>/&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"watchController"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"content"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/angular-1.2.5.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/jquery-1.8.3.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+    <span class="keyword">var</span> <span class="built_in">module</span> = angular.module(<span class="string">"org.angularstudy.watch"</span>, []);
+    <span class="built_in">module</span>.controller(<span class="string">"watchController"</span>, <span class="function"><span class="keyword">function</span> <span class="params">($scope)</span> </span>{
+        $scope.$watch(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+            <span class="keyword">return</span> $(<span class="string">"#inputText"</span>).val();
+        }, <span class="function"><span class="keyword">function</span> <span class="params">(newVal, oldVal)</span> </span>{
+            <span class="built_in">console</span>.log(<span class="string">"New Value: "</span> + newVal + <span class="string">", Old Value: "</span> + oldVal);
+            $(<span class="string">"#content"</span>).text($(<span class="string">"#inputText"</span>).val());
+        });
+
+        $(<span class="string">"#inputText"</span>).change(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+            $scope.$digest();
+        });
+    });
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>关于AngularJS的一些基础概念和核心原理就大概讲到这里，Angular的学习曲线一开始还是比较陡，比较容易上手。后续会分享更多AngularJS的学习笔记和实践经验。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/04/nodejs-http-server/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用nodeJs搭建一个简单的HTTP Server</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="angular-basic-concepts" data-title="AngularJS基础概念与核心原理" data-url="http://www.charlestech.info/2015/05/21/angular-basic-concepts/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Charles Chen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
