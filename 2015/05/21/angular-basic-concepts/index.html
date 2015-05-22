@@ -254,7 +254,7 @@
 <p>$scope对象是一个Angular控制器的数据模型对象，一个控制器所负责的视图绑定的模型数据都是来自$scope对象。</p>
 <p>另外有一个$rootScope对象，它与$scope对象的不同在于作用域。每个controller都有自己的scope，所以$scope对象的作用域是所在的controller中，对其他controller不可见，而$rootScope的作用域是整个Angular模块，对该模块下的所有controller可见。</p>
 <p><strong>过滤器</strong></p>
-<p>Angular的指令可以和一些过滤器配合使用，过滤器是用来对模型数据进行格式化或对数组元素进行过滤。</p>
+<p>Angular的指令可以和一些过滤器配合使用，过滤器是用来对模型数据进行格式化或对数组元素进行筛选，或者对某个模型值进行预处理。</p>
 <h3 id="Angular_Hello_World">Angular Hello World</h3>
 <p>稍微了解了AngularJS的一些概念之后，按惯例要来一发Hello World。</p>
 <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
@@ -317,7 +317,7 @@ angular.module(<span class="string">"myapp"</span>, [])
 <p>ng-app: 指定一个模块</p>
 <p>ng-controller: 指定一个控制器</p>
 <p>ng-bind: 绑定一个model的属性或函数，所绑定的属性值或函数返回值会添加到所在标签中</p>
-<p>ng-bind-html-unsafe: 如果所绑定的模型值包含HTML标签，使用该指令会将HTML标签转义成普通的文本，防止HTML注入</p>
+<p>ng-bind-html: 如果所绑定的模型值包含HTML标签，Angular默认会将HTML标签转义成普通的文本，防止HTML注入。如果我们确实要输出HTML文档，可以使用该指令。</p>
 <p>【条件指令】</p>
 <p>作用于条件判断逻辑。</p>
 <p>ng-show: 根据所绑定的属性值或函数返回值决定所在dom节点是否显示</p>
@@ -387,20 +387,30 @@ angular.module(<span class="string">"myapp"</span>, [])
 </ul>
 <p>如：</p>
 <pre><code>&lt;<span class="operator">div</span> ng-<span class="keyword">repeat</span>=<span class="string">"item in myData.items | filter: itemFilter"</span>&gt;&lt;/<span class="operator">div</span>&gt;
+</code></pre><p>“filter: itemFilter”表示将itemFilter这个过滤器应用到myData.items这个数组上。itemFilter是一个定义在$scope对象上的函数。这个函数接收数组的单个元素作为参数，并返回true或false，表示保留或不保留该元素：</p>
+<pre><code><span class="variable">$scope</span>.itemFilter = <span class="function"><span class="keyword">function</span><span class="params">(item)</span></span>{
+  <span class="keyword">if</span>(item.text == <span class="string">"one"</span>) <span class="keyword">return</span> <span class="keyword">false</span>;
+}
 </code></pre><ul>
-<li><p>filter: itemFilter表示将itemFilter这个过滤器应用到myData.items这个数组上。itemFilter是一个定义在$scope对象上的函数。这个函数接收数组的单个元素作为参数，并返回true或false，表示保留或不保留该元素：</p>
-<p>  $scope.itemFilter = function(item){</p>
-<pre><code><span class="keyword">if</span>(<span class="property">item</span>.<span class="type">text</span> == <span class="string">"one"</span>) <span class="constant">return</span> <span class="constant">false</span>;
-</code></pre><p>  }</p>
-</li>
-<li><p>orderBy</p>
-</li>
+<li>orderBy</li>
 </ul>
 <p>用法：orderBy:sortField:reverse</p>
 <p>如：</p>
 <pre><code>&lt;ul np-<span class="built_in">repeat</span> = <span class="string">"book in books | orderBy:'name':true"</span>&gt;
 </code></pre><p>表示按name倒序</p>
-<h3 id="Angular监听机制">Angular监听机制</h3>
+<p>【自定义过滤器】</p>
+<p>Angular提供filter函数支持自定义过滤器，用来对模型值进行处理。</p>
+<p>有一个常见的应用场景就是输出HTML。前面提到，如果视图绑定的模型数据是一个HTML字符串，Angular会默认将其转义为普通文本以避免HTML注入。如果我们确实像输出HTML文档，可以使用ng-bind-html指令。但只有ng-bind-html还不够，我们还需要自定义个信任HTML的过滤器:</p>
+<pre><code>module.filter(<span class="string">"trustHtml"</span>, [<span class="string">"$sce"</span>,<span class="function"><span class="keyword">function</span><span class="params">(<span class="variable">$sce</span>)</span></span>{
+    <span class="keyword">var</span> filterFunc = <span class="function"><span class="keyword">function</span><span class="params">(text)</span></span>{
+        <span class="keyword">return</span> <span class="variable">$sce</span>.trustAsHtml(text);
+    }
+
+    <span class="keyword">return</span> filterFunc;
+}]);
+</code></pre><p>这里利用了$sce服务的trustAsHtml函数，返回受信任的html文档。<br>对应的视图代码：</p>
+<pre><code><span class="tag">&lt;<span class="title">p</span> <span class="attribute">ng-bind-html</span>=<span class="value">"value | trustHtml"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</code></pre><h3 id="Angular监听机制">Angular监听机制</h3>
 <p>Angular的模型数据发生变化时，所绑定的视图也会随之发生变化。这是由Angular的监听机制来实现的。<br>Angular的监听机制由三个函数来实现：<strong>$watch()</strong>, <strong>$digest()</strong>, <strong>$apply()</strong></p>
 <p><strong>$watch()</strong></p>
 <p>$watch函数会为所要监听的变量创建一个watch对象，这个watch对象由两部分组成：所要监听的变量，以及变量发生变化时执行的监听函数。这两部分分别对应$watch函数的两个参数valueFunction和listenerFunction。</p>
