@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>基于jQueryRotate的前端抽奖转盘实现 | Charles Tech Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="抽奖是产品运营中常见的活动方式，转盘是最常见也是体验较好的一种抽奖方式，那么问题来了，如何快速在页面上实现一个抽奖转盘，并结合服务器端计算的抽奖概率，实现一个抽奖程序？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于jQueryRotate的前端抽奖转盘实现">
+<meta property="og:url" content="http://www.charlestech.info/2015/05/27/lottery-using-jquery-rotate/">
+<meta property="og:site_name" content="Charles Tech Blog">
+<meta property="og:description" content="抽奖是产品运营中常见的活动方式，转盘是最常见也是体验较好的一种抽奖方式，那么问题来了，如何快速在页面上实现一个抽奖转盘，并结合服务器端计算的抽奖概率，实现一个抽奖程序？">
+<meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/rotate.jpg">
+<meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/lottery.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于jQueryRotate的前端抽奖转盘实现">
+<meta name="twitter:description" content="抽奖是产品运营中常见的活动方式，转盘是最常见也是体验较好的一种抽奖方式，那么问题来了，如何快速在页面上实现一个抽奖转盘，并结合服务器端计算的抽奖概率，实现一个抽奖程序？">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars2.githubusercontent.com/u/3364139?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/" style='font-family: 微软雅黑'>茶藕丝陈</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+		
+		
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="2">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="4">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						<li>Categories</li>
+						<!--
+						
+						<li>Others</li>
+						
+						-->
+						
+						<li>About me</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="search-area">
+			<span class="search-icon"></span>
+			<input type="text" id="googleMe" placeholder="Search..." data-url="www.charlestech.info" />
+		</div>
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/charleschaochen" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/bbaocc" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="mafengwo" target="_blank" href="http://www.mafengwo.cn/u/49449646.html" title="mafengwo">mafengwo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/block-ajax/" style="font-size: 10.00px;">block ajax</a><a href="/tags/google/" style="font-size: 10.00px;">google</a><a href="/tags/jQuery/" style="font-size: 10.00px;">jQuery</a>
+					</div>
+				</section>
+				
+				<section class="switch-part switch-part3">
+					<div class="categories-widget">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</section>
+				
+				<!--
+				
+				<section class="switch-part switch-part4">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
+			        
+				</section>
+				
+				-->
+				
+				
+				
+				<section class="switch-part switch-part4">
+				
+					13年毕业，目前就职网易游戏，Java和前端coder，爱折腾技术，什么都懂一点。热爱生活，坚持梦想。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars2.githubusercontent.com/u/3364139?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">茶藕丝陈</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/charleschaochen" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/bbaocc" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="mafengwo" target="_blank" href="http://www.mafengwo.cn/u/49449646.html" title="mafengwo">mafengwo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-lottery-using-jquery-rotate" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/27/lottery-using-jquery-rotate/" class="article-date">
+  	<time datetime="2015-05-27T10:16:00.000Z" itemprop="datePublished">May 27 2015</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WEB前端/">WEB前端</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery-rotate/">jquery rotate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/抽奖程序/">抽奖程序</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于jQueryRotate的前端抽奖转盘实现
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>抽奖是产品运营中常见的活动方式，转盘是最常见也是体验较好的一种抽奖方式，那么问题来了，如何快速在页面上实现一个抽奖转盘，并结合服务器端计算的抽奖概率，实现一个抽奖程序？</p>
+<a id="more"></a>
+<h3 id="思路">思路</h3>
+<p>比较简单的一种方案是：</p>
+<p>1.UI根据本次参与抽奖的奖品，设计一个转盘素材和指针素材，前端用CSS显示在页面上。前端维护一个字典记录每类奖品在转盘上的角度。<br>2.点击开始抽奖后，向服务器发异步请求获取当前用户的中奖概率（可以根据其用户属性，如VIP等级，活跃程度等等计算中奖概率）<br>3.前端拿到概率之后，按比例构造一个中奖种子与未中奖种子的数组，并利用随机数从数组中取出一个值，该值决定了用户的抽奖结果。然后再让转盘转起来（可以先转个若干圈），最后停留在抽奖结果所对应的角度上。</p>
+<h3 id="技术点">技术点</h3>
+<p>所以实现所需的技术点可以归为两点：</p>
+<p>1.前端需要实现转盘图片或者指针图片的旋转，并控制它最终停留在某个角度。</p>
+<p>这里可以使用jQueryRotate这个插件来实现。</p>
+<p>jQueryRotate插件提供了rotate和stopRotate接口：</p>
+<ul>
+<li>rotate(config)</li>
+<li>config是一个json对象，可配置的参数有：</li>
+<li>angle: 起始的角度</li>
+<li>duration: 旋转持续时间</li>
+<li>animateTo: 最终在哪个角度上停止，默认顺时针旋转，如果角度为负数表示逆时针旋转</li>
+<li>callback: 停止后的回调函数</li>
+</ul>
+<p>旋转时从0度开始代表会从6点钟位置顺时针旋转，如下图。所以设置各个奖品的角度的时候要注意是相对6点钟位置的度数。</p>
+<p><img src="http://7x00n0.com1.z0.glb.clouddn.com/rotate.jpg" alt=""></p>
+<p>2.服务端需要根据用户属性决定用户中奖概率，具体情况采用具体策略，这里就不累述。</p>
+<h3 id="实现代码">实现代码</h3>
+<p>方案有了，接下来就可以撸代码了！<br>首先看下要实现的效果图，偷一下梦幻手游的抽奖图，物品纯看图瞎猜，见怪莫怪。</p>
+<p><img src="http://7x00n0.com1.z0.glb.clouddn.com/lottery.png" alt=""></p>
+<p>HTML和CSS：</p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">title</span>&gt;</span>转盘<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+* <span class="rules">{
+<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span>
+</span></span></span>}
+
+<span class="tag">body</span> <span class="rules">{
+<span class="rule"><span class="attribute">text-align</span>:<span class="value"> center
+</span></span></span>}
+
+<span class="class">.plate-container</span> <span class="rules">{
+<span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">509px</span></span></span>;
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">509px</span></span></span>;
+<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">50px</span> auto</span></span>;
+<span class="rule">}</span></span>
+
+<span class="class">.lottery-plate</span> <span class="rules">{
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500px</span></span></span>;
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">500px</span></span></span>;
+<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url</span>(images/plate-bg.png)</span></span>;
+<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+<span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;
+<span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span>
+</span></span></span>}
+
+<span class="class">.plate-container</span> <span class="tag">div</span><span class="class">.lottery-btn-container</span> <span class="rules">{
+<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500px</span></span></span>;
+<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">500px</span></span></span>;
+<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url</span>(images/plate-pointer.png)</span></span>;
+<span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer</span></span>;
+<span class="rule">}</span></span>
+
+
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> &gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"lotteryPlate"</span> &gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"lotteryBtn"</span> &gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"jquery-1.7.2.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"jQueryRotate.2.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+<span class="comment">&lt;!-- 抽奖时指针转动 --&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"rotate_btn.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="comment">&lt;!-- 抽奖时转盘转动 --&gt;</span>
+<span class="comment">&lt;!--&lt;script src="rotate_plate.js"&gt;&lt;/script&gt;--&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>这里我做了两种抽奖显示形式，一种是抽奖时指针在转轮盘不转（rotate_btn.js），一种是指针不转轮盘转（rotate_plate.js）。这里贴上rotate_btn.js的代码，rotate_plate.js其实类似，只是转动的目标以及角度需要调整。</p>
+<pre><code>$(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+<span class="comment">// 在异步请求期间旋转转盘，持续10s，转5圈</span>
+<span class="comment">// 如果这段时间内请求成功返回，会取消旋转，如果超时，回调会执行，提示网络超时</span>
+<span class="keyword">var</span> fRotateDuringReq = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    $(<span class="string">"#lotteryBtn"</span>).rotate({
+        angle: <span class="number">0</span>,
+        duration: <span class="number">10000</span>,
+        animateTo: <span class="number">1800</span>,
+        callback: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+            alert(<span class="string">'网络似乎不给力哦'</span>)
+        }
+    });
+}
+
+<span class="comment">/**
+ * 开始抽奖
+ * @param angle 抽奖结果图片所对应的角度
+ * @param text 抽奖结果提示文案
+ */</span>
+<span class="keyword">var</span> fStartLottery = <span class="function"><span class="keyword">function</span> <span class="params">(angle, text)</span> </span>{
+    $(<span class="string">'#lotteryBtn'</span>).stopRotate();  <span class="comment">// 停止之前的旋转</span>
+    $(<span class="string">"#lotteryBtn"</span>).rotate({
+        angle: <span class="number">0</span>,
+        duration: <span class="number">5000</span>,
+        animateTo: angle + <span class="number">1440</span>, <span class="comment">// 1440表示4圈，转4圈之后转到抽奖结果的角度</span>
+        callback: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+            alert(text);    <span class="comment">// 提示文案</span>
+        }
+    });
+};
+
+<span class="comment">// 奖品池，仙丹是阳光普照奖</span>
+<span class="keyword">var</span> awards = [{name: <span class="string">"仙丹"</span>, angle: [<span class="number">0</span>, <span class="number">51</span>, <span class="number">103</span>, <span class="number">180</span>]}, {name: <span class="string">"鹅卵石"</span>, angle: <span class="number">26</span>}, {
+    name: <span class="string">"经书"</span>,
+    angle: <span class="number">77</span>
+}, {name: <span class="string">"仙草"</span>, angle: <span class="number">129</span>}, {name: <span class="string">"令牌"</span>, angle: <span class="number">154</span>}, {name: <span class="string">"黄钻"</span>, angle: <span class="number">206</span>}, {
+    name: <span class="string">"暗器"</span>,
+    angle: <span class="number">231</span>
+}, {name: <span class="string">"珍珠"</span>, angle: <span class="number">283</span>}, {name: <span class="string">"鱼雷"</span>, angle: <span class="number">334</span>}];
+
+<span class="comment">/**
+ * 抽奖按钮点击事件
+ */</span>
+$(<span class="string">"#lotteryBtn"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+    fRotateDuringReq(); <span class="comment">// 请求期间的旋转</span>
+    <span class="keyword">var</span> probability = <span class="number">1</span>; <span class="comment">// 模拟请求返回的中奖概率</span>
+    <span class="keyword">var</span> data = [];
+    <span class="keyword">if</span> (probability &lt;= <span class="number">0</span>) {
+        <span class="comment">// 如果没有中奖概率，抽奖盒子中只放入未中奖（或阳光普照奖）的种子值</span>
+        data.push(<span class="number">0</span>);
+    } <span class="keyword">else</span> {
+        <span class="comment">// 如果有中奖概率，放入相应概率的中奖类型与不中奖的种子值</span>
+        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; awards.length; i++) {
+            data.push(i);
+        }
+        <span class="keyword">var</span> awardCount = awards.length - <span class="number">1</span>; <span class="comment">// 减掉第一个阳光普照奖</span>
+        <span class="keyword">var</span> total = <span class="built_in">Math</span>.ceil(awardCount / <span class="built_in">parseFloat</span>(probability));
+        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; total - awardCount; i++) data.push(<span class="number">0</span>);
+    }
+    <span class="built_in">console</span>.log(<span class="string">"Lottery seeds: "</span> + data);
+
+    <span class="keyword">var</span> seedIndex = data[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * data.length)];   <span class="comment">// 随机抽取种子</span>
+
+    <span class="keyword">var</span> angle = awards[seedIndex].angle;
+    <span class="keyword">if</span> (<span class="keyword">typeof</span> angle != <span class="string">"number"</span>) {
+        <span class="comment">// 角度是数组，说明转盘上有多个该奖品，随机取一个</span>
+        angle = angle[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * angle.length)];
+    }
+    fStartLottery(angle, <span class="string">"恭喜您抽中"</span> + awards[seedIndex].name);
+});
+
+});
+</code></pre><p>demo页面：<a href="http://www.charlestech.info/examples/jqueryrotate/lottery.html" target="_blank" rel="external">http://www.charlestech.info/examples/jqueryrotate/lottery.html</a></p>
+<p>代码Github：<a href="https://github.com/charleschaochen/LotteryProgram" target="_blank" rel="external">https://github.com/charleschaochen/LotteryProgram</a></p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/27/ajax-proxy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">异步请求代理ajaxProxy</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="lottery-using-jquery-rotate" data-title="基于jQueryRotate的前端抽奖转盘实现" data-url="http://www.charlestech.info/2015/05/27/lottery-using-jquery-rotate/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Charles Chen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
