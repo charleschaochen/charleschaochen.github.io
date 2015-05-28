@@ -243,7 +243,7 @@
 <a id="more"></a>
 <h3 id="思路">思路</h3>
 <p>比较简单的一种方案是：</p>
-<p>1.UI根据本次参与抽奖的奖品，设计一个转盘素材和指针素材，前端用CSS显示在页面上。前端维护一个字典记录每类奖品在转盘上的角度。<br>2.点击开始抽奖后，向服务器发异步请求获取当前用户的中奖概率（可以根据其用户属性，如VIP等级，活跃程度等等计算中奖概率）<br>3.前端拿到概率之后，按比例构造一个中奖种子与未中奖种子的数组，并利用随机数从数组中取出一个值，该值决定了用户的抽奖结果。然后再让转盘转起来（可以先转个若干圈），最后停留在抽奖结果所对应的角度上。</p>
+<p>1.UI根据本次参与抽奖的奖品，设计一个转盘素材和指针素材，前端用CSS显示在页面上。前端维护一个字典记录每类奖品在转盘上的角度。<br>2.点击开始抽奖后，向服务器发异步请求计算出当前用户的中奖结果（可以根据其用户属性，如VIP等级，活跃程度等等计算是否中奖，中什么奖），将中奖结果存入db，并返回给前端。<br>3.前端拿到结果之后，获取该奖品在转盘上的角度，然后让转盘转起来（可以先转个若干圈），最后停留在所对应的角度上。</p>
 <h3 id="技术点">技术点</h3>
 <p>所以实现所需的技术点可以归为两点：</p>
 <p>1.前端需要实现转盘图片或者指针图片的旋转，并控制它最终停留在某个角度。</p>
@@ -259,7 +259,7 @@
 </ul>
 <p>旋转时从0度开始代表会从6点钟位置顺时针旋转，如下图。所以设置各个奖品的角度的时候要注意是相对6点钟位置的度数。</p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/rotate.jpg" alt=""></p>
-<p>2.服务端需要根据用户属性决定用户中奖概率，具体情况采用具体策略，这里就不累述。</p>
+<p>2.服务端需要根据用户属性计算抽奖结果，具体情况采用具体策略，这里就不累述。</p>
 <h3 id="实现代码">实现代码</h3>
 <p>方案有了，接下来就可以撸代码了！<br>首先看下要实现的效果图，偷一下梦幻手游的抽奖图，物品纯看图瞎猜，见怪莫怪。</p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/lottery.png" alt=""></p>
@@ -352,44 +352,34 @@
     });
 };
 
-<span class="comment">// 奖品池，仙丹是阳光普照奖</span>
-<span class="keyword">var</span> awards = [{name: <span class="string">"仙丹"</span>, angle: [<span class="number">0</span>, <span class="number">51</span>, <span class="number">103</span>, <span class="number">180</span>]}, {name: <span class="string">"鹅卵石"</span>, angle: <span class="number">26</span>}, {
-    name: <span class="string">"经书"</span>,
-    angle: <span class="number">77</span>
-}, {name: <span class="string">"仙草"</span>, angle: <span class="number">129</span>}, {name: <span class="string">"令牌"</span>, angle: <span class="number">154</span>}, {name: <span class="string">"黄钻"</span>, angle: <span class="number">206</span>}, {
-    name: <span class="string">"暗器"</span>,
-    angle: <span class="number">231</span>
-}, {name: <span class="string">"珍珠"</span>, angle: <span class="number">283</span>}, {name: <span class="string">"鱼雷"</span>, angle: <span class="number">334</span>}];
+<span class="comment">// 奖品池字典，仙丹是阳光普照奖</span>
+<span class="keyword">var</span> awards = {
+    <span class="string">"0"</span>: {name: <span class="string">"仙丹"</span>, angle: [<span class="number">0</span>, <span class="number">51</span>, <span class="number">103</span>, <span class="number">180</span>]}, <span class="string">"1"</span>: {name: <span class="string">"鹅卵石"</span>, angle: <span class="number">26</span>}, <span class="string">"2"</span>: {
+        name: <span class="string">"经书"</span>,
+        angle: <span class="number">77</span>
+    }, <span class="string">"3"</span>: {name: <span class="string">"仙草"</span>, angle: <span class="number">129</span>}, <span class="string">"4"</span>: {name: <span class="string">"令牌"</span>, angle: <span class="number">154</span>}, <span class="string">"5"</span>: {name: <span class="string">"黄钻"</span>, angle: <span class="number">206</span>}, <span class="string">"6"</span>: {
+        name: <span class="string">"暗器"</span>,
+        angle: <span class="number">231</span>
+    }, <span class="string">"7"</span>: {name: <span class="string">"珍珠"</span>, angle: <span class="number">283</span>}, <span class="string">"8"</span>: {name: <span class="string">"鱼雷"</span>, angle: <span class="number">334</span>}
+};
 
 <span class="comment">/**
  * 抽奖按钮点击事件
  */</span>
 $(<span class="string">"#lotteryBtn"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
     fRotateDuringReq(); <span class="comment">// 请求期间的旋转</span>
-    <span class="keyword">var</span> probability = <span class="number">1</span>; <span class="comment">// 模拟请求返回的中奖概率</span>
-    <span class="keyword">var</span> data = [];
-    <span class="keyword">if</span> (probability &lt;= <span class="number">0</span>) {
-        <span class="comment">// 如果没有中奖概率，抽奖盒子中只放入未中奖（或阳光普照奖）的种子值</span>
-        data.push(<span class="number">0</span>);
-    } <span class="keyword">else</span> {
-        <span class="comment">// 如果有中奖概率，放入相应概率的中奖类型与不中奖的种子值</span>
-        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; awards.length; i++) {
-            data.push(i);
-        }
-        <span class="keyword">var</span> awardCount = awards.length - <span class="number">1</span>; <span class="comment">// 减掉第一个阳光普照奖</span>
-        <span class="keyword">var</span> total = <span class="built_in">Math</span>.ceil(awardCount / <span class="built_in">parseFloat</span>(probability));
-        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; total - awardCount; i++) data.push(<span class="number">0</span>);
-    }
-    <span class="built_in">console</span>.log(<span class="string">"Lottery seeds: "</span> + data);
+    <span class="keyword">var</span> awardIds = [<span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>];
+    <span class="comment">// 随机抽取一个奖品，模拟服务端计算出的用户抽奖结果</span>
+    <span class="keyword">var</span> awardKey = awardIds[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(awardIds.length))];
+    <span class="keyword">var</span> award = awards[awardKey];
+    <span class="built_in">console</span>.log(<span class="string">"Server return award: "</span> + award.name);
 
-    <span class="keyword">var</span> seedIndex = data[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * data.length)];   <span class="comment">// 随机抽取种子</span>
-
-    <span class="keyword">var</span> angle = awards[seedIndex].angle;
+    <span class="keyword">var</span> angle = award.angle;
     <span class="keyword">if</span> (<span class="keyword">typeof</span> angle != <span class="string">"number"</span>) {
         <span class="comment">// 角度是数组，说明转盘上有多个该奖品，随机取一个</span>
-        angle = angle[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * angle.length)];
+        angle = angle[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (angle.length))];
     }
-    fStartLottery(angle, <span class="string">"恭喜您抽中"</span> + awards[seedIndex].name);
+    fStartLottery(angle, <span class="string">"恭喜您抽中"</span> + award.name);
 });
 
 });
