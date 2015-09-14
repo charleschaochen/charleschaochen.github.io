@@ -230,6 +230,8 @@ a {
   -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   height: 100%;
+  overflow-y: auto;
+  padding-right: 20px;
 }
 #container .left-col .overlay {
   width: 100%;
@@ -555,6 +557,13 @@ a {
 }
 #header .header-nav .social a.linkedin:hover {
   border: 1px solid #006b98;
+}
+#header .header-nav .social a.facebook {
+  background: url("/img/facebook.png") center no-repeat #3b5998;
+  border: 1px solid #3b5998;
+}
+#header .header-nav .social a.facebook:hover {
+  border: 1px solid #2d4373;
 }
 #header .header-nav .social a.mafengwo {
   background: url("/img/mafengwo.png") center no-repeat #3b5998;
