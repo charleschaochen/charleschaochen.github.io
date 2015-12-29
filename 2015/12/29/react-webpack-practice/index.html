@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>基于React + webpack的组件化编程和自动化构建实践 | Charles Tech Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作为React入门级的新手，在开始接触React的时候，其实并没觉得React具有多大的优势，理论在实践面前是脆弱的，只有真正应用到工程中，才能知道技术框架有几斤几两重。当真正将工程完全使用React的思想来开发时，才慢慢理解它的原理和优势。而webpack是目前相对于其他构建工具来说与react结合比较完美的工具，经过一段时间在项目中使用react+webpack的经验，这里想分享一下使用这套方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于React + webpack的组件化编程和自动化构建实践">
+<meta property="og:url" content="http://www.charlestech.info/2015/12/29/react-webpack-practice/">
+<meta property="og:site_name" content="Charles Tech Blog">
+<meta property="og:description" content="作为React入门级的新手，在开始接触React的时候，其实并没觉得React具有多大的优势，理论在实践面前是脆弱的，只有真正应用到工程中，才能知道技术框架有几斤几两重。当真正将工程完全使用React的思想来开发时，才慢慢理解它的原理和优势。而webpack是目前相对于其他构建工具来说与react结合比较完美的工具，经过一段时间在项目中使用react+webpack的经验，这里想分享一下使用这套方">
+<meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/react-img.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于React + webpack的组件化编程和自动化构建实践">
+<meta name="twitter:description" content="作为React入门级的新手，在开始接触React的时候，其实并没觉得React具有多大的优势，理论在实践面前是脆弱的，只有真正应用到工程中，才能知道技术框架有几斤几两重。当真正将工程完全使用React的思想来开发时，才慢慢理解它的原理和优势。而webpack是目前相对于其他构建工具来说与react结合比较完美的工具，经过一段时间在项目中使用react+webpack的经验，这里想分享一下使用这套方">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="http://file29.mafengwo.net/M00/7D/C0/wKgBpVXrxiCAAKXwAAw-HvfG6RY46.head.w120.jpeg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/" style='font-family: 微软雅黑'>Charles Chen</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+		
+		
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="2">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="3">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="4">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						<li>Categories</li>
+						<!--
+						
+						<li>Others</li>
+						
+						-->
+						
+						<li>About me</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="search-area">
+			<span class="search-icon"></span>
+			<input type="text" id="googleMe" placeholder="Search..." data-url="www.charlestech.info" />
+		</div>
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/charleschaochen" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/bbaocc" title="weibo">weibo</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/bbao.cc" title="facebook">facebook</a>
+					        
+								<a class="mafengwo" target="_blank" href="http://www.mafengwo.cn/u/49449646.html" title="mafengwo">mafengwo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/block-ajax/" style="font-size: 10.00px;">block ajax</a><a href="/tags/flex/" style="font-size: 10.00px;">flex</a><a href="/tags/google/" style="font-size: 10.00px;">google</a>
+					</div>
+				</section>
+				
+				<section class="switch-part switch-part3">
+					<div class="categories-widget">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</section>
+				
+				<!--
+				
+				<section class="switch-part switch-part4">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
+			        
+				</section>
+				
+				-->
+				
+				
+				
+				<section class="switch-part switch-part4">
+				
+					13年毕业，目前就职网易游戏，Java和前端coder，爱折腾技术，什么都懂一点。热爱生活，坚持梦想。
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="http://file29.mafengwo.net/M00/7D/C0/wKgBpVXrxiCAAKXwAAw-HvfG6RY46.head.w120.jpeg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">Charles Chen</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/charleschaochen" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/bbaocc" title="weibo">weibo</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/bbao.cc" title="facebook">facebook</a>
+			        
+						<a class="mafengwo" target="_blank" href="http://www.mafengwo.cn/u/49449646.html" title="mafengwo">mafengwo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-react-webpack-practice" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/29/react-webpack-practice/" class="article-date">
+  	<time datetime="2015-12-29T02:03:00.000Z" itemprop="datePublished">Dec 29 2015</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WEB前端/">WEB前端</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-hot-loader/">react-hot-loader</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack-dev-server/">webpack-dev-server</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于React + webpack的组件化编程和自动化构建实践
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为React入门级的新手，在开始接触React的时候，其实并没觉得React具有多大的优势，理论在实践面前是脆弱的，只有真正应用到工程中，才能知道技术框架有几斤几两重。当真正将工程完全使用React的思想来开发时，才慢慢理解它的原理和优势。而webpack是目前相对于其他构建工具来说与react结合比较完美的工具，经过一段时间在项目中使用react+webpack的经验，这里想分享一下使用这套方案的具体细节，同时也想听听大家的建议，看看这套实践有什么地方需要改善。</p>
+<a id="more"></a>
+<h3 id="Why_React">Why React</h3>
+<p>在web前端开发过程中，我们经常要处理的一个场景是，将变化的数据反映到前端UI上，我们用的最多的应该是基于jquery的dom节点操作。复杂和频繁的DOM操作通常是前端性能瓶颈产生的原因，如果将数据的变化高效地反映到用户界面上，这就是React所要解决的问题。</p>
+<p>React引入了虚拟DOM（Virtual DOM）的机制，它在内存中构造了一个虚拟的DOM树，基于React开发时所有的DOM构造都是在这棵虚拟的DOM树上进行的，这棵DOM树只有当mount（可以理解为安装或载入）到UI上某个容器中，才会渲染成真正的浏览器DOM节点。而每当数据发生变化时，React都会重新渲染整个虚拟的DOM树，并将新的DOM树与上一个状态的DOM树对比，将真正需要变化的部分更新到浏览器实际的DOM节点上。简单来说，React只是对diff部分进行实际的DOM更新。</p>
+<p><em>可能有人会说，每次数据变化都要构建新的DOM树，性能岂不是很差？</em></p>
+<p>事实上React构建的DOM树是内存数据，所以性能是极高的，真正的DOM操作只是每次变化的那一小部分。</p>
+<p><em>可能又有人会说，我有用jquery同样是可以修改真正发生变化的那一小部分，为啥我要用React？</em></p>
+<p>撇开React底层在操作DOM节点是否真的使用了性能极高的方式不说，使用React开发组件与直接使用jquery操作DOM节点的不同还在于，React简化了开发的逻辑，我们不需要关心某一次具体的数据变化如何更新某一个或多个具体的DOM节点，我们只需要关心在任一数据状态下，组件是如何渲染的，也就是说我们关心的是抽象的渲染逻辑而并非具体的DOM操作。</p>
+<p>简单来说，当数据发生变化时，使用jquery的通常做法是查找具体的DOM节点，修改DOM节点的内容，而使用React的做法是更新组件的状态，触发它重新渲染，而真正的DOM节点操作由React框架去负责。这样的好处在于简化了程序员的开发，有利于代码的维护。想象一下如果页面的逻辑很复杂，当出现问题时，我们很难找到bug是由哪部分的DOM操作导致的，因为jquery可以随便操作DOM。</p>
+<p>React引入组件化开发思想，这里说的组件，指的是封装起来具有独立功能的UI部件，React提倡以组件的方式去组织整个页面，将UI上一些功能相对独立的部分封装成一个个组件，小组件嵌套组合成大组件，最终构成整个用户界面。组件化开发的好处很明显，高复用，松耦合，易维护。</p>
+<h3 id="Why_Webpack">Why Webpack</h3>
+<p>一个基于react的前端工程，使用什么模块管理和构建工具比较好呢？网上随便搜索，可能就只有webpack是不二首选了。</p>
+<p>尤其是react-hot-loader的存在，将webpack推上了react的最佳拍档的地位。</p>
+<p>react-hot-loader是一个实现react组件热加载的webpack插件，人家github首页都说了</p>
+<p><em>To use React Hot Loader in an existing project, you need to</em></p>
+<p><em>switch to Webpack for builds (instead of RequireJS or Browserify);</em></p>
+<p>意思是要用老子，麻烦丢弃requirejs和browserify那套东西，用webpack！</p>
+<p>我们都知道Javascript模块管理的两大规范：CommonJS和AMD，前者模块的同步加载规范，主要用在服务端NodeJS，后者是模块的异步加载规范，主要应用在客户端，通过requirejs等工具实现。</p>
+<p>CommonJS这种同步的规范为什么不能直接用在客户端？原因很简单，客户端加载远程模块是有网络延迟的，这就决定我们只能用异步回调的方式，发出依赖请求，继续执行下面的逻辑，等模块完全加载完毕后再执行回调，这就是所谓的AMD。</p>
+<p>写过Node的童鞋都知道，CommonJS定义模块和引入模块的方式是如此优雅（相对于requirejs编写回调的方式），而且现在npm称为主流的javascript组件库的发布平台，越来越多成熟的项目也发布到npm上。如果我们想要在浏览器端使用CommonJS的方式优雅地开发模块，随心所欲地引入第三方的npm模块，或者如果工程中在服务端用了react渲染组件HTML返回到前端的方式，现在要将react组件无缝迁移到客户端，等等场景，我们要怎么做？于是诞生了类似browerify这样的工具，开发时可以用编写node模块的方式开发，打包时会自动转换为AMD异步的方式在浏览器上执行。</p>
+<p>而webpack也可以实现browerify的功能，除此之外，webpack还具有很多特性：</p>
+<ol>
+<li>同时支持CommonJS和AMD两种方式</li>
+<li>将所有静态都视为模块，这里所说的静态资源包括npm模块，js模块，css/less/scss文件，图片文件，字体文件等等。也就是说我们可以在js中用require直接引入css/less/scss、图片等等</li>
+<li>提取各个模块的公共部分，充分利用浏览器缓存</li>
+<li>提供多种插件和加载器，支持对less/scss，jsx，es6，coffeescript文件的加载。grunt/gulp能做到的，webpack基本都可以做到，包括实时打包、对sourcemap的支持等等。</li>
+</ol>
+<h3 id="webpack配置和执行">webpack配置和执行</h3>
+<h4 id="webpack配置">webpack配置</h4>
+<p>类似grunt和gulp，webpack也是通过运行一个配置文件来执行项目的构建。webpack配置文件的默认名称是webpack.config.js，它是一个node模块，所有的配置在exports的对象中设置。</p>
+<p>一个简单又不失完整的webpack.config.js如下：</p>
+<pre><code><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);
+
+<span class="module"><span class="keyword">module</span>.exports = </span>{
+    entry: [
+        <span class="string">'./app/main.js'</span>
+    ],
+    devtool: <span class="string">"source-map"</span>,
+    output: {
+        path: path.join(__dirname, <span class="string">'/build/'</span>),
+        publicPath: <span class="string">'/build/'</span>,
+        filename: <span class="string">"[name].bundle.js"</span>
+    },
+    plugins: [
+        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">"common.chunk.js"</span>)
+    ],
+    <span class="module"><span class="keyword">module</span>: </span>{
+        loaders: [
+            { test: <span class="regexp">/\.js$/</span>, loader: <span class="string">'babel-loader'</span> },  <span class="comment">// 加载jsx和es6文件</span>
+            { test: <span class="regexp">/\.less$/</span>, loader: <span class="string">'style-loader!css-loader!less-loader'</span> }, <span class="comment">//加载less文件</span>
+            { test: <span class="regexp">/\.css$/</span>, loader: <span class="string">'style-loader!css-loader'</span> },     <span class="comment">// 加载css文件</span>
+            {
+                test: <span class="regexp">/\.(ttf|otf|eot|svg|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/</span>,
+                loader: <span class="string">"url-loader?limit=10240"</span>
+            },     <span class="comment">// 加载字体文件，允许的最大文件大小为10k</span>
+            { test: <span class="regexp">/\.(png|jpg)$/</span>, loader: <span class="string">'url-loader?limit=8192'</span> }   <span class="comment">// 加载图片文件，转换为inline base64数据，允许最大的文件大小为8k</span>
+        ]
+    },
+    resolve: {
+        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.css'</span>, <span class="string">'.less'</span>, <span class="string">'.ejs'</span>]     <span class="comment">// 定义在该数组中的文件后缀不需要显示给出</span>
+    }
+</code></pre><p><strong>配置解析</strong></p>
+<p><strong>entry</strong>： 定义入口文件，webpack会从这些入口文件触发，将文件中所有require的模块（包括js模块，样式，图片等）都打包进来。webpack建议每个页面使用一个入口js文件，页面使用到的所有资源都在这个入口文件中require进来，webpack可以根据这个入口文件将所有资源打包进来。</p>
+<p><strong>output</strong>：</p>
+<ul>
+<li>path：打包后文件存放的绝对路径</li>
+<li>filename: 打包后的文件名，filename: “[name].bundle.js”表示将入口文件打包成 -&gt; 原文件名.bundle.js</li>
+<li>publicPath：网站运行时的访问路径。例如上面定义的图片加载器，所有小于8k的图片都会转换成内链base64数据，而超过8k的图片会直接复制到目标路径下，并在代码中用publicPath去查找</li>
+</ul>
+<p><strong>plugins</strong>：定义打包过程中所使用到的所有插件，这里用到CommonsChunk插件，它会将所有模块的公共部分独立出来生成一个common.chunk.js文件，利用浏览器本身的缓存，避免公共部分在不同页面被重复加载。webpack还自带了很多其他插件，例如代码压缩混淆插件UglifyJsPlugin。</p>
+<p><strong>loaders</strong>：定义文件加载器，webpack自带了很多加载器，如babel-loader,less-loader,url-loader等，多个加载器用!来实现管道处理</p>
+<p><strong>resolve</strong>：定义在extensions数组中的文件后缀在require的时候无需显示给出</p>
+<p><strong>devtool</strong>：使用的开发工具，上面用到sourcemap，便于开始时在浏览器中调试。</p>
+<h4 id="执行打包">执行打包</h4>
+<p>执行webpack命令，会自动读取webpack.config.js文件进行打包<br>如果要执行其他文件名：</p>
+<pre><code><span class="comment">webpack</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">config</span> <span class="comment">webpack</span><span class="string">.</span><span class="comment">config</span><span class="string">.</span><span class="comment">dev</span><span class="string">.</span><span class="comment">js</span>
+</code></pre><p>-w可以实现监控文件的变化实时打包：</p>
+<pre><code><span class="title">webpack</span> -w
+</code></pre><h4 id="举个栗子">举个栗子</h4>
+<p>举个简单的实践例子。假设有如下项目文件结构：</p>
+<p><img src="http://7x00n0.com1.z0.glb.clouddn.com/react-img.png" alt=""></p>
+<p>index.html是一个demo页面，scripts/main.js是这个页面的入口脚本文件，styles/main.css定义了这个页面的样式。index.html中引入打包后入口文件main.bundle.js：</p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">section</span>&gt;</span><span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/build/main.bundle.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>main.js的逻辑如下，其中Hello是一个react组件：</p>
+<pre><code>requre(<span class="string">'../styles/main.css'</span>);     <span class="comment">// 引入样式</span>
+<span class="keyword">var</span> React = <span class="keyword">require</span>(<span class="string">'react'</span>);
+<span class="keyword">var</span> Hello = <span class="keyword">require</span>(<span class="string">'./hello.js'</span>);
+
+React.render(&lt;Hello /&gt;, document.queryForSelector(<span class="string">'section'</span>));
+</code></pre><p>hello.js逻辑如下：</p>
+<pre><code><span class="keyword">var</span> React = require(<span class="string">'react'</span>);
+<span class="keyword">var</span> Hello = React.createClass({
+ render: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+      <span class="keyword">return</span> (
+           &lt;p&gt;Hello, <span class="keyword">this</span> <span class="keyword">is</span> a webpack demo&lt;/p&gt;
+      );
+ }
+});
+module.exports = Hello;
+</code></pre><h3 id="项目实践">项目实践</h3>
+<p>目前我所负责的一个前端工程就是基于react+webpack这套方案，工程的组织和webpack的配置如下：</p>
+<ul>
+<li>每个页面只使用一个脚本作为入口文件，所有入口文件都配置在一个名为entry.config.json的文件中，由webpack config文件去读取。</li>
+</ul>
+<p>如：</p>
+<pre><code>{
+    "<span class="attribute">tag_apply.index</span>": <span class="value"><span class="string">"./web/scripts/tag_apply/index.js"</span></span>,
+    "<span class="attribute">tag_apply.tags</span>": <span class="value"><span class="string">"./web/scripts/tag_apply/tags.js"</span></span>,
+    "<span class="attribute">tag_apply.my_tags</span>": <span class="value"><span class="string">"./web/scripts/tag_apply/my_tags.js"</span></span>,
+    "<span class="attribute">tag_apply.approval</span>": <span class="value"><span class="string">"./web/scripts/tag_apply/approval.js"</span></span>,
+    "<span class="attribute">athena.feedback</span>": <span class="value"><span class="string">"./web/scripts/athena/feedback.js"</span></span>,
+    "<span class="attribute">athena.index</span>": <span class="value"><span class="string">"./web/scripts/athena/index.js"</span>
+</span>}
+</code></pre><p>entry.config.json文件其实就是webpack中entry的属性值，指定了所有页面的入口文件名和路径。</p>
+<p>webpack config文件中，用require引入该文件：</p>
+<pre><code><span class="symbol">entry:</span> <span class="keyword">require</span>(<span class="string">"./entry_config.json"</span>)
+</code></pre><ul>
+<li>HTML页面直接引入打包后的bundle文件名，以及使用CommonsChunk独立出来的公共部分脚本。</li>
+</ul>
+<p>如：</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/build/common.chunk.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/build/hello.bundle.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><ul>
+<li><p>页面所依赖的所有react组件，less样式文件都在页面对应的入口脚本中通过require引入。</p>
+</li>
+<li><p>react所依赖的模块和组件自身的样式文件，在react组件中通过require引入。</p>
+</li>
+<li><p>所有js模块都使用CommonJS的方式去编写。</p>
+</li>
+<li><p>开发时用一个webpack config文件（工程中我命名为webpack.config.dev.js），发布时用另外一个webpack config文件。<br>二者主要的区别是，开发用的配置文件我添加了sourcemap工具，便于开发时的调试，发布用的配置文件我配置了文件名的hash处理，js代码的压缩混淆，以及修改HTML文件中对静态文件的引用名称的工具。</p>
+</li>
+</ul>
+<p>下面我贴出两个文件的内容：</p>
+<p>webpack.config.dev.js （开发时的webpack配置，开发过程中用-w实时打包）：</p>
+<pre><code><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);
+<span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+<span class="keyword">var</span> glob = <span class="built_in">require</span>(<span class="string">'glob'</span>);
+<span class="keyword">var</span> CommonUtil = <span class="built_in">require</span>(<span class="string">'./web/scripts/common_util.js'</span>);
+
+<span class="keyword">var</span> sDistPath = <span class="string">'/build/'</span>;
+
+<span class="comment">// 清除build文件夹下的所有文件</span>
+<span class="built_in">console</span>.log(<span class="string">'Clean build files...'</span>);
+glob(<span class="string">'web'</span> + sDistPath + <span class="string">'*'</span>, {}, <span class="function"><span class="keyword">function</span> <span class="params">(er, files)</span> </span>{
+    files.forEach(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> </span>{
+        <span class="built_in">console</span>.log(<span class="string">'delete file:'</span> + file);
+        fs.unlinkSync(file);
+    });
+    <span class="built_in">console</span>.log(<span class="string">'Clean done.'</span>);
+});
+
+<span class="built_in">module</span>.exports = {
+    entry: <span class="built_in">require</span>(<span class="string">"./entry_config.json"</span>),
+    devtool: <span class="string">"source-map"</span>,
+    output: {
+        path: path.join(__dirname, <span class="string">'web/'</span>, sDistPath),
+        publicPath: CommonUtil.contextPath + sDistPath,
+        filename: <span class="string">"[name].bundle.js"</span>
+    },
+    plugins: [
+        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">"common.chunk.js"</span>)
+    ],
+    <span class="built_in">module</span>: {
+        loaders: [
+            { test: <span class="regexp">/\.js$/</span>, loader: <span class="string">'babel-loader'</span> },  <span class="comment">// parse jsx and es6</span>
+            { test: <span class="regexp">/\.less$/</span>, loader: <span class="string">'style-loader!css-loader!less-loader'</span> }, <span class="comment">// use ! to chain loaders</span>
+            { test: <span class="regexp">/\.(tpl|ejs)$/</span>, loader: <span class="string">'ejs'</span>},  <span class="comment">// parse ejs</span>
+            { test: <span class="regexp">/\.css$/</span>, loader: <span class="string">'style-loader!css-loader'</span> },
+            {
+                test: <span class="regexp">/\.(ttf|otf|eot|svg|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/</span>,
+                loader: <span class="string">"url-loader?limit=10000"</span>
+            },
+            { test: <span class="regexp">/\.(png|jpg)$/</span>, loader: <span class="string">'url-loader?limit=8192'</span> }   <span class="comment">// inline base64 URLs for &lt;=8k images, direct URLs for the rest</span>
+        ]
+    },
+    resolve: {
+        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.css'</span>, <span class="string">'.less'</span>, <span class="string">'.ejs'</span>]
+    }
+};
+</code></pre><p>webpack.config.js（发布时使用的webpack配置）：</p>
+<pre><code><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);
+<span class="keyword">var</span> revc = <span class="built_in">require</span>(<span class="string">"./webpack-revc"</span>);
+<span class="keyword">var</span> CommonUtil = <span class="built_in">require</span>(<span class="string">'./web/scripts/common_util.js'</span>);
+<span class="keyword">var</span> fs =<span class="built_in">require</span>(<span class="string">'fs'</span>);
+<span class="keyword">var</span> glob =<span class="built_in">require</span>(<span class="string">'glob'</span>);
+
+<span class="keyword">var</span> sHtmlFilePatterm = <span class="string">'./web/**/*.html'</span>;   <span class="comment">// 需要替换引用静态文件名的HTML文件匹配字符串</span>
+<span class="keyword">var</span> sHtmlFileExcludePattern = <span class="string">'./web/lib/**/*.html'</span>;    <span class="comment">// 不需要替换引用静态文件名的HTML文件匹配字符串</span>
+
+<span class="keyword">var</span> sDistPath = <span class="string">'/build/'</span>;
+
+<span class="comment">// 清除build文件夹下的所有文件</span>
+glob(<span class="string">'web'</span> + sDistPath + <span class="string">'*'</span>, {}, <span class="function"><span class="keyword">function</span> <span class="params">(er, files)</span> </span>{
+    <span class="built_in">console</span>.log(<span class="string">'Clean build files...'</span>);
+    files.forEach(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> </span>{
+        <span class="built_in">console</span>.log(<span class="string">'delete file:'</span> + file);
+        fs.unlinkSync(file);
+    });
+    <span class="built_in">console</span>.log(<span class="string">'Clean done.'</span>);
+});
+
+
+<span class="built_in">module</span>.exports = {
+    entry: <span class="built_in">require</span>(<span class="string">"./entry_config.json"</span>),
+    output: {
+        path: path.join(__dirname, <span class="string">'web/'</span>, sDistPath),
+        publicPath: CommonUtil.contextPath + sDistPath,
+        filename: <span class="string">"[name].[hash].bundle.js"</span>
+    },
+    plugins: [
+        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">"common.chunk.js"</span>),
+        <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin({minimize: <span class="literal">true</span>}),
+        <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+            <span class="keyword">this</span>.plugin(<span class="string">"done"</span>, <span class="function"><span class="keyword">function</span><span class="params">(stats)</span> </span>{
+                <span class="comment">// 生成stats.json文件</span>
+                revc(stats.toJson(), sHtmlFilePatterm, sHtmlFileExcludePattern);    <span class="comment">// 修改HTML中对静态文件的引用名</span>
+            });
+        }
+    ],
+    <span class="built_in">module</span>: {
+        loaders: [
+            { test: <span class="regexp">/\.js$/</span>, loader: <span class="string">'babel-loader'</span> },
+            { test: <span class="regexp">/\.less$/</span>, loader: <span class="string">'style-loader!css-loader!less-loader'</span> }, <span class="comment">// use ! to chain loaders</span>
+            { test: <span class="regexp">/\.(tpl|ejs)$/</span>, loader: <span class="string">'ejs'</span>},  <span class="comment">// parse ejs</span>
+            { test: <span class="regexp">/\.css$/</span>, loader: <span class="string">'style-loader!css-loader'</span> },
+            {
+                test: <span class="regexp">/\.(ttf|otf|eot|svg|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/</span>,
+                loader: <span class="string">"url-loader?limit=10000"</span>
+            },
+            { test: <span class="regexp">/\.(png|jpg)$/</span>, loader: <span class="string">'url-loader?limit=8192'</span> }   <span class="comment">// inline base64 URLs for &lt;=8k images, direct URLs for the rest</span>
+        ]
+    },
+    resolve: {
+        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.css'</span>, <span class="string">'.less'</span>, <span class="string">'.ejs'</span>]
+    }
+};
+</code></pre><p>由于文件打包后添加了hash值，HTML代码中的引用名也对应进行修改。这里的webpack-revc模块是我自己写的一个实现HTML代码中引用名修改的模块，代码如下：</p>
+<pre><code><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);
+<span class="keyword">var</span> glob = <span class="built_in">require</span>(<span class="string">"glob"</span>)
+
+<span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="params">(stats, sPattern, sExcludePattern)</span> </span>{
+    <span class="comment">/**
+     * 替换文档中的src字符为rev字符
+     */</span>
+    <span class="keyword">var</span> _fReplaceRev = <span class="function"><span class="keyword">function</span> <span class="params">(path, src, rev)</span> </span>{
+        <span class="keyword">var</span> data = fs.readFileSync(path);
+        <span class="keyword">var</span> newValue = data.toString().replace(src, rev);
+        fs.writeFileSync(path, newValue);
+    };
+
+    <span class="built_in">console</span>.log(<span class="string">'Replacing references in path: '</span> + sPattern + <span class="string">'...'</span>);
+    <span class="built_in">console</span>.log(<span class="string">'File stats: '</span> + <span class="built_in">JSON</span>.stringify(stats.assetsByChunkName));
+
+    <span class="keyword">if</span> (stats &amp;&amp; stats.assetsByChunkName) {
+        <span class="comment">// 遍历所有满足sFilter匹配的文件，替换文件中引用的静态文件名</span>
+        <span class="keyword">var</span> oOptions = {};
+        <span class="keyword">if</span> (<span class="keyword">typeof</span> sExcludePattern !== <span class="string">"undefined"</span> || sExcludePattern !== <span class="literal">null</span>)
+            oOptions = {ignore: sExcludePattern};   <span class="comment">// 需要排除的文件</span>
+        glob(sPattern, oOptions, <span class="function"><span class="keyword">function</span> <span class="params">(er, files)</span> </span>{
+            files.forEach(<span class="function"><span class="keyword">function</span> <span class="params">(file)</span> </span>{
+                <span class="comment">// 替换file中引用的静态文件名称</span>
+                <span class="built_in">console</span>.log(<span class="string">'Replacing references in file: '</span> + file + <span class="string">'...'</span>);
+                <span class="keyword">for</span> (<span class="keyword">var</span> name <span class="keyword">in</span> stats.assetsByChunkName)
+                    _fReplaceRev(file, name + <span class="string">".bundle.js"</span>, stats.assetsByChunkName[name]);
+                <span class="built_in">console</span>.log(<span class="string">'Replace references in file: '</span> + file + <span class="string">' done.'</span>);
+            });
+        });
+
+    }
+
+    <span class="built_in">console</span>.log(<span class="string">'Replace references done.'</span>);
+}
+</code></pre><h3 id="webpack-dev-server和react组件热加载配置">webpack-dev-server和react组件热加载配置</h3>
+<p>webpack-dev-server是一个小巧的nodejs expres服务器，webpack-dev-server会根据一个webpack config文件，将静态资源打包后存放在内存，页面访问这些资源直接从内存中读取，所以你会发现，启动webpack-dev-server后，资源打包的目标路径其实是没有东西的。<br>需要注意的是，webpack-dev-server只适用于简单的静态页面或纯前端的工程（独立于后端服务）。如果你的工程是和服务端程序耦合的，例如java web工程，使用webpack-dev-server会引起跨域的问题，因为静态资源是由webpack server来提供服务，而后端接口又是另外一个服务器提供服务。</p>
+<p>安装webpack-dev-server:</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> webpack-dev-<span class="keyword">server</span> <span class="comment">--save-dev</span></span>
+</code></pre><p>启动webpack-dev-server:</p>
+<pre><code>webpack-dev-server --content-<span class="keyword">base</span> <span class="keyword">public</span>/
+</code></pre><p>—content-base指定根目录的路径。webpack server会将资源打包到content-base下，并且监听文件的变化，实时打包。</p>
+<p>我们也可以自己封装下webpack-dev-server，例如：</p>
+<pre><code><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);
+<span class="keyword">var</span> WebpackDevServer = <span class="built_in">require</span>(<span class="string">'webpack-dev-server'</span>);
+<span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'./webpack.config'</span>);
+
+<span class="keyword">new</span> WebpackDevServer(webpack(config), {
+  publicPath: config.output.publicPath,
+  hot: <span class="literal">true</span>,
+  historyApiFallback: <span class="literal">true</span>
+}).listen(<span class="number">3000</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(err, result)</span> </span>{
+  <span class="keyword">if</span> (err) {
+    <span class="built_in">console</span>.log(err);
+  }
+
+  <span class="built_in">console</span>.log(<span class="string">'Listening at localhost:3000'</span>);
+});
+</code></pre><p>执行node server.js同样可以启动web pack server。</p>
+<p>Webpack有一个很实用的功能叫做热替换，可以结合react-hot-loader插件来实现，开发过程中修改react组件代码，不需要刷新浏览器，webpack server会直接帮你将修改同步到浏览器端，实现传说中的live refresh。</p>
+<p>react-hot-loader的配置：</p>
+<ol>
+<li><p>安装：</p>
+<pre><code> npm <span class="operator"><span class="keyword">install</span> react-hot-loader —save-dev</span>
+</code></pre></li>
+<li><p>将webpack-dev-server添加到entry：</p>
+<pre><code> entry: [
+   <span class="string">'webpack-dev-server/client?http://localhost:3000'</span>,
+   <span class="string">'webpack/hot/only-dev-server'</span>,
+   <span class="string">'./scripts/index'</span>
+ ]
+</code></pre></li>
+<li><p>在output中配置publicPath，web pack server会将资源打包到这个路径下</p>
+</li>
+<li><p>添加DefinePlugin和HotModuleReplacementPlugin插件：</p>
+<pre><code> plugins: [
+   <span class="keyword">new</span> webpack.DefinePlugin({
+     <span class="string">"process.env"</span>: {
+       NODE_ENV: <span class="built_in">JSON</span>.stringify(<span class="string">"development"</span>)
+     }
+   }),
+   <span class="keyword">new</span> webpack.HotModuleReplacementPlugin()
+ ]
+</code></pre></li>
+<li><p>在jsx的loader中添加hot-loader在最前面：</p>
+<pre><code> <span class="symbol">loaders:</span> [{
+   <span class="symbol">test:</span> /\.js<span class="variable">$/</span>,
+   <span class="symbol">loaders:</span> [<span class="string">'react-hot'</span>, <span class="string">'babel'</span>]
+ }]
+</code></pre></li>
+</ol>
+<p>至此hot－loader就配置完毕，此时可以启动web pack server，然后修改一下react组件，你会发现浏览器没有刷新，但代码已经热替换了。</p>
+<p>这里是一个简单的配置示例：<br><a href="https://github.com/charleschaochen/reactServerHotLoaderTest" title="https://github.com/charleschaochen/reactServerHotLoaderTest" target="_blank" rel="external">https://github.com/charleschaochen/reactServerHotLoaderTest</a></p>
+<p>总的来说，React是一个全新的前端UI框架，它的优势我认为是两点：</p>
+<ol>
+<li>它接管UI开发中最为复杂的局部更新操作，在复杂场景下保证高性能。</li>
+<li>引入前端组件化开发思想，将用户界面拆分为多个独立的UI组件，便于复用和维护。</li>
+</ol>
+<p>实践证明react+webpack确实是一个不错的前端解决方案，目前使用的还不是很深入，希望通过项目的需求迭代慢慢学习更多相关的东西，收获和坑也会分享出来。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/29/flex-layout/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS Flex布局</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="react-webpack-practice" data-title="基于React + webpack的组件化编程和自动化构建实践" data-url="http://www.charlestech.info/2015/12/29/react-webpack-practice/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Charles Chen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
