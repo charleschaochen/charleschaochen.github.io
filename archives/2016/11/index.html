@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>YUICompressor+ANT压缩Java Web工程前端js/css文件 | Charles Tech Blog</title>
+  <title>Archives: 2016/11 | Charles Tech Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近team里有个jsp工程想要做一些性能上的优化， 需要对工程里的前端部分（主要是js和css）做一些压缩（这是一个老旧重的工程，重构的成本非常大，也没有人力，只能一步一步去优化）。想到与传统ANT工具结合的比较好的yuicompressor。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="YUICompressor+ANT压缩Java Web工程前端js/css文件">
-<meta property="og:url" content="http://www.charlestech.info/2016/08/10/yuicompresor-ant/">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charles Tech Blog">
+<meta property="og:url" content="http://www.charlestech.info/archives/2016/11/">
 <meta property="og:site_name" content="Charles Tech Blog">
-<meta property="og:description" content="最近team里有个jsp工程想要做一些性能上的优化， 需要对工程里的前端部分（主要是js和css）做一些压缩（这是一个老旧重的工程，重构的成本非常大，也没有人力，只能一步一步去优化）。想到与传统ANT工具结合的比较好的yuicompressor。">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YUICompressor+ANT压缩Java Web工程前端js/css文件">
-<meta name="twitter:description" content="最近team里有个jsp工程想要做一些性能上的优化， 需要对工程里的前端部分（主要是js和css）做一些压缩（这是一个老旧重的工程，重构的成本非常大，也没有人力，只能一步一步去优化）。想到与传统ANT工具结合的比较好的yuicompressor。">
+<meta name="twitter:title" content="Charles Tech Blog">
+<meta name="twitter:description">
 
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
@@ -42,7 +42,7 @@
 		</hgroup>
 
 		
-		<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+		<p class="header-subtitle">天蝎座，爱旅游，爱代码</p>
 		
 		
 		
@@ -176,7 +176,7 @@
 			  <h1 class="header-author"><a href="/">Charles Chen</a></h1>
 			</hgroup>
 			
-			<p class="header-subtitle">爱旅游爱码code的纠结1024天蝎男</p>
+			<p class="header-subtitle">天蝎座，爱旅游，爱代码</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -204,11 +204,13 @@
 		</header>				
 	</div>
 </nav>
-      <article id="post-yuicompresor-ant" class="article article-type-post" itemscope itemprop="blogPost">
+      
+  
+    <article id="post-yuicompresor-ant" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/10/yuicompresor-ant/" class="article-date">
-  	<time datetime="2016-08-10T11:14:00.000Z" itemprop="datePublished">Aug 10 2016</time>
+      <a href="/2016/11/18/yuicompresor-ant/" class="article-date">
+  	<time datetime="2016-11-18T02:24:00.000Z" itemprop="datePublished">Nov 18 2016</time>
 </a>
       
   <div class="article-category">
@@ -228,8 +230,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      YUICompressor+ANT压缩Java Web工程前端js/css文件
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/18/yuicompresor-ant/">YUICompressor+ANT压缩Java Web工程前端js/css文件</a>
     </h1>
   
 
@@ -238,120 +240,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近team里有个jsp工程想要做一些性能上的优化， 需要对工程里的前端部分（主要是js和css）做一些压缩（这是一个老旧重的工程，重构的成本非常大，也没有人力，只能一步一步去优化）。想到与传统ANT工具结合的比较好的yuicompressor。</p>
-<a id="more"></a>
-<h3 id="yuicompressor下载">yuicompressor下载</h3>
-<p>下载地址：<a href="http://maven.aliyun.com/nexus/service/local/repositories/central/content/com/yahoo/platform/yui/yuicompressor/2.2.5/yuicompressor-2.2.5.jar?spm=0.0.0.0.jwwQsz&amp;file=yuicompressor-2.2.5.jar" target="_blank" rel="external">http://maven.aliyun.com/nexus/service/local/repositories/central/content/com/yahoo/platform/yui/yuicompressor/2.2.5/yuicompressor-2.2.5.jar?spm=0.0.0.0.jwwQsz&amp;file=yuicompressor-2.2.5.jar</a></p>
-<p>这里推荐下阿里云的maven镜像，下载速度很快。maven repository在国内经常被墙。</p>
-<h3 id="yuicompressor结合ant">yuicompressor结合ant</h3>
-<p>yuicompressor做的东西和gulp类似，可以对js/css文件做压缩混淆，但在使用的过程中还是觉得不是很灵活方便，比如说它构建的目标文件必须在构建前先创建好，这就要求我们在做构建之前先做一次copy操作。</p>
-<p>我要实现的目的很简单，在执行ant任务时，编译java工程之前对工程里的js/css文件做混淆压缩，最后打包成war包。所以我希望压缩后的文件能覆盖旧的文件，这样一来我不需要去修改html/jsp文件中对静态资源的引用。</p>
-<p>折腾一番后，对js或css文件的压缩的步骤大概总结为：</p>
-<ol>
-<li><p>创建一个编译目标目录，将源目录下的文件复制到目标目录</p>
-</li>
-<li><p>将源目录中的文件压缩编译后保存到目标目录</p>
-</li>
-<li><p>将目标目录移动覆盖源目录</p>
-</li>
-</ol>
-<p>以下是ant中压缩js和css的任务：</p>
-<pre><code><span class="comment">&lt;!--定义常量--&gt;</span>
-<span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"yuicompressor.jar"</span> <span class="attribute">location</span>=<span class="value">"${web.dir}/WEB-INF/lib/yuicompressor-2.2.5.jar"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"js.src"</span> <span class="attribute">location</span>=<span class="value">"${web.dir}/js/test_yui"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"js.build"</span> <span class="attribute">location</span>=<span class="value">"${web.dir}/js/test_yui_build"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"css.src"</span> <span class="attribute">location</span>=<span class="value">"${web.dir}/style"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"css.build"</span> <span class="attribute">location</span>=<span class="value">"${web.dir}/style_build"</span>/&gt;</span>
 
-<span class="comment">&lt;!--压缩js--&gt;</span>
-<span class="tag">&lt;<span class="title">target</span> <span class="attribute">name</span>=<span class="value">"js.compress"</span>&gt;</span>
-    <span class="comment">&lt;!-- START: 构建的目标文件必须存在，所以现复制 --&gt;</span>
-    <span class="tag">&lt;<span class="title">delete</span> <span class="attribute">dir</span>=<span class="value">"${js.build}"</span>/&gt;</span>
-    <span class="tag">&lt;<span class="title">mkdir</span> <span class="attribute">dir</span>=<span class="value">"${js.build}"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">copy</span> <span class="attribute">todir</span>=<span class="value">"${js.build}"</span> <span class="attribute">includeEmptyDirs</span>=<span class="value">"true"</span> <span class="attribute">overwrite</span>=<span class="value">"true"</span> <span class="attribute">preservelastmodified</span>=<span class="value">"true"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">fileset</span> <span class="attribute">dir</span>=<span class="value">"${js.src}"</span> &gt;</span>
-            <span class="tag">&lt;<span class="title">exclude</span> <span class="attribute">name</span>=<span class="value">"**/*.*"</span> /&gt;</span>
-        <span class="tag">&lt;/<span class="title">fileset</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">copy</span>&gt;</span>
-    <span class="comment">&lt;!-- END: 构建的目标文件必须存在，所以现复制 --&gt;</span>
-
-    <span class="comment">&lt;!-- START: js压缩混淆 --&gt;</span>
-    <span class="tag">&lt;<span class="title">apply</span> <span class="attribute">executable</span>=<span class="value">"java"</span> <span class="attribute">parallel</span>=<span class="value">"false"</span> <span class="attribute">verbose</span>=<span class="value">"true"</span> <span class="attribute">dest</span>=<span class="value">"${js.build}"</span> &gt;</span>
-        <span class="tag">&lt;<span class="title">fileset</span> <span class="attribute">dir</span>=<span class="value">"${js.src}"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">include</span> <span class="attribute">name</span>=<span class="value">"**/*.js"</span> /&gt;</span>
-            <span class="tag">&lt;<span class="title">exclude</span> <span class="attribute">name</span>=<span class="value">"**/*.min.js"</span> /&gt;</span>
-        <span class="tag">&lt;/<span class="title">fileset</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">arg</span> <span class="attribute">line</span>=<span class="value">"-jar"</span>/&gt;</span>
-        <span class="tag">&lt;<span class="title">arg</span> <span class="attribute">path</span>=<span class="value">"${yuicompressor.jar}"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">arg</span> <span class="attribute">line</span>=<span class="value">"--type js --charset UTF-8 -o"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">mapper</span> <span class="attribute">type</span>=<span class="value">"glob"</span> <span class="attribute">from</span>=<span class="value">"*.js"</span> <span class="attribute">to</span>=<span class="value">"*.js"</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">targetfile</span> /&gt;</span>
-    <span class="tag">&lt;/<span class="title">apply</span>&gt;</span>
-    <span class="comment">&lt;!-- END: js压缩混淆 --&gt;</span>
-
-    <span class="comment">&lt;!-- START: 覆盖源目录 --&gt;</span>
-    <span class="tag">&lt;<span class="title">move</span> <span class="attribute">todir</span>=<span class="value">"${js.src}"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">fileset</span> <span class="attribute">dir</span>=<span class="value">"${js.build}"</span>/&gt;</span>
-    <span class="tag">&lt;/<span class="title">move</span>&gt;</span>
-    <span class="comment">&lt;!-- END: 覆盖源目录 --&gt;</span>
-<span class="tag">&lt;/<span class="title">target</span>&gt;</span>
-</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/18/yuicompresor-ant/#more">more >></a>
+          </p>
+        
       
     </div>
   </div>
   
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2016/08/10/intellij-idea-remote-debug/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Intellij Idea远程调试</div>
-      <strong class="article-nav-caption">&gt;</strong>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
 
 
 
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="yuicompresor-ant" data-title="YUICompressor+ANT压缩Java Web工程前端js/css文件" data-url="http://www.charlestech.info/2016/08/10/yuicompresor-ant/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
 
-
-
+  
+  
 
       <footer id="footer">
   <div class="outer">
