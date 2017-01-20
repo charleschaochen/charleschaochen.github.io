@@ -8,21 +8,20 @@
   <meta name="description" content="什么是建造者模式建造者模式和工厂模式都是由一个类来负责对象的实例化工作，不同在于，建造者模式是针对那些较为复杂的、创建过程需要多个步骤的对象。建造者模式下一般有三个角色：产品、建造者（Builder）以及指导者（Director）。建造者中通常声明了多个方法，每个方法表示一个独立的创建产品的步骤，而指导者负责将建造者的步骤组合起来，从而完成对象的构建。其中，建造者通常抽象为一个接口，可以有多个具体">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建型设计模式 — 建造者模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/06/12/design-pattern-creator/">
+<meta property="og:url" content="http://www.charlestech.info/2014/06/12/design-pattern-creator/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是建造者模式建造者模式和工厂模式都是由一个类来负责对象的实例化工作，不同在于，建造者模式是针对那些较为复杂的、创建过程需要多个步骤的对象。建造者模式下一般有三个角色：产品、建造者（Builder）以及指导者（Director）。建造者中通常声明了多个方法，每个方法表示一个独立的创建产品的步骤，而指导者负责将建造者的步骤组合起来，从而完成对象的构建。其中，建造者通常抽象为一个接口，可以有多个具体">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建型设计模式 — 建造者模式">
 <meta name="twitter:description" content="什么是建造者模式建造者模式和工厂模式都是由一个类来负责对象的实例化工作，不同在于，建造者模式是针对那些较为复杂的、创建过程需要多个步骤的对象。建造者模式下一般有三个角色：产品、建造者（Builder）以及指导者（Director）。建造者中通常声明了多个方法，每个方法表示一个独立的创建产品的步骤，而指导者负责将建造者的步骤组合起来，从而完成对象的构建。其中，建造者通常抽象为一个接口，可以有多个具体">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,19 +221,15 @@
       
         <p>什么是建造者模式建造者模式和工厂模式都是由一个类来负责对象的实例化工作，不同在于，建造者模式是针对那些较为复杂的、创建过程需要多个步骤的对象。建造者模式下一般有三个角色：产品、建造者（Builder）以及指导者（Director）。建造者中通常声明了多个方法，每个方法表示一个独立的创建产品的步骤，而指导者负责将建造者的步骤组合起来，从而完成对象的构建。其中，建造者通常抽象为一个接口，可以有多个具体…</p>
 <a id="more"></a>
-<h4 id="什么是建造者模式">什么是建造者模式</h4>
-<p>建造者模式和工厂模式都是由一个类来负责对象的实例化工作，不同在于，建造者模式是针对那些较为复杂的、创建过程需要多个步骤的对象。</p>
+<h4 id="什么是建造者模式"><a href="#什么是建造者模式" class="headerlink" title="什么是建造者模式"></a>什么是建造者模式</h4><p>建造者模式和工厂模式都是由一个类来负责对象的实例化工作，不同在于，建造者模式是针对那些较为复杂的、创建过程需要多个步骤的对象。</p>
 <p>建造者模式下一般有三个角色：产品、建造者（Builder）以及指导者（Director）。建造者中通常声明了多个方法，每个方法表示一个独立的创建产品的步骤，而指导者负责将建造者的步骤组合起来，从而完成对象的构建。</p>
 <p>其中，建造者通常抽象为一个接口，可以有多个具体的建造者实现类，不同的构造类具有不同的构造对象的步骤。而指导者中，通常提供一个方法接受建造者实例，组合建造者中的创建步骤，最终返回一个完整的对象，指导者不需要关心创建对象的具体逻辑，只需要负责组合这些步骤。</p>
-<h4 id="为什么要使用建造者模式">为什么要使用建造者模式</h4>
-<p>使用建造者模式的优点有：</p>
+<h4 id="为什么要使用建造者模式"><a href="#为什么要使用建造者模式" class="headerlink" title="为什么要使用建造者模式"></a>为什么要使用建造者模式</h4><p>使用建造者模式的优点有：</p>
 <ol>
 <li>简化创建对象的客户端代码。客户端不需要关注创建对象的复杂步骤，只需要调用指导者接口就可以完成对象的创建</li>
 <li>实现对象的创建与具体步骤的分离解耦。指导者可以接受不同的构建者实例，创建出不同的对象，当创建对象的具体步骤需要变化时，我们只需要实现多一个建造者，而不需要修改指导者的构建代码，符合“多扩展开放，对修改关闭的原则”</li>
 </ol>
-<h4 id="#">#</h4>
-<h4 id="建造者模式的实现">建造者模式的实现</h4>
-<p>举一个实际的示例，</p>
+<h4 id=""><a href="#" class="headerlink" title="#"></a>#</h4><h4 id="建造者模式的实现"><a href="#建造者模式的实现" class="headerlink" title="建造者模式的实现"></a>建造者模式的实现</h4><p>举一个实际的示例，</p>
 <p>Product产品有三个属性：partA, partB, partC，构造Product对象需要三个步骤来设置这三个属性</p>
 <p>Builder是构造者接口，声明了三个方法分别设置Product的三个属性，还有一个build方法用于获取设置完的对象</p>
 <p>Director是指导者类，声明了construct方法，接收一个Builder对象参数，并调用Builder对象的三个步骤，最后返回build方法的返回的对象</p>
@@ -259,189 +237,188 @@
 <p>![Image 1][]</p>
 <p>示例代码：</p>
 <p>Product产品类</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 产品角色
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Product</span> </span>{
-       <span class="keyword">private</span> String partA ;
-       <span class="keyword">private</span> String partB ;
-       <span class="keyword">private</span> String partC ;
+ */
+public class Product {
+       private String partA ;
+       private String partB ;
+       private String partC ;
 
-       <span class="keyword">public</span> String <span class="title">getPartA</span>() {
-             <span class="keyword">return</span> partA ;
+       public String getPartA() {
+             return partA ;
       }
 
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPartA</span>(String partA) {
-             <span class="keyword">this</span>.partA = partA;
+       public void setPartA(String partA) {
+             this.partA = partA;
       }
 
-       <span class="keyword">public</span> String <span class="title">getPartB</span>() {
-             <span class="keyword">return</span> partB ;
+       public String getPartB() {
+             return partB ;
       }
 
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPartB</span>(String partB) {
-             <span class="keyword">this</span>.partB = partB;
+       public void setPartB(String partB) {
+             this.partB = partB;
       }
 
-       <span class="keyword">public</span> String <span class="title">getPartC</span>() {
-             <span class="keyword">return</span> partC ;
+       public String getPartC() {
+             return partC ;
       }
 
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPartC</span>(String partC) {
-             <span class="keyword">this</span>.partC = partC;
+       public void setPartC(String partC) {
+             this.partC = partC;
       }
 
-       <span class="keyword">public</span> String <span class="title">toString</span>() {
-             <span class="keyword">return</span> <span class="string">"PartA: "</span> + getPartA() + <span class="string">"\nPartB: "</span> + getPartB() + <span class="string">"\nPartC: "</span>
+       public String toString() {
+             return &quot;PartA: &quot; + getPartA() + &quot;\nPartB: &quot; + getPartB() + &quot;\nPartC: &quot;
                         + getPartC();
       }
 }
 </code></pre><p>Builder建造者接口</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 建造者接口
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Builder</span> </span>{
-       <span class="keyword">void</span> buildPartA();
+ */
+public interface Builder {
+       void buildPartA();
 
-       <span class="keyword">void</span> buildPartB();
+       void buildPartB();
 
-       <span class="keyword">void</span> buildPartC();
+       void buildPartC();
 
       Product build();
 }
 </code></pre><p>具体的建造者类Builder1, Builder2</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 建造者1
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder1</span> <span class="keyword">implements</span> <span class="title">Builder</span> </span>{
-       <span class="keyword">private</span> Product product ;
+ */
+public class Builder1 implements Builder {
+       private Product product ;
 
-       <span class="keyword">public</span> <span class="title">Builder1</span>() {
-             product = <span class="keyword">new</span> Product();
+       public Builder1() {
+             product = new Product();
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> Product <span class="title">build</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             <span class="keyword">return</span> product ;
+       @Override
+       public Product build() {
+             // TODO Auto-generated method stub
+             return product ;
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildPartA</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             product.setPartA(<span class="string">"Build part A from Builder 1"</span> );
+       @Override
+       public void buildPartA() {
+             // TODO Auto-generated method stub
+             product.setPartA(&quot;Build part A from Builder 1&quot; );
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildPartB</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             product.setPartB(<span class="string">"Build part B from Builder 1"</span> );
+       @Override
+       public void buildPartB() {
+             // TODO Auto-generated method stub
+             product.setPartB(&quot;Build part B from Builder 1&quot; );
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildPartC</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             product.setPartC(<span class="string">"Build part C from Builder 1"</span> );
+       @Override
+       public void buildPartC() {
+             // TODO Auto-generated method stub
+             product.setPartC(&quot;Build part C from Builder 1&quot; );
       }
 
 }
 
-<span class="javadoc">/**
+/**
  * 建造者2
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder2</span> <span class="keyword">implements</span> <span class="title">Builder</span> </span>{
-       <span class="keyword">private</span> Product product ;
+ */
+public class Builder2 implements Builder {
+       private Product product ;
 
-       <span class="keyword">public</span> <span class="title">Builder2</span>() {
-             product = <span class="keyword">new</span> Product();
+       public Builder2() {
+             product = new Product();
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> Product <span class="title">build</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             <span class="keyword">return</span> product ;
+       @Override
+       public Product build() {
+             // TODO Auto-generated method stub
+             return product ;
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildPartA</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             product.setPartA(<span class="string">"Build part A from Builder 2"</span> );
+       @Override
+       public void buildPartA() {
+             // TODO Auto-generated method stub
+             product.setPartA(&quot;Build part A from Builder 2&quot; );
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildPartB</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             product.setPartB(<span class="string">"Build part B from Builder 2"</span> );
+       @Override
+       public void buildPartB() {
+             // TODO Auto-generated method stub
+             product.setPartB(&quot;Build part B from Builder 2&quot; );
       }
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildPartC</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             product.setPartC(<span class="string">"Build part C from Builder 2"</span> );
+       @Override
+       public void buildPartC() {
+             // TODO Auto-generated method stub
+             product.setPartC(&quot;Build part C from Builder 2&quot; );
       }
 
 }
 </code></pre><p>Director指导者类</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 指导者类
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Director</span> </span>{
-       <span class="javadoc">/**
+ */
+public class Director {
+       /**
        * 组合传入的建造者的构造步骤，返回对象实例
        *
-       *<span class="javadoctag"> @param</span> builder
-       *<span class="javadoctag"> @return</span>
-       */</span>
-       <span class="keyword">public</span> Product <span class="title">construct</span>(Builder builder) {
+       * @param builder
+       * @return
+       */
+       public Product construct(Builder builder) {
             builder.buildPartA();
             builder.buildPartB();
             builder.buildPartC();
-             <span class="keyword">return</span> builder.build();
+             return builder.build();
       }
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="javadoc">/**
-       *<span class="javadoctag"> @param</span> args
-       */</span>
-       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-             <span class="comment">// TODO Auto-generated method stub</span>
-            Director director = <span class="keyword">new</span> Director();
+<pre><code>/**
+       * @param args
+       */
+       public static void main(String[] args) {
+             // TODO Auto-generated method stub
+            Director director = new Director();
 
-            Builder builder = <span class="keyword">new</span> Builder1(); <span class="comment">// 创建建造者1</span>
-            Product product = director.construct(builder); <span class="comment">// 利用建造者1构建对象</span>
-            System.out.println(product); <span class="comment">// 打印对象</span>
+            Builder builder = new Builder1(); // 创建建造者1
+            Product product = director.construct(builder); // 利用建造者1构建对象
+            System.out.println(product); // 打印对象
             System.out.println();
 
-            builder = <span class="keyword">new</span> Builder2(); <span class="comment">// 创建建造者2</span>
-            product = <span class="keyword">new</span> Director().construct(builder); <span class="comment">// 利用建造者2构建对象</span>
-            System.out.println(product); <span class="comment">// 打印对象</span>
+            builder = new Builder2(); // 创建建造者2
+            product = new Director().construct(builder); // 利用建造者2构建对象
+            System.out.println(product); // 打印对象
       }
-</code></pre><h5 id="建造者模式应用于多属性对象的创建">建造者模式应用于多属性对象的创建</h5>
-<p>《Effective Java》中提到一个建造者模式在构建多属性对象中的应用案例，这种设计方式也是非常值得借鉴。</p>
+</code></pre><h5 id="建造者模式应用于多属性对象的创建"><a href="#建造者模式应用于多属性对象的创建" class="headerlink" title="建造者模式应用于多属性对象的创建"></a>建造者模式应用于多属性对象的创建</h5><p>《Effective Java》中提到一个建造者模式在构建多属性对象中的应用案例，这种设计方式也是非常值得借鉴。</p>
 <p>假如一个类有很多个属性，其中有些属性是在初始化时必须赋值的，而有些是可选的。</p>
 <p>例如类User：</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">class</span> User {
-       <span class="keyword">private</span> <span class="keyword">long</span> userId ;
-       <span class="keyword">private</span> String name ;
-       <span class="keyword">private</span> <span class="keyword">int</span> age ;
-       <span class="keyword">private</span> String email ;
-       <span class="keyword">private</span> String country ;
-       <span class="keyword">private</span> String address ;
-       <span class="keyword">private</span> String phone ;
+<pre><code>public class User {
+       private long userId ;
+       private String name ;
+       private int age ;
+       private String email ;
+       private String country ;
+       private String address ;
+       private String phone ;
 }
 </code></pre><p>其中useId和name是必须的，其他事可选的。</p>
 <p>那么在设计这样的类时，一般来说有两种方案：</p>
@@ -454,103 +431,103 @@
 <p>在建造者内部类中，需要声明与外围类同样的属性列表，并提供一个接受必须属性作为参数的构造器，然后提供一系列流式接口风格的方法为属性设值（所谓流式接口风格，即声明一系列方法，每个方法负责对一个属性进行设值，设值之后返回当前实例，那么外部程序就可以通过连续调用方法的方式初始化对象）。</p>
 <p>另外，外围类的构造器需要声明为私有的，防止外部程序通过new方法方式创建实例。</p>
 <p>代码示例：</p>
-<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{
-       <span class="keyword">private</span> <span class="keyword">long</span> userId ;
-       <span class="keyword">private</span> String name ;
-       <span class="keyword">private</span> <span class="keyword">int</span> age ;
-       <span class="keyword">private</span> String email ;
+<pre><code>public class User {
+       private long userId ;
+       private String name ;
+       private int age ;
+       private String email ;
 
-       <span class="javadoc">/**
+       /**
        * 私有构造器，接受建造者对象，根据建造者初始化属性值
        *
-       *<span class="javadoctag"> @param</span> builder
-       */</span>
-       <span class="keyword">private</span> <span class="title">User</span>(UserBuilder builder) {
-             <span class="keyword">this</span>.userId = builder.userId;
-             <span class="keyword">this</span>.name = builder.name;
-             <span class="keyword">this</span>.age = builder.age;
-             <span class="keyword">this</span>.email = builder.email;
+       * @param builder
+       */
+       private User(UserBuilder builder) {
+             this.userId = builder.userId;
+             this.name = builder.name;
+             this.age = builder.age;
+             this.email = builder.email;
       }
 
-       <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">UserBuilder</span> </span>{
-             <span class="keyword">private</span> <span class="keyword">long</span> userId ;
-             <span class="keyword">private</span> String name ;
-             <span class="keyword">private</span> <span class="keyword">int</span> age ;
-             <span class="keyword">private</span> String email ;
+       public static class UserBuilder {
+             private long userId ;
+             private String name ;
+             private int age ;
+             private String email ;
 
-             <span class="javadoc">/**
+             /**
              * 构造器，对必须属性赋值
              *
-             *<span class="javadoctag"> @param</span> userId
-             *<span class="javadoctag"> @param</span> name
-             */</span>
-             <span class="keyword">public</span> <span class="title">UserBuilder</span>(<span class="keyword">long</span> userId, String name) {
-                   <span class="keyword">this</span>.userId = userId;
-                   <span class="keyword">this</span>.name = name;
+             * @param userId
+             * @param name
+             */
+             public UserBuilder(long userId, String name) {
+                   this.userId = userId;
+                   this.name = name;
             }
 
-             <span class="comment">/* 流式接口风格方法 */</span>
-             <span class="keyword">public</span> UserBuilder <span class="title">age</span>(<span class="keyword">int</span> age) {
-                   <span class="keyword">this</span>.age = age;
-                   <span class="keyword">return</span> <span class="keyword">this</span> ;
+             /* 流式接口风格方法 */
+             public UserBuilder age(int age) {
+                   this.age = age;
+                   return this ;
             }
 
-             <span class="keyword">public</span> UserBuilder <span class="title">email</span>(String email) {
-                   <span class="keyword">this</span>.email = email;
-                   <span class="keyword">return</span> <span class="keyword">this</span> ;
+             public UserBuilder email(String email) {
+                   this.email = email;
+                   return this ;
             }
 
-             <span class="keyword">public</span> User <span class="title">build</span>() {
-                   <span class="keyword">return</span> <span class="keyword">new</span> User(<span class="keyword">this</span>);
+             public User build() {
+                   return new User(this);
             }
-             <span class="comment">/* 流式接口风格方法 */</span>
+             /* 流式接口风格方法 */
       }
 
-       <span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getUserId</span>() {
-             <span class="keyword">return</span> userId ;
+       public long getUserId() {
+             return userId ;
       }
 
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserId</span>(<span class="keyword">long</span> userId) {
-             <span class="keyword">this</span>.userId = userId;
+       public void setUserId(long userId) {
+             this.userId = userId;
       }
 
-       <span class="keyword">public</span> String <span class="title">getName</span>() {
-             <span class="keyword">return</span> name ;
+       public String getName() {
+             return name ;
       }
 
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span>(String name) {
-             <span class="keyword">this</span>.name = name;
+       public void setName(String name) {
+             this.name = name;
       }
 
-       <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span>() {
-             <span class="keyword">return</span> age ;
+       public int getAge() {
+             return age ;
       }
 
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span>(<span class="keyword">int</span> age) {
-             <span class="keyword">this</span>.age = age;
+       public void setAge(int age) {
+             this.age = age;
       }
 
-       <span class="keyword">public</span> String <span class="title">getEmail</span>() {
-             <span class="keyword">return</span> email ;
+       public String getEmail() {
+             return email ;
       }
 
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span>(String email) {
-             <span class="keyword">this</span>.email = email;
+       public void setEmail(String email) {
+             this.email = email;
       }
 
-       <span class="keyword">public</span> String <span class="title">toString</span>() {
-             <span class="keyword">return</span> <span class="string">"User ID: "</span> + userId + <span class="string">"\nUser Name: "</span> + name + <span class="string">"\nUser Age: "</span>
-                        + age + <span class="string">"\nUser Email: "</span> + email;
+       public String toString() {
+             return &quot;User ID: &quot; + userId + &quot;\nUser Name: &quot; + name + &quot;\nUser Age: &quot;
+                        + age + &quot;\nUser Email: &quot; + email;
       }
 
-       <span class="javadoc">/**
+       /**
        * 测试程序
        *
-       *<span class="javadoctag"> @param</span> args
-       */</span>
-       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-            User user = <span class="keyword">new</span> User.UserBuilder(<span class="number">1</span>, <span class="string">"chenchao"</span>).age(<span class="number">23</span>).email(
-                         <span class="string">"399931011@qq.com"</span>).build();
+       * @param args
+       */
+       public static void main(String[] args) {
+            User user = new User.UserBuilder(1, &quot;chenchao&quot;).age(23).email(
+                         &quot;399931011@qq.com&quot;).build();
             System. out.println(user);
       }
 }
@@ -627,7 +604,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -637,12 +614,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

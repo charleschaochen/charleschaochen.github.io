@@ -8,22 +8,22 @@
   <meta name="description" content="原文链接：javacodegeeks   翻译：ImportNew.com - chenchenchao译文链接：http://www.importnew.com/11095.html对于一个较大的Git工程，你可能会想在多个仓库之间共享代码,不管这些代码是在多个不同产品间使用的项目共享库或是一些模板。Git通过子模块来实现这样的需求。子模块允许将其他代码仓库的克隆作为子目录放…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何用JGit管理Git子模块">
-<meta property="og:url" content="http://www.charlestech.info/2014/05/07/manage-git-sub-module/">
+<meta property="og:url" content="http://www.charlestech.info/2014/05/07/manage-git-sub-module/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="原文链接：javacodegeeks   翻译：ImportNew.com - chenchenchao译文链接：http://www.importnew.com/11095.html对于一个较大的Git工程，你可能会想在多个仓库之间共享代码,不管这些代码是在多个不同产品间使用的项目共享库或是一些模板。Git通过子模块来实现这样的需求。子模块允许将其他代码仓库的克隆作为子目录放…">
 <meta property="og:image" content="http://a3ab771892fd198a96736e50.javacodegeeks.netdna-cdn.com/wp-content/uploads/2014/04/submodule-tree.png">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何用JGit管理Git子模块">
 <meta name="twitter:description" content="原文链接：javacodegeeks   翻译：ImportNew.com - chenchenchao译文链接：http://www.importnew.com/11095.html对于一个较大的Git工程，你可能会想在多个仓库之间共享代码,不管这些代码是在多个不同产品间使用的项目共享库或是一些模板。Git通过子模块来实现这样的需求。子模块允许将其他代码仓库的克隆作为子目录放…">
-
+<meta name="twitter:image" content="http://a3ab771892fd198a96736e50.javacodegeeks.netdna-cdn.com/wp-content/uploads/2014/04/submodule-tree.png">
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -61,11 +61,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -82,8 +77,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -128,27 +121,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -243,27 +226,25 @@
 <p><strong>原文链接：</strong><a href="http://www.javacodegeeks.com/2014/04/how-to-manage-git-submodules-with-jgit.html" target="_blank" rel="external"><strong>javacodegeeks</strong></a><strong>   翻译：</strong><a href="http://www.importnew.com/" target="_blank" rel="external"><strong>ImportNew.com</strong> </a><strong>-</strong> <a href="http://www.importnew.com/author/chenchenchao" target="_blank" rel="external"><strong>chenchenchao</strong></a><br><strong>译文链接：</strong><a href="http://www.importnew.com/11095.html" target="_blank" rel="external"><strong>http://www.importnew.com/11095.html</strong></a></p>
 <p>对于一个较大的Git工程，你可能会想在多个仓库之间共享代码,不管这些代码是在多个不同产品间使用的项目共享库或是一些模板。Git通过子模块来实现这样的需求。子模块允许将其他代码仓库的克隆作为子目录放到一个父仓库（有时候也称为父项目）中。一个子模块也是一个独立的仓库，你可以像其他仓库一样执行commit，branch，rebase等等操作。</p>
 <p>JGit提供了实现大部分Git子模块命令的API。我将在这儿给大家介绍这些API。</p>
-<h3 id="设置">设置</h3>
-<p>本文中用到的代码片段将作为学习测试程序。简单的测试程序有助于理解第三方库是如何工作，以及如何使用新的API。你可以将这些测试程序看做是可控制的试验，帮助你更加直观地发现第三方代码是如何执行的。</p>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>本文中用到的代码片段将作为学习测试程序。简单的测试程序有助于理解第三方库是如何工作，以及如何使用新的API。你可以将这些测试程序看做是可控制的试验，帮助你更加直观地发现第三方代码是如何执行的。</p>
 <p>除此之外，如果你保持编写测试程序，可以帮助你检验第三方代码的新版本。如果你的测试程序涵盖了如何调用这些库，那么第三方代码中不兼容的修改将会尽早展现出来。</p>
 <p>回到之前的话题，所有的测试程序共享同一个设置，详细信息请查看<a href="https://gist.github.com/rherrmann/10130951" target="_blank" rel="external">源代码</a>。现在有一个空的仓库，叫parent，以及另一个仓库叫library。测试程序中，library将会作为子模块添加到parent仓库中。library仓库初始化提交了一个readme.txt文件。测试程序中有一个setUp方法，用来创建这两个仓库，如下所示：</p>
-<pre><code><span class="constant">Git git</span> = Git.init().setDirectory( <span class="string">"/tmp/path/to/repo"</span> ).call();
+<pre><code>Git git = Git.init().setDirectory( &quot;/tmp/path/to/repo&quot; ).call();
 </code></pre><p>这两个仓库用类型为Git的parent和library变量表示。该类封装了一个仓库并允许访问JGit的所有可用指令。就如较早之前我在<a href="http://www.javacodegeeks.com/2013/11/an-introduction-to-the-jgit-sources.html" target="_blank" rel="external">这里</a>中提到，每个Commnad类对应于一条原生的Git pocelain指令。调用一个指令需要用到生成器模式。举个例子，执行Git.commit()的结果实际上相当于一个CommitCommand。你可以提供一些必要的参数去调用它的call()方法，从而执行相应的指令。</p>
-<h3 id="添加一个子模块">添加一个子模块</h3>
-<p>第一步当然是在一个已有的仓库添加子模块。通过上面提到的setUp步骤，library仓库应当作为子模块添加到parent仓库的modules/library目录下。</p>
-<pre><code><span class="annotation">@Test</span>
-<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAddSubmodule</span>() <span class="keyword">throws</span> Exception {
+<h3 id="添加一个子模块"><a href="#添加一个子模块" class="headerlink" title="添加一个子模块"></a>添加一个子模块</h3><p>第一步当然是在一个已有的仓库添加子模块。通过上面提到的setUp步骤，library仓库应当作为子模块添加到parent仓库的modules/library目录下。</p>
+<pre><code>@Test
+public void testAddSubmodule() throws Exception {
   String uri 
     = library.getRepository().getDirectory().getCanonicalPath();
   SubmoduleAddCommand addCommand = parent.submoduleAdd();
   addCommand.setURI( uri );
-  addCommand.setPath( <span class="string">"modules/library"</span> );
+  addCommand.setPath( &quot;modules/library&quot; );
   Repository repository = addCommand.call();
   repository.close();
 
   F‌ile workDir = parent.getRepository().getWorkTree();
-  F‌ile readme = <span class="keyword">new</span> F‌ile( workDir, <span class="string">"modules/library/readme.txt"</span> );
-  F‌ile gitmodules = <span class="keyword">new</span> F‌ile( workDir, <span class="string">".gitmodules"</span> );
+  F‌ile readme = new F‌ile( workDir, &quot;modules/library/readme.txt&quot; );
+  F‌ile gitmodules = new F‌ile( workDir, &quot;.gitmodules&quot; );
   assertTrue( readme.isF‌ile() );
   assertTrue( gitmodules.isF‌ile() );
 }
@@ -271,64 +252,58 @@
 <p> <img src="http://a3ab771892fd198a96736e50.javacodegeeks.netdna-cdn.com/wp-content/uploads/2014/04/submodule-tree.png" alt="submodule-tree.png"></p>
 <p>library仓库存放在modules/library目录下，而且它的工作目录树被检出。call()方法返回一个Repository对象，你可以把它当做一个常规的仓库来使用。这也意味着，你必须在程序中明确显式地关闭返回的仓库，以避免文件句柄泄露。</p>
 <p>从上图我们可以看到，SubmoduleAddCommand做了一件事，它在parent仓库的根工作目录下创建了一个.git模块文件，并把它添加到索引中。</p>
-<pre><code>[submodule <span class="string">"modules/library"</span>]
-<span class="variable">path =</span> modules/library
-<span class="variable">url =</span> git@example.com:path/to/lib.git
+<pre><code>[submodule &quot;modules/library&quot;]
+path = modules/library
+url = git@example.com:path/to/lib.git
 </code></pre><p>如果你打开过Git的配置文件，你会发现以上句法。这个文件列出了当前仓库的所有子模块。对于每个模块，文件中列出了它仓库URL地址以及本地路径。一旦commit并push了这个文件，克隆这个仓库的一方就知道哪里可以获取相应的子模块（稍后会详细讲解）。</p>
-<h3 id="列出子模块">列出子模块</h3>
-<p>当我们添加了一个子模块之后，我们可以会想知道，它是否对于父仓库来说是可知的。第一项测试中我们做了一个基础的检测，验证了某些文件和目录的存在。我们也可以使用一个API来列出一个仓库的子模块，如下所示：</p>
-<pre><code><span class="annotation">@Test</span>
-<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testListSubmodules</span>() <span class="keyword">throws</span> Exception {
+<h3 id="列出子模块"><a href="#列出子模块" class="headerlink" title="列出子模块"></a>列出子模块</h3><p>当我们添加了一个子模块之后，我们可以会想知道，它是否对于父仓库来说是可知的。第一项测试中我们做了一个基础的检测，验证了某些文件和目录的存在。我们也可以使用一个API来列出一个仓库的子模块，如下所示：</p>
+<pre><code>@Test
+public void testListSubmodules() throws Exception {
   addLibrarySubmodule();
 
   Map&lt;String,SubmoduleStatus&gt; submodules 
     = parent.submoduleStatus().call();
 
-  assertEquals( <span class="number">1</span>, submodules.size() );
-  SubmoduleStatus status = submodules.get( <span class="string">"modules/library"</span> );
+  assertEquals( 1, submodules.size() );
+  SubmoduleStatus status = submodules.get( &quot;modules/library&quot; );
   assertEquals( INITIALIZED, status.getType() );
 }
 </code></pre><p>SubmoduleStatus命令返回了一个子模块的Map集合，其中键是子模块的路径，值是这个模块的状态值。通过以上代码我们能够验证子模块确实已经添加进去，而且它的状态是INITIALIZED的。这个命令还允许添加一个或多个路径来限制子模块状态。</p>
 <p>说到状态，JGit的StatusCommand并非原生的Git指令。如果在执行指令时添加选项<a href="https://www.kernel.org/pub/software/scm/git/docs/git-status.html" target="_blank" rel="external">‐‐ignore-submodules=dirty</a>，那么所有对子模块工作目录的修改都会被忽略。</p>
-<h3 id="更新子模块">更新子模块</h3>
-<p>子模块通常指向他们所在的仓库的一次特殊的提交。如果之后有人克隆了父仓库，他们也会获得与之完全相同的子模块状态，即便子模块的上游有新的提交。</p>
+<h3 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h3><p>子模块通常指向他们所在的仓库的一次特殊的提交。如果之后有人克隆了父仓库，他们也会获得与之完全相同的子模块状态，即便子模块的上游有新的提交。</p>
 <p>为了修改子模块，你像一下代码一样明确地对其进行更新：</p>
 <pre><code>@Test
-<span class="keyword">public</span> <span class="keyword">void</span> testUpdateSubmodule() <span class="keyword">throws</span> Exception {
+public void testUpdateSubmodule() throws Exception {
   addLibrarySubmodule();
-  ObjectId newHead = library.commit().setMessage( <span class="string">"msg"</span> ).<span class="keyword">call</span>();
+  ObjectId newHead = library.commit().setMessage( &quot;msg&quot; ).call();
 
-  <span class="keyword">File</span> workDir = parent.getRepository().getWorkTree();
-  Git libModule = Git.open( <span class="keyword">new</span> F‌ile( workDir, <span class="string">"modules/library"</span> ) );
-  libModule.pull().<span class="keyword">call</span>();
+  File workDir = parent.getRepository().getWorkTree();
+  Git libModule = Git.open( new F‌ile( workDir, &quot;modules/library&quot; ) );
+  libModule.pull().call();
   libModule.close();
-  parent.add().addF‌ilepattern( <span class="string">"modules/library"</span> ).<span class="keyword">call</span>();
-  parent.commit().setMessage( <span class="string">"Update submodule"</span> ).<span class="keyword">call</span>();
+  parent.add().addF‌ilepattern( &quot;modules/library&quot; ).call();
+  parent.commit().setMessage( &quot;Update submodule&quot; ).call();
 
-  assertEquals( newHead, getSubmoduleHead( <span class="string">"modules/library"</span> ) );
+  assertEquals( newHead, getSubmoduleHead( &quot;modules/library&quot; ) );
 }
 </code></pre><p>这个较长的代码片段中，首先第一件事就是提交一些东西到library仓库中（第四行），接着将子模块更新到最近的一次提交。</p>
 <p>为了让这种更新持久化保存下来，子模块必须被提交（第10,11行）。这次提交在子模块的名下（例子中是modules/library）保存了此次更新的commit-id。最后，通常需要将修改push上去，使得他们对其他仓库可用。</p>
-<h3 id="在父仓库中更新对子模块的修改">在父仓库中更新对子模块的修改</h3>
-<p>将上游的提交拉取到父仓库中也会修改子模块的配置。然而子模块本身并不会自动得到更新。</p>
+<h3 id="在父仓库中更新对子模块的修改"><a href="#在父仓库中更新对子模块的修改" class="headerlink" title="在父仓库中更新对子模块的修改"></a>在父仓库中更新对子模块的修改</h3><p>将上游的提交拉取到父仓库中也会修改子模块的配置。然而子模块本身并不会自动得到更新。</p>
 <p>SubmoduleUpdateCommand就是用来解决这个问题。使用这个命令并不需要指定其他参数，它会更新所有已注册的子模块。该命令会克隆缺失的子模块并检出其配置中指定的提交。就如其他子模块命令一样，这里也有一个addPath()方法，以保证只更新给定路径下的子模块。</p>
-<h3 id="克隆一个包含子模块的仓库">克隆一个包含子模块的仓库</h3>
-<p>此时你可能已经掌握一个规律，所有对子模块的操作都是手动的。克隆一个包含子模块配置的仓库并不会默认克隆它的子模块。但是，CloneCommand命令有一个cloneSubmodules的属性，如果设置为true，那么将会克隆所有配置的子模块。从内部看，在对父仓库进行克隆之后，SubmoduleInitCommand和SubmoduleUpdateCommand命令会被递归地执行，并且父仓库的工作目录会被检出。</p>
-<h3 id="移除一个子模块">移除一个子模块</h3>
-<p>如果要移除一个子模块，你会希望可以这样写：</p>
-<pre><code>git.submoduleRm().setPath( <span class="keyword">...</span> ).call();
+<h3 id="克隆一个包含子模块的仓库"><a href="#克隆一个包含子模块的仓库" class="headerlink" title="克隆一个包含子模块的仓库"></a>克隆一个包含子模块的仓库</h3><p>此时你可能已经掌握一个规律，所有对子模块的操作都是手动的。克隆一个包含子模块配置的仓库并不会默认克隆它的子模块。但是，CloneCommand命令有一个cloneSubmodules的属性，如果设置为true，那么将会克隆所有配置的子模块。从内部看，在对父仓库进行克隆之后，SubmoduleInitCommand和SubmoduleUpdateCommand命令会被递归地执行，并且父仓库的工作目录会被检出。</p>
+<h3 id="移除一个子模块"><a href="#移除一个子模块" class="headerlink" title="移除一个子模块"></a>移除一个子模块</h3><p>如果要移除一个子模块，你会希望可以这样写：</p>
+<pre><code>git.submoduleRm().setPath( ... ).call();
 </code></pre><p>但是很不幸，不管是原生的Git或者JGit都没有提供内置的移除子模块的指令，希望将来会添加这样的指令，在这之前，我们必须手动去移除子模块。如果你滚动到<a href="https://gist.github.com/rherrmann/10130951" target="_blank" rel="external">removeSubmodule()</a>方法你会发现这并不是一件复杂的事。</p>
 <p>首先，各个子模块会从.gitsubmodules和.git/config配置文件中移除。其次，子模块的入口会从索引中被移除。最后，.gitsubmodules文件以及索引的修改会被提交，并且子模块的内容会从工作目录中删除。</p>
-<h3 id="遍历子模块">遍历子模块</h3>
-<p>原生的Git提供了git submodule foreach命令为每个子模块执行一个shell指令。JGit并没有直接支持这样的指令，而是提供了SubmoduleWalk。该类可以用来迭代仓库中子模块。以下示例程序实现了为所有子模块拉取上游的提交。</p>
-<pre><code><span class="annotation">@Test</span>
-<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSubmoduleWalk</span>() <span class="keyword">throws</span> Exception {
+<h3 id="遍历子模块"><a href="#遍历子模块" class="headerlink" title="遍历子模块"></a>遍历子模块</h3><p>原生的Git提供了git submodule foreach命令为每个子模块执行一个shell指令。JGit并没有直接支持这样的指令，而是提供了SubmoduleWalk。该类可以用来迭代仓库中子模块。以下示例程序实现了为所有子模块拉取上游的提交。</p>
+<pre><code>@Test
+public void testSubmoduleWalk() throws Exception {
   addLibrarySubmodule();
 
-  <span class="keyword">int</span> submoduleCount = <span class="number">0</span>;
+  int submoduleCount = 0;
   Repository parentRepository = parent.getRepository();
   SubmoduleWalk walk = SubmoduleWalk.forIndex( parentRepository );
-  <span class="keyword">while</span>( walk.next() ) {
+  while( walk.next() ) {
     Repository submoduleRepository = walk.getRepository();
     Git.wrap( submoduleRepository ).fetch().call();
     submoduleRepository.close();
@@ -336,12 +311,11 @@
   }
   walk.release();
 
-  assertEquals( <span class="number">1</span>, submoduleCount );
+  assertEquals( 1, submoduleCount );
 }
 </code></pre><p>通过next()方法walk对象可以指向下一个子模块，如果没有更多的子模块，该方法会返回false。使用SubmoduleWalk时，通过调用release()方法可以释放子模块相关的资源。再次强调，如果你获得一个子模块的仓库实例可别忘了关闭它。</p>
 <p>SubmoduleWalk也可以用来获取子模块的详细信息。通过它的大部分getter方法可以访问到当前子模块的属性，诸如path，head，remote URL等等。</p>
-<h3 id="同步远程URL">同步远程URL</h3>
-<p>从上面我们知道子模块的配置保存在父仓库根工作目录下的.gitsubmodules文件中。而至少，在.git/config文件中，我们可以重写覆盖子模块的远程URL。对于每个子模块，它们本身都有一个配置文件。那么反过来，每个子模块可以有另一个远程URL。SubmoduleSyncCommand命令可以用来将所有远程URL重置为.gitmodules中的配置。</p>
+<h3 id="同步远程URL"><a href="#同步远程URL" class="headerlink" title="同步远程URL"></a>同步远程URL</h3><p>从上面我们知道子模块的配置保存在父仓库根工作目录下的.gitsubmodules文件中。而至少，在.git/config文件中，我们可以重写覆盖子模块的远程URL。对于每个子模块，它们本身都有一个配置文件。那么反过来，每个子模块可以有另一个远程URL。SubmoduleSyncCommand命令可以用来将所有远程URL重置为.gitmodules中的配置。</p>
 <p>综上所述，JGit对子模块的支持几乎与原生的Git一致。大部分Git指令都在JGit中实现了，或可以通过一些途径进行仿真。如果你发现一些操作缺失或实现不了，可以去友好且帮得上忙的<a href="http://www.eclipse.org/jgit/support/" target="_blank" rel="external">JGit社区</a>去寻求帮助。</p>
 
       
@@ -415,7 +389,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -425,12 +399,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

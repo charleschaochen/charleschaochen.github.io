@@ -8,21 +8,20 @@
   <meta name="description" content="什么是状态模式状态模式允许对象在状态发生变化时执行不同的行为。状态模式是对象的一种行为模式，它提供一种机制来统一管理对象的多种状态以及状态的转移，使得对对象的调用随着对象状态的改变而执行不同的行为。状态模式的类图如下：状态模式下有三类角色：Context：上下文类，持有State属性并提供客户端感兴趣的接口State：状态接口ConcreteState：具体的状态类示例程序：State接口pack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行为型设计模式 — 状态模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/10/12/design-pattern-state/">
+<meta property="og:url" content="http://www.charlestech.info/2014/10/12/design-pattern-state/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是状态模式状态模式允许对象在状态发生变化时执行不同的行为。状态模式是对象的一种行为模式，它提供一种机制来统一管理对象的多种状态以及状态的转移，使得对对象的调用随着对象状态的改变而执行不同的行为。状态模式的类图如下：状态模式下有三类角色：Context：上下文类，持有State属性并提供客户端感兴趣的接口State：状态接口ConcreteState：具体的状态类示例程序：State接口pack">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="行为型设计模式 — 状态模式">
 <meta name="twitter:description" content="什么是状态模式状态模式允许对象在状态发生变化时执行不同的行为。状态模式是对象的一种行为模式，它提供一种机制来统一管理对象的多种状态以及状态的转移，使得对对象的调用随着对象状态的改变而执行不同的行为。状态模式的类图如下：状态模式下有三类角色：Context：上下文类，持有State属性并提供客户端感兴趣的接口State：状态接口ConcreteState：具体的状态类示例程序：State接口pack">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,8 +221,7 @@
       
         <p>什么是状态模式状态模式允许对象在状态发生变化时执行不同的行为。状态模式是对象的一种行为模式，它提供一种机制来统一管理对象的多种状态以及状态的转移，使得对对象的调用随着对象状态的改变而执行不同的行为。状态模式的类图如下：状态模式下有三类角色：Context：上下文类，持有State属性并提供客户端感兴趣的接口State：状态接口ConcreteState：具体的状态类示例程序：State接口pack…</p>
 <a id="more"></a>
-<h4 id="什么是状态模式"><strong>什么是状态模式</strong></h4>
-<p>状态模式允许对象在状态发生变化时执行不同的行为。状态模式是对象的一种行为模式，它提供一种机制来统一管理对象的多种状态以及状态的转移，使得对对象的调用随着对象状态的改变而执行不同的行为。</p>
+<h4 id="什么是状态模式"><a href="#什么是状态模式" class="headerlink" title="什么是状态模式"></a><strong>什么是状态模式</strong></h4><p>状态模式允许对象在状态发生变化时执行不同的行为。状态模式是对象的一种行为模式，它提供一种机制来统一管理对象的多种状态以及状态的转移，使得对对象的调用随着对象状态的改变而执行不同的行为。</p>
 <p>状态模式的类图如下：</p>
 <p>![Image 1][]  </p>
 <p>状态模式下有三类角色：</p>
@@ -249,277 +230,274 @@
 <p><strong>ConcreteState</strong>：具体的状态类</p>
 <p>示例程序：</p>
 <p>State接口</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state;
+<pre><code>package patterns.behavior.state;
 
-<span class="javadoc">/**
+/**
  * State interface
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">State</span> </span>{
-     <span class="keyword">void</span> handle();
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public interface State {
+     void handle();
 }
 </code></pre><p>具体的State类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state;
+<pre><code>package patterns.behavior.state;
 
-<span class="javadoc">/**
+/**
  * Concrete state 1
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteState1</span> <span class="keyword">implements</span> <span class="title">State</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class ConcreteState1 implements State {
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Handle request by ConcreteState1"</span>);
+     @Override
+     public void handle() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Handle request by ConcreteState1&quot;);
      }
 
 }
 
-<span class="keyword">package</span> patterns.behavior.state;
+package patterns.behavior.state;
 
-<span class="javadoc">/**
+/**
  * Concrete state 2
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteState2</span> <span class="keyword">implements</span> <span class="title">State</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class ConcreteState2 implements State {
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Handle request by ConcreteState2"</span>);
+     @Override
+     public void handle() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Handle request by ConcreteState2&quot;);
      }
 
 }
 </code></pre><p>Context上下文类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state;
+<pre><code>package patterns.behavior.state;
 
-<span class="javadoc">/**
+/**
  * Context
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Context</span> </span>{
-     <span class="keyword">private</span> State state;
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class Context {
+     private State state;
 
-     <span class="keyword">public</span> <span class="title">Context</span>(State state) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">this</span>. state = state;
+     public Context(State state) {
+            // TODO Auto-generated constructor stub
+            this. state = state;
      }
 
-     <span class="javadoc">/**
+     /**
       * Change state
       *
-      *<span class="javadoctag"> @param</span> state
-      */</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setState</span>(State state) {
-            <span class="keyword">this</span>. state = state;
+      * @param state
+      */
+     public void setState(State state) {
+            this. state = state;
      }
 
-     <span class="javadoc">/**
+     /**
       * Request the state
-      */</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">request</span>() {
-            <span class="keyword">this</span>. state.handle();
+      */
+     public void request() {
+            this. state.handle();
      }
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state;
+<pre><code>package patterns.behavior.state;
 
-<span class="javadoc">/**
+/**
  * Client test for state design pattern sample
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
-     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-           State state1 = <span class="keyword">new</span> ConcreteState1();
-           Context context = <span class="keyword">new</span> Context( state1);
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class ClientTest {
+     public static void main(String[] args) {
+           State state1 = new ConcreteState1();
+           Context context = new Context( state1);
             context.request();
-           State state2 = <span class="keyword">new</span> ConcreteState2();
-            context.setState( state2); <span class="comment">// Change state</span>
+           State state2 = new ConcreteState2();
+            context.setState( state2); // Change state
             context.request();
      }
 }
-</code></pre><h4 id="为什么要使用状态模式"><strong>为什么要使用状态模式</strong></h4>
-<p>(1) 使用状态模式可以将对象的调用与其状态解耦，对象的具体状态发生变化时，对象的调用不会受到影响</p>
+</code></pre><h4 id="为什么要使用状态模式"><a href="#为什么要使用状态模式" class="headerlink" title="为什么要使用状态模式"></a><strong>为什么要使用状态模式</strong></h4><p>(1) 使用状态模式可以将对象的调用与其状态解耦，对象的具体状态发生变化时，对象的调用不会受到影响</p>
 <p>(2) 状态模式有利于对象状态的扩展，当对象有新的状态时，我们只需要实现新的状态类</p>
-<h4 id="如何使用状态模式"><strong>如何使用状态模式</strong></h4>
-<p>我们可以利用状态模式来实现一个用户下单流程，假设一个网购系统正在做促销活动，规定每个用户对同一个商品只能下单一次。</p>
+<h4 id="如何使用状态模式"><a href="#如何使用状态模式" class="headerlink" title="如何使用状态模式"></a><strong>如何使用状态模式</strong></h4><p>我们可以利用状态模式来实现一个用户下单流程，假设一个网购系统正在做促销活动，规定每个用户对同一个商品只能下单一次。</p>
 <p>我们可以用NormalBuyer和RepeatBuyer来代表正常的下单用户和重复的下单用户，他们都实现了Buyer接口，相当于Buyer的两种状态。</p>
 <p>使用OrderManager类来充当上下文角色，它维护一个列表记录用户下单的记录，提供order方法供客户端进行下单，order方法中，根据下单的内容判断当前用户是NormalBuyer还是RepeatBuyer，切换状态并执行相应的下单方法。</p>
 <p>类图如下：</p>
 <p>![Image 1][]  </p>
 <p>示例程序：</p>
 <p>Buyer接口</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state.sample;
+<pre><code>package patterns.behavior.state.sample;
 
-<span class="javadoc">/**
+/**
  * Buyer interface
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Buyer</span> </span>{
-     <span class="keyword">void</span> order(OrderManager mgr, OrderRecord record);
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public interface Buyer {
+     void order(OrderManager mgr, OrderRecord record);
 }
 </code></pre><p>NormalBuyer类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state.sample;
+<pre><code>package patterns.behavior.state.sample;
 
-<span class="javadoc">/**
+/**
  * Normal buyer
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NormalBuyer</span> <span class="keyword">implements</span> <span class="title">Buyer</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class NormalBuyer implements Buyer {
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">order</span>(OrderManager mgr, OrderRecord record) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"User "</span> + record.getUsername() + <span class="string">" orders "</span>
+     @Override
+     public void order(OrderManager mgr, OrderRecord record) {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;User &quot; + record.getUsername() + &quot; orders &quot;
                      + record.getItem());
             mgr.getRecords().add( record);
      }
 
 }
 </code></pre><p>RepeatBuyer类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state.sample;
+<pre><code>package patterns.behavior.state.sample;
 
-<span class="javadoc">/**
+/**
  * Buyer who order one item repeatedly
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RepeatBuyer</span> <span class="keyword">implements</span> <span class="title">Buyer</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class RepeatBuyer implements Buyer {
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">order</span>(OrderManager mgr, OrderRecord record) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"User "</span> + record.getUsername() + <span class="string">" has bought "</span>
-                     + record.getItem() + <span class="string">" before, not allow to order again"</span>);
+     @Override
+     public void order(OrderManager mgr, OrderRecord record) {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;User &quot; + record.getUsername() + &quot; has bought &quot;
+                     + record.getItem() + &quot; before, not allow to order again&quot;);
      }
 
 }
 </code></pre><p>OrderRecord类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state.sample;
+<pre><code>package patterns.behavior.state.sample;
 
-<span class="javadoc">/**
+/**
  * An Order record
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderRecord</span> </span>{
-     <span class="keyword">private</span> String username;
-     <span class="keyword">private</span> String item;
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class OrderRecord {
+     private String username;
+     private String item;
 
-     <span class="keyword">public</span> <span class="title">OrderRecord</span>(String username, String item) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">this</span>. username = username;
-            <span class="keyword">this</span>. item = item;
+     public OrderRecord(String username, String item) {
+            // TODO Auto-generated constructor stub
+            this. username = username;
+            this. item = item;
      }
 
-     <span class="keyword">public</span> String <span class="title">getUsername</span>() {
-            <span class="keyword">return</span> username;
+     public String getUsername() {
+            return username;
      }
 
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span>(String username) {
-            <span class="keyword">this</span>. username = username;
+     public void setUsername(String username) {
+            this. username = username;
      }
 
-     <span class="keyword">public</span> String <span class="title">getItem</span>() {
-            <span class="keyword">return</span> item;
+     public String getItem() {
+            return item;
      }
 
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setItem</span>(String item) {
-            <span class="keyword">this</span>. item = item;
+     public void setItem(String item) {
+            this. item = item;
      }
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span>(Object obj) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( <span class="keyword">this</span> == obj)
-                 <span class="keyword">return</span> <span class="keyword">true</span>;
-            <span class="keyword">if</span> ( obj <span class="keyword">instanceof</span> OrderRecord) {
+     @Override
+     public boolean equals(Object obj) {
+            // TODO Auto-generated method stub
+            if ( this == obj)
+                 return true;
+            if ( obj instanceof OrderRecord) {
                 OrderRecord other = (OrderRecord) obj;
-                 <span class="keyword">if</span> ( <span class="keyword">this</span>. username == other. username &amp;&amp; <span class="keyword">this</span>. item == other.item )
-                      <span class="keyword">return</span> <span class="keyword">true</span>;
+                 if ( this. username == other. username &amp;&amp; this. item == other.item )
+                      return true;
            }
-            <span class="keyword">return</span> <span class="keyword">false</span>;
+            return false;
      }
 }
 </code></pre><p>OrderManager类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state.sample;
+<pre><code>package patterns.behavior.state.sample;
 
-<span class="keyword">import</span> java.util.ArrayList;
-<span class="keyword">import</span> java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
-<span class="javadoc">/**
+/**
  * Order manager, the context for buyers
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderManager</span> </span>{
-     <span class="keyword">private</span> Buyer buyer;
-     <span class="keyword">private</span> List&lt;OrderRecord&gt; records;
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class OrderManager {
+     private Buyer buyer;
+     private List&lt;OrderRecord&gt; records;
 
-     <span class="keyword">public</span> <span class="title">OrderManager</span>() {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            records = <span class="keyword">new</span> ArrayList&lt;OrderRecord&gt;();
+     public OrderManager() {
+            // TODO Auto-generated constructor stub
+            records = new ArrayList&lt;OrderRecord&gt;();
      }
 
-     <span class="javadoc">/**
+     /**
       * Order a item
       *
-      *<span class="javadoctag"> @param</span> username
-      *<span class="javadoctag"> @param</span> item
-      */</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">order</span>(String username, String item) {
-           OrderRecord record = <span class="keyword">new</span> OrderRecord( username, item);
-            <span class="keyword">if</span> ( records.contains( record)) {
-                 <span class="keyword">this</span>. buyer = <span class="keyword">new</span> RepeatBuyer();
-           } <span class="keyword">else</span> {
-                 <span class="keyword">this</span>. buyer = <span class="keyword">new</span> NormalBuyer();
+      * @param username
+      * @param item
+      */
+     public void order(String username, String item) {
+           OrderRecord record = new OrderRecord( username, item);
+            if ( records.contains( record)) {
+                 this. buyer = new RepeatBuyer();
+           } else {
+                 this. buyer = new NormalBuyer();
            }
-            buyer.order( <span class="keyword">this</span>, record);
+            buyer.order( this, record);
      }
 
-     <span class="keyword">public</span> List&lt;OrderRecord&gt; <span class="title">getRecords</span>() {
-            <span class="keyword">return</span> records;
+     public List&lt;OrderRecord&gt; getRecords() {
+            return records;
      }
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.state.sample;
+<pre><code>package patterns.behavior.state.sample;
 
-<span class="javadoc">/**
+/**
  * Client test for state design pattern sample
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月12日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月12日
+ */
+public class ClientTest {
 
-     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           OrderManager mgr = <span class="keyword">new</span> OrderManager();
-            mgr.order( <span class="string">"charles "</span>, <span class="string">"keyboard"</span>);
-            mgr.order( <span class="string">"charles "</span>, <span class="string">"mouse"</span>);
-            mgr.order( <span class="string">"charles "</span>, <span class="string">"keyboard"</span>);
+     public static void main(String[] args) {
+            // TODO Auto-generated method stub
+           OrderManager mgr = new OrderManager();
+            mgr.order( &quot;charles &quot;, &quot;keyboard&quot;);
+            mgr.order( &quot;charles &quot;, &quot;mouse&quot;);
+            mgr.order( &quot;charles &quot;, &quot;keyboard&quot;);
      }
 
 }
-</code></pre><h4 id="状态模式与策略模式的区别"><strong>状态模式与策略模式的区别</strong></h4>
-<p>状态模式与策略模式的UML与实现方式很类似，但二者在应用场景和实现细节上还是有很大不同：</p>
+</code></pre><h4 id="状态模式与策略模式的区别"><a href="#状态模式与策略模式的区别" class="headerlink" title="状态模式与策略模式的区别"></a><strong>状态模式与策略模式的区别</strong></h4><p>状态模式与策略模式的UML与实现方式很类似，但二者在应用场景和实现细节上还是有很大不同：</p>
 <p>(1) 应用场景不同，策略模式常用于算法决策系统，封装多个算法并提供同一接口，客户端可以自由切换具体的算法。而状态模式是为了统一管理对象的状态和状态的转移</p>
 <p>(2) 策略模式下，控制行为变化的是客户端，客户端可以自由切换算法执行不同的行为。而状态模式下，控制行为变化的往往是Context类或状态对象本身。状态在执行行为时可以接收Context类的实例，回调其方法改变状态，从而实现状态的转移。</p>
 <p>[Image 1]: </p>
@@ -595,7 +573,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -605,12 +583,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

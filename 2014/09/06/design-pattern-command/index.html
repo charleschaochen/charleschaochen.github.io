@@ -8,21 +8,20 @@
   <meta name="description" content="什么是命令模式命令模式在调用者与被调用者之间引入一个命令角色，即将调用者与被调用者分离开开，并将具体的调用过程独立封装。命令模式的类图如下：命令模式下有四类角色：Receiver：被调用者角色，用于接收处理调用请求Command：抽象命令角色，持有Receiver实例，声明execute接口ConcreteCommand：具体命令角色，实现execute方法，调用Receiver处理请求Invok">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行为型设计模式 — 命令模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/09/06/design-pattern-command/">
+<meta property="og:url" content="http://www.charlestech.info/2014/09/06/design-pattern-command/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是命令模式命令模式在调用者与被调用者之间引入一个命令角色，即将调用者与被调用者分离开开，并将具体的调用过程独立封装。命令模式的类图如下：命令模式下有四类角色：Receiver：被调用者角色，用于接收处理调用请求Command：抽象命令角色，持有Receiver实例，声明execute接口ConcreteCommand：具体命令角色，实现execute方法，调用Receiver处理请求Invok">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="行为型设计模式 — 命令模式">
 <meta name="twitter:description" content="什么是命令模式命令模式在调用者与被调用者之间引入一个命令角色，即将调用者与被调用者分离开开，并将具体的调用过程独立封装。命令模式的类图如下：命令模式下有四类角色：Receiver：被调用者角色，用于接收处理调用请求Command：抽象命令角色，持有Receiver实例，声明execute接口ConcreteCommand：具体命令角色，实现execute方法，调用Receiver处理请求Invok">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,8 +221,7 @@
       
         <p>什么是命令模式命令模式在调用者与被调用者之间引入一个命令角色，即将调用者与被调用者分离开开，并将具体的调用过程独立封装。命令模式的类图如下：命令模式下有四类角色：Receiver：被调用者角色，用于接收处理调用请求Command：抽象命令角色，持有Receiver实例，声明execute接口ConcreteCommand：具体命令角色，实现execute方法，调用Receiver处理请求Invok…</p>
 <a id="more"></a>
-<h4 id="什么是命令模式"><strong>什么是命令模式</strong></h4>
-<p>命令模式在调用者与被调用者之间引入一个命令角色，即将调用者与被调用者分离开开，并将具体的调用过程独立封装。命令模式的类图如下：</p>
+<h4 id="什么是命令模式"><a href="#什么是命令模式" class="headerlink" title="什么是命令模式"></a><strong>什么是命令模式</strong></h4><p>命令模式在调用者与被调用者之间引入一个命令角色，即将调用者与被调用者分离开开，并将具体的调用过程独立封装。命令模式的类图如下：</p>
 <p>![Image 1][]  </p>
 <p>命令模式下有四类角色：</p>
 <p><strong>Receiver</strong>：被调用者角色，用于接收处理调用请求</p>
@@ -249,119 +230,115 @@
 <p><strong>Invoker</strong>：调用者角色，持有Command实例，通过action方法调用Command的execute，从而将请求传递给Receiver执行</p>
 <p>示例程序</p>
 <p>Receiver被调用者类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command;
+<pre><code>package patterns.behavior.command;
 
-<span class="javadoc">/**
+/**
  * Receiver
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Receiver</span> </span>{
-      <span class="javadoc">/**
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class Receiver {
+      /**
       * Execute logic
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span>() {
-           System. out.println( <span class="string">"Receiver received the request"</span> );
+      */
+      public void execute() {
+           System. out.println( &quot;Receiver received the request&quot; );
      }
 }
 </code></pre><p>Command命令抽象类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command;
+<pre><code>package patterns.behavior.command;
 
-<span class="javadoc">/**
+/**
  * Abstract command
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Command</span> </span>{
-      <span class="keyword">protected</span> Receiver receiver;
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public abstract class Command {
+      protected Receiver receiver;
 
-      <span class="keyword">public</span> <span class="title">Command</span>(Receiver receiver) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">this</span>. receiver = receiver;
+      public Command(Receiver receiver) {
+            // TODO Auto-generated constructor stub
+            this. receiver = receiver;
      }
 
-      <span class="keyword">public</span> Receiver <span class="title">getReceiver</span>() {
-            <span class="keyword">return</span> receiver;
+      public Receiver getReceiver() {
+            return receiver;
      }
 
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setReceiver</span>(Receiver receiver) {
-            <span class="keyword">this</span>. receiver = receiver;
+      public void setReceiver(Receiver receiver) {
+            this. receiver = receiver;
      }
 
-      <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">execute</span>();
+      public abstract void execute();
 }
 </code></pre><p>ConcreteCommand具体命令类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command;
+<pre><code>package patterns.behavior.command;
 
-<span class="javadoc">/**
+/**
  * Concrete command
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteCommand</span> <span class="keyword">extends</span> <span class="title">Command</span> </span>{
-      <span class="keyword">public</span> <span class="title">ConcreteCommand</span>(Receiver receiver) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">super</span>( receiver);
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class ConcreteCommand extends Command {
+      public ConcreteCommand(Receiver receiver) {
+            // TODO Auto-generated constructor stub
+            super( receiver);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">this</span>. receiver.execute();
+      @Override
+      public void execute() {
+            // TODO Auto-generated method stub
+            this. receiver.execute();
      }
 
 }
 </code></pre><p>Invoker调用者类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command;
+<pre><code>package patterns.behavior.command;
 
-<span class="javadoc">/**
+/**
  * Command invoker
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Invoker</span> </span>{
-      <span class="keyword">private</span> Command command ;
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class Invoker {
+      private Command command ;
 
-      <span class="keyword">public</span> <span class="title">Invoker</span>(Command command ) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">this</span>. command = command;
+      public Invoker(Command command ) {
+            // TODO Auto-generated constructor stub
+            this. command = command;
      }
 
-      <span class="keyword">public</span> Command <span class="title">getCommand</span>() {
-            <span class="keyword">return</span> command;
+      public Command getCommand() {
+            return command;
      }
 
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCommand</span>(Command command ) {
-            <span class="keyword">this</span>. command = command;
+      public void setCommand(Command command ) {
+            this. command = command;
      }
 
-      <span class="javadoc">/**
+      /**
       * Invoke the command
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">action</span>() {
+      */
+      public void action() {
             command.execute();
      }
 }
-</code></pre><h4 id="命令模式的适用场景"><strong>命令模式的适用场景</strong></h4>
-<p>命令模式的一般适用场景是，调用者需要在运行时根据不同的需求，执行对被调用者不同的调用逻辑。</p>
+</code></pre><h4 id="命令模式的适用场景"><a href="#命令模式的适用场景" class="headerlink" title="命令模式的适用场景"></a><strong>命令模式的适用场景</strong></h4><p>命令模式的一般适用场景是，调用者需要在运行时根据不同的需求，执行对被调用者不同的调用逻辑。</p>
 <p>例如，计算机的电源管理器，需要根据用户的不同设置，调用屏幕驱动程序来设置屏幕亮度。当用户选择“高节能”设置时，需要调低屏幕亮度，当用户选择“高性能”设置时，需要调低屏幕亮度。一般情况下，电源管理器需要提供两个接口来调用屏幕驱动程序，实现屏幕亮度的高低调整。如果使用命令模式，我们只需要实现两个命令类分别负责调用屏幕驱动来调高和调低亮度，电源管理器只需要调用命令接口，运行时传入具体的命令类，就可以实现亮度的切换。当需要添加新的亮度设置时，也只需要实现新的命令类，电源管理器的调用接口依旧可以复用。</p>
 <p>命令模式也同样适用于，需要在调用时添加日志处理或需要支持撤销操作的场景。</p>
-<h4 id="为什么要使用命令模式"><strong>为什么要使用命令模式</strong></h4>
-<ol>
+<h4 id="为什么要使用命令模式"><a href="#为什么要使用命令模式" class="headerlink" title="为什么要使用命令模式"></a><strong>为什么要使用命令模式</strong></h4><ol>
 <li>命令模式实现调用者与被调用者的解耦，调用者发出请求时，并不知道接受请求的被调用者的接口，也不知道具体的调用过程。被调用者的变化不会影响到调用者，只需要调整命令角色即可</li>
 <li>命令模式有利于调用过程的扩展，如果需要添加新的调用逻辑，只需要实现新的命令类。客户端可以根据需要动态切换不同的命令类，从而执行不同的调用逻辑</li>
 <li>命令模式将调用逻辑独立封装，我们可以在调用逻辑中添加一些额外的处理逻辑，例如数据校验、日志操作等。这种模式使得调用者与被调用者可以专注于实现自身的逻辑，而不用考虑具体调用与被调用的过程</li>
 <li>命令模式支持可撤销操作，这也是完全得益于在调用者与被调用之间引入命令角色，我们可以在程序中维护一个命令调用的历史记录栈，当命令角色执行命令时，将自身进栈，命令角色同时提供undo接口，将自身出栈，并执行撤销逻辑</li>
 <li>命令模式下，调用者可以持有一个命令实例的队列，执行时依次调用队列中的命令，从而实现请求排队</li>
 </ol>
-<h4 id="_"> </h4>
-<h3 id="#">#</h3>
-<h4 id="如何实现命令模式"><strong>如何实现命令模式</strong></h4>
-<p>我们可以使用命令模式来模拟电视机遥控控制电视机的开关、声量和亮度。在这个例子中，遥控相当于调用者角色，而电视机就是被调用者角色。</p>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="如何实现命令模式"><a href="#如何实现命令模式" class="headerlink" title="如何实现命令模式"></a><strong>如何实现命令模式</strong></h4><p>我们可以使用命令模式来模拟电视机遥控控制电视机的开关、声量和亮度。在这个例子中，遥控相当于调用者角色，而电视机就是被调用者角色。</p>
 <p>定义Television类，具有volume，light和turnOn属性，并提供changeVol()，changeLight()，和changeTurnOn()方法来修改者三个属性</p>
 <p>定义Command抽象类，持有Television实例，声明execute和undo接口用来调用Television方法和撤销操作Command类有三个具体命令类，IncreVolCommand用来实现提高音量，IncreLightCommand用来实现提高亮度，TurnOnCommand用来实现开启电视开关</p>
 <p>定义Monitor类，持有Command实例，声明action和undo方法实现对Television的操作和撤销操作</p>
@@ -370,305 +347,305 @@
 <p>![Image 1][]  </p>
 <p>示例程序：</p>
 <p>Television类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command.sample;
+<pre><code>package patterns.behavior.command.sample;
 
-<span class="javadoc">/**
+/**
  * Television POJO
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Television</span> </span>{
-      <span class="keyword">private</span> <span class="keyword">int</span> volume; <span class="comment">// Volumn value of the TV</span>
-      <span class="keyword">private</span> <span class="keyword">int</span> light; <span class="comment">// Lightness value of the TV</span>
-      <span class="keyword">private</span> <span class="keyword">boolean</span> turnOn; <span class="comment">// Turned on flag of the TV</span>
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class Television {
+      private int volume; // Volumn value of the TV
+      private int light; // Lightness value of the TV
+      private boolean turnOn; // Turned on flag of the TV
 
-      <span class="keyword">public</span> <span class="title">Television</span>() {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="comment">// Initialize TV properties</span>
-            <span class="keyword">this</span>. volume = <span class="number">10</span>;
-            <span class="keyword">this</span>. light = <span class="number">10</span>;
-            <span class="keyword">this</span>. turnOn = <span class="keyword">false</span>;
+      public Television() {
+            // TODO Auto-generated constructor stub
+            // Initialize TV properties
+            this. volume = 10;
+            this. light = 10;
+            this. turnOn = false;
      }
 
-      <span class="javadoc">/**
+      /**
       * Change volume value
       *
-      *<span class="javadoctag"> @param</span> vol
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeVol</span>( <span class="keyword">int</span> vol) {
-            <span class="keyword">if</span> (getVolume() + vol &gt;= <span class="number">0</span>) {
+      * @param vol
+      */
+      public void changeVol( int vol) {
+            if (getVolume() + vol &gt;= 0) {
                 setVolume(getVolume() + vol);
            }
      }
-      <span class="javadoc">/**
+      /**
       * Change light value
-      *<span class="javadoctag"> @param</span> light
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeLight</span>( <span class="keyword">int</span> light){
-            <span class="keyword">if</span>(getLight()+ light&gt;=<span class="number">0</span>){
+      * @param light
+      */
+      public void changeLight( int light){
+            if(getLight()+ light&gt;=0){
                 setLight(getLight()+ light);
            }
      }
 
-      <span class="javadoc">/**
+      /**
       * Change turn on flag
-      *<span class="javadoctag"> @param</span> turnOn
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeTurnOn</span>( <span class="keyword">boolean</span> turnOn){
+      * @param turnOn
+      */
+      public void changeTurnOn( boolean turnOn){
            setTurnOn( turnOn);
      }
-      <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getVolume</span>() {
-            <span class="keyword">return</span> volume;
+      public int getVolume() {
+            return volume;
      }
 
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setVolume</span>( <span class="keyword">int</span> volume) {
-            <span class="keyword">this</span>. volume = volume;
+      public void setVolume( int volume) {
+            this. volume = volume;
      }
 
-      <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLight</span>() {
-            <span class="keyword">return</span> light;
+      public int getLight() {
+            return light;
      }
 
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLight</span>( <span class="keyword">int</span> light) {
-            <span class="keyword">this</span>. light = light;
+      public void setLight( int light) {
+            this. light = light;
      }
 
-      <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTurnOn</span>() {
-            <span class="keyword">return</span> turnOn;
+      public boolean isTurnOn() {
+            return turnOn;
      }
 
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTurnOn</span>( <span class="keyword">boolean</span> turnOn) {
-            <span class="keyword">this</span>. turnOn = turnOn;
+      public void setTurnOn( boolean turnOn) {
+            this. turnOn = turnOn;
      }
 
 }
 </code></pre><p>Command抽象类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command.sample;
+<pre><code>package patterns.behavior.command.sample;
 
-<span class="keyword">import</span> java.util.Stack;
+import java.util.Stack;
 
-<span class="javadoc">/**
+/**
  * Command abstract class
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Command</span> </span>{
-      <span class="keyword">protected</span> Television tv;
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public abstract class Command {
+      protected Television tv;
 
-      <span class="keyword">public</span> <span class="title">Command</span>(Television tv) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">this</span>. tv = tv;
+      public Command(Television tv) {
+            // TODO Auto-generated method stub
+            this. tv = tv;
      }
 
-      <span class="javadoc">/**
+      /**
       * Execute the command
       *
-      *<span class="javadoctag"> @param</span> history
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">execute</span>(Stack&lt;Command&gt; history );
+      * @param history
+      */
+      public abstract void execute(Stack&lt;Command&gt; history );
 
-      <span class="javadoc">/**
+      /**
       * Undo the command
       *
-      *<span class="javadoctag"> @param</span> history
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">undo</span>(Stack&lt;Command&gt; history);
+      * @param history
+      */
+      public abstract void undo(Stack&lt;Command&gt; history);
 }
 </code></pre><p>IncreVolCommand类，用于提升音量</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command.sample;
+<pre><code>package patterns.behavior.command.sample;
 
-<span class="keyword">import</span> java.util.Stack;
+import java.util.Stack;
 
-<span class="javadoc">/**
+/**
  * Command for increasing the volume
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IncreVolCommand</span> <span class="keyword">extends</span> <span class="title">Command</span> </span>{
-      <span class="keyword">public</span> <span class="title">IncreVolCommand</span>(Television tv) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">super</span>( tv);
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class IncreVolCommand extends Command {
+      public IncreVolCommand(Television tv) {
+            // TODO Auto-generated constructor stub
+            super( tv);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span>(Stack&lt;Command&gt; history) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( tv != <span class="keyword">null</span> &amp; history != <span class="keyword">null</span>) {
-                 tv.changeVol(<span class="number">1</span>);
-                 <span class="comment">// Push the current command into command histories</span>
-                 history.push( <span class="keyword">this</span>);
+      @Override
+      public void execute(Stack&lt;Command&gt; history) {
+            // TODO Auto-generated method stub
+            if ( tv != null &amp; history != null) {
+                 tv.changeVol(1);
+                 // Push the current command into command histories
+                 history.push( this);
            }
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">undo</span>(Stack&lt;Command&gt; history) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( history != <span class="keyword">null</span> &amp;&amp; history.size() &gt; <span class="number">0</span>
-                     &amp;&amp; history.lastElement() == <span class="keyword">this</span>) {
-                 <span class="comment">// Pop the last executed command</span>
+      @Override
+      public void undo(Stack&lt;Command&gt; history) {
+            // TODO Auto-generated method stub
+            if ( history != null &amp;&amp; history.size() &gt; 0
+                     &amp;&amp; history.lastElement() == this) {
+                 // Pop the last executed command
                  history.pop();
-                 tv.changeVol(-<span class="number">1</span>);
+                 tv.changeVol(-1);
            }
      }
 }
 </code></pre><p>IncreLightCommand类，用于提高亮度</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command.sample;
+<pre><code>package patterns.behavior.command.sample;
 
-<span class="keyword">import</span> java.util.Stack;
+import java.util.Stack;
 
-<span class="javadoc">/**
+/**
  * Command for increasing lightness of TV
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IncreLightCommand</span> <span class="keyword">extends</span> <span class="title">Command</span> </span>{
-      <span class="keyword">public</span> <span class="title">IncreLightCommand</span>(Television tv) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">super</span>( tv);
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class IncreLightCommand extends Command {
+      public IncreLightCommand(Television tv) {
+            // TODO Auto-generated constructor stub
+            super( tv);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span>(Stack&lt;Command&gt; history) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( tv != <span class="keyword">null</span> &amp; history != <span class="keyword">null</span>) {
-                 tv.changeLight(<span class="number">1</span>);
-                 <span class="comment">// Push the current command into command histories</span>
-                 history.push( <span class="keyword">this</span>);
+      @Override
+      public void execute(Stack&lt;Command&gt; history) {
+            // TODO Auto-generated method stub
+            if ( tv != null &amp; history != null) {
+                 tv.changeLight(1);
+                 // Push the current command into command histories
+                 history.push( this);
            }
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">undo</span>(Stack&lt;Command&gt; history) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( history != <span class="keyword">null</span> &amp;&amp; history.size() &gt; <span class="number">0</span>
-                     &amp;&amp; history.lastElement() == <span class="keyword">this</span>) {
-                 <span class="comment">// Pop the last executed command</span>
+      @Override
+      public void undo(Stack&lt;Command&gt; history) {
+            // TODO Auto-generated method stub
+            if ( history != null &amp;&amp; history.size() &gt; 0
+                     &amp;&amp; history.lastElement() == this) {
+                 // Pop the last executed command
                  history.pop();
-                 tv.changeLight(-<span class="number">1</span>);
+                 tv.changeLight(-1);
            }
      }
 }
 </code></pre><p>TurnOnCommand类，用于打开电视开关</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command.sample;
+<pre><code>package patterns.behavior.command.sample;
 
-<span class="keyword">import</span> java.util.Stack;
+import java.util.Stack;
 
-<span class="javadoc">/**
+/**
  * Command for turning on TV
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TurnOnCommand</span> <span class="keyword">extends</span> <span class="title">Command</span> </span>{
-      <span class="keyword">public</span> <span class="title">TurnOnCommand</span>(Television tv) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">super</span>( tv);
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class TurnOnCommand extends Command {
+      public TurnOnCommand(Television tv) {
+            // TODO Auto-generated constructor stub
+            super( tv);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span>(Stack&lt;Command&gt; history) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( tv != <span class="keyword">null</span> &amp;&amp; history != <span class="keyword">null</span>) {
-                 tv.changeTurnOn( <span class="keyword">true</span>);
-                 <span class="comment">// Push current command into histories</span>
-                 history.push( <span class="keyword">this</span>);
+      @Override
+      public void execute(Stack&lt;Command&gt; history) {
+            // TODO Auto-generated method stub
+            if ( tv != null &amp;&amp; history != null) {
+                 tv.changeTurnOn( true);
+                 // Push current command into histories
+                 history.push( this);
            }
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">undo</span>(Stack&lt;Command&gt; history) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( history != <span class="keyword">null</span> &amp; history.size() &gt; <span class="number">0</span>
-                     &amp;&amp; history.lastElement() == <span class="keyword">this</span>) {
-                 <span class="comment">// Pop last executed command</span>
+      @Override
+      public void undo(Stack&lt;Command&gt; history) {
+            // TODO Auto-generated method stub
+            if ( history != null &amp; history.size() &gt; 0
+                     &amp;&amp; history.lastElement() == this) {
+                 // Pop last executed command
                  history.pop();
-                 tv.changeTurnOn( <span class="keyword">false</span>);
+                 tv.changeTurnOn( false);
            }
      }
 }
 </code></pre><p>Monitor遥控器类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command.sample;
+<pre><code>package patterns.behavior.command.sample;
 
-<span class="keyword">import</span> java.util.Stack;
+import java.util.Stack;
 
-<span class="javadoc">/**
+/**
  * TV monitor POJO
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minitor</span> </span>{
-      <span class="keyword">private</span> Stack&lt;Command&gt; history; <span class="comment">// Command histories</span>
-      <span class="keyword">private</span> Command cmd;
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class Minitor {
+      private Stack&lt;Command&gt; history; // Command histories
+      private Command cmd;
 
-      <span class="keyword">public</span> <span class="title">Minitor</span>(Command cmd) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            history = <span class="keyword">new</span> Stack&lt;Command&gt;();
-            <span class="keyword">this</span>. cmd = cmd;
+      public Minitor(Command cmd) {
+            // TODO Auto-generated constructor stub
+            history = new Stack&lt;Command&gt;();
+            this. cmd = cmd;
      }
 
-      <span class="javadoc">/**
+      /**
       * Execute command for TV
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">action</span>() {
-            <span class="keyword">if</span> ( cmd != <span class="keyword">null</span>) {
+      */
+      public void action() {
+            if ( cmd != null) {
                  cmd.execute( history);
            }
      }
 
-      <span class="javadoc">/**
+      /**
       * Undo the command
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">undo</span>() {
-            <span class="keyword">if</span> ( cmd != <span class="keyword">null</span>) {
+      */
+      public void undo() {
+            if ( cmd != null) {
                  cmd.undo( history);
            }
      }
 
-      <span class="keyword">public</span> Command <span class="title">getCmd</span>() {
-            <span class="keyword">return</span> cmd;
+      public Command getCmd() {
+            return cmd;
      }
 
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCmd</span>(Command cmd) {
-            <span class="keyword">this</span>. cmd = cmd;
+      public void setCmd(Command cmd) {
+            this. cmd = cmd;
      }
 
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.command.sample;
+<pre><code>package patterns.behavior.command.sample;
 
-<span class="javadoc">/**
+/**
  * Client test for command design pattern
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月6日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+ * @author Charles Chen
+ * @date 2014年9月6日
+ */
+public class ClientTest {
 
-      <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           Television tv = <span class="keyword">new</span> Television();
-           Minitor monitor = <span class="keyword">new</span> Minitor( <span class="keyword">new</span> TurnOnCommand( tv));
-            <span class="comment">// Turn on the TV</span>
+      public static void main(String[] args) {
+            // TODO Auto-generated method stub
+           Television tv = new Television();
+           Minitor monitor = new Minitor( new TurnOnCommand( tv));
+            // Turn on the TV
             monitor.action();
-           System. out.println( <span class="string">"TV power: "</span> + (tv .isTurnOn() ? <span class="string">"on"</span> : <span class="string">"off"</span> ));
+           System. out.println( &quot;TV power: &quot; + (tv .isTurnOn() ? &quot;on&quot; : &quot;off&quot; ));
 
-            <span class="comment">// Increase TV's volume</span>
-            monitor.setCmd( <span class="keyword">new</span> IncreVolCommand( tv));
+            // Increase TV&apos;s volume
+            monitor.setCmd( new IncreVolCommand( tv));
             monitor.action();
-           System. out.println( <span class="string">"TV volume: "</span> + tv .getVolume());
+           System. out.println( &quot;TV volume: &quot; + tv .getVolume());
 
-            <span class="comment">// Increase TV's lightness</span>
-            monitor.setCmd( <span class="keyword">new</span> IncreLightCommand( tv));
+            // Increase TV&apos;s lightness
+            monitor.setCmd( new IncreLightCommand( tv));
             monitor.action();
-           System. out.println( <span class="string">"TV lightness: "</span> + tv .getLight());
-            <span class="comment">// Undo increasing lightness</span>
+           System. out.println( &quot;TV lightness: &quot; + tv .getLight());
+            // Undo increasing lightness
             monitor.undo();
-           System. out.println( <span class="string">"TV lightness: "</span> + tv .getLight());
+           System. out.println( &quot;TV lightness: &quot; + tv .getLight());
      }
 
 }
@@ -747,7 +724,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -757,12 +734,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

@@ -8,21 +8,20 @@
   <meta name="description" content="什么是访问者模式访问者模式的定义是：封装某些作用于某种数据结构中各元素的访问，使得在不改变该数据结构的前提下修改或新增作用于这些元素的操作。简单来说，访问者模式就是引入一个访问者角色统一负责对目标对象的所有具体实现的访问。访问者模式的类图如下：访问者模式下有四类角色：（1）Element：被访问者抽象角色。声明接受访问者实例的accept接口，这个接口接收一个访问者实例，并声明实际的操作接口（2）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行为型设计模式 — 访问者模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/10/19/design-pattern-visitor/">
+<meta property="og:url" content="http://www.charlestech.info/2014/10/19/design-pattern-visitor/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是访问者模式访问者模式的定义是：封装某些作用于某种数据结构中各元素的访问，使得在不改变该数据结构的前提下修改或新增作用于这些元素的操作。简单来说，访问者模式就是引入一个访问者角色统一负责对目标对象的所有具体实现的访问。访问者模式的类图如下：访问者模式下有四类角色：（1）Element：被访问者抽象角色。声明接受访问者实例的accept接口，这个接口接收一个访问者实例，并声明实际的操作接口（2）">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="行为型设计模式 — 访问者模式">
 <meta name="twitter:description" content="什么是访问者模式访问者模式的定义是：封装某些作用于某种数据结构中各元素的访问，使得在不改变该数据结构的前提下修改或新增作用于这些元素的操作。简单来说，访问者模式就是引入一个访问者角色统一负责对目标对象的所有具体实现的访问。访问者模式的类图如下：访问者模式下有四类角色：（1）Element：被访问者抽象角色。声明接受访问者实例的accept接口，这个接口接收一个访问者实例，并声明实际的操作接口（2）">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,8 +221,7 @@
       
         <p>什么是访问者模式访问者模式的定义是：封装某些作用于某种数据结构中各元素的访问，使得在不改变该数据结构的前提下修改或新增作用于这些元素的操作。简单来说，访问者模式就是引入一个访问者角色统一负责对目标对象的所有具体实现的访问。访问者模式的类图如下：访问者模式下有四类角色：（1）Element：被访问者抽象角色。声明接受访问者实例的accept接口，这个接口接收一个访问者实例，并声明实际的操作接口（2）…</p>
 <a id="more"></a>
-<h4 id="什么是访问者模式"><strong>什么是访问者模式</strong></h4>
-<p>访问者模式的定义是：封装某些作用于某种数据结构中各元素的访问，使得在不改变该数据结构的前提下修改或新增作用于这些元素的操作。简单来说，访问者模式就是引入一个访问者角色统一负责对目标对象的所有具体实现的访问。</p>
+<h4 id="什么是访问者模式"><a href="#什么是访问者模式" class="headerlink" title="什么是访问者模式"></a><strong>什么是访问者模式</strong></h4><p>访问者模式的定义是：封装某些作用于某种数据结构中各元素的访问，使得在不改变该数据结构的前提下修改或新增作用于这些元素的操作。简单来说，访问者模式就是引入一个访问者角色统一负责对目标对象的所有具体实现的访问。</p>
 <p>访问者模式的类图如下：</p>
 <p>![Image 1][]  </p>
 <p>访问者模式下有四类角色：</p>
@@ -248,219 +229,216 @@
 <p>（2）<strong>ConcreteElement</strong>：被访者具体角色。实现Element，实现accept方法，在该方法中调用访问者的visit方法并将自身作为参数传入，供访问者访问。实现具体的操作方法</p>
 <p>（3）<strong>Visitor</strong>：访问者抽象角色。声明针对所有具体被访问者操作的接口，一般有多少个具体的被访问者，就声明多少个方法</p>
 <p>（4）<strong>ConcreteVisitor</strong>：访问者具体角色。实现抽象访问者接口，实现具的操作</p>
-<h4 id="为什么要使用访问者模式"><strong>为什么要使用访问者模式</strong></h4>
-<p>（1）访问者模式可以实现对一类对象所有具体元素的统一操作</p>
+<h4 id="为什么要使用访问者模式"><a href="#为什么要使用访问者模式" class="headerlink" title="为什么要使用访问者模式"></a><strong>为什么要使用访问者模式</strong></h4><p>（1）访问者模式可以实现对一类对象所有具体元素的统一操作</p>
 <p>（2）访问者模式实现对象与作用于对象的操作的解耦，操作的修改不会影响被访问的对象</p>
 <p>（3）访问者模式便于操作的扩展，如果对被访问对象有新的操作，直接实现一个新访问者即可</p>
 <p>访问者模式的主要缺点是，当被访问者有新的具体实现时，需要调整所有的访问者逻辑，添加对新实例的操作</p>
-<h4 id="_"> </h4>
-<h3 id="#">#</h3>
-<h4 id="如何使用访问者模式"><strong>如何使用访问者模式</strong></h4>
-<p>在财务应用中，单据Transaction有很多具体的单据类型，例如发票Invoice，贷项通知单CreditMemo，借项通知单DebitMemo等等，对单据的操作有做账Accounting，有校验Validate，而针对不同的单据，具体的操作是不同的。我们可以将作用于单据的操作抽象为访问者，例如AccountingVisitor，ValidationVisitor，具体的单据就是被访问的具体元素。</p>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="如何使用访问者模式"><a href="#如何使用访问者模式" class="headerlink" title="如何使用访问者模式"></a><strong>如何使用访问者模式</strong></h4><p>在财务应用中，单据Transaction有很多具体的单据类型，例如发票Invoice，贷项通知单CreditMemo，借项通知单DebitMemo等等，对单据的操作有做账Accounting，有校验Validate，而针对不同的单据，具体的操作是不同的。我们可以将作用于单据的操作抽象为访问者，例如AccountingVisitor，ValidationVisitor，具体的单据就是被访问的具体元素。</p>
 <p>类图如下：</p>
 <p>![Image 1][]  </p>
 <p>示例代码：</p>
 <p>单据接口Transaction</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.visitor;
-<span class="javadoc">/**
+<pre><code>package patterns.behavior.visitor;
+/**
  * Transaction interface
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Transaction</span> </span>{
-    <span class="keyword">void</span> accept(Visitor visitor);
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public interface Transaction {
+    void accept(Visitor visitor);
 
-    <span class="keyword">void</span> accounting();
+    void accounting();
 
-    <span class="keyword">void</span> validate();
+    void validate();
 }
 </code></pre><p>访问者接口Visitor</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.visitor;
+<pre><code>package patterns.behavior.visitor;
 
-<span class="javadoc">/**
+/**
  * Visitor interface
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Visitor</span> </span>{
-    <span class="keyword">void</span> visit(Invoice invoice);
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public interface Visitor {
+    void visit(Invoice invoice);
 
-    <span class="keyword">void</span> visit(CreditMemo creditMemo);
+    void visit(CreditMemo creditMemo);
 
-    <span class="keyword">void</span> visit(DebitMemo debitMemo);
+    void visit(DebitMemo debitMemo);
 }
 </code></pre><p>三类单据Invoice、CreditMemo和DebitMemo的具体实现</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.visitor;
+<pre><code>package patterns.behavior.visitor;
 
-<span class="javadoc">/**
+/**
  * Invoice implementation
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Invoice</span> <span class="keyword">implements</span> <span class="title">Transaction</span> </span>{
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span>(Visitor visitor) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            visitor.visit( <span class="keyword">this</span>);
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public class Invoice implements Transaction {
+      @Override
+      public void accept(Visitor visitor) {
+            // TODO Auto-generated method stub
+            visitor.visit( this);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accounting</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Do accounting for Invoice"</span> );
+      @Override
+      public void accounting() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Do accounting for Invoice&quot; );
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">validate</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Validate Invoice"</span> );
+      @Override
+      public void validate() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Validate Invoice&quot; );
      }
 }
 
-<span class="keyword">package</span> patterns.behavior.visitor;
+package patterns.behavior.visitor;
 
-<span class="javadoc">/**
+/**
  * Credit Memo implementation
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CreditMemo</span> <span class="keyword">implements</span> <span class="title">Transaction</span> </span>{
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span>(Visitor visitor) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            visitor.visit( <span class="keyword">this</span>);
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public class CreditMemo implements Transaction {
+      @Override
+      public void accept(Visitor visitor) {
+            // TODO Auto-generated method stub
+            visitor.visit( this);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accounting</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Do accounting for Credit Memo"</span> );
+      @Override
+      public void accounting() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Do accounting for Credit Memo&quot; );
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">validate</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Validate Credit Memo"</span> );
+      @Override
+      public void validate() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Validate Credit Memo&quot; );
      }
 }
 
-<span class="keyword">package</span> patterns.behavior.visitor;
+package patterns.behavior.visitor;
 
-<span class="javadoc">/**
+/**
  * Debit Memo implementation
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DebitMemo</span> <span class="keyword">implements</span> <span class="title">Transaction</span> </span>{
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span>(Visitor visitor) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            visitor.visit( <span class="keyword">this</span>);
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public class DebitMemo implements Transaction {
+      @Override
+      public void accept(Visitor visitor) {
+            // TODO Auto-generated method stub
+            visitor.visit( this);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accounting</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Do accounting for Debit Memo"</span>);
+      @Override
+      public void accounting() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Do accounting for Debit Memo&quot;);
      }
 
-      <span class="annotation">@Override</span>
-      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">validate</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           System. out.println( <span class="string">"Validate Debit Memo"</span>);
+      @Override
+      public void validate() {
+            // TODO Auto-generated method stub
+           System. out.println( &quot;Validate Debit Memo&quot;);
      }
 
 }
 </code></pre><p>做账操作访问者AccountingVisitor</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.visitor;
+<pre><code>package patterns.behavior.visitor;
 
-<span class="javadoc">/**
+/**
  * Accounting visitor
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountingVisitor</span> <span class="keyword">implements</span> <span class="title">Visitor</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public class AccountingVisitor implements Visitor {
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span>(Invoice invoice) {
-        <span class="comment">// TODO Auto-generated method stub</span>
+    @Override
+    public void visit(Invoice invoice) {
+        // TODO Auto-generated method stub
         invoice.accounting();
     }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span>(CreditMemo creditMemo) {
-        <span class="comment">// TODO Auto-generated method stub</span>
+    @Override
+    public void visit(CreditMemo creditMemo) {
+        // TODO Auto-generated method stub
         creditMemo.accounting();
     }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span>(DebitMemo debitMemo) {
-        <span class="comment">// TODO Auto-generated method stub</span>
+    @Override
+    public void visit(DebitMemo debitMemo) {
+        // TODO Auto-generated method stub
         debitMemo.accounting();
     }
 
 }
 </code></pre><p>校验操作访问者ValidateVisitor</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.visitor;
+<pre><code>package patterns.behavior.visitor;
 
-<span class="javadoc">/**
+/**
  * Validation visitor
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValidateVisitor</span> <span class="keyword">implements</span> <span class="title">Visitor</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public class ValidateVisitor implements Visitor {
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span>(Invoice invoice) {
-        <span class="comment">// TODO Auto-generated method stub</span>
+    @Override
+    public void visit(Invoice invoice) {
+        // TODO Auto-generated method stub
         invoice.validate();
     }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span>(CreditMemo creditMemo) {
-        <span class="comment">// TODO Auto-generated method stub</span>
+    @Override
+    public void visit(CreditMemo creditMemo) {
+        // TODO Auto-generated method stub
         creditMemo.validate();
     }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visit</span>(DebitMemo debitMemo) {
-        <span class="comment">// TODO Auto-generated method stub</span>
+    @Override
+    public void visit(DebitMemo debitMemo) {
+        // TODO Auto-generated method stub
         debitMemo.validate();
     }
 
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.visitor;
+<pre><code>package patterns.behavior.visitor;
 
-<span class="javadoc">/**
+/**
  * Client test for visitor design pattern sample
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月19日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+ * @author Charles Chen
+ * @date 2014年10月19日
+ */
+public class ClientTest {
 
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        Transaction invoice = <span class="keyword">new</span> Invoice();
-        Transaction creditMemo = <span class="keyword">new</span> CreditMemo();
-        Transaction debitMemo = <span class="keyword">new</span> DebitMemo();
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Transaction invoice = new Invoice();
+        Transaction creditMemo = new CreditMemo();
+        Transaction debitMemo = new DebitMemo();
 
-        Visitor accVisitor = <span class="keyword">new</span> AccountingVisitor();
-        Visitor valVisitor = <span class="keyword">new</span> ValidateVisitor();
-        <span class="comment">// Visit invoice</span>
+        Visitor accVisitor = new AccountingVisitor();
+        Visitor valVisitor = new ValidateVisitor();
+        // Visit invoice
         invoice.accept(accVisitor);
         invoice.accept(valVisitor);
-        <span class="comment">// Visit credit memo</span>
+        // Visit credit memo
         creditMemo.accept(accVisitor);
         creditMemo.accept(valVisitor);
-        <span class="comment">// Visit debit memo</span>
+        // Visit debit memo
         debitMemo.accept(accVisitor);
         debitMemo.accept(valVisitor);
     }
@@ -539,7 +517,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -549,12 +527,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

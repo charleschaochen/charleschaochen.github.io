@@ -8,21 +8,20 @@
   <meta name="description" content="什么是JSON-RPCJson-RPC是以Json作为数据交换格式的远程过程调用协议，利用该协议我们可以实现在不同平台之间进行远程的服务调用。JSON-RPC常用与应用内的模块集成。Json-RPC-Java是用Java实现的一个Json-RPC框架，它允许我们在web容器中搭建远程过程调用服务，并提供Javascript客户端API，实现使用Js远程调用Java方法。如何使用JSON-RPC-J">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSON-RPC使用及自动加载服务框架">
-<meta property="og:url" content="http://www.charlestech.info/2014/10/03/jsonrpc-usage/">
+<meta property="og:url" content="http://www.charlestech.info/2014/10/03/jsonrpc-usage/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是JSON-RPCJson-RPC是以Json作为数据交换格式的远程过程调用协议，利用该协议我们可以实现在不同平台之间进行远程的服务调用。JSON-RPC常用与应用内的模块集成。Json-RPC-Java是用Java实现的一个Json-RPC框架，它允许我们在web容器中搭建远程过程调用服务，并提供Javascript客户端API，实现使用Js远程调用Java方法。如何使用JSON-RPC-J">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON-RPC使用及自动加载服务框架">
 <meta name="twitter:description" content="什么是JSON-RPCJson-RPC是以Json作为数据交换格式的远程过程调用协议，利用该协议我们可以实现在不同平台之间进行远程的服务调用。JSON-RPC常用与应用内的模块集成。Json-RPC-Java是用Java实现的一个Json-RPC框架，它允许我们在web容器中搭建远程过程调用服务，并提供Javascript客户端API，实现使用Js远程调用Java方法。如何使用JSON-RPC-J">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,43 +221,40 @@
       
         <p>什么是JSON-RPCJson-RPC是以Json作为数据交换格式的远程过程调用协议，利用该协议我们可以实现在不同平台之间进行远程的服务调用。JSON-RPC常用与应用内的模块集成。Json-RPC-Java是用Java实现的一个Json-RPC框架，它允许我们在web容器中搭建远程过程调用服务，并提供Javascript客户端API，实现使用Js远程调用Java方法。如何使用JSON-RPC-J…</p>
 <a id="more"></a>
-<h4 id="什么是JSON-RPC"><strong>什么是JSON-RPC</strong></h4>
-<p>Json-RPC是以Json作为数据交换格式的远程过程调用协议，利用该协议我们可以实现在不同平台之间进行远程的服务调用。JSON-RPC常用与应用内的模块集成。</p>
+<h4 id="什么是JSON-RPC"><a href="#什么是JSON-RPC" class="headerlink" title="什么是JSON-RPC"></a><strong>什么是JSON-RPC</strong></h4><p>Json-RPC是以Json作为数据交换格式的远程过程调用协议，利用该协议我们可以实现在不同平台之间进行远程的服务调用。JSON-RPC常用与应用内的模块集成。</p>
 <p>Json-RPC-Java是用Java实现的一个Json-RPC框架，它允许我们在web容器中搭建远程过程调用服务，并提供Javascript客户端API，实现使用Js远程调用Java方法。</p>
-<h4 id="_"> </h4>
-<h3 id="#">#</h3>
-<h4 id="如何使用JSON-RPC-JAVA"><strong>如何使用JSON-RPC-JAVA</strong></h4>
-<ol>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="如何使用JSON-RPC-JAVA"><a href="#如何使用JSON-RPC-JAVA" class="headerlink" title="如何使用JSON-RPC-JAVA"></a><strong>如何使用JSON-RPC-JAVA</strong></h4><ol>
 <li><p>下载jsonrpc的jar包以及js库文件</p>
 </li>
 <li><p>在web.xml中配置JSONRPCServlet</p>
 <p>  <servlet><br>   <servlet-name>JSONRPCServlet</servlet-name><br>   <servlet-class></servlet-class></servlet></p>
-<pre><code>   <span class="keyword">com</span>.metaparadigm.jsonrpc.JSONRPCServlet
+<pre><code>com.metaparadigm.jsonrpc.JSONRPCServlet
 </code></pre><p>   <br>   <init-param></init-param></p>
-<pre><code>   &lt;<span class="built_in">param</span>-name&gt;servicePath&lt;/<span class="built_in">param</span>-name&gt;
-   &lt;<span class="built_in">param</span>-<span class="built_in">value</span>&gt;org.cc.service&lt;/<span class="built_in">param</span>-<span class="built_in">value</span>&gt;
+<pre><code>&lt;param-name&gt;servicePath&lt;/param-name&gt;
+&lt;param-value&gt;org.cc.service&lt;/param-value&gt;
 </code></pre><p>   <br>   <load-on-startup>1</load-on-startup><br> <br> <servlet-mapping><br>   <servlet-name>JSONRPCServlet</servlet-name><br>   <url-pattern>/JSON-RPC</url-pattern><br> </servlet-mapping></p>
 </li>
 <li><p>编写服务逻辑</p>
 <p> package org.cc.service;</p>
 <p> public class TestService {</p>
-<pre><code>  <span class="keyword">public</span> String <span class="title">getHello</span>() {
-       <span class="keyword">return</span> <span class="string">"Hello, JSON-RPC"</span>;
-  }
+<pre><code>public String getHello() {
+     return &quot;Hello, JSON-RPC&quot;;
+}
 
-  <span class="keyword">public</span> String <span class="title">random</span>(<span class="keyword">int</span> seed) {
-       Integer <span class="keyword">value</span> = Integer.valueOf((<span class="keyword">int</span>) (Math.random() * (<span class="keyword">double</span>) seed));
-       <span class="keyword">return</span> <span class="keyword">value</span>.toString();
-  }
+public String random(int seed) {
+     Integer value = Integer.valueOf((int) (Math.random() * (double) seed));
+     return value.toString();
+}
 </code></pre><p> }</p>
 </li>
 </ol>
 <ol>
 <li><p>在JSP页面上调用JSONRPCBridge的API注册服务</p>
 <p> &lt;jsp:useBean id =”JSONRPCBridge” scope=”session”</p>
-<pre><code><span class="keyword">class</span>=<span class="string">"com.metaparadigm.jsonrpc.JSONRPCBridge"</span> /&gt;
+<pre><code>class=&quot;com.metaparadigm.jsonrpc.JSONRPCBridge&quot; /&gt;
 </code></pre><p> &lt;jsp:useBean id =”testService” scope=”session”</p>
-<pre><code><span class="keyword">class</span>=<span class="string">"org.cc.service.TestService"</span> /&gt;
+<pre><code>class=&quot;org.cc.service.TestService&quot; /&gt;
 </code></pre><p> &lt;%<br>   JSONRPCBridge.registerObject( “testService”, testService);<br> %&gt;</p>
 </li>
 </ol>
@@ -283,52 +262,50 @@
 <li>通过js API访问服务器服务</li>
 </ol>
 <p>引入js库</p>
-<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>= "<span class="attribute">text</span>/<span class="attribute">javascript</span>" <span class="attribute">src</span>=<span class="value">"js/jsonrpc.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<pre><code>&lt;script type= &quot;text/javascript&quot; src=&quot;js/jsonrpc.js&quot;&gt;&lt;/script&gt;
 </code></pre><p>调用服务器service</p>
-<pre><code><span class="keyword">var</span> jsonrpc = new <span class="type">JSONRpcClient</span>( <span class="string">"JSON-RPC"</span> );
-<span class="keyword">var</span> <span class="literal">result</span> = jsonrpc.testService.getHello();
-<span class="keyword">var</span> <span class="literal">result</span> = jsonrpc.testService.random(<span class="number">5</span>);
+<pre><code>var jsonrpc = new JSONRpcClient( &quot;JSON-RPC&quot; );
+var result = jsonrpc.testService.getHello();
+var result = jsonrpc.testService.random(5);
 </code></pre><p><strong>web容器启动时自动注册服务</strong></p>
 <p>我们可以继承JSONRPCServlet重写其init方法，在它初始化时注册某些服务：</p>
-<pre><code><span class="keyword">package</span> org.cc.rpcservlet;
+<pre><code>package org.cc.rpcservlet;
 
-<span class="keyword">import</span> javax.servlet.ServletConfig;
-<span class="keyword">import</span> javax.servlet.ServletException;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 
-<span class="keyword">import</span> org.cc.service.TestService;
+import org.cc.service.TestService;
 
-<span class="keyword">import</span> com.metaparadigm.jsonrpc.JSONRPCBridge;
-<span class="keyword">import</span> com.metaparadigm.jsonrpc.JSONRPCServlet;
+import com.metaparadigm.jsonrpc.JSONRPCBridge;
+import com.metaparadigm.jsonrpc.JSONRPCServlet;
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoRegisterJSONRPCServlet</span> <span class="keyword">extends</span> <span class="title">JSONRPCServlet</span> </span>{
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span>(ServletConfig servletConfig) {
-             <span class="comment">/* BEGIN: Register services */</span>
+public class AutoRegisterJSONRPCServlet extends JSONRPCServlet {
+       @Override
+       public void init(ServletConfig servletConfig) {
+             /* BEGIN: Register services */
             JSONRPCBridge bridge = JSONRPCBridge. getGlobalBridge();
-            bridge.registerObject( <span class="string">"testService"</span>, <span class="keyword">new</span> TestService());
-             <span class="comment">/* END: Register services */</span>
+            bridge.registerObject( &quot;testService&quot;, new TestService());
+             /* END: Register services */
       }
 }
 </code></pre><p>然后在web.xml中配置重写的servlet</p>
-<pre><code><span class="tag">&lt;<span class="title">servlet</span>&gt;</span>
- <span class="tag">&lt;<span class="title">servlet-name</span>&gt;</span> JSONRPCServlet<span class="tag">&lt;/<span class="title">servlet-name</span> &gt;</span>
- <span class="tag">&lt;<span class="title">servlet-class</span>&gt;</span>
+<pre><code>&lt;servlet&gt;
+ &lt;servlet-name&gt; JSONRPCServlet&lt;/servlet-name &gt;
+ &lt;servlet-class&gt;
       org.cc.rpcservlet.AutoRegisterJSONRPCServlet
- <span class="tag">&lt;/<span class="title">servlet-class</span>&gt;</span>
- <span class="tag">&lt;<span class="title">init-param</span>&gt;</span>
-       <span class="tag">&lt;<span class="title">param-name</span>&gt;</span> servicePath<span class="tag">&lt;/<span class="title">param-name</span> &gt;</span>
-       <span class="tag">&lt;<span class="title">param-value</span>&gt;</span> org.cc.service<span class="tag">&lt;/<span class="title">param-value</span> &gt;</span>
- <span class="tag">&lt;/<span class="title">init-param</span>&gt;</span>
- <span class="tag">&lt;<span class="title">load-on-startup</span>&gt;</span> 1<span class="tag">&lt;/ <span class="attribute">load-on-startup</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">servlet</span>&gt;</span>
-<span class="tag">&lt;<span class="title">servlet-mapping</span>&gt;</span>
- <span class="tag">&lt;<span class="title">servlet-name</span>&gt;</span> JSONRPCServlet<span class="tag">&lt;/<span class="title">servlet-name</span> &gt;</span>
- <span class="tag">&lt;<span class="title">url-pattern</span>&gt;</span> /JSON-RPC<span class="tag">&lt;/<span class="title">url-pattern</span> &gt;</span>
-<span class="tag">&lt;/<span class="title">servlet-mapping</span>&gt;</span>
-</code></pre><h4 id="_-1"> </h4>
-<h3 id="#-1">#</h3>
-<h4 id="JSON-RPC自动加载服务框架"><strong>JSON-RPC自动加载服务框架</strong></h4>
-<p>编写这个框架的目的是为了让应用能够自动动态地加载自定义的服务，而不是每实现一个新的服务都要手动去注册到全局的bridge中。</p>
+ &lt;/servlet-class&gt;
+ &lt;init-param&gt;
+       &lt;param-name&gt; servicePath&lt;/param-name &gt;
+       &lt;param-value&gt; org.cc.service&lt;/param-value &gt;
+ &lt;/init-param&gt;
+ &lt;load-on-startup&gt; 1&lt;/ load-on-startup&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+ &lt;servlet-name&gt; JSONRPCServlet&lt;/servlet-name &gt;
+ &lt;url-pattern&gt; /JSON-RPC&lt;/url-pattern &gt;
+&lt;/servlet-mapping&gt;
+</code></pre><h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="JSON-RPC自动加载服务框架"><a href="#JSON-RPC自动加载服务框架" class="headerlink" title="JSON-RPC自动加载服务框架"></a><strong>JSON-RPC自动加载服务框架</strong></h4><p>编写这个框架的目的是为了让应用能够自动动态地加载自定义的服务，而不是每实现一个新的服务都要手动去注册到全局的bridge中。</p>
 <p>该框架的核心原理是，继承JSONRPCServlet并重写init方法，在init方法中，根据web.xml中配置的初始化类路径参数，将制定路径下的类注册到全局的JSONRPCBridge中。编写一个自定义的注解，在指定目录下搜索服务时，只有标注了这个注解的类才会被加载并注册到全局bridge中。</p>
 <p>框架源代码：<a href="https://github.com/charleschaochen/JSONRPCAutoRegister" target="_blank" rel="external">https://github.com/charleschaochen/JSONRPCAutoRegister</a></p>
 <p>使用步骤：</p>
@@ -339,19 +316,19 @@
 <ol>
 <li><p>配置web.xml，指定service的包路径，如下：</p>
 <p> <servlet></servlet></p>
-<pre><code> <span class="tag">&lt;<span class="title">servlet-name</span>&gt;</span>JSONRPCServlet<span class="tag">&lt;/<span class="title">servlet-name</span>&gt;</span>
- <span class="tag">&lt;<span class="title">servlet-class</span>&gt;</span>
-     org.charlestech.jsonrpc.AutoRegisterJSONRPCServlet
- <span class="tag">&lt;/<span class="title">servlet-class</span>&gt;</span>
- <span class="tag">&lt;<span class="title">init-param</span>&gt;</span>
-     <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>servicePath<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
-     <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>org.cc.service<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>
- <span class="tag">&lt;/<span class="title">init-param</span>&gt;</span>
- <span class="tag">&lt;<span class="title">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="title">load-on-startup</span>&gt;</span>
- <span class="tag">&lt;/<span class="title">servlet</span>&gt;</span>
- <span class="tag">&lt;<span class="title">servlet-mapping</span>&gt;</span>
- <span class="tag">&lt;<span class="title">servlet-name</span>&gt;</span>JSONRPCServlet<span class="tag">&lt;/<span class="title">servlet-name</span>&gt;</span>
- <span class="tag">&lt;<span class="title">url-pattern</span>&gt;</span>/JSON-RPC<span class="tag">&lt;/<span class="title">url-pattern</span>&gt;</span>
+<pre><code>&lt;servlet-name&gt;JSONRPCServlet&lt;/servlet-name&gt;
+&lt;servlet-class&gt;
+    org.charlestech.jsonrpc.AutoRegisterJSONRPCServlet
+&lt;/servlet-class&gt;
+&lt;init-param&gt;
+    &lt;param-name&gt;servicePath&lt;/param-name&gt;
+    &lt;param-value&gt;org.cc.service&lt;/param-value&gt;
+&lt;/init-param&gt;
+&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+&lt;servlet-name&gt;JSONRPCServlet&lt;/servlet-name&gt;
+&lt;url-pattern&gt;/JSON-RPC&lt;/url-pattern&gt;
 </code></pre><p> </p>
 </li>
 </ol>
@@ -359,9 +336,9 @@
 <li><p>在指定的包路径下编写service，使用@RPCService注解，如下：</p>
 <p> import org.charlestech.jsonrpc.RPCService;</p>
 <p> @RPCService(serviceName = “testService”)<br> public class TestService {</p>
-<pre><code> <span class="keyword">public</span> String <span class="title">getHello</span>() {
-     <span class="keyword">return</span> <span class="string">"Hello, JSON-RPC"</span>;
- }
+<pre><code>public String getHello() {
+    return &quot;Hello, JSON-RPC&quot;;
+}
 </code></pre><p> }</p>
 </li>
 </ol>
@@ -444,7 +421,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -454,12 +431,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

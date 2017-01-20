@@ -8,21 +8,20 @@
   <meta name="description" content="什么是工厂模式由工厂来统一负责对象的实例化工作，用工厂方法代替new操作符，就是所谓的工厂模式。工厂模式广泛应用于各个流行的框架中，例如Spring的核心IoC容器，就是一个管理和实例化所有bean的工厂。 为什么要使用工厂模式首先，使用工厂来统一负责对象的实例化，可以简化客户端调用代码的初始化工作。其次，工厂模式可以将对象的客户端调用从具体实现中分离出来，客户端代码只需要关注对象必须满…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建型设计模式 — 工厂模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/05/27/design-pattern-factory/">
+<meta property="og:url" content="http://www.charlestech.info/2014/05/27/design-pattern-factory/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是工厂模式由工厂来统一负责对象的实例化工作，用工厂方法代替new操作符，就是所谓的工厂模式。工厂模式广泛应用于各个流行的框架中，例如Spring的核心IoC容器，就是一个管理和实例化所有bean的工厂。 为什么要使用工厂模式首先，使用工厂来统一负责对象的实例化，可以简化客户端调用代码的初始化工作。其次，工厂模式可以将对象的客户端调用从具体实现中分离出来，客户端代码只需要关注对象必须满…">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建型设计模式 — 工厂模式">
 <meta name="twitter:description" content="什么是工厂模式由工厂来统一负责对象的实例化工作，用工厂方法代替new操作符，就是所谓的工厂模式。工厂模式广泛应用于各个流行的框架中，例如Spring的核心IoC容器，就是一个管理和实例化所有bean的工厂。 为什么要使用工厂模式首先，使用工厂来统一负责对象的实例化，可以简化客户端调用代码的初始化工作。其次，工厂模式可以将对象的客户端调用从具体实现中分离出来，客户端代码只需要关注对象必须满…">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,167 +221,161 @@
       
         <p>什么是工厂模式由工厂来统一负责对象的实例化工作，用工厂方法代替new操作符，就是所谓的工厂模式。工厂模式广泛应用于各个流行的框架中，例如Spring的核心IoC容器，就是一个管理和实例化所有bean的工厂。 为什么要使用工厂模式首先，使用工厂来统一负责对象的实例化，可以简化客户端调用代码的初始化工作。其次，工厂模式可以将对象的客户端调用从具体实现中分离出来，客户端代码只需要关注对象必须满…</p>
 <a id="more"></a>
-<h4 id="什么是工厂模式">什么是工厂模式</h4>
-<p>由工厂来统一负责对象的实例化工作，用工厂方法代替new操作符，就是所谓的工厂模式。工厂模式广泛应用于各个流行的框架中，例如Spring的核心IoC容器，就是一个管理和实例化所有bean的工厂。</p>
-<h4 id="为什么要使用工厂模式">为什么要使用工厂模式</h4>
-<p>首先，使用工厂来统一负责对象的实例化，可以简化客户端调用代码的初始化工作。其次，工厂模式可以将对象的客户端调用从具体实现中分离出来，客户端代码只需要关注对象必须满足的接口，而不需要关注对象的具体实例化过程，实现程序的解耦。</p>
-<h4 id="工厂模式的实现">工厂模式的实现</h4>
-<h5 id="普通工厂模式">普通工厂模式</h5>
-<p>创建一个工厂类负责实现同一接口的类的实例化工作。在该工厂类中，需要声明一个方法用来返回产品实例，该方法通常接受一个参数，通过该参数决定返回的具体实例。</p>
+<h4 id="什么是工厂模式"><a href="#什么是工厂模式" class="headerlink" title="什么是工厂模式"></a>什么是工厂模式</h4><p>由工厂来统一负责对象的实例化工作，用工厂方法代替new操作符，就是所谓的工厂模式。工厂模式广泛应用于各个流行的框架中，例如Spring的核心IoC容器，就是一个管理和实例化所有bean的工厂。</p>
+<h4 id="为什么要使用工厂模式"><a href="#为什么要使用工厂模式" class="headerlink" title="为什么要使用工厂模式"></a>为什么要使用工厂模式</h4><p>首先，使用工厂来统一负责对象的实例化，可以简化客户端调用代码的初始化工作。其次，工厂模式可以将对象的客户端调用从具体实现中分离出来，客户端代码只需要关注对象必须满足的接口，而不需要关注对象的具体实例化过程，实现程序的解耦。</p>
+<h4 id="工厂模式的实现"><a href="#工厂模式的实现" class="headerlink" title="工厂模式的实现"></a>工厂模式的实现</h4><h5 id="普通工厂模式"><a href="#普通工厂模式" class="headerlink" title="普通工厂模式"></a>普通工厂模式</h5><p>创建一个工厂类负责实现同一接口的类的实例化工作。在该工厂类中，需要声明一个方法用来返回产品实例，该方法通常接受一个参数，通过该参数决定返回的具体实例。</p>
 <p>代码示例：</p>
-<pre><code><span class="keyword">import</span> patterns.factory.beans.*;
+<pre><code>import patterns.factory.beans.*;
 
-<span class="javadoc">/**
+/**
  * 简单工厂模式，声明produce方法，根据传入的type参数返回对应的产品
  *
  * 缺点：produce方法需要对传入的参数进行判断以决定生产哪种具体的产品，增加了编程难度，并且如果传入的参数不合法，会导致对象无法正常创建
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFruitFactory</span> </span>{
-       <span class="javadoc">/**
+ */
+public class SimpleFruitFactory {
+       /**
        * Produce fruit with the specific type
        *
-       *<span class="javadoctag"> @param</span> type
-       *<span class="javadoctag"> @return</span> Fruit
-       */</span>
-       <span class="keyword">public</span> Fruit <span class="title">produce</span>(String type) {
-             <span class="keyword">if</span> (<span class="string">"apple"</span> .equals(type)) {
-                   <span class="keyword">return</span> <span class="keyword">new</span> Apple();
+       * @param type
+       * @return Fruit
+       */
+       public Fruit produce(String type) {
+             if (&quot;apple&quot; .equals(type)) {
+                   return new Apple();
             }
-             <span class="keyword">if</span> (<span class="string">"banana"</span> .equals(type)) {
-                   <span class="keyword">return</span> <span class="keyword">new</span> Banana();
+             if (&quot;banana&quot; .equals(type)) {
+                   return new Banana();
             }
-            System. out.println(<span class="string">"Please input correct type."</span> );
-             <span class="keyword">return</span> <span class="keyword">null</span> ;
+            System. out.println(&quot;Please input correct type.&quot; );
+             return null ;
       }
 
-       <span class="javadoc">/**
-       *<span class="javadoctag"> @param</span> args
-       */</span>
-       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-             <span class="comment">// TODO Auto-generated method stub</span>
-            SimpleFruitFactory factory = <span class="keyword">new</span> SimpleFruitFactory();
-            Fruit fruit = factory.produce( <span class="string">"apple"</span>);
-             <span class="keyword">if</span> (fruit != <span class="keyword">null</span>) {
+       /**
+       * @param args
+       */
+       public static void main(String[] args) {
+             // TODO Auto-generated method stub
+            SimpleFruitFactory factory = new SimpleFruitFactory();
+            Fruit fruit = factory.produce( &quot;apple&quot;);
+             if (fruit != null) {
                   fruit.introduce();
             }
       }
 
 }
 </code></pre><p><strong>缺点：普通工厂模式通常需要定义一个返回类实例的方法，该方法通常需要接收一个参数，通过该参数的值来决定实例化哪个具体的类。这种方式会增加编程的复杂性，而且如果传入的参数不正确会导致无法正确地实例化。</strong></p>
-<h5 id="工厂方法模式">工厂方法模式</h5>
-<p>工厂方法模式是对普通工厂模式的改良，工厂类中不使用一个统一的方法来实例化所有的对象，而是针对每一类产品对象都声明一个独立的方法负责实例化。静态工厂方法模式就是在工厂方法模式的基础上，将所有实例化的方法声明为static，这样一来客户端代码不需要实例化工厂，就可以调用其工厂方法。Java并发包中的Executors类就是实现了静态工厂方法模式，来实例化多种线程池。</p>
+<h5 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h5><p>工厂方法模式是对普通工厂模式的改良，工厂类中不使用一个统一的方法来实例化所有的对象，而是针对每一类产品对象都声明一个独立的方法负责实例化。静态工厂方法模式就是在工厂方法模式的基础上，将所有实例化的方法声明为static，这样一来客户端代码不需要实例化工厂，就可以调用其工厂方法。Java并发包中的Executors类就是实现了静态工厂方法模式，来实例化多种线程池。</p>
 <p>示例代码：</p>
-<pre><code><span class="keyword">import</span> patterns.factory.beans.*;
+<pre><code>import patterns.factory.beans.*;
 
-<span class="javadoc">/**
+/**
  * 工厂方法模式，声明不同的方法负责生产不同的产品
  *
  * 缺点：不符合开闭原则，当需要添加新的产品时需要修改工厂类
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodFruitFactory</span> </span>{
-      <span class="javadoc">/**
+ */
+public class MethodFruitFactory {
+      /**
       * Produce apple
       *
-      *<span class="javadoctag"> @return</span> Apple
-      */</span>
-      <span class="keyword">public</span> <span class="keyword">static</span> Fruit <span class="title">produceApple</span>() {
-             <span class="keyword">return</span> <span class="keyword">new</span> Apple();
+      * @return Apple
+      */
+      public static Fruit produceApple() {
+             return new Apple();
       }
 
-      <span class="javadoc">/**
+      /**
        * Produce banana
        *
-       *<span class="javadoctag"> @return</span> Banana
-       */</span>
-       <span class="keyword">public</span> Fruit <span class="title">produceBanana</span>() {
-             <span class="keyword">return</span> <span class="keyword">new</span> Banana();
+       * @return Banana
+       */
+       public Fruit produceBanana() {
+             return new Banana();
        }
 
-       <span class="javadoc">/**
-       *<span class="javadoctag"> @param</span> args
-       */</span>
-       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-             <span class="comment">// TODO Auto-generated method stub</span>
-            MethodFruitFactory factory = <span class="keyword">new</span> MethodFruitFactory();
+       /**
+       * @param args
+       */
+       public static void main(String[] args) {
+             // TODO Auto-generated method stub
+            MethodFruitFactory factory = new MethodFruitFactory();
             Fruit fruit = factory.produceBanana();
             fruit.introduce();
       }
 }
 </code></pre><p><strong>缺点：工厂方法模式的缺点是不符合开闭原则，即对扩展开放，对修改关闭。当程序需要扩展时，例如需要添加新的产品，我们不得不去修改工厂类</strong></p>
-<h5 id="抽象工厂模式">抽象工厂模式</h5>
-<p>抽象工厂模式将工厂抽象为接口，该接口可以有多个具体的工厂实现类，每个具体的工厂类负责实例化一个具体的产品。这样设计方式符合了开闭原则，当需要添加新的产品时，只需要多实现一个工厂类去负责其实例化，而不需要修改工厂接口。</p>
+<h5 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h5><p>抽象工厂模式将工厂抽象为接口，该接口可以有多个具体的工厂实现类，每个具体的工厂类负责实例化一个具体的产品。这样设计方式符合了开闭原则，当需要添加新的产品时，只需要多实现一个工厂类去负责其实例化，而不需要修改工厂接口。</p>
 <p>实例代码：</p>
-<pre><code><span class="keyword">import</span> patterns.factory.beans.Fruit;
+<pre><code>import patterns.factory.beans.Fruit;
 
-<span class="javadoc">/**
+/**
  * 抽象工厂模式，将工厂抽象为一个接口，每个实现该接口的工程类负责生产一种产品
  * 当需要添加新的产品时，只需要实现新的工程类即可
- *<span class="javadoctag"> @author</span> chaoch
+ * @author chaoch
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AbstractFruitFactory</span> </span>{
-       <span class="keyword">public</span> Fruit <span class="title">produce</span>();
+ */
+public interface AbstractFruitFactory {
+       public Fruit produce();
 }
 
 
-<span class="keyword">import</span> patterns.factory.beans.Apple;
-<span class="keyword">import</span> patterns.factory.beans.Fruit;
+import patterns.factory.beans.Apple;
+import patterns.factory.beans.Fruit;
 
-<span class="javadoc">/**
+/**
  * Apple factory, produce apples
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppleFactory</span> <span class="keyword">implements</span> <span class="title">AbstractFruitFactory</span> </span>{
+ */
+public class AppleFactory implements AbstractFruitFactory {
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> Fruit <span class="title">produce</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             <span class="keyword">return</span> <span class="keyword">new</span> Apple();
+       @Override
+       public Fruit produce() {
+             // TODO Auto-generated method stub
+             return new Apple();
       }
 
-       <span class="javadoc">/**
-       *<span class="javadoctag"> @param</span> args
-       */</span>
-       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-             <span class="comment">// TODO Auto-generated method stub</span>
-            AppleFactory factory = <span class="keyword">new</span> AppleFactory();
+       /**
+       * @param args
+       */
+       public static void main(String[] args) {
+             // TODO Auto-generated method stub
+            AppleFactory factory = new AppleFactory();
             Fruit fruit = factory. produce();
             fruit.introduce();
       }
 }
 
 
-<span class="keyword">import</span> patterns.factory.beans.Banana;
-<span class="keyword">import</span> patterns.factory.beans.Fruit;
+import patterns.factory.beans.Banana;
+import patterns.factory.beans.Fruit;
 
-<span class="javadoc">/**
+/**
  * Banana factory, produce bananas
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BananaFactory</span> <span class="keyword">implements</span> <span class="title">AbstractFruitFactory</span> </span>{
+ */
+public class BananaFactory implements AbstractFruitFactory {
 
-       <span class="annotation">@Override</span>
-       <span class="keyword">public</span> Fruit <span class="title">produce</span>() {
-             <span class="comment">// TODO Auto-generated method stub</span>
-             <span class="keyword">return</span> <span class="keyword">new</span> Banana();
+       @Override
+       public Fruit produce() {
+             // TODO Auto-generated method stub
+             return new Banana();
       }
 
-       <span class="javadoc">/**
-       *<span class="javadoctag"> @param</span> args
-       */</span>
-       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-             <span class="comment">// TODO Auto-generated method stub</span>
-            BananaFactory factory = <span class="keyword">new</span> BananaFactory();
+       /**
+       * @param args
+       */
+       public static void main(String[] args) {
+             // TODO Auto-generated method stub
+            BananaFactory factory = new BananaFactory();
             Fruit fruit = factory.produce();
             fruit.introduce();
       }
@@ -476,7 +452,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -486,12 +462,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

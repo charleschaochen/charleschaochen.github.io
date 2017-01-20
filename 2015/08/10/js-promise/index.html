@@ -9,24 +9,24 @@
 这些耗时较长的操作就是所谓的deferred操作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS Promise规范">
-<meta property="og:url" content="http://www.charlestech.info/2015/08/10/js-promise/">
+<meta property="og:url" content="http://www.charlestech.info/2015/08/10/js-promise/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="在前端开发过程中，我们经常会遇到一些耗时较长的操作，例如异步请求、IO等等，处理这种行为我们通常采用异步回调的方式，为它们指定一个回调函数，当操作完成后自动回调这些函数执行一些行为。
 这些耗时较长的操作就是所谓的deferred操作。">
 <meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/promise.png">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS Promise规范">
 <meta name="twitter:description" content="在前端开发过程中，我们经常会遇到一些耗时较长的操作，例如异步请求、IO等等，处理这种行为我们通常采用异步回调的方式，为它们指定一个回调函数，当操作完成后自动回调这些函数执行一些行为。
 这些耗时较长的操作就是所谓的deferred操作。">
-
+<meta name="twitter:image" content="http://7x00n0.com1.z0.glb.clouddn.com/promise.png">
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -64,11 +64,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -85,8 +80,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -131,27 +124,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -244,11 +227,10 @@
         <p>在前端开发过程中，我们经常会遇到一些耗时较长的操作，例如异步请求、IO等等，处理这种行为我们通常采用异步回调的方式，为它们指定一个回调函数，当操作完成后自动回调这些函数执行一些行为。</p>
 <p>这些耗时较长的操作就是所谓的deferred操作。</p>
 <a id="more"></a>
-<h3 id="Promise规范">Promise规范</h3>
-<p>1.Promise是ES6标准的规范，用于一些延期(deferred)和异步计算。一个Promise对象其实代表的是一次将要执行的操作。</p>
+<h3 id="Promise规范"><a href="#Promise规范" class="headerlink" title="Promise规范"></a>Promise规范</h3><p>1.Promise是ES6标准的规范，用于一些延期(deferred)和异步计算。一个Promise对象其实代表的是一次将要执行的操作。</p>
 <p>语法：</p>
 <pre><code>new Promise(executor);
-new Promise(<span class="keyword">function</span>(resolve, reject) { <span class="keyword">...</span> });
+new Promise(function(resolve, reject) { ... });
 </code></pre><p>executor是一个有两个形参的function，一个是resolve函数，一个是reject函数。</p>
 <p>通常我们把执行逻辑放在executor里，当操作执行成功，调用resolve函数，执行失败，调用reject函数。</p>
 <p>2.Promise对象状态</p>
@@ -267,29 +249,29 @@ new Promise(<span class="keyword">function</span>(resolve, reject) { <span class
 <p>（2） Promise.prototype.catch(onRejected)</p>
 <p>为某个promise对象添加执行失败的回调句柄，返回一个新的promise对象。如果想要对操作的异常进行处理，最好在catch的回调中执行。</p>
 <p>示例：</p>
-<pre><code><span class="keyword">var</span> promise = <span class="keyword">new</span> Promise(<span class="function"><span class="keyword">function</span><span class="params">(resolve, reject)</span></span>{
-    resolve(<span class="number">66</span>);
+<pre><code>var promise = new Promise(function(resolve, reject){
+    resolve(66);
 });
-promise.then(<span class="function"><span class="keyword">function</span><span class="params">(value)</span></span>{
-    <span class="built_in">console</span>.log(value);
-}).catch(<span class="function"><span class="keyword">function</span><span class="params">(error)</span></span>{
-    <span class="built_in">console</span>.error(error);
+promise.then(function(value){
+    console.log(value);
+}).catch(function(error){
+    console.error(error);
 });
 </code></pre><p>如果我们希望在then回调中再执行其他的deferred操作，可以手动返回一个Promise对对象，如：</p>
-<pre><code><span class="keyword">new</span> Promise(<span class="function"><span class="keyword">function</span> <span class="params">(resolve, reject)</span> </span>{
-    <span class="built_in">console</span>.log(<span class="string">"Promise 1"</span>);
-    setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
-        resolve(<span class="string">"resolved"</span>);
-    }, <span class="number">1000</span>);
-}).then(<span class="function"><span class="keyword">function</span> <span class="params">(msg)</span> </span>{
-        <span class="keyword">return</span> <span class="keyword">new</span> Promise(<span class="function"><span class="keyword">function</span> <span class="params">(resolve, reject)</span> </span>{
-            <span class="built_in">console</span>.log(<span class="string">"Promise 2"</span>);
-            setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+<pre><code>new Promise(function (resolve, reject) {
+    console.log(&quot;Promise 1&quot;);
+    setTimeout(function () {
+        resolve(&quot;resolved&quot;);
+    }, 1000);
+}).then(function (msg) {
+        return new Promise(function (resolve, reject) {
+            console.log(&quot;Promise 2&quot;);
+            setTimeout(function () {
                 resolve(msg);
-            }, <span class="number">1000</span>);
+            }, 1000);
         })
-    }).then(<span class="function"><span class="keyword">function</span> <span class="params">(msg)</span> </span>{
-        <span class="built_in">console</span>.log(msg);
+    }).then(function (msg) {
+        console.log(msg);
     });
 </code></pre><p>4.Promise静态方法</p>
 <p>（1） Promise.all </p>
@@ -300,36 +282,35 @@ promise.then(<span class="function"><span class="keyword">function</span><span c
 <p>返回一个已经resoved的promise对象，resolve传入的参数就是value</p>
 <p>（4） Promise.reject(message)</p>
 <p>返回一个已经被reject的promise对象，reject传入的参数就是message</p>
-<h3 id="jquery的promise实现">jquery的promise实现</h3>
-<p>jquery1.5之后引入了deferred对象，作为其核心的回调解决方案。</p>
+<h3 id="jquery的promise实现"><a href="#jquery的promise实现" class="headerlink" title="jquery的promise实现"></a>jquery的promise实现</h3><p>jquery1.5之后引入了deferred对象，作为其核心的回调解决方案。</p>
 <p>jquerydeferred对象的使用场景有：</p>
 <p>1.ajax请求</p>
 <p>jquery ajax的传统语法是：</p>
 <pre><code>$.ajax({
-  url: <span class="string">""</span>,
-  data: <span class="string">""</span>,
-  <span class="built_in">type</span>: <span class="string">""</span>,
-  success: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{},
-  <span class="built_in">error</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}
+  url: &quot;&quot;,
+  data: &quot;&quot;,
+  type: &quot;&quot;,
+  success: function(){},
+  error: function(){}
 });
 </code></pre><p>引入deferred对象之后，我们可以采用链式语法：</p>
-<pre><code>$.ajax(<span class="string">"remote.html"</span>).done(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-     <span class="built_in">console</span>.log(<span class="string">"执行成功"</span>);
-}).fail(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-     <span class="built_in">console</span>.log(<span class="string">"执行失败"</span>);
+<pre><code>$.ajax(&quot;remote.html&quot;).done(function(){
+     console.log(&quot;执行成功&quot;);
+}).fail(function(){
+     console.log(&quot;执行失败&quot;);
 });
 </code></pre><p>如果请求成功之后，我们希望多个操作能按顺序依次进行，可以任意在以上的回调函数链中再添加回调函数：</p>
-<pre><code>$.ajax(<span class="string">"remote.html"</span>).done(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-     <span class="built_in">console</span>.log(<span class="string">"执行成功"</span>);
-}).fail(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-     <span class="built_in">console</span>.log(<span class="string">"执行失败"</span>);
-}).done(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-     <span class="built_in">console</span>.log(<span class="string">"继续执行操作"</span>);
+<pre><code>$.ajax(&quot;remote.html&quot;).done(function(){
+     console.log(&quot;执行成功&quot;);
+}).fail(function(){
+     console.log(&quot;执行失败&quot;);
+}).done(function(){
+     console.log(&quot;继续执行操作&quot;);
 });
 </code></pre><p>2.为多个ajax请求指定同一个回调函数</p>
 <p>如果我们希望在一个以上ajax请求完成之后，执行某个回调，可以采用$.when:</p>
-<pre><code><span class="variable">$.</span><span class="keyword">when</span>(<span class="variable">$.</span>ajax(<span class="string">"remote0.html"</span>), <span class="variable">$.</span>ajax(<span class="string">"remote1.html"</span>)).done(fuction(){
-     console.log(<span class="string">"两次请求成功"</span>);
+<pre><code>$.when($.ajax(&quot;remote0.html&quot;), $.ajax(&quot;remote1.html&quot;)).done(fuction(){
+     console.log(&quot;两次请求成功&quot;);
 });
 </code></pre><p>3.为普通的函数实现链式回调</p>
 <p>类似Promise的实现，jquery deferred对象也可以为普通函数实现链式回调。</p>
@@ -411,7 +392,7 @@ promise.then(<span class="function"><span class="keyword">function</span><span c
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -421,12 +402,9 @@ promise.then(<span class="function"><span class="keyword">function</span><span c
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

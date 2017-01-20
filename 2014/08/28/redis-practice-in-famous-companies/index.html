@@ -8,7 +8,7 @@
   <meta name="description" content="随着应用对高性能需求的增加，NoSQL逐渐在各大名企的系统架构中生根发芽。这里我们将为大家分享社交巨头新浪微博、传媒巨头Viacom及图片分享领域佼佼者Pinterest带来的Redis实践，首先我们看新浪微博 @启盼cobain的Redis实战经验分享：新浪微博：史上最大的Redis集群Tape is Dead，Disk is Tape，Flash is Disk，RAM Locali…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="国内外巨头分享Redis实战经验及使用场景">
-<meta property="og:url" content="http://www.charlestech.info/2014/08/28/redis-practice-in-famous-companies/">
+<meta property="og:url" content="http://www.charlestech.info/2014/08/28/redis-practice-in-famous-companies/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="随着应用对高性能需求的增加，NoSQL逐渐在各大名企的系统架构中生根发芽。这里我们将为大家分享社交巨头新浪微博、传媒巨头Viacom及图片分享领域佼佼者Pinterest带来的Redis实践，首先我们看新浪微博 @启盼cobain的Redis实战经验分享：新浪微博：史上最大的Redis集群Tape is Dead，Disk is Tape，Flash is Disk，RAM Locali…">
 <meta property="og:image" content="http://www.chinacloud.cn/upload/2013-10/131007163928475.png">
@@ -16,18 +16,18 @@
 <meta property="og:image" content="http://www.chinacloud.cn/upload/2013-10/131007163928474.png">
 <meta property="og:image" content="http://www.chinacloud.cn/upload/2013-10/131007163928471.jpg">
 <meta property="og:image" content="http://www.chinacloud.cn/upload/2013-10/131007163928472.jpg">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国内外巨头分享Redis实战经验及使用场景">
 <meta name="twitter:description" content="随着应用对高性能需求的增加，NoSQL逐渐在各大名企的系统架构中生根发芽。这里我们将为大家分享社交巨头新浪微博、传媒巨头Viacom及图片分享领域佼佼者Pinterest带来的Redis实践，首先我们看新浪微博 @启盼cobain的Redis实战经验分享：新浪微博：史上最大的Redis集群Tape is Dead，Disk is Tape，Flash is Disk，RAM Locali…">
-
+<meta name="twitter:image" content="http://www.chinacloud.cn/upload/2013-10/131007163928475.png">
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -65,11 +65,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -86,8 +81,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -132,27 +125,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -245,8 +228,7 @@
         <p>随着应用对高性能需求的增加，NoSQL逐渐在各大名企的系统架构中生根发芽。这里我们将为大家分享社交巨头新浪微博、传媒巨头Viacom及图片分享领域佼佼者Pinterest带来的Redis实践，首先我们看新浪微博 @启盼cobain的Redis实战经验分享：新浪微博：史上最大的Redis集群Tape is Dead，Disk is Tape，Flash is Disk，RAM Locali…</p>
 <a id="more"></a>
 <p>随着应用对高性能需求的增加，NoSQL逐渐在各大名企的系统架构中生根发芽。这里我们将为大家分享<strong>社交巨头新浪微博、传媒巨头Viacom及图片分享领域佼佼者Pinterest</strong>带来的Redis实践，首先我们看新浪微博 <a href="http://weibo.com/1319158547/AcmcMuPM5" target="_blank" rel="external">@启盼cobain</a>的Redis实战经验分享：</p>
-<h3 id="新浪微博：史上最大的Redis集群"><strong>新浪微博：史上最大的Redis集群</strong></h3>
-<p><strong>Tape is Dead，Disk is Tape，Flash is Disk，RAM Locality is King. — Jim Gray</strong></p>
+<h3 id="新浪微博：史上最大的Redis集群"><a href="#新浪微博：史上最大的Redis集群" class="headerlink" title="新浪微博：史上最大的Redis集群"></a><strong>新浪微博：史上最大的Redis集群</strong></h3><p><strong>Tape is Dead，Disk is Tape，Flash is Disk，RAM Locality is King. — Jim Gray</strong></p>
 <p>Redis不是比较成熟的memcache或者Mysql的替代品，是对于大型互联网类应用在架构上很好的补充。现在有越来越多的应用也在纷纷基于Redis做架构的改造。首先简单公布一下Redis平台实际情况：</p>
 <ul>
 <li><strong>2200+亿 commands/day 5000亿Read/day 500亿Write/day</strong></li>
@@ -254,8 +236,7 @@
 <li><strong>500+ Servers in 6 IDC 2000+instances</strong></li>
 </ul>
 <p>应该是国内外比较大的Redis使用平台，今天主要从应用角度谈谈Redis服务平台。</p>
-<h4 id="Redis使用场景">Redis使用场景</h4>
-<p><strong>1.Counting（计数）</strong></p>
+<h4 id="Redis使用场景"><a href="#Redis使用场景" class="headerlink" title="Redis使用场景"></a>Redis使用场景</h4><p><strong>1.Counting（计数）</strong></p>
 <p>计数的应用在另外一篇文章里较详细的描述，计数场景的优化 <a href="http://www.xdata.me/?p=262" target="_blank" rel="external">http://www.xdata.me/?p=262</a>这里就不多加描述了。</p>
 <p>可以预见的是，有很多同学认为把计数全部存在内存中成本非常高，我在这里用个图表来表达下我的观点：</p>
 <p><a href="http://www.chinacloud.cn/upload/2013-10/131007163928475.png" target="_blank" rel="external"><img src="http://www.chinacloud.cn/upload/2013-10/131007163928475.png" alt="Mem"></a></p>
@@ -289,8 +270,7 @@
 <li>在很多场景下，Redis对同一份数据的内存开销是小于memcache的slab分配的。</li>
 <li>Redis提供的数据同步功能，其实是对cache的一个强有力功能扩展。</li>
 </ol>
-<h4 id="Redis使用的重要点">Redis使用的重要点</h4>
-<p><strong>1.rdb/aof Backup!</strong></p>
+<h4 id="Redis使用的重要点"><a href="#Redis使用的重要点" class="headerlink" title="Redis使用的重要点"></a>Redis使用的重要点</h4><p><strong>1.rdb/aof Backup!</strong></p>
 <p>我们线上的Redis 95%以上是承担后端存储功能的，我们不仅用作cache，而更为一种k-v存储，他完全替代了后端的存储服务（MySQL），故其数据是非常重要的，如 果出现数据污染和丢失，误操作等情况，将是难以恢复的。所以备份是非常必要的！为此，我们有共享的hdfs资源作为我们的备份池，希望能随时可以还原业务 所需数据。</p>
 <p><strong>2.Small item &amp; Small instance!</strong></p>
 <p>由于Redis单线程（严格意义上不是单线程，但认为对request的处理是单线程的）的模型，大的数据结构list,sorted set,hash set的批量处理就意味着其他请求的等待，故使用Redis的复杂数据结构一定要控制其单key-struct的大小。</p>
@@ -308,8 +288,7 @@
 <p><strong>4.In Memory or not?</strong></p>
 <p>发现一种情况，开发在沟通后端资源设计的时候，常常因为习惯使用和错误了解产品定位等原因，而忽视了对真实使用用户的评估。也许这是一份历史数据，只有最近一天的数据才有人进行访问，而把历史数据的容量和最近一天请求量都抛给内存类的存储现实是非常不合理的。</p>
 <p>所以当你在究竟使用什么样的数据结构存储的时候，请务必先进行成本衡量，有多少数据是需要存储在内存中的？有多少数据是对用户真正有意义的。因为这其实对后端资源的设计是至关重要的，1G的数据容量和1T的数据容量对于设计思路是完全不一样的</p>
-<h4 id="Plans_in_future?">Plans in future?</h4>
-<p><strong>1.slave sync改造</strong></p>
+<h4 id="Plans-in-future"><a href="#Plans-in-future" class="headerlink" title="Plans in future?"></a>Plans in future?</h4><p><strong>1.slave sync改造</strong></p>
 <p>全部改造线上master-slave数据同步机制，这一点我们借鉴了MySQL Replication的思路，使用rdb+aof+pos作为数据同步的依据，这里简要说明为什么官方提供的psync没有很好的满足我们的需求：</p>
 <p>假设A有两个从库B及C，及 A `— B&amp;C，这时我们发现master A服务器有宕机隐患需要重启或者A节点直接宕机，需要切换B为新的主库，如果A、B、C不共享rdb及aof信息，C在作为B的从库时，仍会清除自身数 据，因为C节点只记录了和A节点的同步状况。</p>
 <p>故我们需要有一种将A`–B&amp;C 结构切换切换为A`–B`–C结构的同步机制，psync虽然支持断点续传，但仍无法支持master故障的平滑切换。</p>
@@ -319,8 +298,7 @@
 <p>其实还是很简单，命名系统是个非常重要的组件，而dns是一套比较完善的命名系统，我们为此做了很多改进和试错，zk的实现还是相对复杂，我们还没有较强的把控粒度。我们也在思考用什么做命名系统更符合我们需求。</p>
 <p><strong>3.后端数据存储</strong></p>
 <p>大内存的使用肯定是一个重要的成本优化方向，flash盘及分布式的存储也在我们未来计划之中。（原文链接： <a href="http://www.xdata.me/?p=301" target="_blank" rel="external">Largest Redis Clusters Ever</a>）</p>
-<h3 id="Pinterest：Reids维护上百亿的相关性">Pinterest：Reids维护上百亿的相关性</h3>
-<p>Pinterest已经成为硅谷最疯故事之一，在2012年，他们基于PC的业务增加1047%，移动端采用增加1698%， <a href="http://www.forbes.com/sites/jjcolao/2013/05/08/why-is-pinterest-a-2-5-billion-company-an-early-investor-explains/" target="_blank" rel="external">该年3月其独立访问数量更飙升至533亿</a>。在Pinterest，人们关注的事物以百亿记——每个用户界面都会查询某个board或者是用户是否关注的行为促成了异常复杂的工程问题。这也让Redis获得了用武之地。经过数年的发展，Pinterest已经成为媒体、社交等多个领域的佼佼者，其辉煌战绩如下：</p>
+<h3 id="Pinterest：Reids维护上百亿的相关性"><a href="#Pinterest：Reids维护上百亿的相关性" class="headerlink" title="Pinterest：Reids维护上百亿的相关性"></a>Pinterest：Reids维护上百亿的相关性</h3><p>Pinterest已经成为硅谷最疯故事之一，在2012年，他们基于PC的业务增加1047%，移动端采用增加1698%， <a href="http://www.forbes.com/sites/jjcolao/2013/05/08/why-is-pinterest-a-2-5-billion-company-an-early-investor-explains/" target="_blank" rel="external">该年3月其独立访问数量更飙升至533亿</a>。在Pinterest，人们关注的事物以百亿记——每个用户界面都会查询某个board或者是用户是否关注的行为促成了异常复杂的工程问题。这也让Redis获得了用武之地。经过数年的发展，Pinterest已经成为媒体、社交等多个领域的佼佼者，其辉煌战绩如下：</p>
 <ul>
 <li>获得的推荐流量高于Google+、YouTube及LinkedIn三者的总和</li>
 <li>与Facebook及Twitter一起成为最流行的三大社交网络</li>
@@ -346,8 +324,7 @@
 <p>通过Pinterest的一个创始人了解到，Pinterest开始使用Python及订制的Django编写应用程序，并一直持续到其拥 有1800万用户级日410TB用户数据的时候。虽然使用了多个存储对数据进行储存，工程师根据用户id使用了8192个虚拟分片，每个分片都运行在一个 Redis DB之上，同时1个Redis实例将运行多个Redis DB。为了对CPU核心的充分使用，同一台主机上同时使用多线程和单线程Redis 实例。</p>
 <p>鉴于整个数据集运行在内存当中，Redis在Amazon EBS上对每秒传输进来的写入都会进行持久化。扩展主要通过两个方面进行：第 一，保持50%的利用率，通过主从转换，机器上运行的Redis实例一半会转译到一个新机器上；第二，扩展节点和分片。整个Redis集群都会使用一个主 从配置，从部分将被当做一个热备份。一旦主节点失败，从部分会立刻完成主的转换，同时一个新的从部分将会被添加，ZooKeeper将完成整个过程。同时 他们每个小时都会在Amazon S3上运行BGsave做更持久的储存——这项Reids操作会在后端进行，之后Pinterest会使用这些数据做 MapReduce和分析作业。（更多内容见原文）</p>
 <p><a href="http://www.chinacloud.cn/upload/2013-10/131007163928472.jpg" target="_blank" rel="external"><img src="http://www.chinacloud.cn/upload/2013-10/131007163928472.jpg" alt="131007163928472.jpg"></a></p>
-<h3 id="Viacom：Redis在系统中的用例盘点">Viacom：Redis在系统中的用例盘点</h3>
-<p>Viacom是全球最大的传媒集体之一，同时也遭遇了当下最大的数据难题之一：如何处理日益剧增的动态视频内容。</p>
+<h3 id="Viacom：Redis在系统中的用例盘点"><a href="#Viacom：Redis在系统中的用例盘点" class="headerlink" title="Viacom：Redis在系统中的用例盘点"></a>Viacom：Redis在系统中的用例盘点</h3><p>Viacom是全球最大的传媒集体之一，同时也遭遇了当下最大的数据难题之一：如何处理日益剧增的动态视频内容。</p>
 <p>着眼这一挑战的上升趋势，我们会发现：<a href="http://blogs.vmware.com/vfabric/2013/03/why-every-database-must-be-broken-soon.html" target="_blank" rel="external">2010年世界上所有数据体积达到ZB级</a>，而单单2012这一年，互联网产生的数据就增加了2.8个ZB，其中大部分的数据都是非结构化的，包括了视频和图片。</p>
 <p>覆盖MVN（以前称为MTV Networks、Paramount及BET），Viacom是个名副其实的传媒巨头，支持众多人气站点， 其中包括The Daily Show、osh.0、South Park Studios、GameTrailers.com等。作为媒体公司，这些网 站上的文档、图片、视频短片都在无时无刻的更新。长话短说，下面就进入Viacom高级架构师Michael Venezia 分享的Redis实践：</p>
 <p><strong>Viacom的网站架构背景</strong></p>
@@ -440,7 +417,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -450,12 +427,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

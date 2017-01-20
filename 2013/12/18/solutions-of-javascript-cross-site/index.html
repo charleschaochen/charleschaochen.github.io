@@ -8,21 +8,20 @@
   <meta name="description" content="什么是跨域JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。这里把涉及到跨域的一些问题简单地整理一下：首先什么是跨域，简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：URL说明是否允许通信http://w">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 跨域总结与解决办法">
-<meta property="og:url" content="http://www.charlestech.info/2013/12/18/solutions-of-javascript-cross-site/">
+<meta property="og:url" content="http://www.charlestech.info/2013/12/18/solutions-of-javascript-cross-site/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是跨域JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。这里把涉及到跨域的一些问题简单地整理一下：首先什么是跨域，简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：URL说明是否允许通信http://w">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 跨域总结与解决办法">
 <meta name="twitter:description" content="什么是跨域JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。这里把涉及到跨域的一些问题简单地整理一下：首先什么是跨域，简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：URL说明是否允许通信http://w">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,8 +221,7 @@
       
         <p>什么是跨域JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。这里把涉及到跨域的一些问题简单地整理一下：首先什么是跨域，简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：URL说明是否允许通信http://w…</p>
 <a id="more"></a>
-<h3 id="什么是跨域">什么是跨域</h3>
-<p>JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。这里把涉及到跨域的一些问题简单地整理一下：</p>
+<h3 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h3><p>JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。这里把涉及到跨域的一些问题简单地整理一下：</p>
 <p>首先什么是跨域，简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：</p>
 <table><br> <tbody><br>  <tr><br>   <th>URL</th><br>   <th>说明</th><br>   <th>是否允许通信</th><br>  </tr><br>  <tr><br>   <td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><p><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></p></td><br>   <td>同一域名下</td><br>   <td>允许</td><br>  </tr><br>  <tr><br>   <td><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a><p><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></p></td><br>   <td>同一域名下不同文件夹</td><br>   <td>允许</td><br>  </tr><br>  <tr><br>   <td><a href="http://www.a.com:8000/a.js" target="_blank" rel="external">http://www.a.com:8000/a.js</a><p><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></p></td><br>   <td>同一域名，不同端口</td><br>   <td>不允许</td><br>  </tr><br>  <tr><br>   <td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><p><a href="https://www.a.com/b.js" target="_blank" rel="external">https://www.a.com/b.js</a></p></td><br>   <td>同一域名，不同协议</td><br>   <td>不允许</td><br>  </tr><br>  <tr><br>   <td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><p><a href="http://70.32.92.74/b.js" target="_blank" rel="external">http://70.32.92.74/b.js</a></p></td><br>   <td>域名和域名对应ip</td><br>   <td>不允许</td><br>  </tr><br>  <tr><br>   <td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><p><a href="http://script.a.com/b.js" target="_blank" rel="external">http://script.a.com/b.js</a></p></td><br>   <td>主域相同，子域不同</td><br>   <td>不允许</td><br>  </tr><br>  <tr><br>   <td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><p><a href="http://a.com/b.js" target="_blank" rel="external">http://a.com/b.js</a></p></td><br>   <td>同一域名，不同二级域名（同上）</td><br>   <td>不允许（cookie这种情况下也不允许访问）</td><br>  </tr><br>  <tr><br>   <td><a href="http://www.cnblogs.com/a.js" target="_blank" rel="external">http://www.cnblogs.com/a.js</a><p><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></p></td><br>   <td>不同域名</td><br>   <td>不允许</td><br>  </tr><br> </tbody><br></table>
 
@@ -248,110 +229,105 @@
 <p>第一，如果是协议和端口造成的跨域问题“前台”是无能为力的，</p>
 <p>第二：在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。<br>“URL的首部”指window.location.protocol +window.location.host，也可以理解为“Domains, protocols and ports must match”。</p>
 <p>接下来简单地总结一下在“前台”一般处理跨域的办法，后台proxy这种方案牵涉到后台配置，这里就不阐述了，有兴趣的可以看看yahoo的这篇文章：《<a href="http://developer.yahoo.com/javascript/howto-proxy.html" target="_blank" rel="external">JavaScript: Use a Web Proxy for Cross-Domain XMLHttpRequest Calls</a>》</p>
-<h3 id="1、document-domain+iframe的设置">1、document.domain+iframe的设置</h3>
-<p>对于主域相同而子域不同的例子，可以通过设置document.domain的办法来解决。 具体的做法是可以在<a href="http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上" target="_blank" rel="external">http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上</a> document.domain = ‘a.com’；然后通过a.html文件中创建一个iframe，去控制iframe的contentDocument，这样两个js文件之间就可以 “交互”了。当然这种办法只能解决主域相同而二级域名不同的情况，如果你异想天开的把script.a.com的domian设为alibaba.com 那显然是会报错地！代码如下：</p>
+<h3 id="1、document-domain-iframe的设置"><a href="#1、document-domain-iframe的设置" class="headerlink" title="1、document.domain+iframe的设置"></a>1、document.domain+iframe的设置</h3><p>对于主域相同而子域不同的例子，可以通过设置document.domain的办法来解决。 具体的做法是可以在<a href="http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上" target="_blank" rel="external">http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上</a> document.domain = ‘a.com’；然后通过a.html文件中创建一个iframe，去控制iframe的contentDocument，这样两个js文件之间就可以 “交互”了。当然这种办法只能解决主域相同而二级域名不同的情况，如果你异想天开的把script.a.com的domian设为alibaba.com 那显然是会报错地！代码如下：</p>
 <p>www.a.com上的a.html</p>
 <table><br> <tbody><br>  <tr><br>   <td>&nbsp;</td><br>  </tr><br> </tbody><br></table>
 
-<pre><code><span class="built_in">document</span>.domain = <span class="string">'a.com'</span>;
-<span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);
-ifr.src = <span class="string">'http://script.a.com/b.html'</span>;
-ifr.style.display = <span class="string">'none'</span>;
-<span class="built_in">document</span>.body.appendChild(ifr);
-ifr.onload = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-    <span class="keyword">var</span> doc = ifr.contentDocument || ifr.contentWindow.document;
-    <span class="comment">// 在这里操纵b.html</span>
-    alert(doc.getElementsByTagName(<span class="string">"h1"</span>)[<span class="number">0</span>].childNodes[<span class="number">0</span>].nodeValue);
+<pre><code>document.domain = &apos;a.com&apos;;
+var ifr = document.createElement(&apos;iframe&apos;);
+ifr.src = &apos;http://script.a.com/b.html&apos;;
+ifr.style.display = &apos;none&apos;;
+document.body.appendChild(ifr);
+ifr.onload = function(){
+    var doc = ifr.contentDocument || ifr.contentWindow.document;
+    // 在这里操纵b.html
+    alert(doc.getElementsByTagName(&quot;h1&quot;)[0].childNodes[0].nodeValue);
 };
 </code></pre><p>script.a.com上的b.html</p>
-<pre><code><span class="built_in">document</span>.domain = <span class="string">'a.com'</span>;
+<pre><code>document.domain = &apos;a.com&apos;;
 </code></pre><p>这种方式适用于{www.kuqin.com, kuqin.com, script.kuqin.com, css.kuqin.com}中的任何页面相互通信。</p>
 <p>备注：某一页面的domain默认等于window.location.hostname。主域名是不带www的域名，例如a.com，主域名前面带前缀的通常都为二级域名或多级域名，例如www.a.com其实是二级域名。 domain只能设置为主域名，不可以在b.a.com中将domain设置为c.a.com。</p>
 <p>问题：</p>
 <p>1、安全性，当一个站点（b.a.com）被攻击后，另一个站点（c.a.com）会引起安全漏洞。</p>
 <p>2、如果一个页面中引入多个iframe，要想能够操作所有iframe，必须都得设置相同domain。</p>
-<h3 id="2、动态创建script">2、动态创建script</h3>
-<p>虽然浏览器默认禁止了跨域访问，但并不禁止在页面中引用其他域的JS文件，并可以自由执行引入的JS文件中的function（包括操作cookie、Dom等等）。根据这一点，可以方便地通过创建script节点的方法来实现完全跨域的通信。具体的做法可以参考YUI的<a href="http://developer.yahoo.com/yui/get/" target="_blank" rel="external">Get Utility</a></p>
+<h3 id="2、动态创建script"><a href="#2、动态创建script" class="headerlink" title="2、动态创建script"></a>2、动态创建script</h3><p>虽然浏览器默认禁止了跨域访问，但并不禁止在页面中引用其他域的JS文件，并可以自由执行引入的JS文件中的function（包括操作cookie、Dom等等）。根据这一点，可以方便地通过创建script节点的方法来实现完全跨域的通信。具体的做法可以参考YUI的<a href="http://developer.yahoo.com/yui/get/" target="_blank" rel="external">Get Utility</a></p>
 <p>这里判断script节点加载完毕还是蛮有意思的：ie只能通过script的readystatechange属性，其它浏览器是script的load事件。以下是部分判断script加载完毕的方法。</p>
-<pre><code>js.onload = js.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
-    <span class="keyword">if</span> (!<span class="keyword">this</span>.readyState || <span class="keyword">this</span>.readyState === <span class="string">'loaded'</span> || <span class="keyword">this</span>.readyState === <span class="string">'complete'</span>) {
-        <span class="comment">// callback在此处执行</span>
-        js.onload = js.onreadystatechange = <span class="literal">null</span>;
+<pre><code>js.onload = js.onreadystatechange = function() {
+    if (!this.readyState || this.readyState === &apos;loaded&apos; || this.readyState === &apos;complete&apos;) {
+        // callback在此处执行
+        js.onload = js.onreadystatechange = null;
     }
 };
-</code></pre><h3 id="3、利用iframe和location-hash">3、利用iframe和location.hash</h3>
-<p>这个办法比较绕，但是可以解决完全跨域情况下的脚步置换问题。原理是利用location.hash来进行传值。在url： <a href="http://a.com\#helloword中的‘\#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可" target="_blank" rel="external">http://a.com\#helloword中的‘\#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可</a> 以利用hash值来进行数据传递，当然数据容量是有限的。假设域名a.com下的文件cs1.html要和cnblogs.com域名下的 cs2.html传递信息，cs1.html首先创建自动创建一个隐藏的iframe，iframe的src指向cnblogs.com域名下的 cs2.html页面，这时的hash值可以做参数传递用。cs2.html响应请求后再将通过修改cs1.html的hash值来传递数据（由于两个页面不在同一个域下IE、Chrome不允许修改parent.location.hash的值，所以要借助于a.com域名下的一个代理iframe；Firefox可以修改）。同时在cs1.html上加一个定时器，隔一段时间来判断location.hash的值有没有变化，一点有变化则获取获取hash值。代码如下：</p>
+</code></pre><h3 id="3、利用iframe和location-hash"><a href="#3、利用iframe和location-hash" class="headerlink" title="3、利用iframe和location.hash"></a>3、利用iframe和location.hash</h3><p>这个办法比较绕，但是可以解决完全跨域情况下的脚步置换问题。原理是利用location.hash来进行传值。在url： <a href="http://a.com\#helloword中的‘\#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可" target="_blank" rel="external">http://a.com\#helloword中的‘\#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可</a> 以利用hash值来进行数据传递，当然数据容量是有限的。假设域名a.com下的文件cs1.html要和cnblogs.com域名下的 cs2.html传递信息，cs1.html首先创建自动创建一个隐藏的iframe，iframe的src指向cnblogs.com域名下的 cs2.html页面，这时的hash值可以做参数传递用。cs2.html响应请求后再将通过修改cs1.html的hash值来传递数据（由于两个页面不在同一个域下IE、Chrome不允许修改parent.location.hash的值，所以要借助于a.com域名下的一个代理iframe；Firefox可以修改）。同时在cs1.html上加一个定时器，隔一段时间来判断location.hash的值有没有变化，一点有变化则获取获取hash值。代码如下：</p>
 <p>先是a.com下的文件cs1.html文件：</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">startRequest</span><span class="params">()</span></span>{
-    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);
-    ifr.style.display = <span class="string">'none'</span>;
-    ifr.src = <span class="string">'http://www.cnblogs.com/lab/cscript/cs2.html#paramdo'</span>;
-    <span class="built_in">document</span>.body.appendChild(ifr);
+<pre><code>function startRequest(){
+    var ifr = document.createElement(&apos;iframe&apos;);
+    ifr.style.display = &apos;none&apos;;
+    ifr.src = &apos;http://www.cnblogs.com/lab/cscript/cs2.html#paramdo&apos;;
+    document.body.appendChild(ifr);
 }
 
-<span class="function"><span class="keyword">function</span> <span class="title">checkHash</span><span class="params">()</span> </span>{
-    <span class="keyword">try</span> {
-        <span class="keyword">var</span> data = location.hash ? location.hash.substring(<span class="number">1</span>) : <span class="string">''</span>;
-        <span class="keyword">if</span> (<span class="built_in">console</span>.log) {
-            <span class="built_in">console</span>.log(<span class="string">'Now the data is '</span>+data);
+function checkHash() {
+    try {
+        var data = location.hash ? location.hash.substring(1) : &apos;&apos;;
+        if (console.log) {
+            console.log(&apos;Now the data is &apos;+data);
         }
-    } <span class="keyword">catch</span>(e) {};
+    } catch(e) {};
 }
-setInterval(checkHash, <span class="number">2000</span>);
+setInterval(checkHash, 2000);
 </code></pre><p>cnblogs.com域名下的cs2.html:</p>
-<pre><code><span class="comment">//模拟一个简单的参数处理操作</span>
-<span class="keyword">switch</span>(location.hash){
-    <span class="keyword">case</span> <span class="string">'#paramdo'</span>:
+<pre><code>//模拟一个简单的参数处理操作
+switch(location.hash){
+    case &apos;#paramdo&apos;:
         callBack();
-        <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="string">'#paramset'</span>:
-        <span class="comment">//do something……</span>
-        <span class="keyword">break</span>;
+        break;
+    case &apos;#paramset&apos;:
+        //do something……
+        break;
 }
 
-<span class="function"><span class="keyword">function</span> <span class="title">callBack</span><span class="params">()</span></span>{
-    <span class="keyword">try</span> {
-        parent.location.hash = <span class="string">'somedata'</span>;
-    } <span class="keyword">catch</span> (e) {
-        <span class="comment">// ie、chrome的安全机制无法修改parent.location.hash，</span>
-        <span class="comment">// 所以要利用一个中间的cnblogs域下的代理iframe</span>
-        <span class="keyword">var</span> ifrproxy = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);
-        ifrproxy.style.display = <span class="string">'none'</span>;
-        ifrproxy.src = <span class="string">'http://a.com/test/cscript/cs3.html#somedata'</span>;    <span class="comment">// 注意该文件在"a.com"域下</span>
-        <span class="built_in">document</span>.body.appendChild(ifrproxy);
+function callBack(){
+    try {
+        parent.location.hash = &apos;somedata&apos;;
+    } catch (e) {
+        // ie、chrome的安全机制无法修改parent.location.hash，
+        // 所以要利用一个中间的cnblogs域下的代理iframe
+        var ifrproxy = document.createElement(&apos;iframe&apos;);
+        ifrproxy.style.display = &apos;none&apos;;
+        ifrproxy.src = &apos;http://a.com/test/cscript/cs3.html#somedata&apos;;    // 注意该文件在&quot;a.com&quot;域下
+        document.body.appendChild(ifrproxy);
     }
 }
 </code></pre><p>a.com下的域名cs3.html</p>
-<pre><code><span class="comment">//因为parent.parent和自身属于同一个域，所以可以改变其location.hash的值</span>
-<span class="keyword">parent</span>.<span class="keyword">parent</span>.location.hash = <span class="keyword">self</span>.location.hash.substring(<span class="number">1</span>);
+<pre><code>//因为parent.parent和自身属于同一个域，所以可以改变其location.hash的值
+parent.parent.location.hash = self.location.hash.substring(1);
 </code></pre><p>当然这样做也存在很多缺点，诸如数据直接暴露在了url中，数据容量和类型都有限等……</p>
-<h3 id="4、window-name实现的跨域数据传输">4、window.name实现的跨域数据传输</h3>
-<p>文章较长列在此处不便于阅读，详细请看 <a href="http://www.cnblogs.com/rainman/archive/2011/02/21/1960044.html" target="_blank" rel="external">window.name实现的跨域数据传输</a>。</p>
-<h3 id="5、使用HTML5_postMessage">5、使用HTML5 postMessage</h3>
-<p><a href="http://dev.w3.org/html5/spec/" target="_blank" rel="external">HTML5</a>中最酷的新功能之一就是 <a href="http://www.whatwg.org/specs/web-apps/current-work/#crossDocumentMessages" target="_blank" rel="external">跨文档消息传输Cross Document Messaging</a>。 下一代浏览器都将支持这个功能：Chrome 2.0+、Internet Explorer 8.0+, Firefox 3.0+, Opera 9.6+, 和 Safari 4.0+ 。 Facebook已经使用了这个功能，用postMessage支持基于web的实时消息传递。</p>
+<h3 id="4、window-name实现的跨域数据传输"><a href="#4、window-name实现的跨域数据传输" class="headerlink" title="4、window.name实现的跨域数据传输"></a>4、window.name实现的跨域数据传输</h3><p>文章较长列在此处不便于阅读，详细请看 <a href="http://www.cnblogs.com/rainman/archive/2011/02/21/1960044.html" target="_blank" rel="external">window.name实现的跨域数据传输</a>。</p>
+<h3 id="5、使用HTML5-postMessage"><a href="#5、使用HTML5-postMessage" class="headerlink" title="5、使用HTML5 postMessage"></a>5、使用HTML5 postMessage</h3><p><a href="http://dev.w3.org/html5/spec/" target="_blank" rel="external">HTML5</a>中最酷的新功能之一就是 <a href="http://www.whatwg.org/specs/web-apps/current-work/#crossDocumentMessages" target="_blank" rel="external">跨文档消息传输Cross Document Messaging</a>。 下一代浏览器都将支持这个功能：Chrome 2.0+、Internet Explorer 8.0+, Firefox 3.0+, Opera 9.6+, 和 Safari 4.0+ 。 Facebook已经使用了这个功能，用postMessage支持基于web的实时消息传递。</p>
 <p>otherWindow.postMessage(message, targetOrigin);</p>
 <p>otherWindow: 对接收信息页面的window的引用。可以是页面中iframe的contentWindow属性；<a href="https://developer.mozilla.org/en/DOM/window.open" target="_blank" rel="external">window.open</a>的返回值；通过name或下标从<a href="https://developer.mozilla.org/en/DOM/window.frames" target="_blank" rel="external">window.frames</a>取到的值。<br>message: 所要发送的数据，string类型。<br>targetOrigin: 用于限制otherWindow，“*”表示不作限制</p>
 <p>a.com/index.html中的代码：</p>
-<pre><code><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">id</span>=<span class="value">"ifr"</span> <span class="attribute">src</span>=<span class="value">"b.com/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
-<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
-    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.getElementById(<span class="string">'ifr'</span>);
-    <span class="keyword">var</span> targetOrigin = <span class="string">'http://b.com'</span>;  <span class="comment">// 若写成'http://b.com/c/proxy.html'效果一样</span>
-                                        <span class="comment">// 若写成'http://c.com'就不会执行postMessage了</span>
-    ifr.contentWindow.postMessage(<span class="string">'I was there!'</span>, targetOrigin);
+<pre><code>&lt;iframe id=&quot;ifr&quot; src=&quot;b.com/index.html&quot;&gt;&lt;/iframe&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function() {
+    var ifr = document.getElementById(&apos;ifr&apos;);
+    var targetOrigin = &apos;http://b.com&apos;;  // 若写成&apos;http://b.com/c/proxy.html&apos;效果一样
+                                        // 若写成&apos;http://c.com&apos;就不会执行postMessage了
+    ifr.contentWindow.postMessage(&apos;I was there!&apos;, targetOrigin);
 };
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+&lt;/script&gt;
 </code></pre><p>b.com/index.html中的代码：</p>
-<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
-    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span><span class="params">(event)</span></span>{
-        <span class="comment">// 通过origin属性判断消息来源地址</span>
-        <span class="keyword">if</span> (event.origin == <span class="string">'http://a.com'</span>) {
-            alert(event.data);    <span class="comment">// 弹出"I was there!"</span>
-            alert(event.source);  <span class="comment">// 对a.com、index.html中window对象的引用</span>
-                                  <span class="comment">// 但由于同源策略，这里event.source不可以访问window对象</span>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    window.addEventListener(&apos;message&apos;, function(event){
+        // 通过origin属性判断消息来源地址
+        if (event.origin == &apos;http://a.com&apos;) {
+            alert(event.data);    // 弹出&quot;I was there!&quot;
+            alert(event.source);  // 对a.com、index.html中window对象的引用
+                                  // 但由于同源策略，这里event.source不可以访问window对象
         }
-    }, <span class="literal">false</span>);
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    }, false);
+&lt;/script&gt;
 </code></pre>
       
     </div>
@@ -424,7 +400,7 @@ setInterval(checkHash, <span class="number">2000</span>);
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -434,12 +410,9 @@ setInterval(checkHash, <span class="number">2000</span>);
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

@@ -8,22 +8,22 @@
   <meta name="description" content="出处：阮一峰的网络日志  Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。git clonegit remotegit fetchgit pullgit push本文针对初级用户，从最简单的讲起，但是需要读者对Git的…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git远程操作详解">
-<meta property="og:url" content="http://www.charlestech.info/2014/08/08/tutorials-of-git-remote-control/">
+<meta property="og:url" content="http://www.charlestech.info/2014/08/08/tutorials-of-git-remote-control/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="出处：阮一峰的网络日志  Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。git clonegit remotegit fetchgit pullgit push本文针对初级用户，从最简单的讲起，但是需要读者对Git的…">
 <meta property="og:image" content="http://www.testwo.com/attachments/12326/1407387515508.jpg">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git远程操作详解">
 <meta name="twitter:description" content="出处：阮一峰的网络日志  Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。git clonegit remotegit fetchgit pullgit push本文针对初级用户，从最简单的讲起，但是需要读者对Git的…">
-
+<meta name="twitter:image" content="http://www.testwo.com/attachments/12326/1407387515508.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -61,11 +61,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -82,8 +77,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -128,27 +121,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -254,116 +237,116 @@
 <p><img src="http://www.testwo.com/attachments/12326/1407387515508.jpg" alt="1407387515508.jpg"></p>
 <p><strong>一、git clone</strong></p>
 <p>远程操作的第一步，通常是从远程主机克隆一个版本库，这时就要用到git clone命令。</p>
-<pre><code><span class="variable">$ </span>git clone &lt;版本库的网址&gt;
+<pre><code>$ git clone &lt;版本库的网址&gt;
 </code></pre><p>比如，克隆jQuery的版本库。</p>
-<pre><code>$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/jquery/jquery.git
+<pre><code>$ git clone https://github.com/jquery/jquery.git
 </code></pre><p>该命令会在本地主机生成一个目录，与远程主机的版本库同名。如果要指定不同的目录名，可以将目录名作为git clone命令的第二个参数。</p>
 <p>git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。</p>
-<pre><code><span class="variable">$ </span>git clone http[s]<span class="symbol">://example</span>.com/path/to/repo.git/ <span class="variable">$ </span>git clone <span class="symbol">ssh:</span>/<span class="regexp">/example.com/path</span><span class="regexp">/to/repo</span>.git/ <span class="variable">$ </span>git clone <span class="symbol">git:</span>/<span class="regexp">/example.com/path</span><span class="regexp">/to/repo</span>.git/ <span class="variable">$ </span>git clone /opt/git/project.git 
-<span class="variable">$ </span>git clone <span class="symbol">file:</span>/<span class="regexp">//opt</span><span class="regexp">/git/project</span>.git <span class="variable">$ </span>git clone ftp[s]<span class="symbol">://example</span>.com/path/to/repo.git/ <span class="variable">$ </span>git clone <span class="symbol">rsync:</span>/<span class="regexp">/example.com/path</span><span class="regexp">/to/repo</span>.git/
+<pre><code>$ git clone http[s]://example.com/path/to/repo.git/ $ git clone ssh://example.com/path/to/repo.git/ $ git clone git://example.com/path/to/repo.git/ $ git clone /opt/git/project.git 
+$ git clone file:///opt/git/project.git $ git clone ftp[s]://example.com/path/to/repo.git/ $ git clone rsync://example.com/path/to/repo.git/
 </code></pre><p>SSH协议还有另一种写法。</p>
-<pre><code>$ git clone [<span class="literal">user</span>@]example.com:path/to/repo.git/
+<pre><code>$ git clone [user@]example.com:path/to/repo.git/
 </code></pre><p>通常来说，Git协议下载速度最快，SSH协议用于需要用户认证的场合。各种协议优劣的详细讨论请参考官方文</p>
 <p><strong>二、git remote</strong></p>
 <p>为了便于管理，Git要求每个远程主机都必须指定一个主机名。git remote命令就用于管理主机名。</p>
 <p>不带选项的时候，git remote命令列出所有远程主机。</p>
-<pre><code><span class="variable">$ </span>git remote
+<pre><code>$ git remote
 origin
 </code></pre><p>使用-v选项，可以参看远程主机的网址。</p>
-<pre><code><span class="variable">$ </span>git remote -v
-origin git<span class="variable">@github</span>.<span class="symbol">com:</span>jquery/jquery.git (fetch) origin git<span class="variable">@github</span>.<span class="symbol">com:</span>jquery/jquery.git (push)
+<pre><code>$ git remote -v
+origin git@github.com:jquery/jquery.git (fetch) origin git@github.com:jquery/jquery.git (push)
 </code></pre><p>上面命令表示，当前只有一台远程主机，叫做origin，以及它的网址。</p>
 <p>克隆版本库的时候，所使用的远程主机自动被Git命名为origin。如果想用其他的主机名，需要用git clone命令的-o选项指定。</p>
-<pre><code>$ git clone -<span class="keyword">o</span> jQuery http<span class="variable">s:</span>//github.<span class="keyword">com</span>/jquery/jquery.git
+<pre><code>$ git clone -o jQuery https://github.com/jquery/jquery.git
 $ git remote
 jQuery
 </code></pre><p>上面命令表示，克隆的时候，指定远程主机叫做jQuery。</p>
 <p>git remote show命令加上主机名，可以查看该主机的详细信息。</p>
-<pre><code>$ git remote <span class="literal">show</span> &lt;主机名&gt;
+<pre><code>$ git remote show &lt;主机名&gt;
 </code></pre><p>git remote add命令用于添加远程主机。</p>
-<pre><code><span class="input"><span class="prompt">$ git remote add &lt;主机名&gt;</span> &lt;网址&gt;</span>
+<pre><code>$ git remote add &lt;主机名&gt; &lt;网址&gt;
 </code></pre><p>git remote rm命令用于删除远程主机。</p>
-<pre><code><span class="variable">$ </span>git remote rm &lt;主机名&gt;
+<pre><code>$ git remote rm &lt;主机名&gt;
 </code></pre><p>git remote rename命令用于远程主机的改名。</p>
-<pre><code><span class="input"><span class="prompt">$ git remote rename &lt;原主机名&gt;</span> &lt;新主机名&gt;</span>
+<pre><code>$ git remote rename &lt;原主机名&gt; &lt;新主机名&gt;
 </code></pre><p><strong>三、git fetch</strong>  </p>
 <p>一旦远程主机的版本库有了更新（Git术语叫做commit），需要将这些更新取回本地，这时就要用到git fetch命令。</p>
-<pre><code><span class="variable">$ </span>git fetch &lt;远程主机名&gt;
+<pre><code>$ git fetch &lt;远程主机名&gt;
 </code></pre><p>上面命令将某个远程主机的更新，全部取回本地。</p>
 <p>默认情况下，git fetch取回所有分支（branch）的更新。如果只想取回特定分支的更新，可以指定分支名。</p>
-<pre><code><span class="input"><span class="prompt">$ git fetch &lt;远程主机名&gt;</span> &lt;分支名&gt;</span>
+<pre><code>$ git fetch &lt;远程主机名&gt; &lt;分支名&gt;
 </code></pre><p>比如，取回origin主机的master分支。</p>
-<pre><code><span class="variable">$ </span>git fetch origin master
+<pre><code>$ git fetch origin master
 </code></pre><p>所取回的更新，在本地主机上要用”远程主机名/分支名”的形式读取。比如origin主机的master，就要用origin/master读取。</p>
 <p>git branch命令的-r选项，可以用来查看远程分支，-a选项查看所有分支。</p>
-<pre><code><span class="variable">$ </span>git branch -r
+<pre><code>$ git branch -r
 origin/master
 
-<span class="variable">$ </span>git branch -a * master
+$ git branch -a * master
   remotes/origin/master
 </code></pre><p>上面命令表示，本地主机的当前分支是master，远程分支是origin/master。</p>
 <p>取回远程主机的更新以后，可以在它的基础上，使用git checkout命令创建一个新的分支。</p>
-<pre><code><span class="variable">$ </span>git checkout -b newBrach origin/master
+<pre><code>$ git checkout -b newBrach origin/master
 </code></pre><p>上面命令表示，在origin/master的基础上，创建一个新分支。</p>
 <p>此外，也可以使用git merge命令或者git rebase命令，在本地分支上合并远程分支。</p>
-<pre><code><span class="variable">$ </span>git merge origin/master
-<span class="comment"># 或者</span>
-<span class="variable">$ </span>git rebase origin/master
+<pre><code>$ git merge origin/master
+# 或者
+$ git rebase origin/master
 </code></pre><p>上面命令表示在当前分支上，合并origin/master。</p>
 <p><strong>四、git pull</strong></p>
 <p>git pull命令的作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。</p>
-<pre><code><span class="input"><span class="prompt">$ git pull &lt;远程主机名&gt;</span> &lt;远程分支名&gt;<span class="symbol">:&lt;</span>本地分支名&gt;</span>
+<pre><code>$ git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;
 </code></pre><p>比如，取回origin主机的next分支，与本地的master分支合并，需要写成下面这样。</p>
-<pre><code>$ git pull origin nex<span class="variable">t:master</span>
+<pre><code>$ git pull origin next:master
 </code></pre><p>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。</p>
-<pre><code><span class="variable">$ </span>git pull origin <span class="keyword">next</span>
+<pre><code>$ git pull origin next
 </code></pre><p>上面命令表示，取回origin/next分支，再与当前分支合并。实质上，这等同于先做git fetch，再做git merge。</p>
-<pre><code><span class="variable">$ </span>git fetch origin
-<span class="variable">$ </span>git merge origin/<span class="keyword">next</span>
+<pre><code>$ git fetch origin
+$ git merge origin/next
 </code></pre><p>在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系（tracking）。比如，在git clone的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的master分支自动”追踪”origin/master分支。</p>
 <p>Git也允许手动建立追踪关系。</p>
-<pre><code>git branch --<span class="keyword">set</span>-upstream master origin/<span class="keyword">next</span>
+<pre><code>git branch --set-upstream master origin/next
 </code></pre><p>上面命令指定master分支追踪origin/next分支。</p>
 <p>如果当前分支与远程分支存在追踪关系，git pull就可以省略远程分支名。</p>
-<pre><code><span class="variable">$ </span>git pull origin
+<pre><code>$ git pull origin
 </code></pre><p>上面命令表示，本地的当前分支自动与对应的origin主机”追踪分支”（remote-tracking branch）进行合并。</p>
 <p>如果当前分支只有一个追踪分支，连远程主机名都可以省略。</p>
-<pre><code><span class="variable">$ </span>git pull
+<pre><code>$ git pull
 </code></pre><p>上面命令表示，当前分支自动与唯一一个追踪分支进行合并。</p>
-<p>如果合并需要采用rebase模式，可以使用—rebase选项。</p>
-<pre><code><span class="input"><span class="prompt">$ git pull --rebase &lt;远程主机名&gt;</span> &lt;远程分支名&gt;<span class="symbol">:&lt;</span>本地分支名&gt;</span>
+<p>如果合并需要采用rebase模式，可以使用–rebase选项。</p>
+<pre><code>$ git pull --rebase &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;
 </code></pre><p><strong>五、git push</strong>  </p>
 <p>git push命令用于将本地分支的更新，推送到远程主机。它的格式与git pull命令相仿。</p>
-<pre><code><span class="input"><span class="prompt">$ git push &lt;远程主机名&gt;</span> &lt;本地分支名&gt;<span class="symbol">:&lt;</span>远程分支名&gt;</span>
+<pre><code>$ git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
 </code></pre><p>注意，分支推送顺序的写法是&lt;来源地&gt;:&lt;目的地&gt;，所以git pull是&lt;远程分支&gt;:&lt;本地分支&gt;，而git push是&lt;本地分支&gt;:&lt;远程分支&gt;。</p>
 <p>如果省略远程分支名，则表示将本地分支推送与之存在”追踪关系”的远程分支（通常两者同名），如果该远程分支不存在，则会被新建。</p>
-<pre><code><span class="variable">$ </span>git push origin master
+<pre><code>$ git push origin master
 </code></pre><p>上面命令表示，将本地的master分支推送到origin主机的master分支。如果后者不存在，则会被新建。</p>
 <p>如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。</p>
-<pre><code><span class="variable">$ </span>git push origin <span class="symbol">:master</span>
-<span class="comment"># 等同于</span>
-<span class="variable">$ </span>git push origin --delete master
+<pre><code>$ git push origin :master
+# 等同于
+$ git push origin --delete master
 </code></pre><p>上面命令表示删除origin主机的master分支。</p>
 <p>如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。</p>
-<pre><code><span class="variable">$ </span>git push origin
+<pre><code>$ git push origin
 </code></pre><p>上面命令表示，将当前分支推送到origin主机的对应分支。</p>
 <p>如果当前分支只有一个追踪分支，那么主机名都可以省略。</p>
-<pre><code><span class="variable">$ </span>git push
+<pre><code>$ git push
 </code></pre><p>如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用git push。</p>
-<pre><code><span class="variable">$ </span>git push -u origin master
+<pre><code>$ git push -u origin master
 </code></pre><p>上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</p>
 <p>不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。如果要修改这个设置，可以采用git config命令。</p>
-<pre><code>$ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> matching
-<span class="comment"># 或者</span>
-$ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> simple
-</code></pre><p>还有一种情况，就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用—all选项。</p>
-<pre><code>$ git push --<span class="literal">all</span> origin
+<pre><code>$ git config --global push.default matching
+# 或者
+$ git config --global push.default simple
+</code></pre><p>还有一种情况，就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用–all选项。</p>
+<pre><code>$ git push --all origin
 </code></pre><p>上面命令表示，将所有本地分支都推送到origin主机。</p>
-<p>如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做git pull合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用—force选项。</p>
-<pre><code>$ git push --<span class="literal">force</span> origin
-</code></pre><p>上面命令使用—force选项，结果导致在远程主机产生一个”非直进式”的合并（non-fast-forward merge）。除非你很确定要这样做，否则应该尽量避免使用—force选项。</p>
-<p>最后，git push不会推送标签（tag），除非使用—tags选项。</p>
-<pre><code>$ git push origin --<span class="keyword">tags</span>
+<p>如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做git pull合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用–force选项。</p>
+<pre><code>$ git push --force origin
+</code></pre><p>上面命令使用–force选项，结果导致在远程主机产生一个”非直进式”的合并（non-fast-forward merge）。除非你很确定要这样做，否则应该尽量避免使用–force选项。</p>
+<p>最后，git push不会推送标签（tag），除非使用–tags选项。</p>
+<pre><code>$ git push origin --tags
 </code></pre><p>（完）</p>
 
       
@@ -437,7 +420,7 @@ $ git config --<span class="keyword">global</span> push.<span class="keyword">de
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -447,12 +430,9 @@ $ git config --<span class="keyword">global</span> push.<span class="keyword">de
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

@@ -8,21 +8,20 @@
   <meta name="description" content="实现一个缓存其实就是需要实现一个能够存储键值对，并自动清理超时缓存项的数据结构。java.util.concurrent包下有个DelayQueue，它是一个无界的BlockingQueue，存入DelayQueue的对象必须实现Delayed接口。DelayQueue提供一个阻塞的take方法，只有过期的Delayed对象才能被take出队列。利用DelayQueue的这个特性，我们可以用Del">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用DelayQueue实现缓存">
-<meta property="og:url" content="http://www.charlestech.info/2014/10/09/implement-cache-using-deplay-queue/">
+<meta property="og:url" content="http://www.charlestech.info/2014/10/09/implement-cache-using-deplay-queue/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="实现一个缓存其实就是需要实现一个能够存储键值对，并自动清理超时缓存项的数据结构。java.util.concurrent包下有个DelayQueue，它是一个无界的BlockingQueue，存入DelayQueue的对象必须实现Delayed接口。DelayQueue提供一个阻塞的take方法，只有过期的Delayed对象才能被take出队列。利用DelayQueue的这个特性，我们可以用Del">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用DelayQueue实现缓存">
 <meta name="twitter:description" content="实现一个缓存其实就是需要实现一个能够存储键值对，并自动清理超时缓存项的数据结构。java.util.concurrent包下有个DelayQueue，它是一个无界的BlockingQueue，存入DelayQueue的对象必须实现Delayed接口。DelayQueue提供一个阻塞的take方法，只有过期的Delayed对象才能被take出队列。利用DelayQueue的这个特性，我们可以用Del">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -243,40 +225,40 @@
 <p>java.util.concurrent包下有个DelayQueue，它是一个无界的BlockingQueue，存入DelayQueue的对象必须实现Delayed接口。DelayQueue提供一个阻塞的take方法，只有过期的Delayed对象才能被take出队列。</p>
 <p>利用DelayQueue的这个特性，我们可以用DelayQueue实现一个简单的缓存。我们要做的就是将缓存的键值对封装在一个实现Delayed接口的类中，然后加入DelayQueue，并启动一条线程不断从DelayQueue中take东西，如果DelayQueue中没有过期对象，线程将被阻塞，一旦DelayQueue中有过期对象，将直接被移除。</p>
 <p>首先，我们实现一个键值对数据结构Pair：</p>
-<pre><code><span class="keyword">package</span> concurrent.delay.cache;
+<pre><code>package concurrent.delay.cache;
 
-<span class="javadoc">/**
+/**
  * Key-value pair for cached item
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月8日
- *<span class="javadoctag"> @param</span> &lt;K&gt;
- *<span class="javadoctag"> @param</span> &lt;V&gt;
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; </span>{
-    <span class="keyword">private</span> K key;
-    <span class="keyword">private</span> V value;
+ * @author Charles Chen
+ * @date 2014年10月8日
+ * @param &lt;K&gt;
+ * @param &lt;V&gt;
+ */
+public class Pair&lt;K, V&gt; {
+    private K key;
+    private V value;
 
-    <span class="keyword">public</span> <span class="title">Pair</span>(K key, V value) {
-        <span class="comment">// TODO Auto-generated constructor stub</span>
-        <span class="keyword">this</span>.key = key;
-        <span class="keyword">this</span>.value = value;
+    public Pair(K key, V value) {
+        // TODO Auto-generated constructor stub
+        this.key = key;
+        this.value = value;
     }
 
-    <span class="keyword">public</span> K <span class="title">getKey</span>() {
-        <span class="keyword">return</span> key;
+    public K getKey() {
+        return key;
     }
 
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setKey</span>(K key) {
-        <span class="keyword">this</span>.key = key;
+    public void setKey(K key) {
+        this.key = key;
     }
 
-    <span class="keyword">public</span> V <span class="title">getValue</span>() {
-        <span class="keyword">return</span> value;
+    public V getValue() {
+        return value;
     }
 
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setValue</span>(V value) {
-        <span class="keyword">this</span>.value = value;
+    public void setValue(V value) {
+        this.value = value;
     }
 
 }
@@ -284,188 +266,188 @@
 <p><strong>compareTo()</strong>： DelayQueue根据conpareTo方法的返回值决定Deplayed对象在队列中的顺序，一般是最先过期的元素在队头。</p>
 <p><strong>getDelay()</strong>： 返回Delayed对象剩余的存活时间。DelayQueue根据getDelay方法的返回值判断队头元素是否过期，当getDelay()返回值小于0时，表示这个对象已经过期，此时队列将唤醒调用了take()方法的线程，并移除队头元素。</p>
 <p>实现代码：</p>
-<pre><code><span class="keyword">package</span> concurrent.delay.cache;
+<pre><code>package concurrent.delay.cache;
 
 
-<span class="keyword">import</span> java.util.concurrent.Delayed;
-<span class="keyword">import</span> java.util.concurrent.TimeUnit;
-<span class="keyword">import</span> java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
 
-<span class="javadoc">/**
+/**
  * Cached item
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月9日
- *<span class="javadoctag"> @param</span> &lt;T&gt;
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DelayItem</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Delayed</span> </span>{
-    <span class="keyword">private</span> T item; <span class="comment">// Cached item</span>
-    <span class="keyword">private</span> <span class="keyword">long</span> expire; <span class="comment">// Expire time</span>
-    <span class="keyword">private</span> <span class="keyword">long</span> sequence; <span class="comment">// Sequence</span>
+ * @author Charles Chen
+ * @date 2014年10月9日
+ * @param &lt;T&gt;
+ */
+public class DelayItem&lt;T&gt; implements Delayed {
+    private T item; // Cached item
+    private long expire; // Expire time
+    private long sequence; // Sequence
 
 
-    <span class="comment">// Sequencer for generating sequence</span>
-    <span class="keyword">private</span> <span class="keyword">static</span> AtomicLong sequencer = <span class="keyword">new</span> AtomicLong(<span class="number">0</span>);
+    // Sequencer for generating sequence
+    private static AtomicLong sequencer = new AtomicLong(0);
 
 
-    <span class="javadoc">/**
+    /**
      * Constructor
      * 
-     *<span class="javadoctag"> @param</span> item
-     *<span class="javadoctag"> @param</span> timeout
-     */</span>
-    <span class="keyword">public</span> <span class="title">DelayItem</span>(T item, <span class="keyword">long</span> timeout) {
-        <span class="comment">// TODO Auto-generated constructor stub</span>
-        <span class="keyword">this</span>.item = item;
-        <span class="keyword">this</span>.expire = System.nanoTime() + timeout;
-        <span class="keyword">this</span>.sequence = sequencer.getAndIncrement();
+     * @param item
+     * @param timeout
+     */
+    public DelayItem(T item, long timeout) {
+        // TODO Auto-generated constructor stub
+        this.item = item;
+        this.expire = System.nanoTime() + timeout;
+        this.sequence = sequencer.getAndIncrement();
     }
 
 
-    <span class="annotation">@Override</span>
-    <span class="javadoc">/**
+    @Override
+    /**
      * Compare current object with the specified object.
      * Delay queue uses this method to determine the orders of items
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span>(Delayed o) {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        <span class="keyword">if</span> (<span class="keyword">this</span> == o)
-            <span class="keyword">return</span> <span class="number">0</span>;
-        <span class="keyword">if</span> (o <span class="keyword">instanceof</span> DelayItem) {
+     */
+    public int compareTo(Delayed o) {
+        // TODO Auto-generated method stub
+        if (this == o)
+            return 0;
+        if (o instanceof DelayItem) {
             DelayItem other = (DelayItem) o;
-            <span class="keyword">long</span> dist = <span class="keyword">this</span>.expire - other.expire;
-            <span class="keyword">if</span> (dist &gt; <span class="number">0</span>)
-                <span class="keyword">return</span> <span class="number">1</span>;
-            <span class="keyword">if</span> (dist &lt; <span class="number">0</span>)
-                <span class="keyword">return</span> -<span class="number">1</span>;
-            <span class="comment">// If the expire time is same, compare the sequence</span>
-            <span class="keyword">return</span> <span class="keyword">this</span>.sequence &lt; other.sequence ? -<span class="number">1</span> : <span class="number">1</span>;
+            long dist = this.expire - other.expire;
+            if (dist &gt; 0)
+                return 1;
+            if (dist &lt; 0)
+                return -1;
+            // If the expire time is same, compare the sequence
+            return this.sequence &lt; other.sequence ? -1 : 1;
         }
-        <span class="comment">// If the specified object is not a instance of DelayItem, compare</span>
-        <span class="comment">// the return value of getDelay()</span>
-        <span class="keyword">long</span> dist = <span class="keyword">this</span>.getDelay(TimeUnit.NANOSECONDS)
+        // If the specified object is not a instance of DelayItem, compare
+        // the return value of getDelay()
+        long dist = this.getDelay(TimeUnit.NANOSECONDS)
                 - o.getDelay(TimeUnit.NANOSECONDS);
-        <span class="keyword">return</span> dist &gt; <span class="number">0</span> ? <span class="number">1</span> : (dist &lt; <span class="number">0</span> ? -<span class="number">1</span> : <span class="number">0</span>);
+        return dist &gt; 0 ? 1 : (dist &lt; 0 ? -1 : 0);
     }
 
 
-    <span class="annotation">@Override</span>
-    <span class="javadoc">/**
+    @Override
+    /**
      * Get the distance between expire time and current time.
      * Delay queue uses this method to check if the item is expired
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getDelay</span>(TimeUnit unit) {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        <span class="keyword">return</span> unit.convert(<span class="keyword">this</span>.expire - System.nanoTime(),
+     */
+    public long getDelay(TimeUnit unit) {
+        // TODO Auto-generated method stub
+        return unit.convert(this.expire - System.nanoTime(),
                 TimeUnit.NANOSECONDS);
     }
 
 
-    <span class="javadoc">/**
+    /**
      * Getter for the item
      * 
-     *<span class="javadoctag"> @return</span>
-     */</span>
-    <span class="keyword">public</span> T <span class="title">getItem</span>() {
-        <span class="keyword">return</span> item;
+     * @return
+     */
+    public T getItem() {
+        return item;
     }
 }
 </code></pre><p>最后，我们要实现缓存的数据结构，在这个类中，维护一个DelayQueue存放DelayItem，并维护一个HashMap存储缓存的数据用于存取。</p>
 <p>实现代码：</p>
-<pre><code><span class="keyword">package</span> concurrent.delay.cache;
+<pre><code>package concurrent.delay.cache;
 
-<span class="keyword">import</span> java.util.concurrent.ConcurrentHashMap;
-<span class="keyword">import</span> java.util.concurrent.DelayQueue;
-<span class="keyword">import</span> java.util.concurrent.TimeUnit;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.TimeUnit;
 
-<span class="javadoc">/**
+/**
  * Cache data structure
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年10月9日
- *<span class="javadoctag"> @param</span> &lt;K&gt;
- *<span class="javadoctag"> @param</span> &lt;V&gt;
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cache</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; </span>{
-    <span class="keyword">private</span> DelayQueue&lt;DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt; queue = <span class="keyword">new</span> DelayQueue&lt;DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt;();
-    <span class="keyword">private</span> ConcurrentHashMap&lt;K, DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt; data = <span class="keyword">new</span> ConcurrentHashMap&lt;K, DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt;();
+ * @author Charles Chen
+ * @date 2014年10月9日
+ * @param &lt;K&gt;
+ * @param &lt;V&gt;
+ */
+public class Cache&lt;K, V&gt; {
+    private DelayQueue&lt;DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt; queue = new DelayQueue&lt;DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt;();
+    private ConcurrentHashMap&lt;K, DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt; data = new ConcurrentHashMap&lt;K, DelayItem&lt;Pair&lt;K, V&gt;&gt;&gt;();
 
-    <span class="javadoc">/**
+    /**
      * Constructor
-     */</span>
-    <span class="keyword">public</span> <span class="title">Cache</span>() {
-        <span class="comment">// TODO Auto-generated constructor stub</span>
-        <span class="comment">// Start a timeout checker thread to remove expired items</span>
-        Thread t = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() {
+     */
+    public Cache() {
+        // TODO Auto-generated constructor stub
+        // Start a timeout checker thread to remove expired items
+        Thread t = new Thread(new Runnable() {
 
-            <span class="annotation">@Override</span>
-            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span>() {
-                <span class="comment">// TODO Auto-generated method stub</span>
-                <span class="keyword">while</span> (!Thread.interrupted()) {
-                    <span class="keyword">try</span> {
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                while (!Thread.interrupted()) {
+                    try {
                         timeoutCheck();
-                    } <span class="keyword">catch</span> (InterruptedException e) {
-                        <span class="comment">// TODO Auto-generated catch block</span>
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 }
             }
-        }, <span class="string">"TimeoutChecker"</span>);
-        t.setDaemon(<span class="keyword">true</span>);
+        }, &quot;TimeoutChecker&quot;);
+        t.setDaemon(true);
         t.start();
     }
 
-    <span class="javadoc">/**
+    /**
      * Remove one expired item
      * 
-     *<span class="javadoctag"> @throws</span> InterruptedException
-     */</span>
-    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title">timeoutCheck</span>() <span class="keyword">throws</span> InterruptedException {
+     * @throws InterruptedException
+     */
+    private void timeoutCheck() throws InterruptedException {
         DelayItem&lt;Pair&lt;K, V&gt;&gt; item = queue.take();
-        <span class="keyword">if</span> (item != <span class="keyword">null</span>) {
+        if (item != null) {
             data.remove(item.getItem().getKey());
         }
     }
 
-    <span class="javadoc">/**
+    /**
      * Put key-value pair into cache
      * 
-     *<span class="javadoctag"> @param</span> key
-     *<span class="javadoctag"> @param</span> value
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span>(K key, V value, <span class="keyword">long</span> timeout, TimeUnit unit) {
-        <span class="comment">// If key already exists, remove from queue</span>
-        <span class="keyword">if</span> (data.containsKey(key)) {
+     * @param key
+     * @param value
+     */
+    public void put(K key, V value, long timeout, TimeUnit unit) {
+        // If key already exists, remove from queue
+        if (data.containsKey(key)) {
             queue.remove(data.get(key));
         }
-        Pair&lt;K, V&gt; pair = <span class="keyword">new</span> Pair&lt;K, V&gt;(key, value);
-        DelayItem&lt;Pair&lt;K, V&gt;&gt; item = <span class="keyword">new</span> DelayItem&lt;Pair&lt;K, V&gt;&gt;(pair,
+        Pair&lt;K, V&gt; pair = new Pair&lt;K, V&gt;(key, value);
+        DelayItem&lt;Pair&lt;K, V&gt;&gt; item = new DelayItem&lt;Pair&lt;K, V&gt;&gt;(pair,
                 TimeUnit.NANOSECONDS.convert(timeout, unit));
         data.put(key, item);
         queue.put(item);
     }
 
-    <span class="javadoc">/**
+    /**
      * Remove item by key
      * 
-     *<span class="javadoctag"> @param</span> key
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span>(K key) {
+     * @param key
+     */
+    public void remove(K key) {
         queue.remove(data.remove(key));
     }
 
-    <span class="javadoc">/**
+    /**
      * Get item by key
      * 
-     *<span class="javadoctag"> @param</span> key
-     *<span class="javadoctag"> @return</span>
-     */</span>
-    <span class="keyword">public</span> V <span class="title">get</span>(K key) {
-        <span class="keyword">if</span> (data.get(key) != <span class="keyword">null</span>) {
-            <span class="keyword">return</span> data.get(key).getItem().getValue();
+     * @param key
+     * @return
+     */
+    public V get(K key) {
+        if (data.get(key) != null) {
+            return data.get(key).getItem().getValue();
         }
-        <span class="keyword">return</span> <span class="keyword">null</span>;
+        return null;
     }
 }
 </code></pre><p>客户端测试程序：</p>
@@ -473,22 +455,22 @@
 
 import java.util.concurrent.TimeUnit;
 
-<span class="keyword">public</span> <span class="keyword">class</span> ClientTest {
+public class ClientTest {
 
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        Cache&lt;String, String&gt; cache = <span class="keyword">new</span> Cache&lt;String, String&gt;();
-        cache.put(<span class="string">"No1"</span>, <span class="string">"Value of No1"</span>, <span class="number">1000</span>, TimeUnit.MILLISECONDS);
-        System.<span class="keyword">out</span>.println(cache.<span class="keyword">get</span>(<span class="string">"No1"</span>));
-        <span class="comment">// Wait 1001 milliseconds</span>
-        <span class="keyword">try</span> {
-            TimeUnit.MILLISECONDS.sleep(<span class="number">1001</span>);
-        } <span class="keyword">catch</span> (InterruptedException e) {
-            <span class="comment">// TODO Auto-generated catch block</span>
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Cache&lt;String, String&gt; cache = new Cache&lt;String, String&gt;();
+        cache.put(&quot;No1&quot;, &quot;Value of No1&quot;, 1000, TimeUnit.MILLISECONDS);
+        System.out.println(cache.get(&quot;No1&quot;));
+        // Wait 1001 milliseconds
+        try {
+            TimeUnit.MILLISECONDS.sleep(1001);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        <span class="comment">// Get the value, it will be null</span>
-        System.<span class="keyword">out</span>.println(cache.<span class="keyword">get</span>(<span class="string">"No1"</span>));
+        // Get the value, it will be null
+        System.out.println(cache.get(&quot;No1&quot;));
     }
 
 }
@@ -564,7 +546,7 @@ import java.util.concurrent.TimeUnit;
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -574,12 +556,9 @@ import java.util.concurrent.TimeUnit;
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

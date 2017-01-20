@@ -8,21 +8,20 @@
   <meta name="description" content="原文链接： javarevisited 翻译： ImportNew.com - chenchenchao译文链接： http://www.importnew.com/11493.html  编写一个Java程序来查找一个字符串中第一个非重复的字符，这是在编程测试中很常见的一个问题，因为字符串处理在程序员面试中是一个普遍…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java编程题——在一个字符串中查找第一个非重复的字符">
-<meta property="og:url" content="http://www.charlestech.info/2014/05/25/find-first-non-repeat-character-in-string/">
+<meta property="og:url" content="http://www.charlestech.info/2014/05/25/find-first-non-repeat-character-in-string/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="原文链接： javarevisited 翻译： ImportNew.com - chenchenchao译文链接： http://www.importnew.com/11493.html  编写一个Java程序来查找一个字符串中第一个非重复的字符，这是在编程测试中很常见的一个问题，因为字符串处理在程序员面试中是一个普遍…">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java编程题——在一个字符串中查找第一个非重复的字符">
 <meta name="twitter:description" content="原文链接： javarevisited 翻译： ImportNew.com - chenchenchao译文链接： http://www.importnew.com/11493.html  编写一个Java程序来查找一个字符串中第一个非重复的字符，这是在编程测试中很常见的一个问题，因为字符串处理在程序员面试中是一个普遍…">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -241,45 +223,44 @@
 <a id="more"></a>
 <p>原文链接： <a href="http://javarevisited.blogspot.com/2014/03/3-ways-to-find-first-non-repeated-character-String-programming-problem.html" target="_blank" rel="external">javarevisited</a> 翻译： <a href="http://www.importnew.com/" target="_blank" rel="external">ImportNew.com </a>- <a href="http://www.importnew.com/author/chenchenchao" target="_blank" rel="external">chenchenchao</a><br>译文链接： <a href="http://www.importnew.com/11493.html" target="_blank" rel="external">http://www.importnew.com/11493.html</a></p>
 <p>编写一个Java程序来查找一个字符串中第一个非重复的字符，这是在编程测试中很常见的一个问题，因为字符串处理在程序员面试中是一个普遍的话题。面试前最好是准备好一些熟知的编程问题，例如使用递归反转字符串，或者检查一个字符串是否是回文（即正反读顺序一致）。查找第一个非重复字符的问题也是在同一个范畴。在给出解决方案之前，我们先来弄懂这个问题。我们需要编写一个函数，这个函数接受一个字符串作为参数，并返回第一个不重复的字符。例如字符串“hello”，除了“l”之外所有字符都是不重复的，但是“h”是第一个不重复的字符。同样，字符串“swiss”中“w”是第一个不重复的字符。一种解决该问题的方法就是创建一张表来记录每个字符的出现次数，然后选出第一个不重复的元素。关键在于字符的次序，你的代码必须返回第一个非重复的字符。另外，在这篇文章中，我们可以看到3个解决该问题的示例。我们的第一个方案是使用LinkedHashMap来记录字符个数，因为LinkedHashMap维持的元素顺序与插入顺序一致，而我们正是按照字符串中字符出现的顺序来将字符插入Map中的。当我们扫描字符串时，只需要迭代LinkedHashMap并找出值为1的元素。是的，这种方案只需要一个LinkedHashMap以及两个循环。我们的第二种解决方案是时间和空间的折衷，在一次遍历中找出不重复的字符。这次，我们使用一个Set和一个List去分开保存重复和不重复的字符。当我们完成一次时间复杂度为O(n)的字符串扫描后，我们可以通过访问List来获得这个神奇的不重复字符，该时间为复杂度为O(1)，因为List是有序的，我们可以通过get(0)获得第一个元素。我们的第三种解决方案也是类似的，不过这次我们使用HashMap而不是LinkedHashMap，我们会在第一扫描计算各个字符的出现次数之后，再次扫描字符串去找到第一个不重复的字符。接下来我们将为这个问题编写示例代码和单元测试程序。你也可以去我的<a href="http://javarevisited.blogspot.sg/2012/10/10-java-string-interview-question-answers-top.html" target="_blank" rel="external">字符串面试问题</a>列表中看看更多类似的Java编程题。 </p>
-<h2 id="如何在字符串中找到第一个不重复的字符">如何在字符串中找到第一个不重复的字符</h2>
-<p>这里有在给定字符串中找到第一个非重复字符的完整示例代码，该程序给出了三个找到第一个非重复字符的方法，每个方法都有自己的解决问题的算法。第一个算法实现在getFirstNonRepeatedChar(String str)方法中。它首先获得字符串的字符数组，然后遍历数组并建立一个哈希表，哈希表的键为字符，值为该字符出现的次数。下一步它会遍历LinkedHashMap去找到第一个值为1的元素，那便是第一个非重复的字符，因为LinkedHashMap维护的元素顺序与插入顺序一致，而我们遍历字符数组是从头遍历到尾。这种算法的缺点在于它需要两个循环，第一个循环的次数与字符串的字符个数成正比，而第二个循环的次数与字符串中重复的字符个数成正比。最差的情况是非重复的字符出现在字符串的最尾部，那么这个算法需要2*N的时间去解决这个问题。第二个算法实现在firstNonRepeatingChar(String word)方法中。这种解决方案可以在一次字符串扫描中找到第一个不重复的字符，它应用了典型的空间时间权衡技术。它使用了两个存储空间来减少一次循环，是标准的空间-时间折衷。由于我们将重复和不重复的字符分开存放，在循环结束后，存放不重复字符的列表中的第一个元素就是我们所要找的第一个非重复字符。这种解决方案稍微优于上一种。如果在字符串中没有不重复的字符，你可以选择返回null或者空字符串。第三个算法实现在firstNonRepeatedCharacter(String word)方法中，它与第一种方案非常类似，唯一不同在于它使用了HashMap。由于HashMap并不保证一种特定的顺序，我们必须依赖源字符串去找到第一个不重复的字符。第三种解决方案的算法如下：</p>
+<h2 id="如何在字符串中找到第一个不重复的字符"><a href="#如何在字符串中找到第一个不重复的字符" class="headerlink" title="如何在字符串中找到第一个不重复的字符"></a>如何在字符串中找到第一个不重复的字符</h2><p>这里有在给定字符串中找到第一个非重复字符的完整示例代码，该程序给出了三个找到第一个非重复字符的方法，每个方法都有自己的解决问题的算法。第一个算法实现在getFirstNonRepeatedChar(String str)方法中。它首先获得字符串的字符数组，然后遍历数组并建立一个哈希表，哈希表的键为字符，值为该字符出现的次数。下一步它会遍历LinkedHashMap去找到第一个值为1的元素，那便是第一个非重复的字符，因为LinkedHashMap维护的元素顺序与插入顺序一致，而我们遍历字符数组是从头遍历到尾。这种算法的缺点在于它需要两个循环，第一个循环的次数与字符串的字符个数成正比，而第二个循环的次数与字符串中重复的字符个数成正比。最差的情况是非重复的字符出现在字符串的最尾部，那么这个算法需要2*N的时间去解决这个问题。第二个算法实现在firstNonRepeatingChar(String word)方法中。这种解决方案可以在一次字符串扫描中找到第一个不重复的字符，它应用了典型的空间时间权衡技术。它使用了两个存储空间来减少一次循环，是标准的空间-时间折衷。由于我们将重复和不重复的字符分开存放，在循环结束后，存放不重复字符的列表中的第一个元素就是我们所要找的第一个非重复字符。这种解决方案稍微优于上一种。如果在字符串中没有不重复的字符，你可以选择返回null或者空字符串。第三个算法实现在firstNonRepeatedCharacter(String word)方法中，它与第一种方案非常类似，唯一不同在于它使用了HashMap。由于HashMap并不保证一种特定的顺序，我们必须依赖源字符串去找到第一个不重复的字符。第三种解决方案的算法如下：</p>
 <ol>
 <li>扫描字符串并将每个字符的出现次数保存在HashMap中</li>
 <li>遍历字符串并从Map中获取每个字符的个数</li>
 </ol>
 <p>由于我们从左往右扫描字符，当找到某个字符的计数为1时，我们就可以跳出循环，它就是第一个非重复的字符。在这里，字符次序是靠再次遍历源字符串来实现。</p>
-<pre><code><span class="keyword">import</span> java.io.IOException;
-<span class="keyword">import</span> java.util.ArrayList;
-<span class="keyword">import</span> java.util.HashMap;
-<span class="keyword">import</span> java.util.HashSet;
-<span class="keyword">import</span> java.util.LinkedHashMap;
-<span class="keyword">import</span> java.util.List;
-<span class="keyword">import</span> java.util.Map;
-<span class="keyword">import</span> java.util.Map.Entry;
-<span class="keyword">import</span> java.util.Set;
+<pre><code>import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Programming</span> </span>{
-    <span class="javadoc">/**
+public class Programming {
+    /**
      * Java Program to find first duplicate, non-repeated character in a String.
      * It demonstrate three simple example to do this programming problem.
      * 
-     *<span class="javadoctag"> @author</span> Javarevisited
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">getFirstNonRepeatedChar</span>(String str) {
-        Map&lt;Character, Integer&gt; counts = <span class="keyword">new</span> LinkedHashMap&lt;Character, Integer&gt;(
+     * @author Javarevisited
+     */
+    public static char getFirstNonRepeatedChar(String str) {
+        Map&lt;Character, Integer&gt; counts = new LinkedHashMap&lt;Character, Integer&gt;(
                 str.length());
-        <span class="keyword">for</span> (<span class="keyword">char</span> c : str.toCharArray()) {
-            counts.put(c, counts.containsKey(c) ? counts.get(c) + <span class="number">1</span> : <span class="number">1</span>);
+        for (char c : str.toCharArray()) {
+            counts.put(c, counts.containsKey(c) ? counts.get(c) + 1 : 1);
         }
-        <span class="keyword">for</span> (Entry&lt;Character, Integer&gt; entry : counts.entrySet()) {
-            <span class="keyword">if</span> (entry.getValue() == <span class="number">1</span>) {
-                <span class="keyword">return</span> entry.getKey();
+        for (Entry&lt;Character, Integer&gt; entry : counts.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
             }
         }
-        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"didn't find any non repeated Character"</span>);
+        throw new RuntimeException(&quot;didn&apos;t find any non repeated Character&quot;);
     }
 
-    <span class="javadoc">/**
+    /**
      * Using HashMap to find first non-repeated character from String in Java.
      * Algorithm :
      * 
@@ -287,28 +268,28 @@
      * 
      * Step 2 : traverse String and get count for each character from Map. Since
      * we are going through String from first to last character, * when count
-     * for any character is 1, we break, it's the first * non repeated
+     * for any character is 1, we break, it&apos;s the first * non repeated
      * character. Here order is achieved by going * through String again.
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">firstNonRepeatingChar</span>(String word) {
-        Set&lt;Character&gt; repeating = <span class="keyword">new</span> HashSet&lt;Character&gt;();
-        List&lt;Character&gt; nonRepeating = <span class="keyword">new</span> ArrayList&lt;Character&gt;();
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); i++) {
-            <span class="keyword">char</span> letter = word.charAt(i);
-            <span class="keyword">if</span> (repeating.contains(letter)) {
-                <span class="keyword">continue</span>;
+     */
+    public static char firstNonRepeatingChar(String word) {
+        Set&lt;Character&gt; repeating = new HashSet&lt;Character&gt;();
+        List&lt;Character&gt; nonRepeating = new ArrayList&lt;Character&gt;();
+        for (int i = 0; i &lt; word.length(); i++) {
+            char letter = word.charAt(i);
+            if (repeating.contains(letter)) {
+                continue;
             }
-            <span class="keyword">if</span> (nonRepeating.contains(letter)) {
+            if (nonRepeating.contains(letter)) {
                 nonRepeating.remove((Character) letter);
                 repeating.add(letter);
-            } <span class="keyword">else</span> {
+            } else {
                 nonRepeating.add(letter);
             }
         }
-        <span class="keyword">return</span> nonRepeating.get(<span class="number">0</span>);
+        return nonRepeating.get(0);
     }
 
-    <span class="javadoc">/**
+    /**
      * Using HashMap to find first non-repeated character from String in Java.
      * Algorithm :
      * 
@@ -316,61 +297,60 @@
      * 
      * Step 2 : traverse String and get count for each character from Map. Since
      * we are going through String from first to last character, when count for
-     * any character is 1, we break, it's the first non repeated character. Here
+     * any character is 1, we break, it&apos;s the first non repeated character. Here
      * order is achieved by going through String again.
      * 
-     *<span class="javadoctag"> @return</span>
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">char</span> <span class="title">firstNonRepeatedCharacter</span>(String word) {
-        HashMap&lt;Character, Integer&gt; scoreboard = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();
-        <span class="comment">// build table [char -&gt; count]</span>
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); i++) {
-            <span class="keyword">char</span> c = word.charAt(i);
-            <span class="keyword">if</span> (scoreboard.containsKey(c)) {
-                scoreboard.put(c, scoreboard.get(c) + <span class="number">1</span>);
-            } <span class="keyword">else</span> {
-                scoreboard.put(c, <span class="number">1</span>);
+     * @return
+     */
+    public static char firstNonRepeatedCharacter(String word) {
+        HashMap&lt;Character, Integer&gt; scoreboard = new HashMap&lt;Character, Integer&gt;();
+        // build table [char -&gt; count]
+        for (int i = 0; i &lt; word.length(); i++) {
+            char c = word.charAt(i);
+            if (scoreboard.containsKey(c)) {
+                scoreboard.put(c, scoreboard.get(c) + 1);
+            } else {
+                scoreboard.put(c, 1);
             }
         }
-        <span class="comment">// since HashMap doesn't maintain order, going through string again</span>
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); i++) {
-            <span class="keyword">char</span> c = word.charAt(i);
-            <span class="keyword">if</span> (scoreboard.get(c) == <span class="number">1</span>) {
-                <span class="keyword">return</span> c;
+        // since HashMap doesn&apos;t maintain order, going through string again
+        for (int i = 0; i &lt; word.length(); i++) {
+            char c = word.charAt(i);
+            if (scoreboard.get(c) == 1) {
+                return c;
             }
         }
-        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Undefined behaviour"</span>);
+        throw new RuntimeException(&quot;Undefined behaviour&quot;);
     }
 }
-</code></pre><h2 id="找到第一个唯一字符的JUnit单元测试">找到第一个唯一字符的JUnit单元测试</h2>
-<p>这里有一些JUnit测试用例来测试程序的每个方法。我们测试不同类型的输入，一种包含重复字符而另一种不包含。由于程序并没有定义当输入空字符串，null或者只包含重复字符的字符串该如何处理，你可以自己定义一些有效的处理。</p>
-<pre><code><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;
-<span class="keyword">import</span> org.cc.source.Programming;
-<span class="keyword">import</span> org.junit.Test;
+</code></pre><h2 id="找到第一个唯一字符的JUnit单元测试"><a href="#找到第一个唯一字符的JUnit单元测试" class="headerlink" title="找到第一个唯一字符的JUnit单元测试"></a>找到第一个唯一字符的JUnit单元测试</h2><p>这里有一些JUnit测试用例来测试程序的每个方法。我们测试不同类型的输入，一种包含重复字符而另一种不包含。由于程序并没有定义当输入空字符串，null或者只包含重复字符的字符串该如何处理，你可以自己定义一些有效的处理。</p>
+<pre><code>import static org.junit.Assert.*;
+import org.cc.source.Programming;
+import org.junit.Test;
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProgrammingTest</span> </span>{
-    <span class="annotation">@Test</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFirstNonRepeatedCharacter</span>() {
-        assertEquals(<span class="string">'b'</span>, Programming.firstNonRepeatedCharacter(<span class="string">"abcdefghija"</span>));
-        assertEquals(<span class="string">'h'</span>, Programming.firstNonRepeatedCharacter(<span class="string">"hello"</span>));
-        assertEquals(<span class="string">'J'</span>, Programming.firstNonRepeatedCharacter(<span class="string">"Java"</span>));
-        assertEquals(<span class="string">'i'</span>, Programming.firstNonRepeatedCharacter(<span class="string">"simplest"</span>));
+public class ProgrammingTest {
+    @Test
+    public void testFirstNonRepeatedCharacter() {
+        assertEquals(&apos;b&apos;, Programming.firstNonRepeatedCharacter(&quot;abcdefghija&quot;));
+        assertEquals(&apos;h&apos;, Programming.firstNonRepeatedCharacter(&quot;hello&quot;));
+        assertEquals(&apos;J&apos;, Programming.firstNonRepeatedCharacter(&quot;Java&quot;));
+        assertEquals(&apos;i&apos;, Programming.firstNonRepeatedCharacter(&quot;simplest&quot;));
     }
 
-    <span class="annotation">@Test</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFirstNonRepeatingChar</span>() {
-        assertEquals(<span class="string">'b'</span>, Programming.firstNonRepeatingChar(<span class="string">"abcdefghija"</span>));
-        assertEquals(<span class="string">'h'</span>, Programming.firstNonRepeatingChar(<span class="string">"hello"</span>));
-        assertEquals(<span class="string">'J'</span>, Programming.firstNonRepeatingChar(<span class="string">"Java"</span>));
-        assertEquals(<span class="string">'i'</span>, Programming.firstNonRepeatingChar(<span class="string">"simplest"</span>));
+    @Test
+    public void testFirstNonRepeatingChar() {
+        assertEquals(&apos;b&apos;, Programming.firstNonRepeatingChar(&quot;abcdefghija&quot;));
+        assertEquals(&apos;h&apos;, Programming.firstNonRepeatingChar(&quot;hello&quot;));
+        assertEquals(&apos;J&apos;, Programming.firstNonRepeatingChar(&quot;Java&quot;));
+        assertEquals(&apos;i&apos;, Programming.firstNonRepeatingChar(&quot;simplest&quot;));
     }
 
-    <span class="annotation">@Test</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testGetFirstNonRepeatedChar</span>() {
-        assertEquals(<span class="string">'b'</span>, Programming.getFirstNonRepeatedChar(<span class="string">"abcdefghija"</span>));
-        assertEquals(<span class="string">'h'</span>, Programming.getFirstNonRepeatedChar(<span class="string">"hello"</span>));
-        assertEquals(<span class="string">'J'</span>, Programming.getFirstNonRepeatedChar(<span class="string">"Java"</span>));
-        assertEquals(<span class="string">'i'</span>, Programming.getFirstNonRepeatedChar(<span class="string">"simplest"</span>));
+    @Test
+    public void testGetFirstNonRepeatedChar() {
+        assertEquals(&apos;b&apos;, Programming.getFirstNonRepeatedChar(&quot;abcdefghija&quot;));
+        assertEquals(&apos;h&apos;, Programming.getFirstNonRepeatedChar(&quot;hello&quot;));
+        assertEquals(&apos;J&apos;, Programming.getFirstNonRepeatedChar(&quot;Java&quot;));
+        assertEquals(&apos;i&apos;, Programming.getFirstNonRepeatedChar(&quot;simplest&quot;));
     }
 }
 </code></pre><p>你可以改进一下测试用例以便测试更多的场景。没有什么比编写详细且有创造性的测试用例更能打动面试官的了，很多程序员都想不到或者没有努力去思考这些。这就是这篇文章所有要阐述的内容。我们看到了三种解决这个问题的方法，尽管他们的逻辑很类似，但不尽相同，示例程序对于初学者学习Java容器框架也是非常不错的。它让你有机会去了解不同Map的实现，并明白<a href="http://java67.blogspot.sg/2012/08/difference-between-hashmap-and-LinkedHashMap-Java.html" target="_blank" rel="external">HashMap与LinkedHashMap的区别</a>,以便决定什么时候使用他们。另外，如果你知道解决该问题的其他方法，请分享一下。如果你在面试过程中也遇到过类似问题，你也可以分享一下你的面试经历。</p>
@@ -446,7 +426,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -456,12 +436,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

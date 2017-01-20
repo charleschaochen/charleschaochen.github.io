@@ -8,21 +8,20 @@
   <meta name="description" content="JDK提供的命令行工具大多是jdk/lib/tools.jar类库的一层简单的封装， 其中包括了一些在运行时监控虚拟机数据、定位程序故障、优化程序性能的工具。Sun JDK提供的监控和故障处理工具常用的有：jps (JVM Process Status)虚拟机进程状态工具。显示当前系统中正在运行的虚拟机进程状态信息，包括虚拟机进程的本地虚拟机ID（LVMID），以及虚拟机执行的主类jstat (J">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDK监控和故障处理工具 (I)">
-<meta property="og:url" content="http://www.charlestech.info/2014/09/07/jdk-monitor-tools-1/">
+<meta property="og:url" content="http://www.charlestech.info/2014/09/07/jdk-monitor-tools-1/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="JDK提供的命令行工具大多是jdk/lib/tools.jar类库的一层简单的封装， 其中包括了一些在运行时监控虚拟机数据、定位程序故障、优化程序性能的工具。Sun JDK提供的监控和故障处理工具常用的有：jps (JVM Process Status)虚拟机进程状态工具。显示当前系统中正在运行的虚拟机进程状态信息，包括虚拟机进程的本地虚拟机ID（LVMID），以及虚拟机执行的主类jstat (J">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDK监控和故障处理工具 (I)">
 <meta name="twitter:description" content="JDK提供的命令行工具大多是jdk/lib/tools.jar类库的一层简单的封装， 其中包括了一些在运行时监控虚拟机数据、定位程序故障、优化程序性能的工具。Sun JDK提供的监控和故障处理工具常用的有：jps (JVM Process Status)虚拟机进程状态工具。显示当前系统中正在运行的虚拟机进程状态信息，包括虚拟机进程的本地虚拟机ID（LVMID），以及虚拟机执行的主类jstat (J">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -249,20 +231,16 @@
 <li>jhat (JVM Heapdump Anaysis Tool)用来分析JVM的内存转储快照文件。它会搭建一个HTTP服务器，使用户可以在浏览器上查看分析结果</li>
 <li>jstack (Stack trace for Java)显示虚拟机线程快照</li>
 </ul>
-<h4 id="_"> </h4>
-<h3 id="#">#</h3>
-<h4 id="JPS"><strong>JPS</strong></h4>
-<p>(1)  jps用来查看当前系统中运行的所有虚拟机的状态信息，可以查看所有虚拟机的本地虚拟机ID（LVMID，若虚拟机是本地虚拟机，LVMID等同于PID），以及虚拟机执行的之类。</p>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="JPS"><a href="#JPS" class="headerlink" title="JPS"></a><strong>JPS</strong></h4><p>(1)  jps用来查看当前系统中运行的所有虚拟机的状态信息，可以查看所有虚拟机的本地虚拟机ID（LVMID，若虚拟机是本地虚拟机，LVMID等同于PID），以及虚拟机执行的之类。</p>
 <p>jps还可以用来查看开启了RMI服务的远程虚拟机状态信息。</p>
 <p>(2)  jps命令选项有</p>
 <p>-q ： 只显示LVMID</p>
 <p>-l ： 显示虚拟机执行的主类的全名（包括包路径），如果虚拟机执行的是jar包，显示jar包路径</p>
 <p>-m ：显示虚拟机执行主类时传入的参数</p>
 <p>-v ： 显示虚拟机启动时的JVM参数</p>
-<h4 id="_-1"> </h4>
-<h3 id="#-1">#</h3>
-<h4 id="JSTAT"><strong>JSTAT</strong></h4>
-<p>(1)  jstat（JVM Statistics Monitoring Tool）是JVM统计监控工具，用来监视虚拟机的各种运行时状态信息，它可以显示本地或远程虚拟机的类装载、内存、垃圾回收、JIT编译等运行时数据。jstat是运行时定位虚拟机性能问题的首选工具</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="JSTAT"><a href="#JSTAT" class="headerlink" title="JSTAT"></a><strong>JSTAT</strong></h4><p>(1)  jstat（JVM Statistics Monitoring Tool）是JVM统计监控工具，用来监视虚拟机的各种运行时状态信息，它可以显示本地或远程虚拟机的类装载、内存、垃圾回收、JIT编译等运行时数据。jstat是运行时定位虚拟机性能问题的首选工具</p>
 <p>jstat命令格式： jstat [options] vmid [interval] [count]</p>
 <p>vmid表示虚拟机ID，如果是本地虚拟机，vmid即lvmid，也即是PID，如果是远程虚拟机，vmid的格式是：protocol://lvmid@hostname[:port]/servername</p>
 <p>interval和count用来指定查询间隔和查询次数，interval可以为s或ms，不指定interval和count表示只查询一次</p>
@@ -295,11 +273,8 @@
 <p>FGC：Full GC的次数</p>
 <p>FGCT：Full GC的耗时</p>
 <p>GCT：GC的总耗时</p>
-<h4 id="_-1"> </h4>
-<h3 id="#-2">#</h3>
-<h4 id="#-3">#</h4>
-<h4 id="JINFO"><strong>JINFO</strong></h4>
-<p>(1)  jinfo的作用是实时查看和调整虚拟机各项参数</p>
+<h4 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="-3"><a href="#-3" class="headerlink" title="#"></a>#</h4><h4 id="JINFO"><a href="#JINFO" class="headerlink" title="JINFO"></a><strong>JINFO</strong></h4><p>(1)  jinfo的作用是实时查看和调整虚拟机各项参数</p>
 <p>我们知道使用jps -v也可以查看当前系统中所有虚拟机进程的JVM参数，但打印出来的参数都是显示指定的，如果要查看系统默认的JVM参数，就需要用到jinfo</p>
 <p>（使用java -XX:+PrintFlagsFinal也可以查看虚拟机默认的参数）</p>
 <p>(2) jinfo用法：</p>
@@ -332,10 +307,8 @@
 <p>打印系统属性</p>
 </li>
 </ul>
-<h4 id="_-1"> </h4>
-<h3 id="#-4">#</h3>
-<h4 id="JMAP"><strong>JMAP</strong></h4>
-<p>(1)  jmap(Memory Map for Java)工具用来生成堆转储快照，即heapdump文件。</p>
+<h4 id="-4"><a href="#-4" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="JMAP"><a href="#JMAP" class="headerlink" title="JMAP"></a><strong>JMAP</strong></h4><p>(1)  jmap(Memory Map for Java)工具用来生成堆转储快照，即heapdump文件。</p>
 <p>所谓的heapdump是一个JVM进程在某个时间点的内存快照。我们知道通过一些虚拟机参数也可以获取heapdump文件，例如-XX:+HeapDumpOnOutOfMemoryError可以让虚拟机在发生OOM时生成dump文件，-XX:HeapDumpOnCtrlBreak可以让虚拟机在Ctrl+Break后生成dump文件。</p>
 <p>(2) jmap使用：</p>
 <ul>
@@ -344,7 +317,7 @@
 </li>
 <li><p>jmap -histo</p>
 <p>打印堆中对象统计信息，包括类名、实例个数、占用总空间。例如：</p>
-<p>num     #instances         #bytes  class name<br>-——————————————————————-<br>   1:         19417       82208296  [I<br>   2:        257909       28885808  java.net.SocksSocketImpl<br>   3:         29964       25696952  [B<br>   4:        774416       12390656  java.lang.Object<br>   5:        256326       10253040  java.util.HashMap$KeyIterator<br>   6:         59357        9770416  <constmethodklass><br>   7:        257902        8252864  java.net.Socket</constmethodklass></p>
+<p>num     #instances         #bytes  class name<br>-———————————————<br>   1:         19417       82208296  [I<br>   2:        257909       28885808  java.net.SocksSocketImpl<br>   3:         29964       25696952  [B<br>   4:        774416       12390656  java.lang.Object<br>   5:        256326       10253040  java.util.HashMap$KeyIterator<br>   6:         59357        9770416  <constmethodklass><br>   7:        257902        8252864  java.net.Socket</constmethodklass></p>
 </li>
 <li><p>jmap -heap</p>
 <p>打印当前堆详细信息，包括堆相关参数、使用哪种回收器、分代状况等。例如：</p>
@@ -429,7 +402,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -439,12 +412,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

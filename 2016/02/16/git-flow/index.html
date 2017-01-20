@@ -8,7 +8,7 @@
   <meta name="description" content="我认为一个优秀的版本控制系统解决的问题不仅仅是代码的托管，而是与日常软件开发流程的融合和对多人协作、版本发布存在问题的改进。而目前Git无疑是最受欢迎的版本控制解决方案。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git分支管理实践">
-<meta property="og:url" content="http://www.charlestech.info/2016/02/16/git-flow/">
+<meta property="og:url" content="http://www.charlestech.info/2016/02/16/git-flow/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="我认为一个优秀的版本控制系统解决的问题不仅仅是代码的托管，而是与日常软件开发流程的融合和对多人协作、版本发布存在问题的改进。而目前Git无疑是最受欢迎的版本控制解决方案。">
 <meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/git-icon.png">
@@ -16,18 +16,18 @@
 <meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/git-2.png">
 <meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/git-3.png">
 <meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/git-4.png">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git分支管理实践">
 <meta name="twitter:description" content="我认为一个优秀的版本控制系统解决的问题不仅仅是代码的托管，而是与日常软件开发流程的融合和对多人协作、版本发布存在问题的改进。而目前Git无疑是最受欢迎的版本控制解决方案。">
-
+<meta name="twitter:image" content="http://7x00n0.com1.z0.glb.clouddn.com/git-icon.png">
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -65,11 +65,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -86,8 +81,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -132,27 +125,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -253,11 +236,11 @@
 <p>master和develop是仓库“常驻”的两个分支，master是项目的主干，master的代码应该是项目可发布的最新版本。develop是开发分支，日常的开发在develop上进行。</p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/git-1.png" alt=""></p>
 <p>Git创建develop分支：</p>
-<pre><code><span class="title">git</span> checkout -b develop master
+<pre><code>git checkout -b develop master
 </code></pre><p>将develop分支merge到master上：</p>
 <pre><code>git checkout master
-git <span class="operator"><span class="keyword">merge</span> <span class="comment">--no-ff develop </span></span>
-</code></pre><p>注意：—no-ff意思是not fast forward merge，即不适用fast-forward（快速合并）的合并形式。Git默认情况下在merge的时候会采用fast-forward的形式，即直接将develop分支先于master分支的部分直接接到master上，如果指定了—no-ff，merge这个操作会生成一个新的提交节点，也就是说我们可以在历史中清晰地看到每次的merge操作，这可以保证版本演进的清晰。</p>
+git merge --no-ff develop 
+</code></pre><p>注意：–no-ff意思是not fast forward merge，即不适用fast-forward（快速合并）的合并形式。Git默认情况下在merge的时候会采用fast-forward的形式，即直接将develop分支先于master分支的部分直接接到master上，如果指定了–no-ff，merge这个操作会生成一个新的提交节点，也就是说我们可以在历史中清晰地看到每次的merge操作，这可以保证版本演进的清晰。</p>
 <ol>
 <li>临时分支</li>
 </ol>
@@ -268,44 +251,41 @@ git <span class="operator"><span class="keyword">merge</span> <span class="comme
 <li>临时bug修复分支（hotfix）</li>
 </ul>
 <p>这些临时分支正常情况下应该在merge后删除，避免仓库中残留太多不用到的分支</p>
-<h4 id="需求分支feature">需求分支feature</h4>
-<p>当我们开发某个特定的需求时，可以从develop分支上checkout一个feature分支，命名可以是feature-开头，后面带上需求的简述，或者是团队协作系统上的任务单号。开发完成后，将feature分支merge回develop分支。</p>
+<h4 id="需求分支feature"><a href="#需求分支feature" class="headerlink" title="需求分支feature"></a>需求分支feature</h4><p>当我们开发某个特定的需求时，可以从develop分支上checkout一个feature分支，命名可以是feature-开头，后面带上需求的简述，或者是团队协作系统上的任务单号。开发完成后，将feature分支merge回develop分支。</p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/git-2.png" alt=""></p>
 <p>创建feature分支：</p>
-<pre><code><span class="title">git</span> checkout -b feature-x develop
+<pre><code>git checkout -b feature-x develop
 </code></pre><p>将feature分支合并到develop：</p>
 <pre><code>git checkout develop
-git <span class="operator"><span class="keyword">merge</span> <span class="comment">--no-ff feature-x</span></span>
+git merge --no-ff feature-x
 </code></pre><p>删除feature分支：</p>
-<pre><code>git branch <span class="operator">-d</span> feature-x
+<pre><code>git branch -d feature-x
 </code></pre><p>需求分支应该在项目某个周期版本开始时，每个开发成员各自创建好并进行开发。</p>
-<h4 id="预发布分支（release）">预发布分支（release）</h4>
-<p>预发布分支其实相当于一个测试分支，是在版本发布前进行测试，问题点修复的分支。预发布分支从develop分支checkout出来，最终merge回develop分支和master分支。release分支的命名可以以release-开头，带上版本号，或者版本计划发布的日期。</p>
+<h4 id="预发布分支（release）"><a href="#预发布分支（release）" class="headerlink" title="预发布分支（release）"></a>预发布分支（release）</h4><p>预发布分支其实相当于一个测试分支，是在版本发布前进行测试，问题点修复的分支。预发布分支从develop分支checkout出来，最终merge回develop分支和master分支。release分支的命名可以以release-开头，带上版本号，或者版本计划发布的日期。</p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/git-3.png" alt=""></p>
 <p>创建release分支：</p>
-<pre><code>git checkout -b <span class="operator"><span class="keyword">release</span>-<span class="number">2.3</span> develop</span>
+<pre><code>git checkout -b release-2.3 develop
 </code></pre><p>合并release分支：</p>
 <pre><code>git checkout develop
-git <span class="built_in">merge</span> <span class="comment">--no-ff release-2.3</span>
+git merge --no-ff release-2.3
 git checkout master
-git <span class="built_in">merge</span> <span class="comment">--no-ff release-2.3</span>
+git merge --no-ff release-2.3
 
-<span class="comment"># 对合并生成的新节点，做一个标签</span>
-git tag -<span class="operator">a</span> <span class="number">2.3</span>
+# 对合并生成的新节点，做一个标签
+git tag -a 2.3
 </code></pre><p>删除release分支：</p>
-<pre><code>git branch <span class="operator">-d</span> release-<span class="number">2.3</span>
+<pre><code>git branch -d release-2.3
 </code></pre><p>预发布分支应该在项目的测试期开始时创建，测试过程中发现的问题，可以在预发布分支上直接修改。可以在release分支上创建hook钩子，当release分支有push操作，就同步到远程测试服进行构建和部署，然后进行测试工作。</p>
-<h4 id="临时bug修复分支（hotfix）">临时bug修复分支（hotfix）</h4>
-<p>如果发布之后线上出现bug，需要发布临时bug fix补丁，可以创建一个hotfix分支。命名可以是hotfix-开头，带上bug的简述，或者团队协作系统的bug单号。hotfix分支是从master分支checkout出去，最终merge回master和develop分支。</p>
+<h4 id="临时bug修复分支（hotfix）"><a href="#临时bug修复分支（hotfix）" class="headerlink" title="临时bug修复分支（hotfix）"></a>临时bug修复分支（hotfix）</h4><p>如果发布之后线上出现bug，需要发布临时bug fix补丁，可以创建一个hotfix分支。命名可以是hotfix-开头，带上bug的简述，或者团队协作系统的bug单号。hotfix分支是从master分支checkout出去，最终merge回master和develop分支。</p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/git-4.png" alt=""></p>
 <p>创建hotfix分支：<br>    git checkout -b hotfix-0.1</p>
 <p>将hotfix分支合并到master和develop：</p>
 <pre><code>git checkout develop
-git <span class="operator"><span class="keyword">merge</span> <span class="comment">--no-ff hotfix-0.1</span>
-git checkout <span class="keyword">master</span>
-git <span class="keyword">merge</span> <span class="comment">--no-ff hotfix-0.1</span></span>
+git merge --no-ff hotfix-0.1
+git checkout master
+git merge --no-ff hotfix-0.1
 </code></pre><p>删除hotfix分支：</p>
-<pre><code><span class="title">git</span> branch -dhotfix-<span class="number">0</span>.<span class="number">1</span>
+<pre><code>git branch -dhotfix-0.1
 </code></pre>
       
     </div>
@@ -378,7 +358,7 @@ git <span class="keyword">merge</span> <span class="comment">--no-ff hotfix-0.1<
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -388,12 +368,9 @@ git <span class="keyword">merge</span> <span class="comment">--no-ff hotfix-0.1<
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

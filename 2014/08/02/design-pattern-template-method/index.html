@@ -8,21 +8,20 @@
   <meta name="description" content="什么是模板方法模式模板方法模式就是定义一个抽象类，声明并实现一个模板方法作为所有子类的主要算法的模板，并声明一些基本方法作为算法的实现步骤，这些基本方法中，包含一些抽象方法作为算法实现的可变部分，让子类去实现具体的逻辑，那么不同子类可以用不同方式去实现这些抽象方法，从而使得它们从抽象类中继承而来的模板方法表现出不同的行为。基本方法中也可以包含一些具体方法作为算法实现的公共部分，子类可以选择直接重用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行为型设计模式 — 模板方法模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/08/02/design-pattern-template-method/">
+<meta property="og:url" content="http://www.charlestech.info/2014/08/02/design-pattern-template-method/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是模板方法模式模板方法模式就是定义一个抽象类，声明并实现一个模板方法作为所有子类的主要算法的模板，并声明一些基本方法作为算法的实现步骤，这些基本方法中，包含一些抽象方法作为算法实现的可变部分，让子类去实现具体的逻辑，那么不同子类可以用不同方式去实现这些抽象方法，从而使得它们从抽象类中继承而来的模板方法表现出不同的行为。基本方法中也可以包含一些具体方法作为算法实现的公共部分，子类可以选择直接重用">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="行为型设计模式 — 模板方法模式">
 <meta name="twitter:description" content="什么是模板方法模式模板方法模式就是定义一个抽象类，声明并实现一个模板方法作为所有子类的主要算法的模板，并声明一些基本方法作为算法的实现步骤，这些基本方法中，包含一些抽象方法作为算法实现的可变部分，让子类去实现具体的逻辑，那么不同子类可以用不同方式去实现这些抽象方法，从而使得它们从抽象类中继承而来的模板方法表现出不同的行为。基本方法中也可以包含一些具体方法作为算法实现的公共部分，子类可以选择直接重用">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,8 +221,7 @@
       
         <p>什么是模板方法模式模板方法模式就是定义一个抽象类，声明并实现一个模板方法作为所有子类的主要算法的模板，并声明一些基本方法作为算法的实现步骤，这些基本方法中，包含一些抽象方法作为算法实现的可变部分，让子类去实现具体的逻辑，那么不同子类可以用不同方式去实现这些抽象方法，从而使得它们从抽象类中继承而来的模板方法表现出不同的行为。基本方法中也可以包含一些具体方法作为算法实现的公共部分，子类可以选择直接重用…</p>
 <a id="more"></a>
-<h4 id="什么是模板方法模式"><strong>什么是模板方法模式</strong></h4>
-<p>模板方法模式就是定义一个抽象类，声明并实现一个模板方法作为所有子类的主要算法的模板，并声明一些基本方法作为算法的实现步骤，这些基本方法中，包含一些抽象方法作为算法实现的可变部分，让子类去实现具体的逻辑，那么不同子类可以用不同方式去实现这些抽象方法，从而使得它们从抽象类中继承而来的模板方法表现出不同的行为。基本方法中也可以包含一些具体方法作为算法实现的公共部分，子类可以选择直接重用它们，也可以选择重写覆盖它们。</p>
+<h4 id="什么是模板方法模式"><a href="#什么是模板方法模式" class="headerlink" title="什么是模板方法模式"></a><strong>什么是模板方法模式</strong></h4><p>模板方法模式就是定义一个抽象类，声明并实现一个模板方法作为所有子类的主要算法的模板，并声明一些基本方法作为算法的实现步骤，这些基本方法中，包含一些抽象方法作为算法实现的可变部分，让子类去实现具体的逻辑，那么不同子类可以用不同方式去实现这些抽象方法，从而使得它们从抽象类中继承而来的模板方法表现出不同的行为。基本方法中也可以包含一些具体方法作为算法实现的公共部分，子类可以选择直接重用它们，也可以选择重写覆盖它们。</p>
 <p>模板方法模式下有两类角色：</p>
 <p><strong>抽象模板角色</strong></p>
 <p>抽象模板角色定义了一个模板方法作为主要算法的模板，并定义了一些抽象方法作为主要算法的实现步骤，让子类去实现具体的逻辑。抽象模板角色中还可以定义一些具体的方法作为主要算法的实现步骤，子类可以选择重用它们也可以选择重写覆盖它们。</p>
@@ -255,8 +236,7 @@
 <p>c） 钩子方法（hook method）：算法的某个步骤，在抽象类中可以给出默认实现，子类也可以根据需要重写该类方法</p>
 <p>模板方法模式的类图如下：</p>
 <p>![Image 1][]  </p>
-<h4 id="为什么要使用模板方法模式"><strong>为什么要使用模板方法模式</strong></h4>
-<ol>
+<h4 id="为什么要使用模板方法模式"><a href="#为什么要使用模板方法模式" class="headerlink" title="为什么要使用模板方法模式"></a><strong>为什么要使用模板方法模式</strong></h4><ol>
 <li><p>模板方法模式很好地实现了代码复用，子类复用抽象类中定义的模板方法以及一些具体的基本方法</p>
 </li>
 <li><p>模板方法模式实现了算法设计与具体实现的分离，算法设计者只需要定义抽象类并给出算法的调用步骤，步骤的具体实现由子类去负责。这种模式有利于程序设计的分工，例如在实现某个需求上，高级工程师只需要设计模板方法以及一些调用的基本方法，抽象部分可以由初级程序猿去实现</p>
@@ -265,8 +245,7 @@
 </li>
 </ol>
 <p>当一个问题的解决方案具有一个大体的框架，仅有一些解决步骤会针对不同情况有不同的实现时，我们可以考虑使用模板方法模式。</p>
-<h4 id="模板方法模式的实现"><strong>模板方法模式的实现</strong></h4>
-<p>  模板方法模式下，需要实现两类角色：<strong>抽象模板角色</strong>和<strong>具体模板角色</strong>。抽象模板角色中，我们需要分别一些基本方法对应算法实现的各个步骤，对于算法的抽象部分，我们要将方法声明为<strong>abstract</strong>，对于算法的公共部分，我们给出方法的具体实现。最重要的，我们需要定义模板方法来组合这些基本方法，从而形成算法的大体框架。模板方法一般声明为<strong>final</strong>。</p>
+<h4 id="模板方法模式的实现"><a href="#模板方法模式的实现" class="headerlink" title="模板方法模式的实现"></a><strong>模板方法模式的实现</strong></h4><p>  模板方法模式下，需要实现两类角色：<strong>抽象模板角色</strong>和<strong>具体模板角色</strong>。抽象模板角色中，我们需要分别一些基本方法对应算法实现的各个步骤，对于算法的抽象部分，我们要将方法声明为<strong>abstract</strong>，对于算法的公共部分，我们给出方法的具体实现。最重要的，我们需要定义模板方法来组合这些基本方法，从而形成算法的大体框架。模板方法一般声明为<strong>final</strong>。</p>
 <p>  举个实际的例子，现在有一个需求，需要根据用户输入的二元运算表达式得到计算结果。不管是什么运算，运算的大体步骤都是需要先从表达式中获取操作数，再进行运算，最后输出结果，所以这个算法具有一个大体的模板，可变部分就是具体的运算类型。因此，我们可以使用模板方法模式来解决这个问题。</p>
 <p>  首先定义一个抽象类AbstractCalculator作为抽象模板角色，其中，模板方法是calculate(String exp)，接受一个表达式作为参数。在该方法中，首先调用抽象方法getOperator()获取具体的操作符，然后调用rerieveOperands(String exp, String operator)来根据操作符分割表达式获取操作数列表，接着调用抽象方法calculate(long num1, long num2)来执行具体的运算，最后调用postCalculation(long result)输出结果。</p>
 <p>不难看出，getOperator()和calculate(long num1, long num2)是抽象方法，retrieveOperands(String exp, String operator)是具体方法，postCalculation(long result)是钩子方法。</p>
@@ -277,128 +256,127 @@
 <p>AbstractCalculator抽象类</p>
 <pre><code>package patterns.behavior.templateMethod;
 
-<span class="keyword">import</span> java.util.<span class="type">ArrayList</span>;
-<span class="keyword">import</span> java.util.<span class="type">List</span>;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * <span class="type">Abstract</span> <span class="type">Template</span> <span class="keyword">for</span> <span class="type">Calculators</span>
+ * Abstract Template for Calculators
  * 
- * @author <span class="type">Charles</span> <span class="type">Chen</span>
+ * @author Charles Chen
  * 
  */
-public abstract class <span class="type">AbstractCalculator</span> {
+public abstract class AbstractCalculator {
     /**
-     * <span class="type">Template</span> <span class="keyword">method</span>
+     * Template method
      * 
-     * <span class="type">First</span>, call retrieveOperands() to retrieve operands <span class="keyword">from</span> the input
-     * expression <span class="keyword">with</span> the operator
+     * First, call retrieveOperands() to retrieve operands from the input
+     * expression with the operator
      * 
-     * <span class="type">Then</span>, call calculate() to execute calculation
+     * Then, call calculate() to execute calculation
      * 
-     * <span class="type">Last</span>, call postCalculate() to output the <span class="literal">result</span>
+     * Last, call postCalculate() to output the result
      * 
      * @param exp
      */
-    public final <span class="type">void</span> calculate(<span class="type">String</span> exp) {
-        <span class="type">List</span>&lt;<span class="type">Long</span>&gt; operands = this.retrieveOperands(exp, this.getOperator());
-        <span class="keyword">if</span> (operands == null || operands.size() != <span class="number">2</span>) {
-            <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"Expression is not valid"</span>);
-            <span class="keyword">return</span>;
+    public final void calculate(String exp) {
+        List&lt;Long&gt; operands = this.retrieveOperands(exp, this.getOperator());
+        if (operands == null || operands.size() != 2) {
+            System.out.println(&quot;Expression is not valid&quot;);
+            return;
         }
-        long <span class="literal">result</span> = this.calculate(operands.get(<span class="number">0</span>), operands.get(<span class="number">1</span>));
-        this.postCalculate(<span class="literal">result</span>);
+        long result = this.calculate(operands.get(0), operands.get(1));
+        this.postCalculate(result);
     }
 
-    /* <span class="type">BEGIN</span>: <span class="type">Abstract</span> methods that sub-classes should implement */
-    protected abstract <span class="type">String</span> getOperator();
+    /* BEGIN: Abstract methods that sub-classes should implement */
+    protected abstract String getOperator();
 
     protected abstract long calculate(long num1, long num2);
 
-    /* <span class="type">END</span>: <span class="type">Abstract</span> methods that sub-classes should implement */
+    /* END: Abstract methods that sub-classes should implement */
 
     /**
-     * <span class="type">Concrete</span> <span class="keyword">method</span>, retrieve the operands list <span class="keyword">from</span> expression <span class="keyword">with</span> the
+     * Concrete method, retrieve the operands list from expression with the
      * operator
      * 
      * @param exp
      * @param operator
-     * @<span class="keyword">return</span> <span class="type">Operands</span> list
+     * @return Operands list
      */
-    private <span class="type">List</span>&lt;<span class="type">Long</span>&gt; retrieveOperands(<span class="type">String</span> exp, <span class="type">String</span> operator) {
-        <span class="keyword">if</span> (exp == null || operator == null) {
-            <span class="keyword">return</span> null;
+    private List&lt;Long&gt; retrieveOperands(String exp, String operator) {
+        if (exp == null || operator == null) {
+            return null;
         }
-        <span class="type">List</span>&lt;<span class="type">Long</span>&gt; operands = new <span class="type">ArrayList</span>&lt;<span class="type">Long</span>&gt;();
-        <span class="type">String</span>[] nums = exp.split(operator);
+        List&lt;Long&gt; operands = new ArrayList&lt;Long&gt;();
+        String[] nums = exp.split(operator);
 
-        <span class="keyword">try</span> {
-            <span class="keyword">for</span> (<span class="type">String</span> num : nums) {
-                operands.add(<span class="type">Long</span>.parseLong(num));
+        try {
+            for (String num : nums) {
+                operands.add(Long.parseLong(num));
             }
-        } catch (<span class="type">NumberFormatException</span> e) {
-            // <span class="type">TODO</span>: handle exception
-            <span class="keyword">return</span> null;
+        } catch (NumberFormatException e) {
+            // TODO: handle exception
+            return null;
         }
-        <span class="keyword">return</span> operands;
+        return operands;
     }
 
     /**
-     * <span class="type">Hook</span> <span class="keyword">method</span>, to output the <span class="literal">result</span> after calculation. <span class="type">Sub</span>-classes can use
-     * the default implement <span class="keyword">or</span> override it
+     * Hook method, to output the result after calculation. Sub-classes can use
+     * the default implement or override it
      * 
-     * @param <span class="literal">result</span>
+     * @param result
      */
-    protected <span class="type">void</span> postCalculate(long <span class="literal">result</span>) {
-        <span class="type">System</span>.<span class="keyword">out</span>
-                .println(<span class="string">"Abstract Calculator: Calculation is done, result is "</span>
-                        + <span class="literal">result</span>);
+    protected void postCalculate(long result) {
+        System.out
+                .println(&quot;Abstract Calculator: Calculation is done, result is &quot;
+                        + result);
     }
 }
 </code></pre><p>PlusCalculator加法运算实现类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.templateMethod;
+<pre><code>package patterns.behavior.templateMethod;
 
-<span class="javadoc">/**
+/**
  * Plus Calculator, extends the Calculator and implements the abstract methods
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  * 
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlusCalculator</span> <span class="keyword">extends</span> <span class="title">AbstractCalculator</span> </span>{
+ */
+public class PlusCalculator extends AbstractCalculator {
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">protected</span> <span class="keyword">long</span> <span class="title">calculate</span>(<span class="keyword">long</span> num1, <span class="keyword">long</span> num2) {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        <span class="keyword">return</span> num1 + num2;
+    @Override
+    protected long calculate(long num1, long num2) {
+        // TODO Auto-generated method stub
+        return num1 + num2;
     }
 
-    <span class="annotation">@Override</span>
-    <span class="keyword">protected</span> String <span class="title">getOperator</span>() {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        <span class="keyword">return</span> <span class="string">"\\+"</span>;
+    @Override
+    protected String getOperator() {
+        // TODO Auto-generated method stub
+        return &quot;\\+&quot;;
     }
 
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postCalculate</span>(<span class="keyword">long</span> result) {
-        System.out.println(<span class="string">"Plus Calculator: Calculation is done, result is "</span>
+    public void postCalculate(long result) {
+        System.out.println(&quot;Plus Calculator: Calculation is done, result is &quot;
                 + result);
     }
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.templateMethod;
+<pre><code>package patterns.behavior.templateMethod;
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+public class ClientTest {
 
-    <span class="javadoc">/**
-     *<span class="javadoctag"> @param</span> args
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        AbstractCalculator calculator = <span class="keyword">new</span> PlusCalculator();
-        calculator.calculate(<span class="string">"13+85"</span>);
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        AbstractCalculator calculator = new PlusCalculator();
+        calculator.calculate(&quot;13+85&quot;);
     }
 
 }
-</code></pre><h4 id="模板方法模式在servlet中的应用"><strong>模板方法模式在servlet中的应用</strong></h4>
-<p>我们再编写servlet时需要继承HttpServlet抽象类，这里就是应用了模板方法模式，其中service()方法就是一个模板方法。service()方法可以根据request的method来调用不同的do方法，例如doGet()，doPost()等等，这些do方法在HttpServlet中被声明为抽象方法，具体的实现由我们编写的具体servlet去负责。</p>
+</code></pre><h4 id="模板方法模式在servlet中的应用"><a href="#模板方法模式在servlet中的应用" class="headerlink" title="模板方法模式在servlet中的应用"></a><strong>模板方法模式在servlet中的应用</strong></h4><p>我们再编写servlet时需要继承HttpServlet抽象类，这里就是应用了模板方法模式，其中service()方法就是一个模板方法。service()方法可以根据request的method来调用不同的do方法，例如doGet()，doPost()等等，这些do方法在HttpServlet中被声明为抽象方法，具体的实现由我们编写的具体servlet去负责。</p>
 <p>[Image 1]: </p>
 
       
@@ -472,7 +450,7 @@ public abstract class <span class="type">AbstractCalculator</span> {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -482,12 +460,9 @@ public abstract class <span class="type">AbstractCalculator</span> {
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

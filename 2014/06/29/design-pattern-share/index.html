@@ -8,21 +8,20 @@
   <meta name="description" content="什么是享元模式？享元模式（Flyweight）就是维护一个对象实例的共享池，实现对象实例的共享和回收利用。当系统中需要频繁创建和使用一个类的实例，而该类创建实例时需要较大的开销，使用享元模式去维护一个该类实例的共享池，实现实例的共享，可以很大程度地减少创建实例带来的开销。享元模式下有两个角色，共享池角色和实例角色。共享池其实也充当一个实例工厂的角色，一般需要在初始化时创建一定数量的对象实例，并提供">
 <meta property="og:type" content="article">
 <meta property="og:title" content="结构型设计模式 — 享元模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/06/29/design-pattern-share/">
+<meta property="og:url" content="http://www.charlestech.info/2014/06/29/design-pattern-share/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是享元模式？享元模式（Flyweight）就是维护一个对象实例的共享池，实现对象实例的共享和回收利用。当系统中需要频繁创建和使用一个类的实例，而该类创建实例时需要较大的开销，使用享元模式去维护一个该类实例的共享池，实现实例的共享，可以很大程度地减少创建实例带来的开销。享元模式下有两个角色，共享池角色和实例角色。共享池其实也充当一个实例工厂的角色，一般需要在初始化时创建一定数量的对象实例，并提供">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="结构型设计模式 — 享元模式">
 <meta name="twitter:description" content="什么是享元模式？享元模式（Flyweight）就是维护一个对象实例的共享池，实现对象实例的共享和回收利用。当系统中需要频繁创建和使用一个类的实例，而该类创建实例时需要较大的开销，使用享元模式去维护一个该类实例的共享池，实现实例的共享，可以很大程度地减少创建实例带来的开销。享元模式下有两个角色，共享池角色和实例角色。共享池其实也充当一个实例工厂的角色，一般需要在初始化时创建一定数量的对象实例，并提供">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,158 +221,155 @@
       
         <p>什么是享元模式？享元模式（Flyweight）就是维护一个对象实例的共享池，实现对象实例的共享和回收利用。当系统中需要频繁创建和使用一个类的实例，而该类创建实例时需要较大的开销，使用享元模式去维护一个该类实例的共享池，实现实例的共享，可以很大程度地减少创建实例带来的开销。享元模式下有两个角色，共享池角色和实例角色。共享池其实也充当一个实例工厂的角色，一般需要在初始化时创建一定数量的对象实例，并提供…</p>
 <a id="more"></a>
-<h4 id="什么是享元模式？"><strong>什么是享元模式？</strong></h4>
-<p>享元模式（Flyweight）就是维护一个对象实例的共享池，实现对象实例的共享和回收利用。当系统中需要频繁创建和使用一个类的实例，而该类创建实例时需要较大的开销，使用享元模式去维护一个该类实例的共享池，实现实例的共享，可以很大程度地减少创建实例带来的开销。</p>
+<h4 id="什么是享元模式？"><a href="#什么是享元模式？" class="headerlink" title="什么是享元模式？"></a><strong>什么是享元模式？</strong></h4><p>享元模式（Flyweight）就是维护一个对象实例的共享池，实现对象实例的共享和回收利用。当系统中需要频繁创建和使用一个类的实例，而该类创建实例时需要较大的开销，使用享元模式去维护一个该类实例的共享池，实现实例的共享，可以很大程度地减少创建实例带来的开销。</p>
 <p>享元模式下有两个角色，共享池角色和实例角色。共享池其实也充当一个实例工厂的角色，一般需要在初始化时创建一定数量的对象实例，并提供获取实例、回收实例的接口，从而实现对象实例的共享和回收利用。</p>
-<h4 id="为什么要使用享元模式？"><strong>为什么要使用享元模式？</strong></h4>
-<p>系统中往往需要频繁创建和使用一个类的对象实例，如果这个类的初始化工作需要较大的开销，比如该类结构较为复杂，或者初始化过程涉及对外部资源的I/O操作，比如读写文件或进行数据库连接，那么频繁地创建该类的实例，使用完后立即丢弃，难免会造成较大的开销和浪费。</p>
+<h4 id="为什么要使用享元模式？"><a href="#为什么要使用享元模式？" class="headerlink" title="为什么要使用享元模式？"></a><strong>为什么要使用享元模式？</strong></h4><p>系统中往往需要频繁创建和使用一个类的对象实例，如果这个类的初始化工作需要较大的开销，比如该类结构较为复杂，或者初始化过程涉及对外部资源的I/O操作，比如读写文件或进行数据库连接，那么频繁地创建该类的实例，使用完后立即丢弃，难免会造成较大的开销和浪费。</p>
 <p>使用享元模式去维护一个该类实例的共享池，由共享池去负责类实例的创建、获取、回收、生命周期管理等，可以有效地减少创建实例带来的开销，提高系统的性能。</p>
 <p>我们所熟知的数据库连接池就是实现享元模式的典型案例，连接池维护了一个数据库连接实例的共享池，实现数据库连接实例的共享和管理，从而较少频繁地数据连接带来的开销，优化系统的性能。</p>
-<h4 id="如何实现享元模式？"><strong>如何实现享元模式？</strong></h4>
-<p>以上面提到的数据库连接池为例，我们需要编一个连接池类，在连接池初始化时创建一定数目的数据库连接，并将所有连接实例保存在一个集合中，对外提供获取连接实例、释放连接实例的接口。UML类图如下：</p>
+<h4 id="如何实现享元模式？"><a href="#如何实现享元模式？" class="headerlink" title="如何实现享元模式？"></a><strong>如何实现享元模式？</strong></h4><p>以上面提到的数据库连接池为例，我们需要编一个连接池类，在连接池初始化时创建一定数目的数据库连接，并将所有连接实例保存在一个集合中，对外提供获取连接实例、释放连接实例的接口。UML类图如下：</p>
 <p>![Image 1][]  </p>
 <p>示例程序：</p>
 <p>数据库连接池类</p>
-<pre><code><span class="keyword">package</span> patterns.structure.flyweight;
+<pre><code>package patterns.structure.flyweight;
 
-<span class="keyword">import</span> java.util.Vector;
-<span class="keyword">import</span> java.util.concurrent.TimeUnit;
-<span class="keyword">import</span> java.sql.Connection;
-<span class="keyword">import</span> java.sql.DriverManager;
-<span class="keyword">import</span> java.sql.SQLException;
+import java.util.Vector;
+import java.util.concurrent.TimeUnit;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-<span class="javadoc">/**
+/**
  * Simple Connection Pool Demo
  * 
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  * 
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectionPool</span> </span>{
-    <span class="comment">// Database Driver</span>
-    <span class="keyword">private</span> <span class="keyword">final</span> String DRIVER = <span class="string">"com.mysql.jdbc.Driver"</span>;
-    <span class="comment">// Database connection url</span>
-    <span class="keyword">private</span> <span class="keyword">final</span> String URL = <span class="string">"jdbc:mysql://127.0.0.1:3306/test"</span>;
-    <span class="comment">// Database login user name</span>
-    <span class="keyword">private</span> <span class="keyword">final</span> String USER = <span class="string">"root"</span>;
-    <span class="comment">// Database login password</span>
-    <span class="keyword">private</span> <span class="keyword">final</span> String PASSWD = <span class="string">"2426"</span>;
+ */
+public class ConnectionPool {
+    // Database Driver
+    private final String DRIVER = &quot;com.mysql.jdbc.Driver&quot;;
+    // Database connection url
+    private final String URL = &quot;jdbc:mysql://127.0.0.1:3306/test&quot;;
+    // Database login user name
+    private final String USER = &quot;root&quot;;
+    // Database login password
+    private final String PASSWD = &quot;2426&quot;;
 
-    <span class="comment">// Initial pool size</span>
-    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> INIT_SIZE = <span class="number">100</span>;
-    <span class="comment">// Maximum retry times while getting a connection</span>
-    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_RETRY = <span class="number">3</span>;
+    // Initial pool size
+    private final int INIT_SIZE = 100;
+    // Maximum retry times while getting a connection
+    private final int MAX_RETRY = 3;
 
-    <span class="keyword">private</span> Vector&lt;Connection&gt; pool = <span class="keyword">null</span>; <span class="comment">// For storage connections</span>
+    private Vector&lt;Connection&gt; pool = null; // For storage connections
 
-    <span class="javadoc">/**
+    /**
      * Constructor. Create connection instance
-     */</span>
-    <span class="keyword">private</span> <span class="title">ConnectionPool</span>() {
-        pool = <span class="keyword">new</span> Vector&lt;Connection&gt;();
-        <span class="keyword">try</span> {
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; INIT_SIZE; i++) {
+     */
+    private ConnectionPool() {
+        pool = new Vector&lt;Connection&gt;();
+        try {
+            for (int i = 0; i &lt; INIT_SIZE; i++) {
                 Class.forName(DRIVER);
                 Connection connection = DriverManager.getConnection(URL, USER,
                         PASSWD);
                 pool.add(connection);
             }
 
-        } <span class="keyword">catch</span> (ClassNotFoundException e) {
-            <span class="comment">// TODO Auto-generated catch block</span>
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
-        } <span class="keyword">catch</span> (SQLException e) {
-            <span class="comment">// TODO: handle exception</span>
+        } catch (SQLException e) {
+            // TODO: handle exception
             e.printStackTrace();
         }
     }
 
-    <span class="javadoc">/**
+    /**
      * Create connection pool instance
      * 
-     *<span class="javadoctag"> @author</span> Charles Chen
+     * @author Charles Chen
      * 
-     */</span>
-    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectionPoolInstance</span> </span>{
-        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ConnectionPool instance = <span class="keyword">new</span> ConnectionPool();
+     */
+    private static class ConnectionPoolInstance {
+        private static final ConnectionPool instance = new ConnectionPool();
     }
 
-    <span class="javadoc">/**
+    /**
      * 获取连接池实例
      * 
-     *<span class="javadoctag"> @return</span>
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> ConnectionPool <span class="title">getInstance</span>() {
-        <span class="keyword">return</span> ConnectionPoolInstance.instance;
+     * @return
+     */
+    public static ConnectionPool getInstance() {
+        return ConnectionPoolInstance.instance;
     }
 
-    <span class="javadoc">/**
+    /**
      * Get database connection from pool
      * 
-     *<span class="javadoctag"> @return</span>
-     */</span>
-    <span class="keyword">public</span> Connection <span class="title">getConnection</span>() {
-        <span class="keyword">int</span> retry = <span class="number">1</span>;
-        <span class="comment">// If there are not connections, sleep and retry</span>
-        <span class="keyword">while</span> (retry &lt;= MAX_RETRY &amp;&amp; pool.size() &lt; <span class="number">1</span>) {
-            <span class="keyword">try</span> {
-                System.out.println(<span class="string">"Not avaiable connections, retry to get..."</span>);
-                TimeUnit.SECONDS.sleep(<span class="number">1</span>);
+     * @return
+     */
+    public Connection getConnection() {
+        int retry = 1;
+        // If there are not connections, sleep and retry
+        while (retry &lt;= MAX_RETRY &amp;&amp; pool.size() &lt; 1) {
+            try {
+                System.out.println(&quot;Not avaiable connections, retry to get...&quot;);
+                TimeUnit.SECONDS.sleep(1);
                 retry++;
-            } <span class="keyword">catch</span> (InterruptedException e) {
-                <span class="comment">// TODO Auto-generated catch block</span>
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
 
-        <span class="keyword">if</span> (pool.size() &gt; <span class="number">0</span>) {
-            <span class="keyword">synchronized</span> (pool) {
-                <span class="keyword">if</span> (pool.size() &gt; <span class="number">0</span>) {
-                    <span class="keyword">return</span> pool.remove(<span class="number">0</span>);
+        if (pool.size() &gt; 0) {
+            synchronized (pool) {
+                if (pool.size() &gt; 0) {
+                    return pool.remove(0);
                 }
             }
         }
 
-        System.out.println(<span class="string">"Sorry, there are not available connections"</span>);
-        <span class="keyword">return</span> <span class="keyword">null</span>;
+        System.out.println(&quot;Sorry, there are not available connections&quot;);
+        return null;
     }
 
-    <span class="javadoc">/**
+    /**
      * Release connection
      * 
-     *<span class="javadoctag"> @param</span> connection
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">release</span>(Connection connection) {
+     * @param connection
+     */
+    public void release(Connection connection) {
         pool.add(connection);
     }
 }
 </code></pre><p>客户端测试程序：</p>
-<pre><code><span class="keyword">package</span> patterns.structure.flyweight;
+<pre><code>package patterns.structure.flyweight;
 
-<span class="keyword">import</span> java.sql.Connection;
-<span class="keyword">import</span> java.sql.ResultSet;
-<span class="keyword">import</span> java.sql.SQLException;
-<span class="keyword">import</span> java.sql.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+public class ClientTest {
 
-    <span class="javadoc">/**
-     *<span class="javadoctag"> @param</span> args
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-        <span class="comment">// TODO Auto-generated method stub</span>
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
         ConnectionPool pool = ConnectionPool.getInstance();
-        Connection conn = pool.getConnection(); <span class="comment">// Get a connection from pool</span>
-        <span class="keyword">try</span> {
+        Connection conn = pool.getConnection(); // Get a connection from pool
+        try {
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery(<span class="string">"select name, passwd from user"</span>);
-            <span class="keyword">while</span> (rs.next()) {
-                System.out.println(rs.getString(<span class="string">"name"</span>));
+            ResultSet rs = stm.executeQuery(&quot;select name, passwd from user&quot;);
+            while (rs.next()) {
+                System.out.println(rs.getString(&quot;name&quot;));
             }
-        } <span class="keyword">catch</span> (SQLException e) {
-            <span class="comment">// TODO Auto-generated catch block</span>
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        pool.release(conn); <span class="comment">// Release the connection</span>
+        pool.release(conn); // Release the connection
     }
 
 }
@@ -467,7 +446,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -477,12 +456,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

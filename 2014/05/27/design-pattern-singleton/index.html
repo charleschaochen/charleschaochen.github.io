@@ -8,21 +8,20 @@
   <meta name="description" content="什么是单例模式单例模式顾名思义就是对类只实例化一次，在程序中复用同一个实例。单例模式能保证对象在一个JVM中只存在一个实例。 为什么要使用单例模式首先，使用单例模式可以减少new关键字的使用，降低开销，减轻垃圾回收器的压力其次，某些业务需求要求对象在整个系统中只存在一个实例，如果存在多个会对业务造成影响。例如一个交易系统的核心交易引擎实例，该实例管理和控制着所有核心交易，如果该实例存在多…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建型设计模式 — 单例模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/05/27/design-pattern-singleton/">
+<meta property="og:url" content="http://www.charlestech.info/2014/05/27/design-pattern-singleton/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是单例模式单例模式顾名思义就是对类只实例化一次，在程序中复用同一个实例。单例模式能保证对象在一个JVM中只存在一个实例。 为什么要使用单例模式首先，使用单例模式可以减少new关键字的使用，降低开销，减轻垃圾回收器的压力其次，某些业务需求要求对象在整个系统中只存在一个实例，如果存在多个会对业务造成影响。例如一个交易系统的核心交易引擎实例，该实例管理和控制着所有核心交易，如果该实例存在多…">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建型设计模式 — 单例模式">
 <meta name="twitter:description" content="什么是单例模式单例模式顾名思义就是对类只实例化一次，在程序中复用同一个实例。单例模式能保证对象在一个JVM中只存在一个实例。 为什么要使用单例模式首先，使用单例模式可以减少new关键字的使用，降低开销，减轻垃圾回收器的压力其次，某些业务需求要求对象在整个系统中只存在一个实例，如果存在多个会对业务造成影响。例如一个交易系统的核心交易引擎实例，该实例管理和控制着所有核心交易，如果该实例存在多…">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,139 +221,134 @@
       
         <p>什么是单例模式单例模式顾名思义就是对类只实例化一次，在程序中复用同一个实例。单例模式能保证对象在一个JVM中只存在一个实例。 为什么要使用单例模式首先，使用单例模式可以减少new关键字的使用，降低开销，减轻垃圾回收器的压力其次，某些业务需求要求对象在整个系统中只存在一个实例，如果存在多个会对业务造成影响。例如一个交易系统的核心交易引擎实例，该实例管理和控制着所有核心交易，如果该实例存在多…</p>
 <a id="more"></a>
-<h4 id="什么是单例模式">什么是单例模式</h4>
-<p>单例模式顾名思义就是对类只实例化一次，在程序中复用同一个实例。单例模式能保证对象在一个JVM中只存在一个实例。</p>
-<h4 id="#">#</h4>
-<h4 id="为什么要使用单例模式">为什么要使用单例模式</h4>
-<p>首先，使用单例模式可以减少new关键字的使用，降低开销，减轻垃圾回收器的压力其次，某些业务需求要求对象在整个系统中只存在一个实例，如果存在多个会对业务造成影响。例如一个交易系统的核心交易引擎实例，该实例管理和控制着所有核心交易，如果该实例存在多个，必定会对系统造成致命的影响。</p>
-<h4 id="#-1">#</h4>
-<h4 id="单例模式的实现">单例模式的实现</h4>
-<p>1、普通方式（也称懒汉方式）</p>
+<h4 id="什么是单例模式"><a href="#什么是单例模式" class="headerlink" title="什么是单例模式"></a>什么是单例模式</h4><p>单例模式顾名思义就是对类只实例化一次，在程序中复用同一个实例。单例模式能保证对象在一个JVM中只存在一个实例。</p>
+<h4 id=""><a href="#" class="headerlink" title="#"></a>#</h4><h4 id="为什么要使用单例模式"><a href="#为什么要使用单例模式" class="headerlink" title="为什么要使用单例模式"></a>为什么要使用单例模式</h4><p>首先，使用单例模式可以减少new关键字的使用，降低开销，减轻垃圾回收器的压力其次，某些业务需求要求对象在整个系统中只存在一个实例，如果存在多个会对业务造成影响。例如一个交易系统的核心交易引擎实例，该实例管理和控制着所有核心交易，如果该实例存在多个，必定会对系统造成致命的影响。</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title="#"></a>#</h4><h4 id="单例模式的实现"><a href="#单例模式的实现" class="headerlink" title="单例模式的实现"></a>单例模式的实现</h4><p>1、普通方式（也称懒汉方式）</p>
 <p>一般是声明一个私有的对象属性，然后声明一个静态的获取实例的方法，在方法中判断对象是否已经创建，若已经创建则返回实例，否则new一个实例返回。另外，需要将构造方法声明为私有，防止外部程序通过new方式创建实例。这种方式的缺点是不保证线程安全，多线程下不能保证实例化操作的同步。</p>
 <p>代码示例：</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 普通单例模式，也称懒汉方式，不保证线程安全
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LazySingleton</span> </span>{
-   <span class="keyword">private</span> <span class="title">LazySingleton</span>() {
+ */
+public class LazySingleton {
+   private LazySingleton() {
   }
 
-   <span class="keyword">private</span> <span class="keyword">static</span> LazySingleton singleton;
+   private static LazySingleton singleton;
 
-   <span class="javadoc">/**
+   /**
    * Get instance
    *
-   *<span class="javadoctag"> @return</span>
-   */</span>
-   <span class="keyword">public</span> <span class="keyword">static</span> LazySingleton <span class="title">getInstance</span>() {
- <span class="keyword">if</span> (singleton == <span class="keyword">null</span>) {
-   singleton = <span class="keyword">new</span> LazySingleton();
+   * @return
+   */
+   public static LazySingleton getInstance() {
+ if (singleton == null) {
+   singleton = new LazySingleton();
 }
- <span class="keyword">return</span> singleton ;
+ return singleton ;
   }
 }
 </code></pre><p>2、饿汉方式</p>
 <p>在声明对象属性时便进行实例化，然后声明一个静态方法直接返回这个实例。由于类加载的过程是线程互斥的，加载过程中的实例化操作具有原子性，因此这种方式可以保证线程安全，但并没有实现延迟加载，如果对象的实例化过程需要很大的消耗，而且实例不一定会被使用，那么这种方式会对性能造成一定影响。</p>
 <p>代码示例：</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 饿汉方式，声明对象属性时进行实例化，保证线程安全，不实现延迟加载
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HungrySingleton</span> </span>{
-   <span class="keyword">private</span> <span class="title">HungrySingleton</span>() {
+ */
+public class HungrySingleton {
+   private HungrySingleton() {
   }
 
-   <span class="keyword">private</span> <span class="keyword">static</span> HungrySingleton singleton = <span class="keyword">new</span> HungrySingleton ();
+   private static HungrySingleton singleton = new HungrySingleton ();
 
-   <span class="javadoc">/**
+   /**
    * Get instance
    *
-   *<span class="javadoctag"> @return</span>
-   */</span>
-   <span class="keyword">public</span> <span class="keyword">static</span> HungrySingleton <span class="title">getInstance</span>() {
- <span class="keyword">return</span> singleton ;
+   * @return
+   */
+   public static HungrySingleton getInstance() {
+ return singleton ;
   }
 
 }
 </code></pre><p>3、同步方式</p>
 <p>为了保证延迟加载，并保证线程安全，一种实现方式就是加同步锁。</p>
 <p>（1）同步锁可以加在获取实例的方法上，代码如下：</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
 * Get instance
-*<span class="javadoctag"> @return</span>
-*/</span>
-<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> SyncSingleton <span class="title">getInstance</span>(){
- <span class="keyword">if</span>(singleton == <span class="keyword">null</span>){
-   singleton = <span class="keyword">new</span> SyncSingleton();
+* @return
+*/
+public static synchronized SyncSingleton getInstance(){
+ if(singleton == null){
+   singleton = new SyncSingleton();
 }
- <span class="keyword">return</span> singleton ;
+ return singleton ;
 }
 </code></pre><p>（2）将同步锁加在整个方法上会导致每次调用该方法都要对对象加锁，会严重影响性能。事实上，懒汉方式导致线程不安全的根本原因在于判断singleton是否为null与实例化singleton的操作时分开的，于是只需要将锁加在判断与实例化的代码上，代码如下：</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
 * Get instance
 *
-*<span class="javadoctag"> @return</span>
-*/</span>
-<span class="keyword">public</span> <span class="keyword">static</span> SyncSingleton <span class="title">getInstance</span>() {
- <span class="keyword">synchronized</span> (SyncSingleton.class) {
-   <span class="keyword">if</span> (singleton == <span class="keyword">null</span>) {
- singleton = <span class="keyword">new</span> SyncSingleton();
+* @return
+*/
+public static SyncSingleton getInstance() {
+ synchronized (SyncSingleton.class) {
+   if (singleton == null) {
+ singleton = new SyncSingleton();
   }
 }
- <span class="keyword">return</span> singleton ;
+ return singleton ;
 }
 </code></pre><p>（3）上面这种方式事实上已经将getInstance方法90%的代码加了锁，在性能上几乎没有提升。于是我们可以考虑先检查对象是否为空，当对象真的为空时，才进入同步块，同步块需要进行再一次的检查避免其他线程实例化了对象，这就是所谓的双重校验锁（double-checked locking）方法。代码如下：</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
 * Get instance
 *
-*<span class="javadoctag"> @return</span>
-*/</span>
-<span class="keyword">public</span> <span class="keyword">static</span> SyncSingleton <span class="title">getInstance</span>() {
- <span class="keyword">if</span> (singleton == <span class="keyword">null</span>) {
-   <span class="keyword">synchronized</span> (SyncSingleton.class) {
- <span class="keyword">if</span> (singleton == <span class="keyword">null</span>) {
-   singleton = <span class="keyword">new</span> SyncSingleton();
+* @return
+*/
+public static SyncSingleton getInstance() {
+ if (singleton == null) {
+   synchronized (SyncSingleton.class) {
+ if (singleton == null) {
+   singleton = new SyncSingleton();
 }
   }
 }
- <span class="keyword">return</span> singleton ;
+ return singleton ;
 }
 </code></pre><p>双重校验锁的方式是不是就可以保证程序完全没有问题了呢？不一定。首先，从JVM层面上看，实例化一个对象的步骤包括：申请一块内存，调用构造方法初始化内存，将引用指向该内存块。而JVM并没有确定这三个步骤的先后顺序，那么就存在这么一个情况，JVM先申请了一块内存并将引用指向该内存，然后再进行初始化。这种情况下，如果A，B线程同时调用了getInstance方法，A线程中singleton对象已经指向了一块内存，但还未进行初始化，而B此时判断singleton应该不为null，那么B调用getInstacne方法返回的是一个为初始化的对象，使用该实例就会导致程序错误。</p>
 <p>4、内部类方式（个人推荐）</p>
 <p>在类内部声明一个私有的静态内部类，内部类中声明对象属性并对其进行实例化，获取实例的方法直接返回内部类中的对象。由于静态内部类只有当调用获取实例的方法时才被加载，加载的过程中完成对对象的实例化，因此这种方式既实现了延迟加载，又能保证线程安全。</p>
 <p>代码示例：</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 内部类方式，声明一个私有的静态内部类，内部类中声明对象属性并进行实例化
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClassSingleton</span> </span>{
-   <span class="keyword">private</span> <span class="title">InnerClassSingleton</span>() {
+ */
+public class InnerClassSingleton {
+   private InnerClassSingleton() {
   }
 
-   <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClassSingletonInstance</span> </span>{
- <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> InnerClassSingleton singleton = <span class="keyword">new</span> InnerClassSingleton();
+   private static class InnerClassSingletonInstance {
+ private static final InnerClassSingleton singleton = new InnerClassSingleton();
   }
 
-   <span class="javadoc">/**
+   /**
    * Get instance
-   *<span class="javadoctag"> @return</span>
-   */</span>
-   <span class="keyword">public</span> <span class="keyword">static</span> InnerClassSingleton <span class="title">getInstance</span>() {
- <span class="keyword">return</span> InnerClassSingletonInstance.singleton;
+   * @return
+   */
+   public static InnerClassSingleton getInstance() {
+ return InnerClassSingletonInstance.singleton;
   }
 }
 </code></pre><p>以上4种方式需要将构造器声明为私有，以防止外部通过new方式创建对象，但是，Java的反射机制允许在类外部通过反射设置构造器的访问权限。代码如下：</p>
-<pre><code>Class <span class="variable">singletonClass =</span> Class. forName(<span class="string">"patterns.singleton.LazySingleton"</span>);
-Constructor[] <span class="variable">constructors =</span> singletonClass.getDeclaredConstructors();
-constructors[<span class="number">0</span>].setAccessible( <span class="constant">true</span>);
-<span class="variable">singleton =</span> (LazySingleton) constructors[<span class="number">0</span>].newInstance(<span class="constant">null</span>);
+<pre><code>Class singletonClass = Class. forName(&quot;patterns.singleton.LazySingleton&quot;);
+Constructor[] constructors = singletonClass.getDeclaredConstructors();
+constructors[0].setAccessible( true);
+singleton = (LazySingleton) constructors[0].newInstance(null);
 </code></pre><p>解决这种方法我们唯有在构造器中抛出异常。</p>
 <p>5、枚举方式</p>
 <p>还有另外一种实现单例的方式就是定义单枚举值的枚举类型。枚举事实上也是一个类，继承自java.lang.Enum，每个枚举值都是该类的一个实例。使用枚举方式创建实例的优势有：</p>
@@ -380,14 +357,14 @@ constructors[<span class="number">0</span>].setAccessible( <span class="constant
 <p>（3） 枚举类型可以保证反序列化后返回的是同一个实例。JVM对枚举类型的序列化有特殊的规定，序列化的结果只保存了枚举值的名称，即枚举值的toString方法的返回值，反序列化时会调用该枚举类型的valueOf方法，以枚举值的名称作为参数，返回同一个枚举实例。</p>
 <p>唯一的缺点就是没有实现延迟加载。</p>
 <p>代码示例：</p>
-<pre><code><span class="javadoc">/**
+<pre><code>/**
  * 枚举方式，保证线程安全，防止反射或反序列化产生新的实例，不实现延迟加载
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="keyword">enum</span> EnumSingleton {
+ */
+public enum EnumSingleton {
    INSTANCE;
-   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">otherMehod</span>() {
+   public void otherMehod() {
   }
 }
 </code></pre><p>枚举方式应该是最简洁并且相对安全的单例实现模式，只不过枚举是在JDK5以后才有的类型，写法难免有相对生疏。</p>
@@ -463,7 +440,7 @@ constructors[<span class="number">0</span>].setAccessible( <span class="constant
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -473,12 +450,9 @@ constructors[<span class="number">0</span>].setAccessible( <span class="constant
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

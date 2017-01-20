@@ -8,21 +8,20 @@
   <meta name="description" content="什么是策略模式策略模式（Strategy）定义了一系列算法，并将它们各自独立封装，实现一个公共的算法接口，使用算法时通过调用该接口执行具体的算法行为，使得客户端可以在不同算法之间自由切换。策略模式常用于算法决策系统，当需要在不同情况下使用不同的策略时，或者策略需要经常改变时，可以选择使用策略模式。策略模式下有三个角色：抽象策略角色、具体策略角色与环境角色。具体策略角色用来定义算法的具体行为，而抽象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行为型设计模式 — 策略模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/07/13/design-pattern-strategy/">
+<meta property="og:url" content="http://www.charlestech.info/2014/07/13/design-pattern-strategy/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是策略模式策略模式（Strategy）定义了一系列算法，并将它们各自独立封装，实现一个公共的算法接口，使用算法时通过调用该接口执行具体的算法行为，使得客户端可以在不同算法之间自由切换。策略模式常用于算法决策系统，当需要在不同情况下使用不同的策略时，或者策略需要经常改变时，可以选择使用策略模式。策略模式下有三个角色：抽象策略角色、具体策略角色与环境角色。具体策略角色用来定义算法的具体行为，而抽象">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="行为型设计模式 — 策略模式">
 <meta name="twitter:description" content="什么是策略模式策略模式（Strategy）定义了一系列算法，并将它们各自独立封装，实现一个公共的算法接口，使用算法时通过调用该接口执行具体的算法行为，使得客户端可以在不同算法之间自由切换。策略模式常用于算法决策系统，当需要在不同情况下使用不同的策略时，或者策略需要经常改变时，可以选择使用策略模式。策略模式下有三个角色：抽象策略角色、具体策略角色与环境角色。具体策略角色用来定义算法的具体行为，而抽象">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,177 +221,169 @@
       
         <p>什么是策略模式策略模式（Strategy）定义了一系列算法，并将它们各自独立封装，实现一个公共的算法接口，使用算法时通过调用该接口执行具体的算法行为，使得客户端可以在不同算法之间自由切换。策略模式常用于算法决策系统，当需要在不同情况下使用不同的策略时，或者策略需要经常改变时，可以选择使用策略模式。策略模式下有三个角色：抽象策略角色、具体策略角色与环境角色。具体策略角色用来定义算法的具体行为，而抽象…</p>
 <a id="more"></a>
-<h4 id="什么是策略模式"><strong>什么是策略模式</strong></h4>
-<p>策略模式（Strategy）定义了一系列算法，并将它们各自独立封装，实现一个公共的算法接口，使用算法时通过调用该接口执行具体的算法行为，使得客户端可以在不同算法之间自由切换。策略模式常用于算法决策系统，当需要在不同情况下使用不同的策略时，或者策略需要经常改变时，可以选择使用策略模式。</p>
+<h4 id="什么是策略模式"><a href="#什么是策略模式" class="headerlink" title="什么是策略模式"></a><strong>什么是策略模式</strong></h4><p>策略模式（Strategy）定义了一系列算法，并将它们各自独立封装，实现一个公共的算法接口，使用算法时通过调用该接口执行具体的算法行为，使得客户端可以在不同算法之间自由切换。策略模式常用于算法决策系统，当需要在不同情况下使用不同的策略时，或者策略需要经常改变时，可以选择使用策略模式。</p>
 <p>策略模式下有三个角色：抽象策略角色、具体策略角色与环境角色。具体策略角色用来定义算法的具体行为，而抽象策略角色是所有具体策略角色的公共接口。环境角色为客户端提供算法的使用接口，它持有一个抽象策略角色的实例，具体的策略实例由客户端传入，通过调用该实例的接口，在运行时动态绑定到具体的算法调用。</p>
 <p>策略模式的UML图如下：</p>
-<h4 id="![Image_1][]"><strong>![Image 1][]</strong></h4>
-<h3 id="#">#</h3>
-<h4 id="_"> </h4>
-<h3 id="#-1">#</h3>
-<h4 id="为什么要使用策略模式"><strong>为什么要使用策略模式</strong></h4>
-<ol>
+<h4 id="Image-1"><a href="#Image-1" class="headerlink" title="![Image 1][]"></a><strong>![Image 1][]</strong></h4><p>  ####</p>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="为什么要使用策略模式"><a href="#为什么要使用策略模式" class="headerlink" title="为什么要使用策略模式"></a><strong>为什么要使用策略模式</strong></h4><ol>
 <li>策略模式实现算法的使用与具体行为之间的解耦，算法的变化并不会影响算法的使用</li>
 <li>策略模式有利于算法的扩展，当需要添加新的策略时，只需要实现新的算法类即可。</li>
 </ol>
-<h4 id="_-1"> </h4>
-<h3 id="#-2">#</h3>
-<h4 id="_-1"> </h4>
-<h3 id="#-3">#</h3>
-<h4 id="如何实现策略模式"><strong>如何实现策略模式</strong></h4>
-<p>编写一个实现策略模式的程序，通常需要以下步骤：1. 编写抽象策略接口2. 实现不同的具体策略类3. 编写环境类，持有抽象策略接口对象，提供该对象的setter和getter方法，或者声明以该接口为参数的构造方法，使客户端可以传入具体的策略类实例。并提供使用策略的方法供客户端调用。</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="如何实现策略模式"><a href="#如何实现策略模式" class="headerlink" title="如何实现策略模式"></a><strong>如何实现策略模式</strong></h4><p>编写一个实现策略模式的程序，通常需要以下步骤：1. 编写抽象策略接口2. 实现不同的具体策略类3. 编写环境类，持有抽象策略接口对象，提供该对象的setter和getter方法，或者声明以该接口为参数的构造方法，使客户端可以传入具体的策略类实例。并提供使用策略的方法供客户端调用。</p>
 <p>举个实际的例子，系统需要一套实现加、减、乘、除的算法来完成一些简单运算。如果不使用策略模式，我们可能需要编写一个运算类，定义四个运算方法来实现加、减、乘、除运算，这种实现方式相当于将算法的实现与使用耦合起来，当算法需要改变时，需要修改使用算法的方法。且当算法需要扩展时，需要修改运算类，并不符合“对扩展开放，对修改关闭”的原则。</p>
 <p>此时我们可以使用策略模式来解决该问题。定义运算算法接口Calculator，作为这套加、减、乘、除的简单运算算法的公共接口，提供calculate()抽象方法实现运算。Calculator接口具有Plus、Minus、Multiply以及Divide四个具体的实现类，CalculatorContext类充当环境角色，提供useCalculator()方法来使用Calculator算法。UML类图如，</p>
 <p>![Image 1][]  </p>
 <p>示例程序：</p>
 <p>Calculator接口</p>
-<pre><code><span class="keyword">package</span> patterns.behavior;
+<pre><code>package patterns.behavior;
 
-<span class="javadoc">/**
+/**
  * Calculator Interface
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Calculator</span> </span>{
-   <span class="keyword">double</span> calculate(<span class="keyword">double</span> operand1, <span class="keyword">double</span> operand2);
+ */
+public interface Calculator {
+   double calculate(double operand1, double operand2);
 }
 </code></pre><p>Plus、Minus、Multiply以及Divide具体运算类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior;
+<pre><code>package patterns.behavior;
 
-<span class="javadoc">/**
+/**
  * Add Operation
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Plus</span> <span class="keyword">implements</span> <span class="title">Calculator</span> </span>{
+ */
+public class Plus implements Calculator {
 
-   <span class="annotation">@Override</span>
-   <span class="keyword">public</span> <span class="keyword">double</span> <span class="title">calculate</span>(<span class="keyword">double</span> operand1, <span class="keyword">double</span> operand2) {
-     <span class="comment">// TODO Auto-generated method stub</span>
-     <span class="keyword">return</span> operand1 + operand2;
+   @Override
+   public double calculate(double operand1, double operand2) {
+     // TODO Auto-generated method stub
+     return operand1 + operand2;
   }
 
 }
 
-<span class="keyword">package</span> patterns.behavior;
+package patterns.behavior;
 
-<span class="javadoc">/**
+/**
  * Subtract Operation
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Minus</span> <span class="keyword">implements</span> <span class="title">Calculator</span> </span>{
+ */
+public class Minus implements Calculator {
 
-   <span class="annotation">@Override</span>
-   <span class="keyword">public</span> <span class="keyword">double</span> <span class="title">calculate</span>(<span class="keyword">double</span> operand1, <span class="keyword">double</span> operand2) {
-     <span class="comment">// TODO Auto-generated method stub</span>
-     <span class="keyword">return</span> operand1 - operand2;
+   @Override
+   public double calculate(double operand1, double operand2) {
+     // TODO Auto-generated method stub
+     return operand1 - operand2;
   }
 
 }
 
-<span class="keyword">package</span> patterns.behavior;
+package patterns.behavior;
 
-<span class="javadoc">/**
+/**
  * Multiply Operation
  *
- *<span class="javadoctag"> @author</span> chaoch
+ * @author chaoch
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Multiply</span> <span class="keyword">implements</span> <span class="title">Calculator</span> </span>{
+ */
+public class Multiply implements Calculator {
 
-   <span class="annotation">@Override</span>
-   <span class="keyword">public</span> <span class="keyword">double</span> <span class="title">calculate</span>(<span class="keyword">double</span> operand1, <span class="keyword">double</span> operand2) {
-     <span class="comment">// TODO Auto-generated method stub</span>
-     <span class="keyword">return</span> operand1 * operand2;
+   @Override
+   public double calculate(double operand1, double operand2) {
+     // TODO Auto-generated method stub
+     return operand1 * operand2;
   }
 
 }
 
-<span class="keyword">package</span> patterns.behavior;
+package patterns.behavior;
 
-<span class="javadoc">/**
+/**
  * Divistion Operation
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Divide</span> <span class="keyword">implements</span> <span class="title">Calculator</span> </span>{
+ */
+public class Divide implements Calculator {
 
-   <span class="annotation">@Override</span>
-   <span class="keyword">public</span> <span class="keyword">double</span> <span class="title">calculate</span>(<span class="keyword">double</span> operand1, <span class="keyword">double</span> operand2) {
- <span class="comment">// TODO Auto-generated method stub</span>
- <span class="keyword">if</span> (operand1 == <span class="number">0</span>)
-   <span class="keyword">return</span> <span class="number">0</span>;
- <span class="keyword">if</span> (operand2 == <span class="number">0</span>)
-   <span class="keyword">return</span> Double.MAX_VALUE;
- <span class="keyword">return</span> operand1 / operand2;
+   @Override
+   public double calculate(double operand1, double operand2) {
+ // TODO Auto-generated method stub
+ if (operand1 == 0)
+   return 0;
+ if (operand2 == 0)
+   return Double.MAX_VALUE;
+ return operand1 / operand2;
   }
 
 }
 </code></pre><p>环境类CalculatorContext</p>
-<pre><code><span class="keyword">package</span> patterns.behavior;
+<pre><code>package patterns.behavior;
 
-<span class="javadoc">/**
+/**
  * Calculator Context
  *
- *<span class="javadoctag"> @author</span> Charles Chen
+ * @author Charles Chen
  *
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorContext</span> </span>{
-   <span class="keyword">private</span> Calculator calculator ;
+ */
+public class CalculatorContext {
+   private Calculator calculator ;
 
-   <span class="keyword">public</span> <span class="title">CalculatorContext</span>(Calculator calculator) {
-    <span class="keyword">this</span>.calculator = calculator;
+   public CalculatorContext(Calculator calculator) {
+    this.calculator = calculator;
   }
 
-   <span class="javadoc">/**
+   /**
    * Use the calculator
    *
-   *<span class="javadoctag"> @param</span> operand1
-   *<span class="javadoctag"> @param</span> operand2
-   *<span class="javadoctag"> @return</span>
-   */</span>
-   <span class="keyword">public</span> <span class="keyword">double</span> <span class="title">useCalculator</span>(<span class="keyword">double</span> operand1, <span class="keyword">double</span> operand2) {
-    <span class="keyword">return</span> calculator .calculate(operand1, operand2);
+   * @param operand1
+   * @param operand2
+   * @return
+   */
+   public double useCalculator(double operand1, double operand2) {
+    return calculator .calculate(operand1, operand2);
   }
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior;
+<pre><code>package patterns.behavior;
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+public class ClientTest {
 
-   <span class="javadoc">/**
-   *<span class="javadoctag"> @param</span> args
-   */</span>
-   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-     <span class="comment">// TODO Auto-generated method stub</span>
-     <span class="keyword">double</span> operand1 = <span class="number">18</span>;
-     <span class="keyword">double</span> operand2 = <span class="number">9</span>;
+   /**
+   * @param args
+   */
+   public static void main(String[] args) {
+     // TODO Auto-generated method stub
+     double operand1 = 18;
+     double operand2 = 9;
 
-    CalculatorContext context = <span class="keyword">new</span> CalculatorContext(<span class="keyword">new</span> Plus());
-     <span class="comment">// Use addition calculator</span>
+    CalculatorContext context = new CalculatorContext(new Plus());
+     // Use addition calculator
     System. out.println(context.useCalculator(operand1, operand2));
 
-     <span class="comment">// Use subtraction calculator</span>
-    context.setCalculator( <span class="keyword">new</span> Minus());
+     // Use subtraction calculator
+    context.setCalculator( new Minus());
     System. out.println(context.useCalculator(operand1, operand2));
 
-     <span class="comment">// Use multiply calculator</span>
-    context.setCalculator( <span class="keyword">new</span> Multiply());
+     // Use multiply calculator
+    context.setCalculator( new Multiply());
     System. out.println(context.useCalculator(operand1, operand2));
 
-     <span class="comment">// Use division calculator</span>
-    context.setCalculator( <span class="keyword">new</span> Divide());
+     // Use division calculator
+    context.setCalculator( new Divide());
     System. out.println(context.useCalculator(operand1, operand2));
   }
 
 }
-</code></pre><h4 id="策略模式在Java_API中的使用"><strong>策略模式在Java API中的使用</strong></h4>
-<p>Java集合框架中，涉及到排序时，通常需要传入一个Comparator比较器实例，作为排序依据的比较策略。例如创建TreeSet或TreeMap时，可以通过构造器传入一个Comparator实例，或者调用Collections.sort方法进行排序时，也可以传入一个Comparator实例作为排序策略。</p>
+</code></pre><h4 id="策略模式在Java-API中的使用"><a href="#策略模式在Java-API中的使用" class="headerlink" title="策略模式在Java API中的使用"></a><strong>策略模式在Java API中的使用</strong></h4><p>Java集合框架中，涉及到排序时，通常需要传入一个Comparator比较器实例，作为排序依据的比较策略。例如创建TreeSet或TreeMap时，可以通过构造器传入一个Comparator实例，或者调用Collections.sort方法进行排序时，也可以传入一个Comparator实例作为排序策略。</p>
 <p>这里就是实现了策略模式。Comparator作为不同的具体比较器的公共接口，排序方法通过调用该接口，从而使用具体的比较策略进行排序。</p>
 <p>[Image 1]: </p>
 
@@ -484,7 +458,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -494,12 +468,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

@@ -8,21 +8,20 @@
   <meta name="description" content="什么是责任链模式责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。责任链模式的类图如下：责任链模式下有两种角色：Hander：抽象处理者角色，提供设置下一个处理者的setter方法，并提供接受处理请求的接口ConcreteHandler：具体处理者角色，实现处理请求的方法，若没有下一个处理者，则处理请求示例程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="行为型设计模式 — 责任链模式">
-<meta property="og:url" content="http://www.charlestech.info/2014/08/30/design-pattern-handler-chain/">
+<meta property="og:url" content="http://www.charlestech.info/2014/08/30/design-pattern-handler-chain/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是责任链模式责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。责任链模式的类图如下：责任链模式下有两种角色：Hander：抽象处理者角色，提供设置下一个处理者的setter方法，并提供接受处理请求的接口ConcreteHandler：具体处理者角色，实现处理请求的方法，若没有下一个处理者，则处理请求示例程">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="行为型设计模式 — 责任链模式">
 <meta name="twitter:description" content="什么是责任链模式责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。责任链模式的类图如下：责任链模式下有两种角色：Hander：抽象处理者角色，提供设置下一个处理者的setter方法，并提供接受处理请求的接口ConcreteHandler：具体处理者角色，实现处理请求的方法，若没有下一个处理者，则处理请求示例程">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -239,8 +221,7 @@
       
         <p>什么是责任链模式责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。责任链模式的类图如下：责任链模式下有两种角色：Hander：抽象处理者角色，提供设置下一个处理者的setter方法，并提供接受处理请求的接口ConcreteHandler：具体处理者角色，实现处理请求的方法，若没有下一个处理者，则处理请求示例程…</p>
 <a id="more"></a>
-<h4 id="什么是责任链模式"><strong>什么是责任链模式</strong></h4>
-<p>责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。</p>
+<h4 id="什么是责任链模式"><a href="#什么是责任链模式" class="headerlink" title="什么是责任链模式"></a><strong>什么是责任链模式</strong></h4><p>责任链模式下，有多个对象，每个对象持有下一个对象的引用，从而形成一条链，客户端发出的请求在这条链上进行传递，直到最后一个对象处理完这个请求。</p>
 <p>责任链模式的类图如下：</p>
 <p>![Image 1][]  </p>
 <p>责任链模式下有两种角色：</p>
@@ -248,80 +229,77 @@
 <p><strong>ConcreteHandler</strong>：具体处理者角色，实现处理请求的方法，若没有下一个处理者，则处理请求</p>
 <p>示例程序：</p>
 <p>Handler抽象类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
+<pre><code>package patterns.behavior.respchain;
 
-<span class="javadoc">/**
+/**
  * Abstract handler
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年8月30日
- */</span>
-<span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Handler</span> </span>{
-     <span class="keyword">protected</span> Handler handler;
+ * @author Charles Chen
+ * @date 2014年8月30日
+ */
+public abstract class Handler {
+     protected Handler handler;
 
-     <span class="keyword">public</span> Handler <span class="title">getHandler</span>() {
-            <span class="keyword">return</span> handler;
+     public Handler getHandler() {
+            return handler;
      }
 
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHandler</span>(Handler handler) {
-            <span class="keyword">this</span>. handler = handler;
+     public void setHandler(Handler handler) {
+            this. handler = handler;
      }
 
-     <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">handleRequest</span>();
+     public abstract void handleRequest();
 }
 </code></pre><p>ConcreteHandler具体处理者类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
+<pre><code>package patterns.behavior.respchain;
 
-<span class="javadoc">/**
+/**
  * Concrete handler
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年8月30日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>{
+ * @author Charles Chen
+ * @date 2014年8月30日
+ */
+public class ConcreteHandler extends Handler {
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleRequest</span>() {
-            <span class="comment">// TODO Auto-generated method stub</span>
-            <span class="keyword">if</span> ( <span class="keyword">this</span>.getHandler() != <span class="keyword">null</span>) {
-                System. out.println( <span class="string">"Pass request to next handler"</span>);
-                 <span class="keyword">this</span>.getHandler().handleRequest();
-                 <span class="keyword">return</span>;
+     @Override
+     public void handleRequest() {
+            // TODO Auto-generated method stub
+            if ( this.getHandler() != null) {
+                System. out.println( &quot;Pass request to next handler&quot;);
+                 this.getHandler().handleRequest();
+                 return;
            }
 
-           System. out.println( <span class="string">"No next handler, process the request"</span>);
+           System. out.println( &quot;No next handler, process the request&quot;);
      }
 
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
+<pre><code>package patterns.behavior.respchain;
 
-<span class="javadoc">/**
+/**
  * Client test for responsibility chain design pattern
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年8月30日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+ * @author Charles Chen
+ * @date 2014年8月30日
+ */
+public class ClientTest {
 
-     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           Handler handler1 = <span class="keyword">new</span> ConcreteHandler();
-           Handler handler2 = <span class="keyword">new</span> ConcreteHandler();
-            <span class="comment">// Set handler2 as the next handler of handler1</span>
+     public static void main(String[] args) {
+            // TODO Auto-generated method stub
+           Handler handler1 = new ConcreteHandler();
+           Handler handler2 = new ConcreteHandler();
+            // Set handler2 as the next handler of handler1
             handler1.setHandler( handler2);
-            <span class="comment">// Request the handler1</span>
+            // Request the handler1
             handler1.handleRequest();
      }
 
 }
-</code></pre><h4 id="_"> </h4>
-<h3 id="#">#</h3>
-<h4 id="为什么要使用责任链模式"><strong>为什么要使用责任链模式</strong></h4>
-<p>（1）责任链模式使得客户端请求与具体的处理逻辑解耦，我们可以在不影响客户端请求的前提下，自由调整和组织请求的处理逻辑</p>
+</code></pre><h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>  ####</p>
+<h4 id="为什么要使用责任链模式"><a href="#为什么要使用责任链模式" class="headerlink" title="为什么要使用责任链模式"></a><strong>为什么要使用责任链模式</strong></h4><p>（1）责任链模式使得客户端请求与具体的处理逻辑解耦，我们可以在不影响客户端请求的前提下，自由调整和组织请求的处理逻辑</p>
 <p>（2）责任链模式有利于处理流程的扩展，当需求引入新的处理者，只需要实现新的处理者，调整局部处理链即可，符合“开闭原则”</p>
-<h4 id="责任链模式实现过滤器"><strong>责任链模式实现过滤器</strong></h4>
-<p>Tomcat服务器为web应用提供了Filter过滤器机制，struts也提供了类似的过滤器功能。这种过滤器机制就是基于责任链模式实现的。</p>
+<h4 id="责任链模式实现过滤器"><a href="#责任链模式实现过滤器" class="headerlink" title="责任链模式实现过滤器"></a><strong>责任链模式实现过滤器</strong></h4><p>Tomcat服务器为web应用提供了Filter过滤器机制，struts也提供了类似的过滤器功能。这种过滤器机制就是基于责任链模式实现的。</p>
 <p>过滤器的设计思想是，通过配置信息将过滤器实例添加到一个过滤器链中，相当于在过滤器链中维护各个过滤器的处理次序，客户端请求会依次在过滤器链上传递，直至最后一个过滤器处理完毕，才将请求传递给服务器程序。</p>
 <p>这里我们可以模拟这种过滤器实现机制，实现一个过滤器链<strong>FilterChain</strong>和过滤器接口<strong>Filter</strong>。</p>
 <p>FilterChain持有Filter的集合，维护一个index变量表示当前等待处理请求的过滤器的下标，并提供addFilter和removeFilter方法实现体检和移除过滤器。</p>
@@ -336,241 +314,240 @@
 <p>![Image 1][]  </p>
 <p>示例程序：</p>
 <p>Filter过滤器接口</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+<pre><code>package patterns.behavior.respchain.filter;
 
-<span class="javadoc">/**
+/**
  * Filter interface
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年8月30日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Filter</span> </span>{
-     <span class="keyword">void</span> doFilter(Request request, FilterChain chain);
+ * @author Charles Chen
+ * @date 2014年8月30日
+ */
+public interface Filter {
+     void doFilter(Request request, FilterChain chain);
 }
 </code></pre><p>FilterChain过滤器链</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+<pre><code>package patterns.behavior.respchain.filter;
 
-<span class="keyword">import</span> java.util.ArrayList;
-<span class="keyword">import</span> java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FilterChain</span> </span>{
-     <span class="keyword">private</span> List&lt;Filter&gt; filters = <span class="keyword">new</span> ArrayList&lt;Filter&gt;();
-     <span class="keyword">private</span> <span class="keyword">int</span> index = <span class="number">0</span>;
+public class FilterChain {
+     private List&lt;Filter&gt; filters = new ArrayList&lt;Filter&gt;();
+     private int index = 0;
 
-     <span class="javadoc">/**
+     /**
       * Add a filter to filter list
       *
-      *<span class="javadoctag"> @param</span> filter
-      */</span>
-     <span class="keyword">public</span> FilterChain <span class="title">addFilter</span>(Filter filter) {
-            <span class="keyword">this</span>. filters.add( filter);
-            <span class="keyword">return</span> <span class="keyword">this</span>;
+      * @param filter
+      */
+     public FilterChain addFilter(Filter filter) {
+            this. filters.add( filter);
+            return this;
      }
 
-     <span class="javadoc">/**
+     /**
       * Remove a filter from filter list
       *
-      *<span class="javadoctag"> @param</span> filter
-      */</span>
-     <span class="keyword">public</span> FilterChain <span class="title">removeFilter</span>(Filter filter) {
-            <span class="keyword">this</span>. filters.remove( filter);
-            <span class="keyword">return</span> <span class="keyword">this</span>;
+      * @param filter
+      */
+     public FilterChain removeFilter(Filter filter) {
+            this. filters.remove( filter);
+            return this;
      }
 
-     <span class="javadoc">/**
+     /**
       * Call current filter to handle the request
       *
       * The current filter will callback this doFilter method to call next filter
       *
-      *<span class="javadoctag"> @param</span> request
-      */</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span>(Request request) {
-            <span class="keyword">if</span> ( index &gt;= <span class="keyword">this</span>. filters.size()) {
+      * @param request
+      */
+     public void doFilter(Request request) {
+            if ( index &gt;= this. filters.size()) {
                 System. out
-                           .println( <span class="string">"All filters are done, the request content after filters: "</span>
+                           .println( &quot;All filters are done, the request content after filters: &quot;
                                      + request);
-                 <span class="keyword">return</span>;
+                 return;
            }
-           Filter filter = <span class="keyword">this</span>. filters.get( index++);
-            filter.doFilter( request, <span class="keyword">this</span> );
+           Filter filter = this. filters.get( index++);
+            filter.doFilter( request, this );
      }
 }
 </code></pre><p>ScriptFilter脚本过滤器类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+<pre><code>package patterns.behavior.respchain.filter;
 
-<span class="javadoc">/**
+/**
  * Filter the script in the requeset content
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年8月30日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScriptFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>{
+ * @author Charles Chen
+ * @date 2014年8月30日
+ */
+public class ScriptFilter implements Filter {
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span>(Request request, FilterChain chain) {
-            <span class="comment">// TODO Auto-generated method stub</span>
+     @Override
+     public void doFilter(Request request, FilterChain chain) {
+            // TODO Auto-generated method stub
            String content = request.getContent();
-            content = content.replaceAll(<span class="string">"&lt;script[^&gt;]*&gt;.*&lt;/script&gt;"</span> , <span class="string">""</span> );
+            content = content.replaceAll(&quot;&lt;script[^&gt;]*&gt;.*&lt;/script&gt;&quot; , &quot;&quot; );
             request.setContent( content);
             chain.doFilter( request);
      }
 }
 </code></pre><p>SensitiveWordsFilter敏感词过滤器类</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+<pre><code>package patterns.behavior.respchain.filter;
 
-<span class="javadoc">/**
+/**
  * Sensitive words filter
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年8月30日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SensitiveWordsFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>{
-     <span class="keyword">private</span> String[] words;
+ * @author Charles Chen
+ * @date 2014年8月30日
+ */
+public class SensitiveWordsFilter implements Filter {
+     private String[] words;
 
-     <span class="keyword">public</span> <span class="title">SensitiveWordsFilter</span>() {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            words = <span class="keyword">new</span> String[] { <span class="string">"fuck "</span>, <span class="string">"shit"</span>, <span class="string">"hell"</span> };
+     public SensitiveWordsFilter() {
+            // TODO Auto-generated constructor stub
+            words = new String[] { &quot;fuck &quot;, &quot;shit&quot;, &quot;hell&quot; };
      }
 
-     <span class="annotation">@Override</span>
-     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span>(Request request, FilterChain chain) {
-            <span class="comment">// TODO Auto-generated method stub</span>
+     @Override
+     public void doFilter(Request request, FilterChain chain) {
+            // TODO Auto-generated method stub
            String content = request.getContent();
-            <span class="keyword">for</span> (String word : words) {
-                 content = content.replaceAll( <span class="string">"(?i)"</span> + word, <span class="string">""</span>);
+            for (String word : words) {
+                 content = content.replaceAll( &quot;(?i)&quot; + word, &quot;&quot;);
            }
             request.setContent( content);
             chain.doFilter( request);
      }
 }
 </code></pre><p>客户端测试程序</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain.filter;
+<pre><code>package patterns.behavior.respchain.filter;
 
-<span class="javadoc">/**
+/**
  * Client test for filters using responsibility design pattern
  *
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年8月30日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientTest</span> </span>{
+ * @author Charles Chen
+ * @date 2014年8月30日
+ */
+public class ClientTest {
 
-     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-            <span class="comment">// TODO Auto-generated method stub</span>
-           FilterChain chain = <span class="keyword">new</span> FilterChain();
-            chain.addFilter( <span class="keyword">new</span> ScriptFilter()).addFilter( <span class="keyword">new</span> SensitiveWordsFilter());
-           Request request = <span class="keyword">new</span> Request(
-                      <span class="string">"This is a request&lt;script&gt;alert('script')&lt;/script&gt;. Fuck"</span> );
+     public static void main(String[] args) {
+            // TODO Auto-generated method stub
+           FilterChain chain = new FilterChain();
+            chain.addFilter( new ScriptFilter()).addFilter( new SensitiveWordsFilter());
+           Request request = new Request(
+                      &quot;This is a request&lt;script&gt;alert(&apos;script&apos;)&lt;/script&gt;. Fuck&quot; );
             chain.doFilter( request);
      }
 
 }
-</code></pre><h4 id="枚举类型实现责任链模式"><strong>枚举类型实现责任链模式</strong></h4>
-<p>我们知道Enum枚举类型的每个枚举值可以有自己的常量相关方法，利用这个特性，我们可以定义一个枚举类型，将每个处理者声明为一个枚举值，并实现常量相关方法。当请求到来时，只需要遍历枚举类型的所有枚举值，直到找到某一个枚举值可以处理这个请求，从而实现责任链模式。</p>
+</code></pre><h4 id="枚举类型实现责任链模式"><a href="#枚举类型实现责任链模式" class="headerlink" title="枚举类型实现责任链模式"></a><strong>枚举类型实现责任链模式</strong></h4><p>我们知道Enum枚举类型的每个枚举值可以有自己的常量相关方法，利用这个特性，我们可以定义一个枚举类型，将每个处理者声明为一个枚举值，并实现常量相关方法。当请求到来时，只需要遍历枚举类型的所有枚举值，直到找到某一个枚举值可以处理这个请求，从而实现责任链模式。</p>
 <p>例如Request请求实例包括请求方法method和请求内容content，请求方法有GET, POST, PUT, DELETE。我们可以定义一个枚举类型RequestHandler，其中声明四个枚举值用来分别处理四种请求内容的请求实例。示例代码如下：</p>
-<pre><code><span class="keyword">package</span> patterns.behavior.respchain;
-<span class="javadoc">/**
+<pre><code>package patterns.behavior.respchain;
+/**
  * Responsibility chain design pattern with Enum
- *<span class="javadoctag"> @author</span> Charles Chen
- *<span class="javadoctag"> @date</span> 2014年9月4日
- */</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EnumRespChain</span> </span>{
-    <span class="javadoc">/**
+ * @author Charles Chen
+ * @date 2014年9月4日
+ */
+public class EnumRespChain {
+    /**
      * Request handler, every enum value is a concrete handler
-     *<span class="javadoctag"> @author</span> Charles Chen
-     *<span class="javadoctag"> @date</span> 2014年9月4日
-     */</span>
-    <span class="keyword">static</span> <span class="keyword">enum</span> RequestHandler {
+     * @author Charles Chen
+     * @date 2014年9月4日
+     */
+    static enum RequestHandler {
         HANDLE_GET {
-            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
-                <span class="keyword">if</span> (request.getMethod() == Request.Method.GET) {
-                    System.out.println(<span class="string">"Request Method: "</span> + Request.Method.GET
-                            + <span class="string">", Request Content: "</span> + request.getContent());
-                    <span class="keyword">return</span> <span class="keyword">true</span>;
+            public boolean handle(Request request) {
+                if (request.getMethod() == Request.Method.GET) {
+                    System.out.println(&quot;Request Method: &quot; + Request.Method.GET
+                            + &quot;, Request Content: &quot; + request.getContent());
+                    return true;
                 }
-                <span class="keyword">return</span> <span class="keyword">false</span>;
+                return false;
             }
         },
         HANDLE_POST {
-            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
-                <span class="keyword">if</span> (request.getMethod() == Request.Method.POST) {
-                    System.out.println(<span class="string">"Request Method: "</span> + Request.Method.POST
-                            + <span class="string">", Request Content: "</span> + request.getContent());
-                    <span class="keyword">return</span> <span class="keyword">true</span>;
+            public boolean handle(Request request) {
+                if (request.getMethod() == Request.Method.POST) {
+                    System.out.println(&quot;Request Method: &quot; + Request.Method.POST
+                            + &quot;, Request Content: &quot; + request.getContent());
+                    return true;
                 }
-                <span class="keyword">return</span> <span class="keyword">false</span>;
+                return false;
             }
         },
         HANDLE_PUT {
-            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
-                <span class="keyword">if</span> (request.getMethod() == Request.Method.PUT) {
-                    System.out.println(<span class="string">"Request Method: "</span> + Request.Method.PUT
-                            + <span class="string">", Request Content: "</span> + request.getContent());
-                    <span class="keyword">return</span> <span class="keyword">true</span>;
+            public boolean handle(Request request) {
+                if (request.getMethod() == Request.Method.PUT) {
+                    System.out.println(&quot;Request Method: &quot; + Request.Method.PUT
+                            + &quot;, Request Content: &quot; + request.getContent());
+                    return true;
                 }
-                <span class="keyword">return</span> <span class="keyword">false</span>;
+                return false;
             }
         },
         HANDLE_DELETE {
-            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request) {
-                <span class="keyword">if</span> (request.getMethod() == Request.Method.DELETE) {
-                    System.out.println(<span class="string">"Request Method: "</span>
-                            + Request.Method.DELETE + <span class="string">", Request Content: "</span>
+            public boolean handle(Request request) {
+                if (request.getMethod() == Request.Method.DELETE) {
+                    System.out.println(&quot;Request Method: &quot;
+                            + Request.Method.DELETE + &quot;, Request Content: &quot;
                             + request.getContent());
-                    <span class="keyword">return</span> <span class="keyword">true</span>;
+                    return true;
                 }
-                <span class="keyword">return</span> <span class="keyword">false</span>;
+                return false;
             }
         };
 
-        <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">boolean</span> <span class="title">handle</span>(Request request);
+        public abstract boolean handle(Request request);
     }
 
-    <span class="javadoc">/**
+    /**
      * The request POJO
-     *<span class="javadoctag"> @author</span> Charles Chen
-     *<span class="javadoctag"> @date</span> 2014年9月4日
-     */</span>
-    <span class="keyword">static</span> class Request {
-        <span class="keyword">enum</span> Method {
+     * @author Charles Chen
+     * @date 2014年9月4日
+     */
+    static class Request {
+        enum Method {
             GET, POST, PUT, DELETE
         }
 
-        <span class="keyword">private</span> String content;
-        <span class="keyword">private</span> Method method;
+        private String content;
+        private Method method;
 
-        <span class="keyword">public</span> <span class="title">Request</span>(Method method, String content) {
-            <span class="comment">// TODO Auto-generated constructor stub</span>
-            <span class="keyword">this</span>.method = method;
-            <span class="keyword">this</span>.content = content;
+        public Request(Method method, String content) {
+            // TODO Auto-generated constructor stub
+            this.method = method;
+            this.content = content;
         }
 
-        <span class="keyword">public</span> String <span class="title">getContent</span>() {
-            <span class="keyword">return</span> content;
+        public String getContent() {
+            return content;
         }
 
-        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContent</span>(String content) {
-            <span class="keyword">this</span>.content = content;
+        public void setContent(String content) {
+            this.content = content;
         }
 
-        <span class="keyword">public</span> Method <span class="title">getMethod</span>() {
-            <span class="keyword">return</span> method;
+        public Method getMethod() {
+            return method;
         }
 
-        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMethod</span>(Method method) {
-            <span class="keyword">this</span>.method = method;
+        public void setMethod(Method method) {
+            this.method = method;
         }
 
     }
 
-    <span class="javadoc">/**
+    /**
      * Client test
-     *<span class="javadoctag"> @param</span> args
-     */</span>
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
-        <span class="comment">// TODO Auto-generated method stub</span>
-        Request request = <span class="keyword">new</span> Request(Request.Method.POST, <span class="string">"This is a HTTP request in POST method"</span>);
-        <span class="keyword">for</span>(RequestHandler handler: RequestHandler.values()){
-            <span class="keyword">if</span>(handler.handle(request))<span class="keyword">break</span>;
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Request request = new Request(Request.Method.POST, &quot;This is a HTTP request in POST method&quot;);
+        for(RequestHandler handler: RequestHandler.values()){
+            if(handler.handle(request))break;
         }
     }
 
@@ -648,7 +625,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -658,12 +635,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

@@ -9,23 +9,22 @@
 在包含很多大图片长页面中延迟加载图片可以加快页面加载速度。浏览器将会在加载可见图片之后即进入就绪状态。在某些情况下还可以帮助降低服务器负担。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery图片延迟加载插件">
-<meta property="og:url" content="http://www.charlestech.info/2015/05/04/jquery-lazyload/">
+<meta property="og:url" content="http://www.charlestech.info/2015/05/04/jquery-lazyload/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="jquery.lazyload是一个实现图片延迟加载的jQuery 插件，它可以延迟加载长页面中的图片。在浏览器可视区域外的图片在初始状态下不会被载入，直到用户将页面滚动到它们所在的位置。这与图片预加载的处理方式正好是相反的。
 在包含很多大图片长页面中延迟加载图片可以加快页面加载速度。浏览器将会在加载可见图片之后即进入就绪状态。在某些情况下还可以帮助降低服务器负担。">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery图片延迟加载插件">
 <meta name="twitter:description" content="jquery.lazyload是一个实现图片延迟加载的jQuery 插件，它可以延迟加载长页面中的图片。在浏览器可视区域外的图片在初始状态下不会被载入，直到用户将页面滚动到它们所在的位置。这与图片预加载的处理方式正好是相反的。
 在包含很多大图片长页面中延迟加载图片可以加快页面加载速度。浏览器将会在加载可见图片之后即进入就绪状态。在某些情况下还可以帮助降低服务器负担。">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -63,11 +62,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -84,8 +78,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -130,27 +122,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -243,42 +225,36 @@
         <p>jquery.lazyload是一个实现图片延迟加载的jQuery 插件，它可以延迟加载长页面中的图片。在浏览器可视区域外的图片在初始状态下不会被载入，直到用户将页面滚动到它们所在的位置。这与图片预加载的处理方式正好是相反的。</p>
 <p>在包含很多大图片长页面中延迟加载图片可以加快页面加载速度。浏览器将会在加载可见图片之后即进入就绪状态。在某些情况下还可以帮助降低服务器负担。</p>
 <a id="more"></a>
-<h3 id="如何使用">如何使用</h3>
-<p>引入js文件</p>
-<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><p>引入js文件</p>
+<pre><code>&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js&quot;&gt;&lt;/script&gt;
 </code></pre><p>修改图片img标签的src属性，由指向实际的图片修改为指向一个图片占位符，这里推荐一个在线获取图片占位符的站点 &gt; <a href="http://placehold.it/" title="获取图片占位符" target="_blank" rel="external">http://placehold.it/</a>。<br>然后用data-original属性指定真实的图片地址：</p>
-<pre><code>&lt;img <span class="variable">class=</span><span class="string">"lazy"</span> <span class="variable">src=</span><span class="string">"images/placeholder.gif"</span> <span class="variable">data-original=</span><span class="string">"images/example.png"</span>  <span class="variable">width=</span><span class="string">"600"</span>/<span class="string">"&gt;</span>
+<pre><code>&lt;img class=&quot;lazy&quot; src=&quot;images/placeholder.gif&quot; data-original=&quot;images/example.png&quot;  width=&quot;600&quot;/&quot;&gt;
 </code></pre><p>调用lazyload：</p>
-<pre><code><span class="variable">$(</span><span class="string">"img.lazy"</span>).lazyload();
+<pre><code>$(&quot;img.lazy&quot;).lazyload();
 </code></pre><p>图片的占位符除了可以通过src属性来指定，也可以通过lazyload函数的参数来指定：</p>
-<pre><code>$("<span class="tag">img</span><span class="class">.lazy</span>")<span class="class">.lazyload</span>(<span class="rules">{
-    <span class="rule"><span class="attribute">placeholder</span>:<span class="value"> <span class="string">"images/placeholder.gif"</span>
-</span></span></span>});
-</code></pre><h3 id="占位图片事件触发加载">占位图片事件触发加载</h3>
-<p>如果我们希望滚到到图片的位置后，还要通过click或hover事件来唤醒图片的加载，我们可以指定lazyload函数的event属性：</p>
-<pre><code>$("<span class="tag">img</span><span class="class">.lazy</span>")<span class="class">.lazyload</span>(<span class="rules">{
-    <span class="rule"><span class="attribute">placeholder</span>:<span class="value"> <span class="string">"images/placeholder.gif"</span>,
-    event: <span class="string">"click"</span>
-</span></span></span>});
-</code></pre><h3 id="图片显示效果">图片显示效果</h3>
-<p>当图片完全加载的时候，插件默认地使用show()方法来将图显示出来。你也可以使用其他的效果，如fadeIn：</p>
-<pre><code>$("<span class="tag">img</span><span class="class">.lazy</span>")<span class="class">.lazyload</span>(<span class="rules">{
-    <span class="rule"><span class="attribute">effect</span>:<span class="value"> <span class="string">"fadeIn"</span>
-</span></span></span>});
-</code></pre><h3 id="提前加载图片">提前加载图片</h3>
-<p>lazyload插件默认用户滚动到图片位置时才触发加载图片，如果我们希望滚动到距离图片一定位置就触发加载，可以指定lazyload函数的threshold参数：<br>    $(“img.lazy”).lazyload({<br>        threshold: 200<br>    });<br>那么，当用户滚动到距离图片200像素时图片就开始加载了。</p>
-<h3 id="指定加载的容器">指定加载的容器</h3>
-<p>lazyload还可以应用到具有滚动条的div容器里，此时调用lazyload函数就需要指定一个container：</p>
-<pre><code><span class="variable">$(</span><span class="string">"img.lazy"</span>).lazyload({         
-     <span class="keyword">container</span>: <span class="variable">$(</span><span class="string">"#container"</span>)
+<pre><code>$(&quot;img.lazy&quot;).lazyload({
+    placeholder: &quot;images/placeholder.gif&quot;
 });
-</code></pre><h3 id="图片不按顺序排列">图片不按顺序排列</h3>
-<p>lazyload的实现原理是，在页面滚动时，会搜索未加载的图片，如果图片在可视范围内就加载，默认情况下当找到第一张不在可见区域的图片时就会停止搜索。而搜索的顺序就是HTML文档中dom节点的定义顺序，所以如果有些图片定义在前面，但由于页面猥琐的布局图片将会呈现在后面，那么就会导致图片没办法正常显示。</p>
+</code></pre><h3 id="占位图片事件触发加载"><a href="#占位图片事件触发加载" class="headerlink" title="占位图片事件触发加载"></a>占位图片事件触发加载</h3><p>如果我们希望滚到到图片的位置后，还要通过click或hover事件来唤醒图片的加载，我们可以指定lazyload函数的event属性：</p>
+<pre><code>$(&quot;img.lazy&quot;).lazyload({
+    placeholder: &quot;images/placeholder.gif&quot;,
+    event: &quot;click&quot;
+});
+</code></pre><h3 id="图片显示效果"><a href="#图片显示效果" class="headerlink" title="图片显示效果"></a>图片显示效果</h3><p>当图片完全加载的时候，插件默认地使用show()方法来将图显示出来。你也可以使用其他的效果，如fadeIn：</p>
+<pre><code>$(&quot;img.lazy&quot;).lazyload({
+    effect: &quot;fadeIn&quot;
+});
+</code></pre><h3 id="提前加载图片"><a href="#提前加载图片" class="headerlink" title="提前加载图片"></a>提前加载图片</h3><p>lazyload插件默认用户滚动到图片位置时才触发加载图片，如果我们希望滚动到距离图片一定位置就触发加载，可以指定lazyload函数的threshold参数：<br>    $(“img.lazy”).lazyload({<br>        threshold: 200<br>    });<br>那么，当用户滚动到距离图片200像素时图片就开始加载了。</p>
+<h3 id="指定加载的容器"><a href="#指定加载的容器" class="headerlink" title="指定加载的容器"></a>指定加载的容器</h3><p>lazyload还可以应用到具有滚动条的div容器里，此时调用lazyload函数就需要指定一个container：</p>
+<pre><code>$(&quot;img.lazy&quot;).lazyload({         
+     container: $(&quot;#container&quot;)
+});
+</code></pre><h3 id="图片不按顺序排列"><a href="#图片不按顺序排列" class="headerlink" title="图片不按顺序排列"></a>图片不按顺序排列</h3><p>lazyload的实现原理是，在页面滚动时，会搜索未加载的图片，如果图片在可视范围内就加载，默认情况下当找到第一张不在可见区域的图片时就会停止搜索。而搜索的顺序就是HTML文档中dom节点的定义顺序，所以如果有些图片定义在前面，但由于页面猥琐的布局图片将会呈现在后面，那么就会导致图片没办法正常显示。</p>
 <p>此时我们可以通过lazyload函数的failure_limit参数：</p>
-<pre><code>$("<span class="tag">img</span><span class="class">.lazy</span>")<span class="class">.lazyload</span>(<span class="rules">{         
-     <span class="rule"><span class="attribute">failure_limit</span>:<span class="value"> <span class="number">10</span>
-</span></span></span>});
+<pre><code>$(&quot;img.lazy&quot;).lazyload({         
+     failure_limit: 10
+});
 </code></pre><p>这样一来，插件会搜索至少10个未加载的图片才停止搜索，如果你的图片布局比较不规则，可以尝试将这个参数调大。</p>
 <p>插件使用示例： </p>
 <p><a href="https://github.com/charleschaochen/charleschaochen.github.io/blob/master/examples/lazyload/lazyload.html" title="jquery lazyload插件使用示例" target="_blank" rel="external">https://github.com/charleschaochen/charleschaochen.github.io/blob/master/examples/lazyload/lazyload.html</a></p>
@@ -300,8 +276,8 @@
     </a>
   
   
-    <a href="/2015/04/14/pushstate-ajax/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">实现异步请求ajax的前进和后退 - PJAX</div>
+    <a href="/2015/04/14/css3-transition/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS3 Transition属性</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -354,7 +330,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -364,12 +340,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

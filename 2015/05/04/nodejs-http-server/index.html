@@ -9,25 +9,25 @@
 NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也就是说我们完全可以使用几句简单的js代码搭建起一个非阻塞的http服务器。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用nodeJs搭建一个简单的HTTP Server">
-<meta property="og:url" content="http://www.charlestech.info/2015/05/04/nodejs-http-server/">
+<meta property="og:url" content="http://www.charlestech.info/2015/05/04/nodejs-http-server/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="NodeJs是一个基于Chrome内核的Javascript执行引擎，它的出现使得javascript可以掉渣天地运行在服务器端，这样一来很多业务逻辑不太复杂的网站完全可以用javascript一站式搭建起来。
 NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也就是说我们完全可以使用几句简单的js代码搭建起一个非阻塞的http服务器。">
 <meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/nodeserver.png">
 <meta property="og:image" content="http://7x00n0.com1.z0.glb.clouddn.com/nodeserver_files.png">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用nodeJs搭建一个简单的HTTP Server">
 <meta name="twitter:description" content="NodeJs是一个基于Chrome内核的Javascript执行引擎，它的出现使得javascript可以掉渣天地运行在服务器端，这样一来很多业务逻辑不太复杂的网站完全可以用javascript一站式搭建起来。
 NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也就是说我们完全可以使用几句简单的js代码搭建起一个非阻塞的http服务器。">
-
+<meta name="twitter:image" content="http://7x00n0.com1.z0.glb.clouddn.com/nodeserver.png">
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -65,11 +65,6 @@ NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -86,8 +81,6 @@ NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -132,27 +125,17 @@ NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -245,80 +228,77 @@ NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也
         <p>NodeJs是一个基于Chrome内核的Javascript执行引擎，它的出现使得javascript可以掉渣天地运行在服务器端，这样一来很多业务逻辑不太复杂的网站完全可以用javascript一站式搭建起来。</p>
 <p>NodeJs不仅可以用来编写服务器程序，还可以搭建Http Server，也就是说我们完全可以使用几句简单的js代码搭建起一个非阻塞的http服务器。</p>
 <a id="more"></a>
-<h3 id="Node_http库">Node http库</h3>
-<p>Node除了用V8引擎来解析 JavaScript外，还提供了高度优化的应用库，用来提高服务器效率。HTTP模块就是一个node库，这个库是用C语言编写的，用于快速搭建非阻塞式http服务器。</p>
+<h3 id="Node-http库"><a href="#Node-http库" class="headerlink" title="Node http库"></a>Node http库</h3><p>Node除了用V8引擎来解析 JavaScript外，还提供了高度优化的应用库，用来提高服务器效率。HTTP模块就是一个node库，这个库是用C语言编写的，用于快速搭建非阻塞式http服务器。</p>
 <p>我们可以通过require来引入http库：</p>
-<pre><code><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);
+<pre><code>var http = require(&quot;http&quot;);
 </code></pre><p>http的一个重要的API就是：</p>
-<pre><code>http.createServer(<span class="function"><span class="keyword">function</span><span class="params">(request, response)</span></span>{
-    response.writeHead(<span class="number">200</span>, {<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>});
-    response.<span class="keyword">end</span>(<span class="string">'I am building a Node Http Server!'</span>);
-}).listen(<span class="number">8888</span>);
+<pre><code>http.createServer(function(request, response){
+    response.writeHead(200, {&apos;Content-Type&apos;: &apos;text/plain&apos;});
+    response.end(&apos;I am building a Node Http Server!&apos;);
+}).listen(8888);
 </code></pre><p>运行这段简单的代码就启动了一个监听8888端口的http服务器进程！<br>通过浏览器访问<a href="http://localhost:8888/就可以看到：" target="_blank" rel="external">http://localhost:8888/就可以看到：</a></p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/nodeserver.png" alt=""></p>
-<h3 id="http服务器逻辑">http服务器逻辑</h3>
-<p>http服务器就是用来监听、接收和处理客户端请求的。那么要实现一个可用的http服务器，我们就要实现处理客户端请求的逻辑。简单来说，我们要知道客户端请求的目标是什么，然后读取这些资源返回给客户端。</p>
+<h3 id="http服务器逻辑"><a href="#http服务器逻辑" class="headerlink" title="http服务器逻辑"></a>http服务器逻辑</h3><p>http服务器就是用来监听、接收和处理客户端请求的。那么要实现一个可用的http服务器，我们就要实现处理客户端请求的逻辑。简单来说，我们要知道客户端请求的目标是什么，然后读取这些资源返回给客户端。</p>
 <p>所以，在http.createServer的回调函数内部，我们要对request进行处理，解析请求的url，根据url请求的目标资源，读取资源内容输出到客户端。</p>
 <p>解析请求的url可以使用url库：</p>
-<pre><code><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);
+<pre><code>var url = require(&quot;url&quot;);
 </code></pre><p>url的parse函数可以将request.url解析成json对象：</p>
-<pre><code><span class="attribute">var oUrl </span>=<span class="string"> url.parse(request.url);</span>
+<pre><code>var oUrl = url.parse(request.url);
 </code></pre><p>解析后的url对象内容包括：</p>
-<pre><code>{ protocol: <span class="literal">null</span>,
-  slashes: <span class="literal">null</span>,
-  auth: <span class="literal">null</span>,
-  host: <span class="literal">null</span>,
-  port: <span class="literal">null</span>,
-  hostname: <span class="literal">null</span>,
-  hash: <span class="literal">null</span>,
-  search: <span class="literal">null</span>,
-  query: <span class="literal">null</span>,
-  pathname: <span class="string">'/'</span>,
-  path: <span class="string">'/'</span>,
-  href: <span class="string">'/'</span> }
+<pre><code>{ protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: null,
+  query: null,
+  pathname: &apos;/&apos;,
+  path: &apos;/&apos;,
+  href: &apos;/&apos; }
 </code></pre><p>通过oUrl.pathname可以获取请求的路径，oUrl.query可以获取请求参数，这样一来就可以知道客户端请求的是哪个资源，请求参数是什么。</p>
-<h3 id="简单可用的node_server示例">简单可用的node server示例</h3>
-<p>差不多久可以开码了。</p>
+<h3 id="简单可用的node-server示例"><a href="#简单可用的node-server示例" class="headerlink" title="简单可用的node server示例"></a>简单可用的node server示例</h3><p>差不多久可以开码了。</p>
 <p>用webstorm创建一个node工程。这里我将node服务器处理程序和服务器资源组织成如下结构：</p>
 <p><img src="http://7x00n0.com1.z0.glb.clouddn.com/nodeserver_files.png" alt=""></p>
 <p>各目录存放的是，</p>
 <p><strong>config</strong>: 存放服务器的配置文件，serverConfig.js包含了服务器的一些基础信息的配置，如端口号，网页资源所在目录，欢迎页面等等，内容如下：</p>
-<pre><code><span class="keyword">var</span> serverConfig = {
-    port: <span class="string">"4000"</span>,
-    web_root: <span class="string">"../web"</span>,
-    welcome_page: <span class="string">"/index.html"</span>,
+<pre><code>var serverConfig = {
+    port: &quot;4000&quot;,
+    web_root: &quot;../web&quot;,
+    welcome_page: &quot;/index.html&quot;,
     error_page: {
-        <span class="string">"404"</span>: <span class="string">"/404.html"</span>
+        &quot;404&quot;: &quot;/404.html&quot;
     }
 };
 </code></pre><p><strong>server</strong>: 存放http服务器的创建和请求处理程序</p>
 <p><strong>web</strong>：网站资源的根目录</p>
 <p>主要的代码在于server.js:</p>
-<pre><code><span class="keyword">var</span> serverConfig = <span class="built_in">require</span>(<span class="string">"../config/serverConfig.js"</span>);
-<span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);
-<span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);
-<span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);
+<pre><code>var serverConfig = require(&quot;../config/serverConfig.js&quot;);
+var http = require(&quot;http&quot;);
+var url = require(&quot;url&quot;);
+var fs = require(&quot;fs&quot;);
 
-<span class="comment">// Create a server and start</span>
-<span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span> <span class="params">(request, response)</span> </span>{
-<span class="keyword">var</span> oUrl = url.parse(request.url);
-<span class="keyword">var</span> sPath = oUrl.pathname;
-<span class="keyword">var</span> sRoot = serverConfig.config.web_root;
-<span class="comment">// If request the home directory, redirect to welcome page</span>
-<span class="keyword">if</span> (sPath === <span class="string">"/"</span> || <span class="regexp">/^\/*\/$/</span>.test(sPath)) {
+// Create a server and start
+var server = http.createServer(function (request, response) {
+var oUrl = url.parse(request.url);
+var sPath = oUrl.pathname;
+var sRoot = serverConfig.config.web_root;
+// If request the home directory, redirect to welcome page
+if (sPath === &quot;/&quot; || /^\/*\/$/.test(sPath)) {
     sPath = serverConfig.config.welcome_page;
 }
 
-<span class="comment">// Read server resource content and output to browser</span>
-fs.readFile(sRoot + sPath, <span class="string">"utf-8"</span>, <span class="function"><span class="keyword">function</span> <span class="params">(err, data)</span> </span>{
-    <span class="keyword">if</span>(err) {
-        <span class="built_in">console</span>.log(err);
-        response.writeHead(<span class="number">404</span>);
-        <span class="comment">// Redirect to 404 page</span>
-        fs.readFile(sRoot + serverConfig.config.error_page[<span class="string">'404'</span>], <span class="string">"utf-8"</span>, <span class="function"><span class="keyword">function</span><span class="params">(err,data)</span></span>{
+// Read server resource content and output to browser
+fs.readFile(sRoot + sPath, &quot;utf-8&quot;, function (err, data) {
+    if(err) {
+        console.log(err);
+        response.writeHead(404);
+        // Redirect to 404 page
+        fs.readFile(sRoot + serverConfig.config.error_page[&apos;404&apos;], &quot;utf-8&quot;, function(err,data){
             response.end(data);
         });
-        <span class="keyword">return</span>;
+        return;
     }
 
     response.end(data);
@@ -401,7 +381,7 @@ server.listen(serverConfig.config.port);
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -411,12 +391,9 @@ server.listen(serverConfig.config.port);
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

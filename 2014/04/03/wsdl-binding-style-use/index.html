@@ -8,21 +8,20 @@
   <meta name="description" content="在WSDL文档详解中提到，wsdl binding中，标签可以指定其style，style有两种：rpc和doucment。对于每个绑定的operation，也可以通过”use”指定其编码方式，use也有两种：encoded和literal。这里将对着两种style和use的优缺点以及组合方式进行分析。1. WSDL绑定的样式s…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSDL绑定的style和use">
-<meta property="og:url" content="http://www.charlestech.info/2014/04/03/wsdl-binding-style-use/">
+<meta property="og:url" content="http://www.charlestech.info/2014/04/03/wsdl-binding-style-use/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="在WSDL文档详解中提到，wsdl binding中，标签可以指定其style，style有两种：rpc和doucment。对于每个绑定的operation，也可以通过”use”指定其编码方式，use也有两种：encoded和literal。这里将对着两种style和use的优缺点以及组合方式进行分析。1. WSDL绑定的样式s…">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSDL绑定的style和use">
 <meta name="twitter:description" content="在WSDL文档详解中提到，wsdl binding中，标签可以指定其style，style有两种：rpc和doucment。对于每个绑定的operation，也可以通过”use”指定其编码方式，use也有两种：encoded和literal。这里将对着两种style和use的优缺点以及组合方式进行分析。1. WSDL绑定的样式s…">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -272,40 +254,40 @@
 <li>rpc/encoded方式</li>
 </ul>
 <p>WSDL文档：</p>
-<pre><code><span class="tag">&lt;<span class="title">wsdl:message</span> <span class="attribute">name</span>=<span class="value">"addRequest"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:part</span> <span class="attribute">name</span>=<span class="value">"a"</span> <span class="attribute">type</span>=<span class="value">"xsd:double"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:part</span> <span class="attribute">name</span>=<span class="value">"b"</span> <span class="attribute">type</span>=<span class="value">"xsd:double"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:message</span>&gt;</span>
+<pre><code>&lt;wsdl:message name=&quot;addRequest&quot;&gt;
+&lt;wsdl:part name=&quot;a&quot; type=&quot;xsd:double&quot;/&gt;
+&lt;wsdl:part name=&quot;b&quot; type=&quot;xsd:double&quot;/&gt;
+&lt;/wsdl:message&gt;
 ......
 
-<span class="tag">&lt;<span class="title">wsdl:portType</span> <span class="attribute">name</span>=<span class="value">"ComputerServicePortType"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"add"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">name</span>=<span class="value">"addRequest"</span> <span class="attribute">message</span>=<span class="value">"tns:addRequest"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">name</span>=<span class="value">"addResponse"</span> <span class="attribute">message</span>=<span class="value">"tns:addResponse"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:portType</span>&gt;</span>
+&lt;wsdl:portType name=&quot;ComputerServicePortType&quot;&gt;
+&lt;wsdl:operation name=&quot;add&quot;&gt;
+&lt;wsdl:input name=&quot;addRequest&quot; message=&quot;tns:addRequest&quot;/&gt;
+&lt;wsdl:output name=&quot;addResponse&quot; message=&quot;tns:addResponse&quot;/&gt;
+&lt;/wsdl:operation&gt;
+&lt;/wsdl:portType&gt;
 
-<span class="tag">&lt;<span class="title">wsdl:binding</span> <span class="attribute">name</span>=<span class="value">"ComputerServiceHttpBinding"</span> <span class="attribute">type</span>=<span class="value">"tns:ComputerServicePortType"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:binding</span> <span class="attribute">style</span>=<span class="value">"rpc"</span> <span class="attribute">transport</span>=<span class="value">"http://schemas.xmlsoap.org/soap/http"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"add"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:operation</span> <span class="attribute">soapAction</span>=<span class="value">""</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">name</span>=<span class="value">"addRequest"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:body</span> <span class="attribute">use</span>=<span class="value">"encoded"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:input</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">name</span>=<span class="value">"addResponse"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:body</span> <span class="attribute">use</span>=<span class="value">"encoded"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:output</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:binding</span>&gt;</span>
+&lt;wsdl:binding name=&quot;ComputerServiceHttpBinding&quot; type=&quot;tns:ComputerServicePortType&quot;&gt;
+&lt;wsdlsoap:binding style=&quot;rpc&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;
+&lt;wsdl:operation name=&quot;add&quot;&gt;
+&lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+&lt;wsdl:input name=&quot;addRequest&quot;&gt;
+&lt;wsdlsoap:body use=&quot;encoded&quot;/&gt;
+&lt;/wsdl:input&gt;
+&lt;wsdl:output name=&quot;addResponse&quot;&gt;
+&lt;wsdlsoap:body use=&quot;encoded&quot;/&gt;
+&lt;/wsdl:output&gt;
+&lt;/wsdl:operation&gt;
+&lt;/wsdl:binding&gt;
 </code></pre><p>SOAP消息：</p>
-<pre><code><span class="tag">&lt;<span class="title">soap:envelope</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">soap:body</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">add</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">xsi:type</span>=<span class="value">"xsd:int"</span>&gt;</span>5<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">b</span> <span class="attribute">xsi:type</span>=<span class="value">"xsd:float"</span>&gt;</span>5.0<span class="tag">&lt;/<span class="title">b</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">add</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">soap:body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">soap:envelope</span>&gt;</span>
+<pre><code>&lt;soap:envelope&gt;
+    &lt;soap:body&gt;
+        &lt;add&gt;
+            &lt;a xsi:type=&quot;xsd:int&quot;&gt;5&lt;/a&gt;
+            &lt;b xsi:type=&quot;xsd:float&quot;&gt;5.0&lt;/b&gt;
+        &lt;/add&gt;
+    &lt;/soap:body&gt;
+&lt;/soap:envelope&gt;
 </code></pre><p>优点：</p>
 <p>a） WSDL文档中不定义输入输出参数的类型schema，而是在message中直接指定。文档简洁，可读性好</p>
 <p>b） SOAP消息中，发送操作名add，接受者可以直接根据操作名调用相应接口</p>
@@ -318,14 +300,14 @@
 <p>WSDL文档：</p>
 <p>同rpc/encoded方式，use改为literal</p>
 <p>SOAP消息：</p>
-<pre><code><span class="tag">&lt;<span class="title">soap:envelope</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">soap:body</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">add</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">a</span>&gt;</span>5<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">b</span>&gt;</span>5.0<span class="tag">&lt;/<span class="title">b</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">add</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">soap:body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">soap:envelope</span>&gt;</span>
+<pre><code>&lt;soap:envelope&gt;
+    &lt;soap:body&gt;
+        &lt;add&gt;
+            &lt;a&gt;5&lt;/a&gt;
+            &lt;b&gt;5.0&lt;/b&gt;
+        &lt;/add&gt;
+    &lt;/soap:body&gt;
+&lt;/soap:envelope&gt;
 </code></pre><p>优点：</p>
 <p>a） 同rpc/encoded方式，WSDL文档中不定义输入输出参数的类型schema，而是在message中直接指定。文档简洁，可读性好</p>
 <p>b） 同rpc/encoded方式，SOAP消息中，发送操作名add，接受者可以直接根据操作名调用相应接口</p>
@@ -341,45 +323,45 @@
 </ul>
 <p>WSDL文档：</p>
 <pre><code>&lt;wsdl:types&gt;
-&lt;xsd:schema xmlns:<span class="variable">xsd=</span><span class="string">"http://www.w3.org/2001/XMLSchema"</span> <span class="variable">attributeFormDefault=</span><span class="string">"qualified"</span> <span class="variable">elementFormDefault=</span><span class="string">"qualified"</span> <span class="variable">targetNamespace=</span><span class="string">"http://service.charlestech.org"</span>&gt;
-     &lt;xsd:element <span class="variable">name=</span><span class="string">"a"</span> <span class="variable">type=</span><span class="string">"xsd:double"</span>/&gt;
-     &lt;xsd:element <span class="variable">name=</span><span class="string">"b"</span> <span class="variable">type=</span><span class="string">"xsd:double"</span>/&gt;
+&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; attributeFormDefault=&quot;qualified&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://service.charlestech.org&quot;&gt;
+     &lt;xsd:element name=&quot;a&quot; type=&quot;xsd:double&quot;/&gt;
+     &lt;xsd:element name=&quot;b&quot; type=&quot;xsd:double&quot;/&gt;
 &lt;/xsd:schema&gt;
 &lt;/wsdl:types&gt;
 
-&lt;wsdl:message <span class="variable">name=</span><span class="string">"addRequest"</span>&gt;
-&lt;wsdl:part <span class="variable">name=</span><span class="string">"a"</span> <span class="variable">element=</span><span class="string">"tns:a"</span>/&gt;
-&lt;wsdl:part <span class="variable">name=</span><span class="string">"b"</span> <span class="variable">element=</span><span class="string">"tns:b"</span>/&gt;
+&lt;wsdl:message name=&quot;addRequest&quot;&gt;
+&lt;wsdl:part name=&quot;a&quot; element=&quot;tns:a&quot;/&gt;
+&lt;wsdl:part name=&quot;b&quot; element=&quot;tns:b&quot;/&gt;
 &lt;/wsdl:message&gt;
 
 ......
 
-&lt;wsdl:portType <span class="variable">name=</span><span class="string">"ComputerServicePortType"</span>&gt;
-&lt;wsdl:operation <span class="variable">name=</span><span class="string">"add"</span>&gt;
-&lt;wsdl:input <span class="variable">name=</span><span class="string">"addRequest"</span> <span class="variable">message=</span><span class="string">"tns:addRequest"</span>/&gt;
-&lt;wsdl:output <span class="variable">name=</span><span class="string">"addResponse"</span> <span class="variable">message=</span><span class="string">"tns:addResponse"</span>/&gt;
+&lt;wsdl:portType name=&quot;ComputerServicePortType&quot;&gt;
+&lt;wsdl:operation name=&quot;add&quot;&gt;
+&lt;wsdl:input name=&quot;addRequest&quot; message=&quot;tns:addRequest&quot;/&gt;
+&lt;wsdl:output name=&quot;addResponse&quot; message=&quot;tns:addResponse&quot;/&gt;
 &lt;/wsdl:operation&gt;
 &lt;/wsdl:portType&gt;
 
-&lt;wsdl:binding <span class="variable">name=</span><span class="string">"ComputerServiceHttpBinding"</span> <span class="variable">type=</span><span class="string">"tns:ComputerServicePortType"</span>&gt;
-&lt;wsdlsoap:binding <span class="variable">style=</span><span class="string">"document"</span> <span class="variable">transport=</span><span class="string">"http://schemas.xmlsoap.org/soap/http"</span>/&gt;
-&lt;wsdl:operation <span class="variable">name=</span><span class="string">"add"</span>&gt;
-&lt;wsdlsoap:operation <span class="variable">soapAction=</span><span class="string">""</span>/&gt;
-&lt;wsdl:input <span class="variable">name=</span><span class="string">"addRequest"</span>&gt;
-&lt;wsdlsoap:body <span class="variable">use=</span><span class="string">"literal"</span>/&gt;
+&lt;wsdl:binding name=&quot;ComputerServiceHttpBinding&quot; type=&quot;tns:ComputerServicePortType&quot;&gt;
+&lt;wsdlsoap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;
+&lt;wsdl:operation name=&quot;add&quot;&gt;
+&lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+&lt;wsdl:input name=&quot;addRequest&quot;&gt;
+&lt;wsdlsoap:body use=&quot;literal&quot;/&gt;
 &lt;/wsdl:input&gt;
-&lt;wsdl:output <span class="variable">name=</span><span class="string">"addResponse"</span>&gt;
-&lt;wsdlsoap:body <span class="variable">use=</span><span class="string">"literal"</span>/&gt;
+&lt;wsdl:output name=&quot;addResponse&quot;&gt;
+&lt;wsdlsoap:body use=&quot;literal&quot;/&gt;
 &lt;/wsdl:output&gt;
 &lt;/wsdl:operation&gt;
 &lt;/wsdl:binding&gt;
 </code></pre><p>SOAP消息：</p>
-<pre><code><span class="tag">&lt;<span class="title">soap:envelope</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">soap:body</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">a</span>&gt;</span>5<span class="tag">&lt;/<span class="title">b</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">a</span>&gt;</span>5.0<span class="tag">&lt;/<span class="title">b</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">soap:body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">soap:envelope</span>&gt;</span>
+<pre><code>&lt;soap:envelope&gt;
+    &lt;soap:body&gt;
+            &lt;a&gt;5&lt;/b&gt;
+            &lt;a&gt;5.0&lt;/b&gt;
+    &lt;/soap:body&gt;
+&lt;/soap:envelope&gt;
 </code></pre><p>优点：</p>
 <p>a） SOAP消息中所有标签都在schema中定义，可以直接验证SOAP消息的有效性</p>
 <p>b） SOAP消息中不出现传入参数类型定义，减小了开销</p>
@@ -390,54 +372,54 @@
 <li>document/literal wrapped方式</li>
 </ul>
 <p>WSDL文档：</p>
-<pre><code><span class="tag">&lt;<span class="title">wsdl:types</span>&gt;</span>
-<span class="tag">&lt;<span class="title">xsd:schema</span> <span class="attribute">xmlns:xsd</span>=<span class="value">"http://www.w3.org/2001/XMLSchema"</span> <span class="attribute">attributeFormDefault</span>=<span class="value">"qualified"</span> <span class="attribute">elementFormDefault</span>=<span class="value">"qualified"</span> <span class="attribute">targetNamespace</span>=<span class="value">"http://service.charlestech.org"</span>&gt;</span>
-     <span class="tag">&lt;<span class="title">xsd:element</span> <span class="attribute">name</span>=<span class="value">"add"</span>&gt;</span>
-     <span class="tag">&lt;<span class="title">xsd:complexType</span>&gt;</span>
-     <span class="tag">&lt;<span class="title">xsd:sequence</span>&gt;</span>
-     <span class="tag">&lt;<span class="title">xsd:element</span> <span class="attribute">name</span>=<span class="value">"a"</span> <span class="attribute">type</span>=<span class="value">"xsd:double"</span>/&gt;</span>
-     <span class="tag">&lt;<span class="title">xsd:element</span> <span class="attribute">name</span>=<span class="value">"b"</span> <span class="attribute">type</span>=<span class="value">"xsd:double"</span>/&gt;</span>
-     <span class="tag">&lt;/<span class="title">xsd:sequence</span>&gt;</span>
-     <span class="tag">&lt;/<span class="title">xsd:complexType</span>&gt;</span>
-     <span class="tag">&lt;/<span class="title">xsd:element</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">xsd:schema</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:types</span>&gt;</span>
+<pre><code>&lt;wsdl:types&gt;
+&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; attributeFormDefault=&quot;qualified&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://service.charlestech.org&quot;&gt;
+     &lt;xsd:element name=&quot;add&quot;&gt;
+     &lt;xsd:complexType&gt;
+     &lt;xsd:sequence&gt;
+     &lt;xsd:element name=&quot;a&quot; type=&quot;xsd:double&quot;/&gt;
+     &lt;xsd:element name=&quot;b&quot; type=&quot;xsd:double&quot;/&gt;
+     &lt;/xsd:sequence&gt;
+     &lt;/xsd:complexType&gt;
+     &lt;/xsd:element&gt;
+&lt;/xsd:schema&gt;
+&lt;/wsdl:types&gt;
 
-<span class="tag">&lt;<span class="title">wsdl:message</span> <span class="attribute">name</span>=<span class="value">"addRequest"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:part</span> <span class="attribute">name</span>=<span class="value">"a"</span> <span class="attribute">element</span>=<span class="value">"tns:a"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:part</span> <span class="attribute">name</span>=<span class="value">"b"</span> <span class="attribute">element</span>=<span class="value">"tns:b"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:message</span>&gt;</span>
+&lt;wsdl:message name=&quot;addRequest&quot;&gt;
+&lt;wsdl:part name=&quot;a&quot; element=&quot;tns:a&quot;/&gt;
+&lt;wsdl:part name=&quot;b&quot; element=&quot;tns:b&quot;/&gt;
+&lt;/wsdl:message&gt;
 
 ......
 
-<span class="tag">&lt;<span class="title">wsdl:portType</span> <span class="attribute">name</span>=<span class="value">"ComputerServicePortType"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"add"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">name</span>=<span class="value">"addRequest"</span> <span class="attribute">message</span>=<span class="value">"tns:addRequest"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">name</span>=<span class="value">"addResponse"</span> <span class="attribute">message</span>=<span class="value">"tns:addResponse"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:portType</span>&gt;</span>
+&lt;wsdl:portType name=&quot;ComputerServicePortType&quot;&gt;
+&lt;wsdl:operation name=&quot;add&quot;&gt;
+&lt;wsdl:input name=&quot;addRequest&quot; message=&quot;tns:addRequest&quot;/&gt;
+&lt;wsdl:output name=&quot;addResponse&quot; message=&quot;tns:addResponse&quot;/&gt;
+&lt;/wsdl:operation&gt;
+&lt;/wsdl:portType&gt;
 
-<span class="tag">&lt;<span class="title">wsdl:binding</span> <span class="attribute">name</span>=<span class="value">"ComputerServiceHttpBinding"</span> <span class="attribute">type</span>=<span class="value">"tns:ComputerServicePortType"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:binding</span> <span class="attribute">style</span>=<span class="value">"document"</span> <span class="attribute">transport</span>=<span class="value">"http://schemas.xmlsoap.org/soap/http"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"add"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:operation</span> <span class="attribute">soapAction</span>=<span class="value">""</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">name</span>=<span class="value">"addRequest"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:body</span> <span class="attribute">use</span>=<span class="value">"literal"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:input</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">name</span>=<span class="value">"addResponse"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">wsdlsoap:body</span> <span class="attribute">use</span>=<span class="value">"literal"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:output</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">wsdl:binding</span>&gt;</span>
+&lt;wsdl:binding name=&quot;ComputerServiceHttpBinding&quot; type=&quot;tns:ComputerServicePortType&quot;&gt;
+&lt;wsdlsoap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;
+&lt;wsdl:operation name=&quot;add&quot;&gt;
+&lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+&lt;wsdl:input name=&quot;addRequest&quot;&gt;
+&lt;wsdlsoap:body use=&quot;literal&quot;/&gt;
+&lt;/wsdl:input&gt;
+&lt;wsdl:output name=&quot;addResponse&quot;&gt;
+&lt;wsdlsoap:body use=&quot;literal&quot;/&gt;
+&lt;/wsdl:output&gt;
+&lt;/wsdl:operation&gt;
+&lt;/wsdl:binding&gt;
 </code></pre><p>SOAP消息：</p>
-<pre><code><span class="tag">&lt;<span class="title">soap:envelope</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">soap:body</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">add</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">a</span>&gt;</span>5<span class="tag">&lt;/<span class="title">b</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">a</span>&gt;</span>5.0<span class="tag">&lt;/<span class="title">b</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">add</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">soap:body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">soap:envelope</span>&gt;</span>
+<pre><code>&lt;soap:envelope&gt;
+    &lt;soap:body&gt;
+          &lt;add&gt;
+            &lt;a&gt;5&lt;/b&gt;
+            &lt;a&gt;5.0&lt;/b&gt;
+          &lt;/add&gt;
+    &lt;/soap:body&gt;
+&lt;/soap:envelope&gt;
 </code></pre><p>这里的SOAP消息看起来很像rpc/literal，应该说是几乎一样。但是，在rpc/literal组合方式下，add标签代表的是操作，而document/literal wrapped方式下，add标签代表的是WSDL文档中types标签下定义的复合类型。document/literal wrapped方式对参数类型进行了包装，且规定包装后的组合类型element名称要与操作名相同。</p>
 <p>所以，document/literal wrapped方式综合了rpc和document的优点，既能够直接对SOAP消息进行有效性验证，又能让服务接受者轻松找到对应接口进行调用，这种方式也使用得最广泛。</p>
 
@@ -512,7 +494,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -522,12 +504,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>

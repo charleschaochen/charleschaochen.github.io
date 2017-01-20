@@ -8,21 +8,20 @@
   <meta name="description" content="什么是WSDL      WSDL(Web Service Description Language)，Web服务描述语言。WSDL是基于XML的web接口描述语言，用来描述Web服务和如何与Web服务进行通信，相当于一个接口说明文件。  2. WSDL文档结构      …">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSDL文档详解">
-<meta property="og:url" content="http://www.charlestech.info/2014/01/31/wsdl-document/">
+<meta property="og:url" content="http://www.charlestech.info/2014/01/31/wsdl-document/index.html">
 <meta property="og:site_name" content="Charles Tech Blog">
 <meta property="og:description" content="什么是WSDL      WSDL(Web Service Description Language)，Web服务描述语言。WSDL是基于XML的web接口描述语言，用来描述Web服务和如何与Web服务进行通信，相当于一个接口说明文件。  2. WSDL文档结构      …">
+<meta property="og:updated_time" content="2017-01-20T08:44:04.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSDL文档详解">
 <meta name="twitter:description" content="什么是WSDL      WSDL(Web Service Description Language)，Web服务描述语言。WSDL是基于XML的web接口描述语言，用来描述Web服务和如何与Web服务进行通信，相当于一个接口说明文件。  2. WSDL文档结构      …">
-
   
     <link rel="alternative" href="/atom.xml" title="Charles Tech Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
+  <link rel="stylesheet" href="/css/style.css">
   
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
@@ -60,11 +59,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="3">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="4">
 							<div class="user"></div>
@@ -81,8 +75,6 @@
 						<li>Tags</li>
 						<li>Categories</li>
 						<!--
-						
-						<li>Others</li>
 						
 						-->
 						
@@ -127,27 +119,17 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud">
-						<a href="/tags/2014/" style="font-size: 10.00px;">2014</a><a href="/tags/AngularJS/" style="font-size: 10.00px;">AngularJS</a><a href="/tags/CSRF/" style="font-size: 10.00px;">CSRF</a><a href="/tags/CSS/" style="font-size: 10.00px;">CSS</a><a href="/tags/CSS3/" style="font-size: 15.00px;">CSS3</a><a href="/tags/DelayQueue/" style="font-size: 10.00px;">DelayQueue</a><a href="/tags/Git/" style="font-size: 20.00px;">Git</a><a href="/tags/Github/" style="font-size: 10.00px;">Github</a><a href="/tags/Google/" style="font-size: 10.00px;">Google</a><a href="/tags/HTML5/" style="font-size: 15.00px;">HTML5</a><a href="/tags/HttpServer/" style="font-size: 10.00px;">HttpServer</a><a href="/tags/IntelliJ-Idea/" style="font-size: 15.00px;">IntelliJ Idea</a><a href="/tags/Intellij-Idea/" style="font-size: 10.00px;">Intellij Idea</a><a href="/tags/J2EE/" style="font-size: 10.00px;">J2EE</a><a href="/tags/JGit/" style="font-size: 10.00px;">JGit</a><a href="/tags/JQuery/" style="font-size: 10.00px;">JQuery</a><a href="/tags/JSON-RPC/" style="font-size: 10.00px;">JSON-RPC</a><a href="/tags/JVM/" style="font-size: 20.00px;">JVM</a><a href="/tags/JVM参数/" style="font-size: 10.00px;">JVM参数</a><a href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Javascript/" style="font-size: 15.00px;">Javascript</a><a href="/tags/Java虚拟机/" style="font-size: 15.00px;">Java虚拟机</a><a href="/tags/Jquery/" style="font-size: 10.00px;">Jquery</a><a href="/tags/NBA/" style="font-size: 10.00px;">NBA</a><a href="/tags/NoSql/" style="font-size: 10.00px;">NoSql</a><a href="/tags/NodeJs/" style="font-size: 10.00px;">NodeJs</a><a href="/tags/Oracle/" style="font-size: 10.00px;">Oracle</a><a href="/tags/RPC/" style="font-size: 10.00px;">RPC</a><a href="/tags/ReadWriteLock/" style="font-size: 10.00px;">ReadWriteLock</a><a href="/tags/Redis/" style="font-size: 10.00px;">Redis</a><a href="/tags/SAP/" style="font-size: 10.00px;">SAP</a><a href="/tags/Servlet线程安全/" style="font-size: 10.00px;">Servlet线程安全</a><a href="/tags/Tomcat/" style="font-size: 10.00px;">Tomcat</a><a href="/tags/Uber/" style="font-size: 10.00px;">Uber</a><a href="/tags/WSDL/" style="font-size: 15.00px;">WSDL</a><a href="/tags/Webservice/" style="font-size: 15.00px;">Webservice</a><a href="/tags/XSS/" style="font-size: 10.00px;">XSS</a><a href="/tags/ajax/" style="font-size: 10.00px;">ajax</a><a href="/tags/ajax-chain/" style="font-size: 10.00px;">ajax chain</a><a href="/tags/ant/" style="font-size: 10.00px;">ant</a>
+						<a href="/tags/2014/" style="font-size: 10px;">2014</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSRF/" style="font-size: 10px;">CSRF</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/DelayQueue/" style="font-size: 10px;">DelayQueue</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a> <a href="/tags/HttpServer/" style="font-size: 10px;">HttpServer</a> <a href="/tags/IntelliJ-Idea/" style="font-size: 13.33px;">IntelliJ Idea</a> <a href="/tags/Intellij-Idea/" style="font-size: 10px;">Intellij Idea</a> <a href="/tags/J2EE/" style="font-size: 10px;">J2EE</a> <a href="/tags/JGit/" style="font-size: 10px;">JGit</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JSON-RPC/" style="font-size: 10px;">JSON-RPC</a> <a href="/tags/JVM/" style="font-size: 16.67px;">JVM</a> <a href="/tags/JVM参数/" style="font-size: 10px;">JVM参数</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a> <a href="/tags/Java虚拟机/" style="font-size: 13.33px;">Java虚拟机</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/NBA/" style="font-size: 10px;">NBA</a> <a href="/tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/tags/ReadWriteLock/" style="font-size: 10px;">ReadWriteLock</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SAP/" style="font-size: 10px;">SAP</a> <a href="/tags/Servlet线程安全/" style="font-size: 10px;">Servlet线程安全</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Uber/" style="font-size: 10px;">Uber</a> <a href="/tags/WSDL/" style="font-size: 13.33px;">WSDL</a> <a href="/tags/Webservice/" style="font-size: 13.33px;">Webservice</a> <a href="/tags/XSS/" style="font-size: 10px;">XSS</a> <a href="/tags/airbnb/" style="font-size: 10px;">airbnb</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-chain/" style="font-size: 10px;">ajax chain</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/block-ajax/" style="font-size: 10px;">block ajax</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/flex/" style="font-size: 10px;">flex</a> <a href="/tags/git-flow/" style="font-size: 10px;">git flow</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/jasmine/" style="font-size: 10px;">jasmine</a> <a href="/tags/jquery-deferred/" style="font-size: 10px;">jquery deferred</a> <a href="/tags/jquery-rotate/" style="font-size: 10px;">jquery rotate</a> <a href="/tags/lazyload/" style="font-size: 10px;">lazyload</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/pjax/" style="font-size: 10px;">pjax</a> <a href="/tags/promise/" style="font-size: 10px;">promise</a> <a href="/tags/pushState/" style="font-size: 10px;">pushState</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-hot-loader/" style="font-size: 10px;">react-hot-loader</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/substring/" style="font-size: 10px;">substring</a> <a href="/tags/syntax-standard/" style="font-size: 10px;">syntax standard</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webpack-dev-server/" style="font-size: 10px;">webpack-dev-server</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/web安全/" style="font-size: 10px;">web安全</a> <a href="/tags/web应用测试/" style="font-size: 10px;">web应用测试</a> <a href="/tags/yuicompressor/" style="font-size: 10px;">yuicompressor</a> <a href="/tags/中位数/" style="font-size: 10px;">中位数</a> <a href="/tags/享元模式/" style="font-size: 10px;">享元模式</a> <a href="/tags/代理模式/" style="font-size: 10px;">代理模式</a> <a href="/tags/会话跟踪/" style="font-size: 10px;">会话跟踪</a> <a href="/tags/内存泄露/" style="font-size: 10px;">内存泄露</a> <a href="/tags/分页/" style="font-size: 10px;">分页</a> <a href="/tags/创建J2EE工程/" style="font-size: 10px;">创建J2EE工程</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/单元测试/" style="font-size: 10px;">单元测试</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/反向代理/" style="font-size: 10px;">反向代理</a> <a href="/tags/发布-订阅/" style="font-size: 10px;">发布/订阅</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/命令模式/" style="font-size: 10px;">命令模式</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/基础算法/" style="font-size: 10px;">基础算法</a> <a href="/tags/堆外内存/" style="font-size: 10px;">堆外内存</a> <a href="/tags/备忘录模式/" style="font-size: 10px;">备忘录模式</a> <a href="/tags/外观模式/" style="font-size: 10px;">外观模式</a> <a href="/tags/大数据处理/" style="font-size: 10px;">大数据处理</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/工厂模式/" style="font-size: 10px;">工厂模式</a> <a href="/tags/并发编程/" style="font-size: 16.67px;">并发编程</a> <a href="/tags/建造者模式/" style="font-size: 10px;">建造者模式</a> <a href="/tags/异步调用/" style="font-size: 10px;">异步调用</a> <a href="/tags/强制关闭页面/" style="font-size: 10px;">强制关闭页面</a> <a href="/tags/性能调优/" style="font-size: 13.33px;">性能调优</a> <a href="/tags/打车应用/" style="font-size: 10px;">打车应用</a> <a href="/tags/抽奖程序/" style="font-size: 10px;">抽奖程序</a> <a href="/tags/桥接模式/" style="font-size: 10px;">桥接模式</a> <a href="/tags/模板方法模式/" style="font-size: 10px;">模板方法模式</a> <a href="/tags/浏览器支持/" style="font-size: 10px;">浏览器支持</a> <a href="/tags/渐变/" style="font-size: 10px;">渐变</a> <a href="/tags/爸爸去哪儿/" style="font-size: 10px;">爸爸去哪儿</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/状态模式/" style="font-size: 10px;">状态模式</a> <a href="/tags/移动前端/" style="font-size: 10px;">移动前端</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/线程协作/" style="font-size: 10px;">线程协作</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/组合模式/" style="font-size: 10px;">组合模式</a> <a href="/tags/缓存/" style="font-size: 16.67px;">缓存</a> <a href="/tags/编程题/" style="font-size: 10px;">编程题</a> <a href="/tags/聊天气泡/" style="font-size: 10px;">聊天气泡</a> <a href="/tags/装饰器模式/" style="font-size: 10px;">装饰器模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a> <a href="/tags/访问者模式/" style="font-size: 10px;">访问者模式</a> <a href="/tags/读写锁/" style="font-size: 10px;">读写锁</a> <a href="/tags/负载均衡/" style="font-size: 10px;">负载均衡</a> <a href="/tags/责任链模式/" style="font-size: 10px;">责任链模式</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/运行时数据区/" style="font-size: 10px;">运行时数据区</a> <a href="/tags/返回顶部/" style="font-size: 10px;">返回顶部</a> <a href="/tags/远程调试/" style="font-size: 10px;">远程调试</a> <a href="/tags/迭代器模式/" style="font-size: 10px;">迭代器模式</a> <a href="/tags/适配器模式/" style="font-size: 10px;">适配器模式</a> <a href="/tags/锁/" style="font-size: 10px;">锁</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
 				<section class="switch-part switch-part3">
 					<div class="categories-widget">
-						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java虚拟机/">Java虚拟机</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB前端/">WEB前端</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Webservice/">Webservice</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web容器/">web容器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/交流分享/">交流分享</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/并发编程/">并发编程</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术研发/">技术研发</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库技术/">数据库技术</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/版本控制/">版本控制</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法-数据结构/">算法/数据结构</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/视觉-交互设计/">视觉/交互设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件测试/">软件测试</a><span class="category-list-count">2</span></li></ul>
 					</div>
 				</section>
 				
 				<!--
-				
-				<section class="switch-part switch-part4">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://github.com/charleschaochen">Github</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com/bbaocc">Weibo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mafengwo.cn/u/49449646.html">蚂蜂窝</a>
-			        
-				</section>
 				
 				-->
 				
@@ -241,33 +223,30 @@
 <li>什么是WSDL      WSDL(Web Service Description Language)，Web服务描述语言。WSDL是基于XML的web接口描述语言，用来描述Web服务和如何与Web服务进行通信，相当于一个接口说明文件。  2. WSDL文档结构      …</li>
 </ol>
 <a id="more"></a>
-<h3 id="1-_什么是WSDL">1. 什么是WSDL</h3>
-<pre><code>  WSDL(Web Service Description <span class="keyword">Language</span>)，Web服务描述语言。WSDL是基于XML的web接口描述语言，用来描述Web服务和如何与Web服务进行通信，相当于一个接口说明文件。
-</code></pre><h3 id="2-_WSDL文档结构"><strong>2. WSDL文档结构</strong></h3>
-<pre><code>  一个WSDL文档的主要结构如下，
+<h3 id="1-什么是WSDL"><a href="#1-什么是WSDL" class="headerlink" title="1. 什么是WSDL"></a>1. 什么是WSDL</h3><pre><code>WSDL(Web Service Description Language)，Web服务描述语言。WSDL是基于XML的web接口描述语言，用来描述Web服务和如何与Web服务进行通信，相当于一个接口说明文件。
+</code></pre><h3 id="2-WSDL文档结构"><a href="#2-WSDL文档结构" class="headerlink" title="2. WSDL文档结构"></a><strong>2. WSDL文档结构</strong></h3><pre><code>  一个WSDL文档的主要结构如下，
 
-<span class="tag">&lt;<span class="title">definitions</span>&gt;</span>
+&lt;definitions&gt;
 
-<span class="tag">&lt;<span class="title">types</span>&gt;</span>
+&lt;types&gt;
    definition of types........
-<span class="tag">&lt;/<span class="title">types</span>&gt;</span>
+&lt;/types&gt;
 
-<span class="tag">&lt;<span class="title">message</span>&gt;</span>
+&lt;message&gt;
    definition of a message....
-<span class="tag">&lt;/<span class="title">message</span>&gt;</span>
+&lt;/message&gt;
 
-<span class="tag">&lt;<span class="title">portType</span>&gt;</span>
+&lt;portType&gt;
    definition of a port.......
-<span class="tag">&lt;/<span class="title">portType</span>&gt;</span>
+&lt;/portType&gt;
 
-<span class="tag">&lt;<span class="title">binding</span>&gt;</span>
+&lt;binding&gt;
    definition of a binding....
-<span class="tag">&lt;/<span class="title">binding</span>&gt;</span>
+&lt;/binding&gt;
 
-<span class="tag">&lt;/<span class="title">definitions</span>&gt;</span>
+&lt;/definitions&gt;
 </code></pre><p>WSDL 文档可包含其它的元素，比如 extension 元素，以及一个 service 元素，此元素可把若干个 web services 的定义组合在一个单一的 WSDL 文档中。</p>
-<h3 id="3-_WSDL文档主要元素">3. WSDL文档主要元素</h3>
-<p>（1） <wsdl:types>用来定义各个接口的输入和输出参数的数据类型。</wsdl:types></p>
+<h3 id="3-WSDL文档主要元素"><a href="#3-WSDL文档主要元素" class="headerlink" title="3. WSDL文档主要元素"></a>3. WSDL文档主要元素</h3><p>（1） <wsdl:types>用来定义各个接口的输入和输出参数的数据类型。</wsdl:types></p>
 <ul>
 <li>types的定义使用的是XML Schema定义的方式。一个类型的说明由一个<xsd:element>来组织。关于XML Shema Definition的教程可以参考<a href="http://www.w3school.com.cn/schema/index.asp" target="_blank" rel="external">http://www.w3school.com.cn/schema/index.asp</a></xsd:element></li>
 <li>一个接口一般需要在types中定义两个复合类型，一个是输入参数的复合类型，一个是输出参数的复合类型，</li>
@@ -275,16 +254,16 @@
 <p><xsd:element name="add"></xsd:element></p>
 <pre><code>&lt;xsd:complexType&gt;
     &lt;xsd:sequence&gt;
-        &lt;xsd:element <span class="variable">maxOccurs=</span><span class="string">"1"</span> <span class="variable">minOccurs=</span><span class="string">"1"</span> <span class="variable">name=</span><span class="string">"in0"</span> <span class="variable">type=</span><span class="string">"xsd:double"</span>/&gt;
-        &lt;xsd:element <span class="variable">maxOccurs=</span><span class="string">"1"</span> <span class="variable">minOccurs=</span><span class="string">"1"</span> <span class="variable">name=</span><span class="string">"in1"</span> <span class="variable">type=</span><span class="string">"xsd:double"</span>/&gt;
+        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;in0&quot; type=&quot;xsd:double&quot;/&gt;
+        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;in1&quot; type=&quot;xsd:double&quot;/&gt;
     &lt;/xsd:sequence&gt;
 &lt;/xsd:complexType&gt;
 </code></pre><p><br><xsd:element name="addResponse"></xsd:element></p>
-<pre><code><span class="tag">&lt;<span class="title">xsd:complexType</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">xsd:sequence</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">xsd:element</span> <span class="attribute">maxOccurs</span>=<span class="value">"1"</span> <span class="attribute">minOccurs</span>=<span class="value">"1"</span> <span class="attribute">name</span>=<span class="value">"out"</span> <span class="attribute">type</span>=<span class="value">"xsd:double"</span>/&gt;</span>
-    <span class="tag">&lt;/<span class="title">xsd:sequence</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">xsd:complexType</span>&gt;</span>
+<pre><code>&lt;xsd:complexType&gt;
+    &lt;xsd:sequence&gt;
+        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;out&quot; type=&quot;xsd:double&quot;/&gt;
+    &lt;/xsd:sequence&gt;
+&lt;/xsd:complexType&gt;
 </code></pre><p></p>
 </li>
 </ul>
@@ -295,9 +274,9 @@
 <li>消息的数据结构是使用types中定义的类型元素。</li>
 <li><p>示例：接口方法double add(int a, int b)，消息定义如下，</p>
 <p><wsdl:message name="addRequest"></wsdl:message></p>
-<pre><code>&lt;wsdl:part <span class="variable">name=</span><span class="string">"parameters"</span> <span class="variable">element=</span><span class="string">"tns:add"</span>/&gt;
+<pre><code>&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:add&quot;/&gt;
 </code></pre><p><br><wsdl:message name="addResponse"></wsdl:message></p>
-<pre><code>&lt;wsdl:part <span class="variable">name=</span><span class="string">"parameters"</span> <span class="variable">element=</span><span class="string">"tns:addResponse"</span>/&gt;
+<pre><code>&lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:addResponse&quot;/&gt;
 </code></pre><p></p>
 </li>
 </ul>
@@ -306,13 +285,13 @@
 <li>portType由若干个<wsdl:operation>组成，每个operation代表一个可被调用接口的操作描述，定义了访问接口的请求/相应消息对。请求消息由<wsdl:input name="\*" message="\*">来组织，相应消息由<wsdl:output name="\*" message="\*">来组织。</wsdl:output></wsdl:input></wsdl:operation></li>
 <li><p>示例：webservice提供double add(int a, int b)和double minus(int a, int b)两个接口，portType定义如下，</p>
 <p><wsdl:porttype name="ComputerServicePortType"></wsdl:porttype></p>
-<pre><code>&lt;wsdl:operation <span class="variable">name=</span><span class="string">"minus"</span>&gt;
-    &lt;wsdl:input <span class="variable">name=</span><span class="string">"minusRequest"</span> <span class="variable">message=</span><span class="string">"tns:minusRequest"</span>/&gt;
-    &lt;wsdl:output <span class="variable">name=</span><span class="string">"minusResponse"</span> <span class="variable">message=</span><span class="string">"tns:minusResponse"</span>/&gt;
+<pre><code>&lt;wsdl:operation name=&quot;minus&quot;&gt;
+    &lt;wsdl:input name=&quot;minusRequest&quot; message=&quot;tns:minusRequest&quot;/&gt;
+    &lt;wsdl:output name=&quot;minusResponse&quot; message=&quot;tns:minusResponse&quot;/&gt;
 &lt;/wsdl:operation&gt;
-&lt;wsdl:operation <span class="variable">name=</span><span class="string">"add"</span>&gt;
-    &lt;wsdl:input <span class="variable">name=</span><span class="string">"addRequest"</span> <span class="variable">message=</span><span class="string">"tns:addRequest"</span>/&gt;
-    &lt;wsdl:output <span class="variable">name=</span><span class="string">"addResponse"</span> <span class="variable">message=</span><span class="string">"tns:addResponse"</span>/&gt;
+&lt;wsdl:operation name=&quot;add&quot;&gt;
+    &lt;wsdl:input name=&quot;addRequest&quot; message=&quot;tns:addRequest&quot;/&gt;
+    &lt;wsdl:output name=&quot;addResponse&quot; message=&quot;tns:addResponse&quot;/&gt;
 &lt;/wsdl:operation&gt;
 </code></pre><p></p>
 </li>
@@ -333,12 +312,12 @@
 <li>每个<wsdl:port>下通过<wsdlsoap:address location="\*">指定服务的URL</wsdlsoap:address></wsdl:port></li>
 <li><p>示例：webservice提供SayHelloPortType和SayGoodbyePortType两个operation集合，service定义如下，</p>
 <p><wsdl:service></wsdl:service></p>
-<pre><code> <span class="tag">&lt;<span class="title">wsdl:port</span> <span class="attribute">name</span>=<span class="value">"SayHelloPortType"</span> <span class="attribute">binding</span>=<span class="value">"SayHelloHttpBinding"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">wsdlsoap:address</span> <span class="attribute">location</span>=<span class="value">"http://locahost:8080/service/SayHello"</span> /&gt;</span>
- <span class="tag">&lt;/<span class="title">wsdl:port</span>&gt;</span>
- <span class="tag">&lt;<span class="title">wsdl:port</span> <span class="attribute">name</span>=<span class="value">"SayGoodbyePortType"</span> <span class="attribute">binding</span>=<span class="value">"SayGoodbyeHttpBinding"</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">wsdlsoap:address</span> <span class="attribute">location</span>=<span class="value">"http://locahost:8080/service/SayGoodbye"</span> /&gt;</span>
- <span class="tag">&lt;/<span class="title">wsdl:port</span>&gt;</span>
+<pre><code>&lt;wsdl:port name=&quot;SayHelloPortType&quot; binding=&quot;SayHelloHttpBinding&quot;&gt;
+     &lt;wsdlsoap:address location=&quot;http://locahost:8080/service/SayHello&quot; /&gt;
+&lt;/wsdl:port&gt;
+&lt;wsdl:port name=&quot;SayGoodbyePortType&quot; binding=&quot;SayGoodbyeHttpBinding&quot;&gt;
+     &lt;wsdlsoap:address location=&quot;http://locahost:8080/service/SayGoodbye&quot; /&gt;
+&lt;/wsdl:port&gt;
 </code></pre><p></p>
 </li>
 </ul>
@@ -414,7 +393,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Charles Chen
+    		&copy; 2017 Charles Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -424,12 +403,9 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-  <script src="/js/main.js" type="text/javascript"></script>
-
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
 
   </div>
 </body>
