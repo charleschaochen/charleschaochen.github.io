@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aha Tracking Page</title>
+  <script async src="https://scripts.ahalab.io/track.js" data-aha-client-id="org_2uoYN91O9s3m3O0uJFecCaJGPNx"></script>
+</head>
+<body>
+  <script>
+    // Before the business logic of signup
+    try {
+      window.ahaTracker.track([{ name: "signUp" }])
+    } catch (error) {
+      // Log error in case your request failed due to validation
+      console.error(error);
+    }
+    // Your normal business logic
+
+    // Or store it in your backend
+    if (window.ahaTracker?.ready) {
+      fetch('/api/store-tracking-in-server-side', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          orderId: window.ahaTracker.payload.orderId,
+          campaignId: window.ahaTracker.payload.campaignId,
+          clientId: window.ahaTracker.payload.clientId,
+          // Other tracking data you may want to send 
+        })
+      });
+    }
+  </script>
+</body>
+</html>
